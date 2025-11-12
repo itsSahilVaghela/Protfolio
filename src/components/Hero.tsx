@@ -76,7 +76,7 @@ export const Hero = () => {
               className="hover-lift"
             >
               <a
-                href="/Sahil_Vaghela_Resume.pdf"
+                href={'Sahil_Vaghela_Resume.pdf'}
                 download="Sahil_Vaghela_Resume.pdf"
                 className="no-underline flex items-center"
               >

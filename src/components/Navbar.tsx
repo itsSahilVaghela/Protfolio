@@ -68,7 +68,7 @@ export const Navbar = () => {
             }}
             className="text-xl md:text-2xl font-bold text-gradient hover:opacity-80 transition-opacity"
           >
-            VS
+            SV
           </a>
 
           {/* Desktop Navigation */}

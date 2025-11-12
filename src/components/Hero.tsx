@@ -34,14 +34,14 @@ export const Hero = () => {
           <div className="mb-8 flex justify-center">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-accent p-1 hover-lift">
               <Avatar className="w-full h-full">
-                <AvatarImage src={profileImage} alt="Vaghela Sahil" className="object-cover" />
+                <AvatarImage src={profileImage} alt="Sahil Vaghela" className="object-cover" />
                 <AvatarFallback className="text-4xl md:text-5xl font-bold text-gradient bg-surface-elevated">VS</AvatarFallback>
               </Avatar>
             </div>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-gradient">Vaghela Sahil</span>
+            <span className="text-gradient">Sahil Vaghela</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>

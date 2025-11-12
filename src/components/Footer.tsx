@@ -11,7 +11,7 @@ export const Footer = () => {
             {/* Branding */}
             <div>
               <h3 className="text-2xl font-bold text-gradient mb-3">
-                Vaghela Sahil A
+                Sahil Vaghela
               </h3>
               <p className="text-muted-foreground">
                 Unity Game Developer specializing in AR/VR/MR experiences
@@ -72,7 +72,7 @@ export const Footer = () => {
           <div className="pt-8 border-t border-border">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-sm text-muted-foreground">
-                © {currentYear} Vaghela Sahil A. All rights reserved.
+                © {currentYear} Sahil Vaghela. All rights reserved.
               </p>
               <p className="text-sm text-muted-foreground">
                 Built with React, TypeScript & Tailwind CSS

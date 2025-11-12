@@ -82,8 +82,8 @@ export const Hero = () => {
               >
                 <Download className="mr-2 h-5 w-5" />
                 Resume
-             </Button>
-            </a>
+              </a>
+            </Button>
           </div>
         </div>
       </div>

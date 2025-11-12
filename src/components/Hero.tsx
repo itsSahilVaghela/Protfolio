@@ -74,17 +74,15 @@ export const Hero = () => {
               size="lg"
               variant="secondary"
               className="hover-lift"
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "/Sahil-Vaghela-Resume.pdf"; // path inside public folder
-                link.download = "Sahil-Vaghela-Resume.pdf"; // optional custom name
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
             >
-              <Download className="mr-2 h-5 w-5" />
-              Resume
+              <a
+                href="/Sahil_Vaghela_Resume.pdf"
+                download="Sahil_Vaghela_Resume.pdf"
+                className="no-underline flex items-center"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Resume
+              </a>
             </Button>
           </div>
         </div>

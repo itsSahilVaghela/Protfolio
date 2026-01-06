@@ -42,15 +42,36 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        "service_6gyry2l", // Service ID
-        "template_6e9uisl", // Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: "Vaghela Sahil"
+      };
+      const templateParams2 = {
+        to_name: formData.name,
+        from_name: formData.name,
+        from_email: formData.email,
+          to_email: formData.email,
           message: formData.message,
-          to_name: "Vaghela Sahil",
-        },
+      };
+      
+      // await emailjs.send(
+      //   "service_6gyry2l", // Service ID
+      //   "template_6e9uisl", // Template ID
+      //   {
+      //     from_name: formData.name,
+      //     from_email: formData.email,
+      //     message: formData.message,
+      //     to_name: "Vaghela Sahil",
+      //   },
+
+        await emailjs.send(
+        "service_6gyry2l",          // same service ID
+        "template_zom0ui8", 
+         templateParams2,
+          
         "mNnRMvyiWf4VgOiRy" // Public Key
       );
 

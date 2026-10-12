@@ -9,32 +9,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ExternalLink, Github } from "lucide-react";
-import { AvatarCharacter } from "@/components/AvatarCharacter";
+import { ExternalLink } from "lucide-react";
 
-interface Project {
-  title: string;
-  type: string;
-  role: string;
-  tech: string[];
-  description: string;
-  category: string;
-  githubUrl?: string;
-  liveUrl?: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Bible Strong Avatar Lab",
-    type: "Procedural Avatar Studio & Web Tool",
-    role: "Open Source Contributor",
-    tech: ["TypeScript", "SVG / 3D Geometry", "Vite", "React", "Procedural Animation"],
-    description:
-      "A browser-based authoring studio for procedural 2D avatars. Combines 3D-inspired geometry with SVG rendering to construct characters, customize facial dimensions/perspective, compose reusable expressions, and export portable animation definitions (.avatar.json).",
-    category: "software",
-    githubUrl: "https://github.com/smontlouis/bible-strong-avatar-lab",
-    liveUrl: "https://avatars.bible-strong.app",
-  },
+const projects = [
   {
     title: "FictionArchviz",
     type: "Architectural Visualization",
@@ -199,14 +176,10 @@ export const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Project Icon/Visual */}
-                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden">
-                  {project.title === "Bible Strong Avatar Lab" ? (
-                    <AvatarCharacter size={140} />
-                  ) : (
-                    <div className="text-6xl font-bold text-primary/30">
-                      {project.title.charAt(0)}
-                    </div>
-                  )}
+                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="text-6xl font-bold text-primary/30">
+                    {project.title.charAt(0)}
+                  </div>
                 </div>
 
                 <Badge variant="secondary" className="mb-3">
@@ -225,35 +198,7 @@ export const Portfolio = () => {
                   <span className="text-xs font-medium text-primary">
                     {project.role}
                   </span>
-                  <div className="flex items-center gap-2">
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        title="View GitHub Repository"
-                        className="p-1 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
-                      >
-                        <Github className="h-4 w-4" />
-                      </a>
-                    )}
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        title="Open Live App"
-                        className="p-1 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    )}
-                    {!project.githubUrl && !project.liveUrl && (
-                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    )}
-                  </div>
+                  <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
               </Card>
             ))}
@@ -278,19 +223,10 @@ export const Portfolio = () => {
 
                   <div className="space-y-6">
                     {/* Visual */}
-                    <div className="w-full min-h-64 py-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex flex-col items-center justify-center overflow-hidden">
-                      {selectedProject.title === "Bible Strong Avatar Lab" ? (
-                        <div className="w-full flex flex-col items-center">
-                          <AvatarCharacter size={180} interactive={true} />
-                          <p className="text-xs text-muted-foreground mt-2">
-                            Interactive Procedural Avatar &bull; Click buttons above to test live animations
-                          </p>
-                        </div>
-                      ) : (
-                        <div className="text-9xl font-bold text-primary/30">
-                          {selectedProject.title.charAt(0)}
-                        </div>
-                      )}
+                    <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
+                      <div className="text-9xl font-bold text-primary/30">
+                        {selectedProject.title.charAt(0)}
+                      </div>
                     </div>
 
                     {/* Description */}
@@ -312,37 +248,6 @@ export const Portfolio = () => {
                         ))}
                       </div>
                     </div>
-
-                    {(selectedProject.githubUrl || selectedProject.liveUrl) && (
-                      <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
-                        {selectedProject.githubUrl && (
-                          <Button asChild variant="outline" size="sm" className="hover-lift">
-                            <a
-                              href={selectedProject.githubUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2"
-                            >
-                              <Github className="h-4 w-4" />
-                              View on GitHub
-                            </a>
-                          </Button>
-                        )}
-                        {selectedProject.liveUrl && (
-                          <Button asChild size="sm" className="hover-lift">
-                            <a
-                              href={selectedProject.liveUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2"
-                            >
-                              <ExternalLink className="h-4 w-4" />
-                              Try Live Demo
-                            </a>
-                          </Button>
-                        )}
-                      </div>
-                    )}
                   </div>
                 </>
               )}

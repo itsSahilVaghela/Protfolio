@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Gamepad2, Glasses, ArrowRight } from "lucide-react";
+import { Gamepad2, Glasses, Code2, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -26,6 +26,18 @@ const services = [
       "Real-time 3D Visualization",
     ],
   },
+  {
+    icon: Code2,
+    title: "Software & Real-Time 3D Development",
+    description:
+      "Unreal Engine C++ and web-based 3D software: data-driven systems, procedural geometry, and multiuser applications for desktop, VR, and the browser.",
+    features: [
+      "Unreal Engine C++ & Blueprints",
+      "Procedural Geometry & DXF/JSON Pipelines",
+      "Multiuser & Device Communication",
+      "WebAR & Three.js Experiences",
+    ],
+  },
 ];
 
 export const Services = () => {
@@ -38,11 +50,11 @@ export const Services = () => {
               My <span className="text-gradient">Services</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Specialized solutions for game development and immersive experiences
+              Specialized solutions for game development, software and immersive experiences
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (

@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Code2, Gamepad2, Palette } from "lucide-react";
 
@@ -32,6 +33,15 @@ const skillCategories = [
   },
 ];
 
+const techStack = [
+  { title: "Game Engines", items: ["Unity", "Unreal Engine 5", "Blueprints"] },
+  { title: "Programming", items: ["C#", "C++", "JavaScript", "Python", "C (basic)", "Java (basic)"] },
+  { title: "XR and 3D", items: ["OpenXR", "Meta Quest 3", "ARCore", "Vuforia", "HoloLens", "Three.js", "MindAR", "FBX workflows"] },
+  { title: "Graphics and Content", items: ["Unreal materials and lighting", "Unity URP/Shader Graph", "Material instances", "Texture mapping"] },
+  { title: "Networking and Vision", items: ["Agora Video SDK", "UDP", "WebSocket concepts", "MediaPipe", "OpenCV", "Multiuser sessions"] },
+  { title: "Tools and UI", items: ["Git/GitHub", "Figma", "API integration", "Debugging", "UI programming"] },
+];
+
 const coreSkills = [
   "Game Programming",
   "Game Development",
@@ -44,6 +54,11 @@ const coreSkills = [
   "MediaPipe",
   "Photon SDK",
   "Agora SDK",
+  "Unreal Engine 5",
+  "C++",
+  "Blueprints",
+  "Three.js",
+  "Software Development",
 ];
 
 export const Skills = () => {
@@ -56,7 +71,7 @@ export const Skills = () => {
               Technical <span className="text-gradient">Skills</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              Expertise across game development and immersive technologies
+              Expertise across game development, software engineering and immersive technologies
             </p>
           </div>
 
@@ -95,6 +110,29 @@ export const Skills = () => {
                 </Card>
               );
             })}
+          </div>
+
+          {/* Full Tech Stack */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold mb-8 text-center">Full Tech Stack</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {techStack.map((group, index) => (
+                <Card
+                  key={index}
+                  className="p-6 hover-lift hover-glow animate-scale-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <h4 className="text-lg font-bold mb-4 text-primary">{group.title}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item, itemIndex) => (
+                      <Badge key={itemIndex} variant="secondary">
+                        {item}
+                      </Badge>
+                    ))}
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
 
           {/* Core Skills Tags */}

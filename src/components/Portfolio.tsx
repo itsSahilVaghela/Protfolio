@@ -13,6 +13,42 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "FictionArchviz",
+    type: "Architectural Visualization",
+    role: "Developer",
+    tech: ["Unreal Engine 5", "C++", "DXF/JSON", "Meta Quest"],
+    description:
+      "A multiuser architectural-visualization application for desktop and Meta Quest. Includes a floor-plan-to-geometry workflow that extracts walls, windows, and doors into DXF layers, C++ roof-mesh generation with polygon-gap handling and tessellation, a VR see-through/X-ray overlay material, interior-lighting setup, and server-session debugging.",
+    category: "software",
+  },
+  {
+    title: "MimadimHomeStudio Furniture Customization",
+    type: "Unreal Engine Project",
+    role: "Developer",
+    tech: ["Unreal Engine", "C++", "Blueprints", "Data Assets", "Subsystems"],
+    description:
+      "Furniture customization built on data assets and a master data asset that maps furniture types to available furniture assets. Includes selection and replacement logic that preserves transforms, with responsibilities refactored into a GameInstance subsystem to support future material customization.",
+    category: "software",
+  },
+  {
+    title: "WebAR Coloring Book",
+    type: "WebAR Application",
+    role: "Developer",
+    tech: ["Three.js", "MindAR", "GPU Textures"],
+    description:
+      "Tracks a physical drawing sheet through a webcam and maps its live colors onto an animated 3D model. Implements a 2048 x 2048 texture-unwarping workflow designed for real-time rendering.",
+    category: "ar-vr",
+  },
+  {
+    title: "Three.js Browser Games",
+    type: "Browser Game Prototypes",
+    role: "Developer",
+    tech: ["Three.js", "JavaScript", "AI-assisted coding"],
+    description:
+      "Browser-based 3D game prototypes built with AI-assisted coding workflows, including reviewing, debugging, testing, and refining the generated code.",
+    category: "game",
+  },
+  {
     title: "Turbo Trail",
     type: "Mobile Game",
     role: "Sub Developer",
@@ -91,6 +127,7 @@ const categories = [
   { id: "game", label: "Games" },
   { id: "ar-vr", label: "AR/VR/MR" },
   { id: "client", label: "Client Work" },
+  { id: "software", label: "Software & Unreal" },
 ];
 
 export const Portfolio = () => {
@@ -111,7 +148,7 @@ export const Portfolio = () => {
               My <span className="text-gradient">Portfolio</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              Showcasing innovative projects across games and immersive tech
+              Showcasing projects across games, software and immersive tech
             </p>
           </div>
 

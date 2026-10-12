@@ -4,21 +4,51 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    title: "Unreal & Unity Game Developer",
+    company: "Invisible Fiction",
+    period: "Feb 2026 - Present",
+    description:
+      "Building multiuser architectural visualization and Unreal Engine tooling, alongside Unity XR work.",
+    highlights: [
+      "FictionArchviz (Unreal Engine 5, C++): developing a desktop and Meta Quest multiuser architectural-visualization application.",
+      "Built a floor-plan processing workflow that extracts walls, windows, and doors from floor-plan images into separate DXF layers.",
+      "Implemented C++ geometry generation that reads DXF/JSON building data and creates roof meshes, including polygon-gap handling and tessellation.",
+      "Developed a VR see-through/X-ray overlay material with consistent outline thickness and worked on interior-lighting balance using skylight and lighting channels.",
+      "Extended the server-manager subsystem with color-coded on-screen debug output and documented the multiuser session flow.",
+      "MimadimHomeStudio / Mimadim (Unreal Engine): implemented furniture data assets and a master data asset mapping furniture types to available furniture assets; added selection and replacement logic with transform preservation.",
+      "Refactored furniture customization responsibilities toward a GameInstance subsystem to centralize selection, replacement, and future material-customization logic.",
+      "Fiction Mech (Unity, OpenXR, Meta Quest 3): developed a 3D visualization experience as sole developer, including multiplayer and two-way control/communication between Quest 3 and Android using Agora Video SDK.",
+      "Three.js: developed browser-based 3D game prototypes using AI-assisted coding workflows, reviewing, debugging, testing, and refining generated code.",
+    ],
+    technologies: ["Unreal Engine 5", "C++", "Unity", "C#", "OpenXR", "Agora SDK", "Three.js", "DXF/JSON"],
+    current: true,
+  },
+  {
     title: "Junior Unity Game Developer",
     company: "Invisible Fiction",
-    period: "May 2023 - Present",
+    period: "May 2023 - Feb 2026",
     description:
-      "Leading development of innovative game projects and AR/VR/MR applications. Collaborating with cross-functional teams to deliver high-quality interactive experiences.",
-    technologies: ["Unity", "C#", "Figma"],
-    current: true,
+      "Developed and updated in-house Unity/C# games and XR applications.",
+    highlights: [
+      "Developed and updated in-house Unity/C# games, including Turbo Trail, Cupping Muffins, and Catch the Object; adapted game content into themed variants and improved UI.",
+      "Built body-tracking gameplay for Alien Runner and Football Cup using MediaPipe, streaming movement data into Unity to drive player actions.",
+      "Worked on a QR-triggered AR model-visualization application for HoloLens using ARCore/Vuforia-related tooling.",
+      "Contributed to Fiction Mech, a 3D model visualization application for Meta Quest 3, including OpenXR and cross-device communication work.",
+    ],
+    technologies: ["Unity", "C#", "MediaPipe", "OpenXR", "ARCore", "Vuforia", "Figma"],
+    current: false,
   },
   {
     title: "Artificial Intelligence Intern",
     company: "Invisible Fiction",
     period: "Feb 2023 - May 2023",
     description:
-      "Contributed to AI-driven game mechanics and intelligent system implementations. Gained expertise in Python integration with Unity environments.",
-    technologies: ["Python", "Unity", "C#"],
+      "Prototyped AI-driven movement tracking for Unity games using Python.",
+    highlights: [
+      "Prototyped human-movement recognition in Python using MediaPipe and sent tracking data to a Unity game to control the player.",
+      "Supported day-to-day development activities and collaborated with cross-functional teammates.",
+    ],
+    technologies: ["Python", "MediaPipe", "Unity", "C#"],
     current: false,
   },
 ];
@@ -33,7 +63,7 @@ export const Experience = () => {
               Professional <span className="text-gradient">Experience</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              My journey in game development and immersive technologies
+              My journey in game development, software and immersive technologies
             </p>
           </div>
 
@@ -79,6 +109,15 @@ export const Experience = () => {
                     <p className="text-muted-foreground mb-4 leading-relaxed">
                       {exp.description}
                     </p>
+
+                    <ul className="space-y-2 mb-5 text-muted-foreground">
+                      {exp.highlights.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex gap-3 leading-relaxed">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, techIndex) => (

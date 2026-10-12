@@ -45,12 +45,12 @@ export const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Unity Game Developer | AR/VR/MR Software Specialist
+            Game &amp; Software Developer | Unity &bull; Unreal Engine &bull; XR
           </p>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            I'm a Unity game developer focused on building interactive and immersive
-            experiences across PC, mobile, and extended reality platforms.
+            I build real-time 3D, VR/AR, and multiuser applications in Unity (C#) and
+            Unreal Engine (C++), plus browser-based 3D experiences with Three.js.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.3s" }}>

@@ -39,13 +39,16 @@ export const About = () => {
           {/* Personal Overview */}
           <Card className="p-8 md:p-12 mb-12 hover-lift card-glass">
             <p className="text-lg md:text-xl text-foreground leading-relaxed">
-              As a dedicated Unity Game Developer, I specialize in crafting engaging
-              interactive experiences that span across multiple platforms. My expertise
-              lies in developing innovative games and immersive AR/VR/MR applications
-              for PC, Android, iOS, and extended reality devices. With a strong
-              foundation in computer engineering and hands-on experience at Invisible
-              Fiction, I combine technical proficiency with creative vision to bring
-              unique digital experiences to life.
+              I'm a game and software developer with 3+ years of professional
+              experience across Unity (C#), Unreal Engine (C++/Blueprints),
+              real-time 3D, VR/AR, motion-controlled games, and browser-based 3D
+              experiences. My work spans gameplay and UI systems,
+              multiplayer/device communication, furniture customization,
+              architectural visualization, procedural geometry, and WebAR image
+              tracking. With a strong foundation in computer engineering and
+              hands-on experience at Invisible Fiction, I combine technical
+              proficiency with creative vision to build unique digital
+              experiences.
             </p>
           </Card>
 

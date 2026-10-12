@@ -14,7 +14,7 @@ export const Footer = () => {
                 Sahil Vaghela
               </h3>
               <p className="text-muted-foreground">
-                Unity Game Developer specializing in AR/VR/MR experiences
+                Game &amp; Software Developer building Unity, Unreal Engine and XR experiences
               </p>
             </div>
 

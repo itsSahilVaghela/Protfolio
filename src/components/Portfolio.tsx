@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ExternalLink, Github } from "lucide-react";
+import { AvatarCharacter } from "@/components/AvatarCharacter";
 
 interface Project {
   title: string;
@@ -198,10 +199,14 @@ export const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Project Icon/Visual */}
-                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <div className="text-6xl font-bold text-primary/30">
-                    {project.title.charAt(0)}
-                  </div>
+                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden">
+                  {project.title === "Bible Strong Avatar Lab" ? (
+                    <AvatarCharacter size={140} />
+                  ) : (
+                    <div className="text-6xl font-bold text-primary/30">
+                      {project.title.charAt(0)}
+                    </div>
+                  )}
                 </div>
 
                 <Badge variant="secondary" className="mb-3">
@@ -273,10 +278,19 @@ export const Portfolio = () => {
 
                   <div className="space-y-6">
                     {/* Visual */}
-                    <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                      <div className="text-9xl font-bold text-primary/30">
-                        {selectedProject.title.charAt(0)}
-                      </div>
+                    <div className="w-full min-h-64 py-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex flex-col items-center justify-center overflow-hidden">
+                      {selectedProject.title === "Bible Strong Avatar Lab" ? (
+                        <div className="w-full flex flex-col items-center">
+                          <AvatarCharacter size={180} interactive={true} />
+                          <p className="text-xs text-muted-foreground mt-2">
+                            Interactive Procedural Avatar &bull; Click buttons above to test live animations
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="text-9xl font-bold text-primary/30">
+                          {selectedProject.title.charAt(0)}
+                        </div>
+                      )}
                     </div>
 
                     {/* Description */}

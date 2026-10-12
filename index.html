@@ -24,5 +24,17 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <script>
+(function(){
+var bar=document.createElement('div');bar.id='sv-progress';document.body.appendChild(bar);
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('sv-in');io.unobserve(t);setTimeout(function(){t.classList.remove('sv-reveal','sv-in');t.style.transitionDelay=''},1500)}})},{threshold:.1});
+function scan(){document.querySelectorAll('section h2, section p, section [class*="bg-card"], section img').forEach(function(el,i){
+ if(el.dataset.svr)return;el.dataset.svr=1;el.classList.add('sv-reveal');el.style.transitionDelay=((i%6)*80)+'ms';io.observe(el)})}
+var t;new MutationObserver(function(){clearTimeout(t);t=setTimeout(scan,120)}).observe(document.body,{childList:true,subtree:true});scan();
+document.addEventListener('mousemove',function(e){var c=e.target.closest&&e.target.closest('[class*="bg-card"]');if(!c)return;
+ var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+})();
+</script>
+</body>
 </html>

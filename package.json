@@ -11,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@bible-strong/avatar-core": "^0.1.0",
+    "@bible-strong/avatar-react": "^0.1.0",
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",

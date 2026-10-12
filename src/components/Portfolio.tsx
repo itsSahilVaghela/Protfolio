@@ -9,9 +9,31 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
-const projects = [
+interface Project {
+  title: string;
+  type: string;
+  role: string;
+  tech: string[];
+  description: string;
+  category: string;
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Bible Strong Avatar Lab",
+    type: "Procedural Avatar Studio & Web Tool",
+    role: "Open Source Contributor",
+    tech: ["TypeScript", "SVG / 3D Geometry", "Vite", "React", "Procedural Animation"],
+    description:
+      "A browser-based authoring studio for procedural 2D avatars. Combines 3D-inspired geometry with SVG rendering to construct characters, customize facial dimensions/perspective, compose reusable expressions, and export portable animation definitions (.avatar.json).",
+    category: "software",
+    githubUrl: "https://github.com/smontlouis/bible-strong-avatar-lab",
+    liveUrl: "https://avatars.bible-strong.app",
+  },
   {
     title: "FictionArchviz",
     type: "Architectural Visualization",

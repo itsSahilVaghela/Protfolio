@@ -35,3 +35,7 @@ yarn-error.log*
 
 # Superpowers scratch
 .superpowers/
+
+# Media scratch files
+*.mp4
+public/pc-walkthrough-thumb.jpg

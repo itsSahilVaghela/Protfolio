@@ -6,11 +6,41 @@ import NotFound from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      const targetId = hash.replace("#", "");
+      const scrollToTarget = () => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return true;
+        }
+        return false;
+      };
+
+      if (!scrollToTarget()) {
+        const timer = setTimeout(scrollToTarget, 150);
+        return () => clearTimeout(timer);
+      }
+    } else if (pathname === "/contact") {
+      const scrollToContact = () => {
+        const el = document.getElementById("contact");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return true;
+        }
+        return false;
+      };
+      if (!scrollToContact()) {
+        const timer = setTimeout(scrollToContact, 150);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 };
@@ -21,6 +51,7 @@ const App = () => (
     <>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/contact" element={<Index />} />
         <Route path="/project/fiction-mech" element={<FictionMechCaseStudy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

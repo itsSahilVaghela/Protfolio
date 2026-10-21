@@ -277,10 +277,23 @@ export const FictionMechCaseStudy = () => {
 
             <a
               href="#architecture"
-              className="hidden md:inline-flex px-3 py-1.5 rounded-lg text-xs font-mono bg-[#4D8DFF] text-[#080B10] font-semibold hover:bg-[#689FFF] transition-colors"
+              className="hidden md:inline-flex px-3 py-1.5 rounded-lg text-xs font-mono bg-[#151C27] hover:bg-[#1E2736] text-[#F4F6FA] border border-[#1E2736] transition-colors"
             >
-              System Architecture
+              Architecture
             </a>
+
+            <Link
+              to="/#contact"
+              onClick={() => {
+                setTimeout(() => {
+                  const el = document.getElementById("contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }, 150);
+              }}
+              className="px-3 py-1.5 rounded-lg text-xs font-mono bg-[#4D8DFF] text-[#080B10] font-semibold hover:bg-[#689FFF] transition-colors"
+            >
+              Contact Sahil
+            </Link>
           </div>
         </div>
       </header>
@@ -1181,6 +1194,12 @@ export const FictionMechCaseStudy = () => {
                 </a>
                 <Link
                   to="/#contact"
+                  onClick={() => {
+                    setTimeout(() => {
+                      const el = document.getElementById("contact");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }, 150);
+                  }}
                   className="px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-[#4D8DFF] text-[#080B10] hover:bg-[#689FFF] transition-colors"
                 >
                   Contact Sahil

@@ -18,6 +18,8 @@ import {
   FileCode2,
   Sparkles,
   Play,
+  Monitor,
+  Glasses,
 } from "lucide-react";
 import {
   featuredProjects,
@@ -515,176 +517,341 @@ export const Portfolio = () => {
                   )}
                 </div>
 
-                {/* 1. Overview & 2. Problem / Requirement */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-5 rounded-xl bg-[#151C27] border border-[#1E2736]">
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] mb-2 flex items-center gap-2">
-                      <FileCode2 className="w-4 h-4" />
-                      1. Project Overview
-                    </h4>
-                    <p className="text-sm text-[#A4ADBB] leading-relaxed">
-                      {activeCaseStudy.caseStudy.overview}
-                    </p>
-                  </div>
-
-                  <div className="p-5 rounded-xl bg-[#151C27] border border-[#1E2736]">
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] mb-2 flex items-center gap-2">
-                      <Wrench className="w-4 h-4" />
-                      2. Problem &amp; Technical Requirement
-                    </h4>
-                    <p className="text-sm text-[#A4ADBB] leading-relaxed">
-                      {activeCaseStudy.caseStudy.problem}
-                    </p>
-                  </div>
-                </div>
-
-                {/* 3. Role & Responsibilities (Personal vs Team Scope) */}
-                <div className="p-5 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-3">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4" />
-                      3. My Role &amp; Responsibilities ({activeCaseStudy.roleTitle})
-                    </h4>
-                    <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]">
-                      {activeCaseStudy.ownershipScope}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-[#778294] italic border-l-2 border-[#4D8DFF] pl-3">
-                    {activeCaseStudy.ownershipNote}
-                  </p>
-
-                  <ul className="space-y-2 pt-1">
-                    {activeCaseStudy.caseStudy.responsibilities.map(
-                      (resp, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2.5 text-sm text-[#A4ADBB]"
-                        >
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                          <span>{resp}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-
-                {/* 4. Technical Approach */}
-                <div className="space-y-2">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
-                    <Cpu className="w-4 h-4" />
-                    4. Technical Approach
-                  </h4>
-                  <p className="text-sm text-[#A4ADBB] leading-relaxed">
-                    {activeCaseStudy.caseStudy.technicalApproach}
-                  </p>
-                </div>
-
-                {/* 5. Architecture & Implementation Details */}
-                <div className="space-y-4">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] flex items-center gap-2">
-                    <GitBranch className="w-4 h-4" />
-                    5. Architecture &amp; Implementation Pipeline
-                  </h4>
-
-                  {/* Pipeline Step Cards */}
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (
-                      <div
-                        key={i}
-                        className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]"
-                      >
-                        <div className="text-[10px] font-mono text-[#4D8DFF] mb-1">
-                          {step.stage}
-                        </div>
-                        <div className="text-sm font-semibold text-[#F4F6FA] mb-1">
-                          {step.title}
-                        </div>
-                        <div className="text-xs text-[#A4ADBB] leading-snug">
-                          {step.detail}
-                        </div>
+                {activeCaseStudy.id === "fiction-mech" ? (
+                  <div className="space-y-6 pt-1 text-left">
+                    {/* At a Glance Specs Grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
+                        <div className="text-sm font-bold text-[#4D8DFF]">Sole Developer</div>
+                        <div className="text-[11px] text-[#A4ADBB]">100% Architecture &amp; Delivery</div>
                       </div>
-                    ))}
-                  </div>
+                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Target Runtimes</div>
+                        <div className="text-sm font-bold text-[#F4F6FA]">PC · Quest 3 · Android</div>
+                        <div className="text-[11px] text-[#A4ADBB]">Cross-Device Interaction</div>
+                      </div>
+                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Networking &amp; Voice</div>
+                        <div className="text-sm font-bold text-emerald-400">Agora RTC SDK</div>
+                        <div className="text-[11px] text-[#A4ADBB]">Real-Time Sync &amp; Audio</div>
+                      </div>
+                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">VR Performance</div>
+                        <div className="text-sm font-bold text-amber-400">72+ FPS Standalone</div>
+                        <div className="text-[11px] text-[#A4ADBB]">Single-Pass Shader Clip</div>
+                      </div>
+                    </div>
 
-                  <ul className="space-y-2 pt-1">
-                    {activeCaseStudy.caseStudy.architectureDetails.map(
-                      (detail, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2.5 text-sm text-[#A4ADBB]"
-                        >
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                          <span>{detail}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-
-                {/* 6. Technologies Used */}
-                <div className="space-y-2.5">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF]">
-                    6. Technologies Used
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {activeCaseStudy.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 rounded-md text-xs font-mono bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 8. Challenges & Solutions */}
-                <div className="space-y-3">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF]">
-                    8. Engineering Challenges &amp; Solutions
-                  </h4>
-                  <div className="grid gap-3">
-                    {activeCaseStudy.caseStudy.challenges.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-2"
-                      >
-                        <p className="text-sm text-[#F4F6FA] font-medium">
-                          <span className="font-mono text-xs text-[#8B6CFF] mr-2">
-                            CHALLENGE:
+                    {/* Dual System Architecture - Quick Breakdown */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {/* Part One: PC Studio */}
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-lg bg-[#4D8DFF]/15 border border-[#4D8DFF]/30 flex items-center justify-center text-[#4D8DFF]">
+                              <Monitor className="w-3.5 h-3.5" />
+                            </div>
+                            <div>
+                              <h5 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#4D8DFF]">
+                                Part 1: PC Authoring Studio
+                              </h5>
+                              <span className="text-[11px] text-[#778294]">CAD Preparation &amp; Manifest Staging</span>
+                            </div>
+                          </div>
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736]">
+                            Windows
                           </span>
-                          {item.challenge}
-                        </p>
-                        <p className="text-sm text-[#A4ADBB]">
-                          <span className="font-mono text-xs text-[#4D8DFF] mr-2">
-                            SOLUTION:
+                        </div>
+
+                        <ul className="space-y-2 text-xs text-[#A4ADBB]">
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Asset Ingestion:</strong> Windows explorer loader for 3D models (FBX/OBJ), textures, audio &amp; docs.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Material Customizer:</strong> PBR palette (Copper, Gold, Silver) + Hue, Saturation, Luminance &amp; Alpha sliders.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Part-Level Tech Docs:</strong> Attaches PDFs (<code className="text-[#89B2FF]">sensors.pdf</code>) &amp; demo clips with <code className="text-amber-400 font-bold">(i)</code> tree indicators.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Assembly Slider:</strong> Continuous <code className="text-[#89B2FF]">Assemble &lt;---&gt; Disassemble</code> timeline authoring.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Turntable &amp; Green Screen:</strong> Built-in <code className="text-rose-400 font-bold">• REC</code> 1080p MP4 capture for technical catalogs.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Cloud Publishing:</strong> One-click packaging and upload to backend for instant viewer access.</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      {/* Part Two: Quest 3 & Mobile */}
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-7 h-7 rounded-lg bg-[#8B6CFF]/15 border border-[#8B6CFF]/30 flex items-center justify-center text-[#8B6CFF]">
+                              <Glasses className="w-3.5 h-3.5" />
+                            </div>
+                            <div>
+                              <h5 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#8B6CFF]">
+                                Part 2: Quest 3 &amp; Mobile Viewers
+                              </h5>
+                              <span className="text-[11px] text-[#778294]">Spatial Inspection &amp; Multi-Device Review</span>
+                            </div>
+                          </div>
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736]">
+                            Quest 3 · Android
                           </span>
-                          {item.solution}
+                        </div>
+
+                        <ul className="space-y-2 text-xs text-[#A4ADBB]">
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Room &amp; Tabletop Passthrough:</strong> Full-color stereo passthrough surface anchoring in real space.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">6DoF &amp; Hand Tracking:</strong> Pinch interaction, raycasting, cyan selection outlines &amp; floating part HUDs.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">3-Axis Shader Cross-Section:</strong> Color-coded X (Red), Y (Green), Z (Blue) clipping sliders + 3D RGB gizmo.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Spatial Layer Deck:</strong> Subsystem toggles (containers, plates, fins, flaps, turbine_hull, pistons).</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Agora Real-Time Multiplayer:</strong> Bidirectional interaction sync + low-latency audio &amp; screencast.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                            <span><strong className="text-[#F4F6FA]">Assembly Playback:</strong> Interactive step-by-step mechanical maintenance demonstration.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* 4-Stage Pipeline (Compact) */}
+                    <div className="space-y-2">
+                      <div className="text-xs font-mono uppercase tracking-wider text-[#A4ADBB] flex items-center justify-between">
+                        <span>End-to-End Pipeline</span>
+                        <span className="text-[11px] text-[#778294]">4 Staged Nodes</span>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (
+                          <div key={i} className="p-3 rounded-lg bg-[#0C1017] border border-[#1E2736]">
+                            <div className="text-[10px] font-mono text-[#4D8DFF] mb-0.5">{step.stage}</div>
+                            <div className="text-xs font-semibold text-[#F4F6FA] mb-1">{step.title}</div>
+                            <div className="text-[11px] text-[#778294] leading-snug line-clamp-2">{step.detail}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Quick Specs Call-to-Action to Full Case Study */}
+                    <div className="p-4 rounded-xl bg-gradient-to-r from-[#4D8DFF]/15 via-[#8B6CFF]/15 to-[#10151D] border border-[#4D8DFF]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div>
+                        <div className="text-sm font-bold text-[#F4F6FA] flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-[#4D8DFF]" />
+                          <span>Looking for Deep Architecture &amp; Verification Evidence?</span>
+                        </div>
+                        <p className="text-xs text-[#A4ADBB] mt-0.5">
+                          Inspect the complete 10-section case study with 17 HD screenshots, 3 video player switchers, and full engineering writeup.
                         </p>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 9. Results & Evidence-Based Outcomes */}
-                <div className="p-5 rounded-xl bg-[#151C27] border border-[#4D8DFF]/30 space-y-2.5">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
-                    <Sparkles className="w-4 h-4" />
-                    9. Documented Outcomes
-                  </h4>
-                  <ul className="space-y-2">
-                    {activeCaseStudy.caseStudy.outcomes.map((outcome, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2.5 text-sm text-[#F4F6FA]"
+                      <Link
+                        to={activeCaseStudy.caseStudyUrl || "/project/fiction-mech"}
+                        onClick={() => setActiveCaseStudy(null)}
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-[#4D8DFF] text-[#080B10] hover:bg-[#89B2FF] transition-colors whitespace-nowrap shadow-md self-start sm:self-auto"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-[#4D8DFF] mt-0.5 flex-shrink-0" />
-                        <span>{outcome}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                        <span>Open Full 10-Section Study</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {/* 1. Overview & 2. Problem / Requirement */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="p-5 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] mb-2 flex items-center gap-2">
+                          <FileCode2 className="w-4 h-4" />
+                          1. Project Overview
+                        </h4>
+                        <p className="text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.overview}
+                        </p>
+                      </div>
+
+                      <div className="p-5 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] mb-2 flex items-center gap-2">
+                          <Wrench className="w-4 h-4" />
+                          2. Problem &amp; Technical Requirement
+                        </h4>
+                        <p className="text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.problem}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 3. Role & Responsibilities (Personal vs Team Scope) */}
+                    <div className="p-5 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                          <ShieldCheck className="w-4 h-4" />
+                          3. My Role &amp; Responsibilities ({activeCaseStudy.roleTitle})
+                        </h4>
+                        <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]">
+                          {activeCaseStudy.ownershipScope}
+                        </span>
+                      </div>
+
+                      <p className="text-xs text-[#778294] italic border-l-2 border-[#4D8DFF] pl-3">
+                        {activeCaseStudy.ownershipNote}
+                      </p>
+
+                      <ul className="space-y-2 pt-1">
+                        {activeCaseStudy.caseStudy.responsibilities.map(
+                          (resp, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2.5 text-sm text-[#A4ADBB]"
+                            >
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#4D8DFF] flex-shrink-0" />
+                              <span>{resp}</span>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+
+                    {/* 4. Technical Approach */}
+                    <div className="space-y-2">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                        <Cpu className="w-4 h-4" />
+                        4. Technical Approach
+                      </h4>
+                      <p className="text-sm text-[#A4ADBB] leading-relaxed">
+                        {activeCaseStudy.caseStudy.technicalApproach}
+                      </p>
+                    </div>
+
+                    {/* 5. Architecture & Implementation Details */}
+                    <div className="space-y-4">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] flex items-center gap-2">
+                        <GitBranch className="w-4 h-4" />
+                        5. Architecture &amp; Implementation Pipeline
+                      </h4>
+
+                      {/* Pipeline Step Cards */}
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (
+                          <div
+                            key={i}
+                            className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]"
+                          >
+                            <div className="text-[10px] font-mono text-[#4D8DFF] mb-1">
+                              {step.stage}
+                            </div>
+                            <div className="text-sm font-semibold text-[#F4F6FA] mb-1">
+                              {step.title}
+                            </div>
+                            <div className="text-xs text-[#A4ADBB] leading-snug">
+                              {step.detail}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <ul className="space-y-2 pt-1">
+                        {activeCaseStudy.caseStudy.architectureDetails.map(
+                          (detail, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2.5 text-sm text-[#A4ADBB]"
+                            >
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#8B6CFF] flex-shrink-0" />
+                              <span>{detail}</span>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+
+                    {/* 6. Technologies Used */}
+                    <div className="space-y-2.5">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF]">
+                        6. Technologies Used
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {activeCaseStudy.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 rounded-md text-xs font-mono bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 8. Challenges & Solutions */}
+                    <div className="space-y-3">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF]">
+                        8. Engineering Challenges &amp; Solutions
+                      </h4>
+                      <div className="grid gap-3">
+                        {activeCaseStudy.caseStudy.challenges.map((item, idx) => (
+                          <div
+                            key={idx}
+                            className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-2"
+                          >
+                            <p className="text-sm text-[#F4F6FA] font-medium">
+                              <span className="font-mono text-xs text-[#8B6CFF] mr-2">
+                                CHALLENGE:
+                              </span>
+                              {item.challenge}
+                            </p>
+                            <p className="text-sm text-[#A4ADBB]">
+                              <span className="font-mono text-xs text-[#4D8DFF] mr-2">
+                                SOLUTION:
+                              </span>
+                              {item.solution}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 9. Results & Evidence-Based Outcomes */}
+                    <div className="p-5 rounded-xl bg-[#151C27] border border-[#4D8DFF]/30 space-y-2.5">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                        <Sparkles className="w-4 h-4" />
+                        9. Documented Outcomes
+                      </h4>
+                      <ul className="space-y-2">
+                        {activeCaseStudy.caseStudy.outcomes.map((outcome, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2.5 text-sm text-[#F4F6FA]"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-[#4D8DFF] mt-0.5 flex-shrink-0" />
+                            <span>{outcome}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                )}
               </div>
             </>
           )}

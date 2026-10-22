@@ -584,10 +584,10 @@ export const Portfolio = () => {
                         <div>
                           <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">VR Performance</div>
                           <div className="text-sm sm:text-base font-bold text-amber-400">72+ FPS Standalone</div>
-                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Snapdragon XR2 Gen 2</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Meta Quest 3 Native</div>
                         </div>
                         <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
-                          Custom single-pass fragment discard clipping shader with zero stencil overhead.
+                          Lightweight HLSL shaders and batched draw calls delivering locked 72 FPS in mixed reality.
                         </div>
                       </div>
                     </div>
@@ -905,34 +905,34 @@ export const Portfolio = () => {
                             <div className="flex items-start justify-between gap-2">
                               <div className="flex items-center gap-2">
                                 <div className="w-7 h-7 rounded-lg bg-[#8B6CFF]/15 border border-[#8B6CFF]/30 flex items-center justify-center text-[#8B6CFF] flex-shrink-0">
-                                  <Glasses className="w-3.5 h-3.5" />
+                                  <FileText className="w-3.5 h-3.5" />
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    2. 1:1 Scale Spatial 3D &amp; Part Interaction
+                                    2. Part Metadata &amp; Technical Manual HUD
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
-                                    Passthrough &amp; Hand Tracking
+                                    Specs, Tooling &amp; Video Reference
                                   </span>
                                 </div>
                               </div>
                               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-[#B8A1FF] border border-[#1E2736]">
-                                OpenXR MR
+                                HUD Overlay
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Room-scale and tabletop passthrough with 6DoF, hand tracking, and part metadata HUDs.
+                              Tap any subcomponent to inspect dimensions, required tools, reference photos, PDF manuals, and video clips.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Color Passthrough
+                              Tool Specifications
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              6DoF &amp; Hand Tracking
+                              PDF Manual Viewer
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Part Metadata HUD
+                              MP4 Video Reference
                             </span>
                           </div>
                         </div>

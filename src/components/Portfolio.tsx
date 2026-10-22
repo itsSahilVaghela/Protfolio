@@ -546,7 +546,7 @@ export const Portfolio = () => {
                     </div>
 
                     {/* 2. Key Specifications Grid */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
                         <div>
                           <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
@@ -577,17 +577,6 @@ export const Portfolio = () => {
                         </div>
                         <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
                           Photon multiplayer sync &amp; voice; Agora VR screen cast streaming to web pages.
-                        </div>
-                      </div>
-
-                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
-                        <div>
-                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">VR Performance</div>
-                          <div className="text-sm sm:text-base font-bold text-amber-400">72+ FPS Standalone</div>
-                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Meta Quest 3 Native</div>
-                        </div>
-                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
-                          Lightweight HLSL shaders and batched draw calls delivering locked 72 FPS in mixed reality.
                         </div>
                       </div>
                     </div>

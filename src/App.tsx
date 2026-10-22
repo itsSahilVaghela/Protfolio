@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
-import FictionMechCaseStudy from "./pages/FictionMechCaseStudy";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -52,7 +51,6 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/contact" element={<Index />} />
-        <Route path="/project/fiction-mech" element={<FictionMechCaseStudy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

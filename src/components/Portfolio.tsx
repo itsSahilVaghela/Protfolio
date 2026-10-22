@@ -75,10 +75,22 @@ export const Portfolio = () => {
     "video"
   );
   const [activeModalVideoUrl, setActiveModalVideoUrl] = useState<string | null>(null);
+  const [activeModalImageUrl, setActiveModalImageUrl] = useState<string | null>(null);
+  const [activeImageMode, setActiveImageMode] = useState<"image" | "schematic">("image");
 
   const currentVideoUrl = activeCaseStudy
     ? activeModalVideoUrl || activeCaseStudy.videoUrl
     : undefined;
+
+  const currentImageUrl = activeCaseStudy
+    ? activeModalImageUrl ||
+      activeCaseStudy.additionalImages?.[0]?.previewUrl ||
+      activeCaseStudy.mediaUrl
+    : undefined;
+
+  const currentImageDriveUrl = activeCaseStudy?.additionalImages?.find(
+    (img) => img.previewUrl === currentImageUrl
+  )?.url;
 
   const visibleProjects =
     selectedFilter === "all"
@@ -251,6 +263,10 @@ export const Portfolio = () => {
                         setActiveCaseStudy(project);
                         setActiveMediaView(project.videoUrl ? "video" : "schematic");
                         setActiveModalVideoUrl(project.videoUrl || null);
+                        setActiveImageMode("image");
+                        setActiveModalImageUrl(
+                          project.additionalImages?.[0]?.previewUrl || project.mediaUrl || null
+                        );
                       }}
                       className={`w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] ${
                         isMainProject
@@ -476,6 +492,98 @@ export const Portfolio = () => {
                               } demo walkthrough.`
                             : "Interactive recording from Meta Quest 3 and Android cross-device production session."
                           : activeCaseStudy.mediaCaption}
+                      </p>
+                    </div>
+                  ) : activeCaseStudy.additionalImages && activeCaseStudy.additionalImages.length > 0 ? (
+                    <div className="space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                          <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-1.5">
+                            {activeImageMode === "image"
+                              ? "Live Production AR Capture"
+                              : "System Architecture Schematic"}
+                          </h4>
+                        </div>
+                        <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-[#0C1017] border border-[#1E2736]">
+                          <button
+                            type="button"
+                            onClick={() => setActiveImageMode("image")}
+                            className={`px-3 py-1 rounded text-xs font-mono transition-colors ${
+                              activeImageMode === "image"
+                                ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
+                                : "text-[#A4ADBB] hover:text-[#F4F6FA]"
+                            }`}
+                          >
+                            Live Capture
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setActiveImageMode("schematic")}
+                            className={`px-3 py-1 rounded text-xs font-mono transition-colors ${
+                              activeImageMode === "schematic"
+                                ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
+                                : "text-[#A4ADBB] hover:text-[#F4F6FA]"
+                            }`}
+                          >
+                            Schematic
+                          </button>
+                        </div>
+                      </div>
+
+                      {activeImageMode === "image" ? (
+                        <>
+                          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                            <span className="text-[10px] font-mono text-[#778294] uppercase tracking-wider mr-1">
+                              Inspection Mode:
+                            </span>
+                            {activeCaseStudy.additionalImages.map((img, idx) => {
+                              const isSelected = currentImageUrl === img.previewUrl;
+                              return (
+                                <button
+                                  key={idx}
+                                  type="button"
+                                  onClick={() => setActiveModalImageUrl(img.previewUrl || null)}
+                                  className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors border ${
+                                    isSelected
+                                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold border-[#4D8DFF]"
+                                      : "bg-[#0C1017] text-[#A4ADBB] border-[#1E2736] hover:text-[#F4F6FA] hover:border-[#4D8DFF]/40"
+                                  }`}
+                                >
+                                  {img.label}
+                                </button>
+                              );
+                            })}
+                            {currentImageDriveUrl && (
+                              <a
+                                href={currentImageDriveUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono text-[#89B2FF] hover:bg-[#4D8DFF]/10 transition-colors border border-[#4D8DFF]/30 ml-auto"
+                              >
+                                <span>Open Drive ↗</span>
+                              </a>
+                            )}
+                          </div>
+
+                          <div className="relative w-full aspect-video max-h-[460px] rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl flex items-center justify-center">
+                            <img
+                              src={currentImageUrl}
+                              alt={activeCaseStudy.title}
+                              className="w-full h-full object-contain bg-[#080B10]"
+                            />
+                          </div>
+                        </>
+                      ) : (
+                        <ProjectTechnicalVisual
+                          project={activeCaseStudy}
+                          variant="modal"
+                          forceSchematic
+                        />
+                      )}
+
+                      <p className="text-xs font-mono text-[#778294]">
+                        {activeCaseStudy.mediaCaption}
                       </p>
                     </div>
                   ) : (

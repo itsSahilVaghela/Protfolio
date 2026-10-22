@@ -3,18 +3,20 @@ import { ProjectCaseStudy } from "@/data/portfolioData";
 interface ProjectTechnicalVisualProps {
   project: ProjectCaseStudy;
   variant?: "card" | "modal";
+  forceSchematic?: boolean;
 }
 
 export const ProjectTechnicalVisual = ({
   project,
   variant = "card",
+  forceSchematic = false,
 }: ProjectTechnicalVisualProps) => {
   const heightClass =
     variant === "modal"
       ? "h-60 sm:h-72"
       : "h-48 sm:h-52";
 
-  if (project.mediaUrl) {
+  if (project.mediaUrl && !forceSchematic) {
     return (
       <div
         className={`relative w-full ${heightClass} rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736]`}

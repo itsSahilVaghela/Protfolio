@@ -42,6 +42,7 @@ export interface ProjectCaseStudy {
   mediaCaption: string;
   caseStudyUrl?: string;
   additionalVideos?: { label: string; url: string; previewUrl?: string }[];
+  additionalImages?: { label: string; url: string; previewUrl?: string }[];
   links?: {
     liveDemo?: string;
     video?: string;
@@ -294,84 +295,109 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 2,
     featuredTier: "primary",
     title: "Radicon Powerbuild AR/MR",
-    subtitle: "Industrial Gearbox Inspection on Meta Quest 3 & Mobile AR",
+    subtitle: "Mobile AR & Meta Quest 3 Showcase",
     category: "Industrial AR / Mixed Reality",
     filterGroup: "xr-multiuser",
-    technologies: ["Unity", "C#", "Meta SDK", "Vuforia", "Meta Quest 3"],
-    shortDescription:
-      "Engineered entirely alone as sole developer: A mixed-reality industrial inspection solution for Radicon Powerbuild enabling users to examine complex industrial gearboxes via brochure tracking or factory floor placement on Meta Quest 3.",
-    highlights: [
-      "Worked alone as sole developer covering architecture, spatial anchoring, tracking, and UI.",
-      "Dual-mode inspection: Marker-based printed brochure tracking (Vuforia) and physical floor placement (Meta Quest Passthrough).",
-      "Real-time 1:1 scaling, cross-section cutaways, and interactive mechanical component inspection.",
-      "Optimized high-density CAD geometry for stable 72+ FPS performance on standalone mobile XR hardware.",
+    technologies: [
+      "Unity",
+      "C#",
+      "Vuforia Engine",
+      "Meta Quest 3",
+      "OpenXR",
+      "Android AR",
     ],
-    roleTitle: "Sole Developer (Worked Alone)",
-    ownershipScope: "Sole Developer (Worked Alone)",
+    shortDescription:
+      "Industrial 3D product visualization platform featuring Vuforia brochure tracking, markerless floor placement, and radial spec HUDs.",
+    highlights: [
+      "Dual Tracking Engine: Vuforia brochure marker tracking + markerless ground plane placement.",
+      "Circular Showroom Carousel: Orbiting product ring with central hero focus and real-time shaft swapping.",
+      "Radial Engineering HUD: Curved UI exposing product options, industry applications, catalogs, and manuals.",
+    ],
+    roleTitle: "Sole Developer",
+    ownershipScope: "Sole Developer",
     ownershipNote:
-      "Engineered entirely alone as sole developer for Radicon Powerbuild. Handled the complete mixed-reality pipeline including Vuforia marker tracking, Meta Quest 3 MR passthrough, 3D model optimization, interactive scaling, and deployment.",
+      "Engineered independently as sole developer for Radicon Powerbuild: delivered the Android application with Vuforia brochure tracking and markerless floor modes, plus the Meta Quest 3 MR experience with full 3D interaction.",
     diagramType: "radicon-mr",
+    mediaUrl:
+      "https://lh3.googleusercontent.com/d/1LVa70qlxKUC-kk-THRGT3JsqH7xQb6n_",
+    additionalImages: [
+      {
+        label: "Marker Mode (Brochure Tracking)",
+        url: "https://drive.google.com/file/d/1LVa70qlxKUC-kk-THRGT3JsqH7xQb6n_/view?usp=sharing",
+        previewUrl:
+          "https://lh3.googleusercontent.com/d/1LVa70qlxKUC-kk-THRGT3JsqH7xQb6n_",
+      },
+      {
+        label: "Markerless Mode (Floor Showroom)",
+        url: "https://drive.google.com/file/d/1R4VdJlbzkYXP1nBW6MQd8yHBekCdXFay/view?usp=sharing",
+        previewUrl:
+          "https://lh3.googleusercontent.com/d/1R4VdJlbzkYXP1nBW6MQd8yHBekCdXFay",
+      },
+    ],
     mediaCaption:
-      "System Architecture: Vuforia Image Target / Meta SDK Spatial Anchor -> Real-Time Gearbox CAD Rendering -> Interactive Quest 3 MR Inspection.",
+      "Live Production Capture: Vuforia printed brochure tracking vs markerless floor placement with circular product carousel and curved radial HUD.",
     caseStudy: {
       overview:
-        "Radicon Powerbuild AR/MR is an industrial mixed-reality application engineered independently as sole developer. It allows clients, engineers, and training technicians to inspect intricate industrial gearbox assemblies in 3D—either triggered directly from printed product brochures or anchored onto real factory floors in Meta Quest 3 mixed reality.",
+        "Radicon Powerbuild AR/MR is an industrial 3D product visualization and marketing platform developed solely by Sahil Vaghela. Delivered across Android mobile and Meta Quest 3, it offers dual inspection modes: Vuforia marker tracking that brings printed product brochures to life with 3D gearbox assemblies, and markerless ground-plane tracking for tabletop and full-scale factory floor placement. The experience features an orbiting circular product carousel, dynamic shaft configuration, and an interactive curved radial HUD connecting users directly to technical catalogs, application domains, and installation manuals.",
       problem:
-        "Heavy industrial gearboxes cannot be easily transported to sales meetings or training seminars. Radicon Powerbuild needed a portable, high-fidelity mixed-reality solution that allows users to examine internal gearing mechanisms, scale models from tabletop to 1:1 factory scale, and view components in context without physical machinery.",
+        "Industrial gearboxes are heavy, expensive to ship, and impossible to bring into typical sales meetings, trade-show booths, or client offices. Radicon Powerbuild needed a portable, high-impact visualization tool where sales teams and engineers could demonstrate their complete gearbox line-up, swap mechanical configurations in real time, and access technical specifications on-device without physical equipment.",
       responsibilities: [
-        "Designed and developed the entire application independently as sole developer in Unity (C#).",
-        "Implemented Vuforia marker tracking to recognize printed brochure diagrams and overlay interactive 3D gearbox models.",
-        "Built Meta Quest 3 passthrough and spatial anchoring workflows for 1:1 factory floor placement.",
-        "Developed interactive inspection mechanics including model rotation, exploded part views, and scale switching.",
-        "Optimized industrial CAD meshes and shaders to maintain high framerates on standalone VR headsets.",
+        "Architected and engineered the entire application as sole developer in Unity (C#) for Android and Meta Quest 3.",
+        "Integrated Vuforia Engine image-target tracking to recognize printed brochure covers and accurately anchor 3D assemblies.",
+        "Built markerless surface detection algorithms to place and scale models on floors and tabletops in real-world environments.",
+        "Programmed the circular 3D carousel system arranging product models in an orbit around the brand center with smooth focus transitions.",
+        "Engineered the dynamic shaft configuration system allowing live component swapping on the active Series-M model.",
+        "Designed and implemented the custom curved radial HUD menu providing instant navigation through catalogs, applications, and manuals.",
       ],
       technicalApproach:
-        "Leveraged Vuforia for robust optical tracking of high-contrast brochure targets and the Meta XR SDK for room-scale spatial anchoring and passthrough visualization. Implemented custom lightweight shaders and Level-of-Detail (LOD) hierarchies to ensure smooth 72 FPS standalone execution on Meta Quest 3.",
+        "Engineered a unified Unity C# architecture deployed to both Android phones and standalone Meta Quest 3 headsets. On Android, Vuforia handles dual-pipeline computer vision: switching between high-contrast brochure feature tracking and markerless plane tracking. On Quest 3, OpenXR and Passthrough provide 1:1 room-scale surface anchoring with 6DoF hand and controller interaction. Gearbox CAD meshes were decimated, batched, and shaded with lightweight mobile PBR shaders to maintain steady framerates.",
       architectureDetails: [
-        "Dual Tracking Engine: Seamlessly toggles between Vuforia image-target tracking for tabletop brochure demos and Meta SDK spatial anchoring for room-scale floor placement.",
-        "Interactive Gearbox Inspection: Modular C# controllers handling gesture-based model rotation, uniform scaling (0.1x to 1.0x), and animated component dissection.",
-        "CAD Mesh & Material Optimization: Converted heavy manufacturing CAD models into optimized Unity meshes with draw-call batching and mobile URP shaders.",
-        "Standalone Quest 3 Execution: Fully self-contained build running directly on Meta Quest 3 without tethered PC hardware.",
+        "Dual Vision Pipeline: Seamless toggle between Vuforia brochure target tracking and markerless plane detection.",
+        "Circular Carousel Engine: Algorithmic radial positioning of secondary product models orbiting a central brand logo with smooth hero-focus lerping.",
+        "Modular Component Swapping: Runtime shaft attachment system switching mechanical output configurations on active assemblies.",
+        "Curved Radial HUD: Custom canvas shaders and spherical coordinate layout presenting product options, applications, and documentation.",
+        "Meta Quest 3 Passthrough MR: Native OpenXR stereoscopic passthrough surface placement with 6DoF free interaction.",
+        "CAD Decimation & Batching: Industrial manufacturing meshes optimized for mobile GPU fill-rate limits without visual fidelity loss.",
       ],
       pipelineSteps: [
         {
-          stage: "TRACKING",
-          title: "Vuforia / Meta SDK",
-          detail: "Optical brochure tracking or spatial floor anchor detection",
+          stage: "VISION & TRACKING",
+          title: "Dual Tracking Modes",
+          detail: "Vuforia printed brochure image tracking or markerless surface detection",
         },
         {
-          stage: "ANCHORING",
-          title: "Pose & Spatial Alignment",
-          detail: "Align 3D gearbox coordinates with physical surfaces in passthrough",
+          stage: "CAROUSEL STAGE",
+          title: "Circular Showroom",
+          detail: "Orbiting ring of product models with centered hero focus",
         },
         {
-          stage: "INSPECTION",
-          title: "Interactive Controls",
-          detail: "1:1 scaling, rotational inspection & component dissection",
+          stage: "CONFIGURATION",
+          title: "Shaft & Option Swap",
+          detail: "Interactive mechanical swapping of shaft types on active model",
         },
         {
-          stage: "PERFORMANCE",
-          title: "Mobile XR Optimization",
-          detail: "Batched draw calls & mobile URP shaders maintaining 72 FPS",
+          stage: "SPECIFICATIONS HUD",
+          title: "Curved Radial Navigation",
+          detail: "On-device access to catalogs, installation manuals, and applications",
         },
       ],
       challenges: [
         {
           challenge:
-            "High-polygon industrial gearbox CAD files caused severe frame drops and thermal throttling on mobile VR hardware.",
+            "Maintaining stable 3D model tracking over printed brochure paper under varying ambient trade-show lighting and camera angles.",
           solution:
-            "Remeshed complex geometries, baked ambient occlusion into textures, and set up an efficient LOD system that sustains a constant 72 FPS on Meta Quest 3.",
+            "Configured high-contrast feature descriptors in Vuforia and implemented extended tracking to sustain model stability even when the brochure target temporarily left the camera frame.",
         },
         {
           challenge:
-            "Target drift when transitioning between printed brochure tracking and physical floor placement.",
+            "Displaying an entire circular showroom of multiple high-detail gearbox models simultaneously on mobile Android hardware without frame drops.",
           solution:
-            "Implemented pose smoothing and state decoupling between the Vuforia image tracker and Meta spatial anchors.",
+            "Applied aggressive polygon reduction, shared material atlasing, and LOD instances for the orbiting secondary models while reserving high-resolution textures for the active central hero model.",
         },
       ],
       outcomes: [
-        "Delivered a complete, production-ready industrial MR tool developed entirely alone as sole developer.",
-        "Empowered sales and engineering teams to demonstrate complex industrial machinery anywhere using Meta Quest 3.",
+        "Delivered a production-ready marketing and sales tool empowering Radicon Powerbuild representatives to showcase industrial gearboxes anywhere.",
+        "Seamlessly combined physical print collateral with digital 3D visualization, circular catalog browsing, and live shaft customization.",
       ],
     },
   },

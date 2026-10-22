@@ -629,18 +629,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Create and organize multi-model projects; dynamic file ingestion for FBX and OBJ models with interactive 360° turntable orbit inspection.
+                              Dynamic FBX/OBJ multi-model loader with interactive 360° turntable orbit review.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Multi-Model Projects
+                              FBX / OBJ Importer
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              FBX &amp; OBJ Ingestion
+                              360° Orbit Review
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              360° Turntable Orbit
+                              Multi-Model Staging
                             </span>
                           </div>
                         </div>
@@ -667,18 +667,21 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Assign custom materials, colors, and PBR textures to individual sub-components; switch between Mesh View, Wireframe View, Edge View, and Texture View.
+                              Assign custom PBR materials across 4 instant viewport rendering modes.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              PBR Materials
+                              Mesh View
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Mesh / Wireframe / Edge
+                              Wireframe View
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Texture Shading
+                              Edge View
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Texture View
                             </span>
                           </div>
                         </div>
@@ -705,18 +708,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Bind operational engineering data to each separate part: Part Name, Physical Dimensions, Required Tool for Opening/Fastening, Reference Image, Video Demo, and Reference PDF Manual.
+                              Bind physical specs, operational tools, and documentation directly to sub-components.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Part Dimensions
+                              Dimensions &amp; Specs
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               Required Tooling
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              PDF Manuals &amp; Videos
+                              PDFs &amp; Video Demos
                             </span>
                           </div>
                         </div>
@@ -743,18 +746,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Author step-by-step procedural assembly and disassembly sequence timelines; configure expanded subassembly view (explosion slider) with reset controls.
+                              Author step-by-step procedural maintenance timelines with continuous explosion slider.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Procedural Timelines
+                              Step Sequencing
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Assembly Sequences
+                              Exploded View Slider
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Expansion Slider Config
+                              Disassembly Timelines
                             </span>
                           </div>
                         </div>
@@ -781,18 +784,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Group parts into distinct functional layers to isolate subsystems; set target runtime view permissions (enable or disable specific parts or views for Quest vs Mobile).
+                              Group parts into functional layers and set target view permissions per platform.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Subsystem Grouping
+                              Subsystem Layer Deck
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Isolation Layers
+                              Quest 3 Permissions
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Quest vs Mobile Permissions
+                              Mobile View Filters
                             </span>
                           </div>
                         </div>
@@ -819,7 +822,7 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Built-in in-engine recording mode with 360° turntable and chroma key green screen for technical catalog video editing; one-click package serialization and cloud upload to backend.
+                              Capture 1080p turntable demos with chroma green screen and publish packages to backend.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
@@ -827,10 +830,10 @@ export const Portfolio = () => {
                               Chroma Key Green Screen
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Turntable Video Capture
+                              1080p Video Rec
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Cloud Bundle Publishing
+                              Cloud Package Export
                             </span>
                           </div>
                         </div>
@@ -877,18 +880,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              In-app project library directly connects to cloud backend, downloading authored project bundles on demand.
+                              Connects to cloud backend to download and cache authored project bundles on demand.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Cloud Backend Sync
+                              Cloud Manifest Sync
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              On-Demand Caching
+                              On-Demand Asset Fetch
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Dynamic Project Library
+                              Local Caching
                             </span>
                           </div>
                         </div>
@@ -915,18 +918,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Full-color stereo passthrough surface anchoring (room-scale / tabletop) on Meta Quest 3 with 6DoF controllers and natural hand tracking; responsive touch interaction on Android &amp; iOS. Tap or pinch any part to view its attached metadata HUD (dimensions, tool needed, photos, videos, PDFs).
+                              Room-scale and tabletop passthrough with 6DoF, hand tracking, and part metadata HUDs.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Room/Tabletop Passthrough
+                              Color Passthrough
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               6DoF &amp; Hand Tracking
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Metadata HUD Inspection
+                              Part Metadata HUD
                             </span>
                           </div>
                         </div>
@@ -953,15 +956,15 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Toggle subsystem layers on and off; expand model parts in 3D space with continuous slider, plus one-touch instant reset back to default assembled state.
+                              Filter subsystem layers live, expand parts with smooth slider, and reset in 1-click.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Subsystem Layer Deck
+                              Subsystem Filtering
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Continuous Explode Slider
+                              Real-Time Part Expansion
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               1-Touch Instant Reset
@@ -991,18 +994,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Dynamic X, Y, and Z clipping planes with interactive 3D RGB gizmo to slice open enclosed mechanical assemblies and inspect internal tolerances without physical teardown.
+                              Interactive 3D RGB gizmo slicing internal tolerances with zero stencil GPU overhead.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              3-Axis RGB Gizmo
+                              3-Axis RGB Cutting
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Internal Clearances
+                              Single-Pass Fragment Clip
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Zero Stencil Fragment Discard
+                              Internal Inspection
                             </span>
                           </div>
                         </div>
@@ -1029,18 +1032,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Step-by-step procedural training playback teaching technicians the precise assembly sequence authored on PC.
+                              Step-by-step SOP playback teaching technicians maintenance sequences authored on PC.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Interactive SOP Training
+                              Interactive SOP Guidance
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Step Playback
+                              Assembly Playback
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Technician Verification
+                              Safety Step Verification
                             </span>
                           </div>
                         </div>
@@ -1067,18 +1070,18 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Cast Meta Quest 3 spatial perspective directly to Android and iOS mobile devices; multiplayer state sync where every part transform and selection syncs live with bidirectional audio voice chat.
+                              Stream headset view to mobile tablets with bidirectional state sync and live voice chat.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Meta Quest 3 to Mobile Cast
+                              Agora Screen Casting
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Multiplayer State Sync
+                              Bi-Directional State Sync
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Bidirectional Voice Chat
+                              Two-Way Spatial Audio
                             </span>
                           </div>
                         </div>

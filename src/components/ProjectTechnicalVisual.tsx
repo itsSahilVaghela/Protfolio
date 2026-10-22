@@ -17,12 +17,19 @@ export const ProjectTechnicalVisual = ({
       : "h-48 sm:h-52";
 
   if (project.mediaUrl && !forceSchematic) {
+    const mediaSrc =
+      project.mediaUrl.startsWith("http://") || project.mediaUrl.startsWith("https://")
+        ? project.mediaUrl
+        : `${import.meta.env.BASE_URL}${
+            project.mediaUrl.startsWith("/") ? project.mediaUrl.slice(1) : project.mediaUrl
+          }`;
+
     return (
       <div
         className={`relative w-full ${heightClass} rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736]`}
       >
         <img
-          src={project.mediaUrl}
+          src={mediaSrc}
           alt={`${project.title} — ${project.category}`}
           loading="lazy"
           className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"

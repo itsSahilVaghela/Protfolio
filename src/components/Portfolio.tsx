@@ -568,7 +568,13 @@ export const Portfolio = () => {
 
                           <div className="relative w-full aspect-video max-h-[460px] rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl flex items-center justify-center">
                             <img
-                              src={currentImageUrl}
+                              src={
+                                currentImageUrl?.startsWith("http://") || currentImageUrl?.startsWith("https://")
+                                  ? currentImageUrl
+                                  : `${import.meta.env.BASE_URL}${
+                                      currentImageUrl?.startsWith("/") ? currentImageUrl.slice(1) : currentImageUrl
+                                    }`
+                              }
                               alt={activeCaseStudy.title}
                               className="w-full h-full object-contain bg-[#080B10]"
                             />
@@ -1196,6 +1202,260 @@ export const Portfolio = () => {
                           <span>End-to-End Execution Pipeline</span>
                         </span>
                         <span className="text-[11px] text-[#778294]">4 Staged Execution Nodes</span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                        {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (
+                          <div key={i} className="p-3.5 rounded-xl bg-[#0C1017] border border-[#1E2736] flex flex-col justify-between">
+                            <div>
+                              <div className="flex items-center justify-between gap-1 mb-1">
+                                <span className="text-[10px] font-mono text-[#4D8DFF]">{step.stage}</span>
+                                <span className="text-[10px] font-mono text-[#778294]">Node 0{i + 1}</span>
+                              </div>
+                              <div className="text-xs font-bold text-[#F4F6FA] mb-1.5">{step.title}</div>
+                            </div>
+                            <div className="text-[11px] text-[#A4ADBB] leading-snug">{step.detail}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : activeCaseStudy.id === "radicon-powerbuild-xr" ? (
+                  <div className="space-y-6 pt-1 text-left">
+                    {/* 1. Overview Banner */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-[#151C27] via-[#10151D] to-[#0C1017] border border-[#1E2736] space-y-3 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-[#4D8DFF]/5 rounded-full blur-3xl pointer-events-none" />
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4D8DFF]/10 border border-[#4D8DFF]/30">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#4D8DFF]" />
+                          <span className="font-mono text-[11px] uppercase tracking-wider text-[#89B2FF]">
+                            INDUSTRIAL AR/MR SHOWCASE · SOLE DEVELOPER
+                          </span>
+                        </div>
+                        <span className="font-mono text-xs text-[#778294] px-2.5 py-0.5 rounded bg-[#080B10] border border-[#1E2736]">
+                          Mobile &amp; Meta Quest 3
+                        </span>
+                      </div>
+
+                      <div>
+                        <h4 className="text-base sm:text-lg font-bold text-[#F4F6FA] tracking-tight">
+                          Interactive Gearbox Showroom with Dual Tracking &amp; Radial HUD
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] mt-1.5 leading-relaxed">
+                          Engineered independently as sole developer for Radicon Powerbuild. Enables sales engineers to demonstrate industrial gearboxes via Vuforia printed brochure tracking or markerless room placement on mobile and Meta Quest 3.
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/70">
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-[#89B2FF] border border-[#1E2736]">
+                          Android Phone (Vuforia)
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-purple-400 border border-[#1E2736]">
+                          Meta Quest 3 MR
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-emerald-400 border border-[#1E2736]">
+                          Marker &amp; Markerless
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-amber-400 border border-[#1E2736]">
+                          Radial Spec HUD
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 2. Key Specifications Grid (3 Cards) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
+                          <div className="text-sm sm:text-base font-bold text-[#4D8DFF]">Sole Developer</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">100% Architecture &amp; Delivery</div>
+                        </div>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          Full-stack Unity C#, Vuforia tracking, Meta Quest 3 MR &amp; radial UI.
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Target Runtimes</div>
+                          <div className="text-sm sm:text-base font-bold text-[#F4F6FA]">Android · Meta Quest 3</div>
+                          <div className="text-xs font-medium text-[#89B2FF] mt-0.5">Mobile AR &amp; Immersive MR</div>
+                        </div>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          Native Android touch app and standalone Meta Quest 3 APK.
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Inspection Modes</div>
+                          <div className="text-sm sm:text-base font-bold text-emerald-400">Marker + Markerless</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Dual-Vision Tracking</div>
+                        </div>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          Printed brochure image target and ground-plane real surface placement.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 3. Core Capabilities Bento (4 Cards) */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                          <Layers className="w-4 h-4 text-[#4D8DFF]" />
+                          <span>Core Engineering Capabilities</span>
+                        </h4>
+                        <span className="text-[11px] font-mono text-[#778294]">
+                          4 Highlight Features
+                        </span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2.5">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 rounded-lg bg-[#4D8DFF]/15 border border-[#4D8DFF]/30 flex items-center justify-center text-[#4D8DFF] flex-shrink-0">
+                                  <FileText className="w-3.5 h-3.5" />
+                                </div>
+                                <div>
+                                  <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
+                                    1. Vuforia Brochure Tracking
+                                  </h5>
+                                  <span className="text-[10px] font-mono text-[#778294]">
+                                    Printed Collateral Target
+                                  </span>
+                                </div>
+                              </div>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-[#89B2FF] border border-[#1E2736]">
+                                Marker AR
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Locks interactive 3D Series-M gearbox directly onto physical printed marketing brochures.
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Brochure Anchor
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Image Target Tracking
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2.5">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                  <Box className="w-3.5 h-3.5" />
+                                </div>
+                                <div>
+                                  <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
+                                    2. Markerless Surface Showroom
+                                  </h5>
+                                  <span className="text-[10px] font-mono text-[#778294]">
+                                    Plane &amp; Passthrough Placement
+                                  </span>
+                                </div>
+                              </div>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-emerald-400 border border-[#1E2736]">
+                                Ground Plane
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Anchors full product lineup onto real floors and tabletops across mobile and Meta Quest 3 MR.
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Floor Anchoring
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Quest 3 Passthrough
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2.5">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 rounded-lg bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0">
+                                  <Sliders className="w-3.5 h-3.5" />
+                                </div>
+                                <div>
+                                  <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
+                                    3. Circular Carousel &amp; Shaft Swap
+                                  </h5>
+                                  <span className="text-[10px] font-mono text-[#778294]">
+                                    Ring Showroom &amp; Variants
+                                  </span>
+                                </div>
+                              </div>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-purple-400 border border-[#1E2736]">
+                                Configuration
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Orbiting product ring with central hero focus and real-time mechanical shaft swapping.
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Circular Carousel
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Shaft Customizer
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2.5">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                                  <Wrench className="w-3.5 h-3.5" />
+                                </div>
+                                <div>
+                                  <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
+                                    4. Curved Radial Engineering HUD
+                                  </h5>
+                                  <span className="text-[10px] font-mono text-[#778294]">
+                                    Specs, Manuals &amp; Catalogs
+                                  </span>
+                                </div>
+                              </div>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-amber-400 border border-[#1E2736]">
+                                Radial UI
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Curved arc menu giving instant on-device access to specs, catalogs, applications, and manuals.
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Catalog &amp; Manuals
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Curved Arc Layout
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 4. Execution Pipeline */}
+                    <div className="space-y-2.5">
+                      <div className="text-xs font-mono uppercase tracking-wider text-[#A4ADBB] flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <GitBranch className="w-4 h-4 text-[#4D8DFF]" />
+                          <span>4-Stage Pipeline</span>
+                        </span>
+                        <span className="text-[11px] text-[#778294]">Vision to Inspection</span>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
                         {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (

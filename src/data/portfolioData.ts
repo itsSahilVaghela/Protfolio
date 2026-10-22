@@ -332,6 +332,16 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ownershipNote:
       "Engineered independently as sole developer for Radicon Powerbuild: delivered the Android application with Vuforia brochure tracking and markerless floor modes, plus the Meta Quest 3 MR experience with full 3D interaction.",
     diagramType: "radicon-mr",
+    cardSlides: [
+      {
+        url: "/projects/radicon/radicon-marker-brochure.jpg",
+        label: "Brochure Marker Tracking",
+      },
+      {
+        url: "/projects/radicon/radicon-markerless-floor.jpg",
+        label: "Markerless Floor Showroom",
+      },
+    ],
     mediaUrl: "/projects/radicon/radicon-marker-brochure.jpg",
     additionalImages: [
       {

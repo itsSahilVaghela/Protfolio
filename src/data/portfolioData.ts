@@ -38,6 +38,12 @@ export interface ProjectCaseStudy {
     | "unity-games";
   /** Optional genuine screenshot or video path when added to public/assets */
   mediaUrl?: string;
+  cardSplitMedia?: {
+    leftUrl: string;
+    leftLabel: string;
+    rightUrl: string;
+    rightLabel: string;
+  };
   videoUrl?: string;
   mediaCaption: string;
   caseStudyUrl?: string;
@@ -200,6 +206,12 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ownershipNote:
       "Engineered entirely as sole developer—architected the two-part system separating PC-based project authoring from spatial Meta Quest 3 and mobile companion inspection, including Photon multiplayer state sync/voice and Agora video screencast integration.",
     diagramType: "fiction-mech-xr",
+    cardSplitMedia: {
+      leftUrl: "/projects/fiction-mech/fiction-mech-pc.jpg",
+      leftLabel: "PC Studio",
+      rightUrl: "/projects/fiction-mech/fiction-mech-meta.jpg",
+      rightLabel: "Quest 3 MR",
+    },
     videoUrl:
       "https://drive.google.com/file/d/1-Nq5PV4sZDEReHngLBV7VVP1WOyfX2Wo/view?usp=sharing",
     additionalVideos: [

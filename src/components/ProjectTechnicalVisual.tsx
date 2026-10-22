@@ -16,6 +16,56 @@ export const ProjectTechnicalVisual = ({
       ? "h-60 sm:h-72"
       : "h-48 sm:h-52";
 
+  if (project.cardSplitMedia && variant === "card") {
+    const resolveSrc = (url: string) =>
+      url.startsWith("http://") || url.startsWith("https://")
+        ? url
+        : `${import.meta.env.BASE_URL}${
+            url.startsWith("/") ? url.slice(1) : url
+          }`;
+
+    return (
+      <div
+        className={`relative w-full ${heightClass} rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] flex group/split`}
+      >
+        {/* Left half: PC Studio */}
+        <div className="relative w-1/2 h-full overflow-hidden border-r border-[#1E2736]/80">
+          <img
+            src={resolveSrc(project.cardSplitMedia.leftUrl)}
+            alt={`${project.title} — ${project.cardSplitMedia.leftLabel}`}
+            loading="lazy"
+            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/split:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080B10]/85 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-2 left-2 z-10 px-2 py-0.5 rounded bg-[#10151D]/90 border border-[#1E2736] font-mono text-[9px] font-medium text-[#89B2FF] flex items-center gap-1.5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4D8DFF]" />
+            {project.cardSplitMedia.leftLabel}
+          </div>
+        </div>
+
+        {/* Right half: Quest 3 MR */}
+        <div className="relative w-1/2 h-full overflow-hidden">
+          <img
+            src={resolveSrc(project.cardSplitMedia.rightUrl)}
+            alt={`${project.title} — ${project.cardSplitMedia.rightLabel}`}
+            loading="lazy"
+            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/split:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080B10]/85 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 rounded bg-[#10151D]/90 border border-[#1E2736] font-mono text-[9px] font-medium text-[#B8A1FF] flex items-center gap-1.5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8B6CFF]" />
+            {project.cardSplitMedia.rightLabel}
+          </div>
+        </div>
+
+        {/* Center divider badge */}
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10 px-1.5 py-0.5 rounded bg-[#080B10]/80 border border-[#1E2736] text-[8px] font-mono text-[#A4ADBB] uppercase tracking-wider backdrop-blur-sm pointer-events-none">
+          Live Split
+        </div>
+      </div>
+    );
+  }
+
   if (project.mediaUrl && !forceSchematic) {
     const mediaSrc =
       project.mediaUrl.startsWith("http://") || project.mediaUrl.startsWith("https://")

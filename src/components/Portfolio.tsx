@@ -67,6 +67,10 @@ export const Portfolio = () => {
   );
   const [activeModalVideoUrl, setActiveModalVideoUrl] = useState<string | null>(null);
 
+  const currentVideoUrl = activeCaseStudy
+    ? activeModalVideoUrl || activeCaseStudy.videoUrl
+    : undefined;
+
   const visibleProjects =
     selectedFilter === "all"
       ? featuredProjects
@@ -232,49 +236,26 @@ export const Portfolio = () => {
                       ))}
                     </div>
 
-                    {project.caseStudyUrl ? (
-                      <div className="grid grid-cols-2 gap-2">
-                        <Link
-                          to={project.caseStudyUrl}
-                          className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider bg-[#4D8DFF] text-[#080B10] font-semibold hover:bg-[#89B2FF] transition-colors shadow-sm"
-                        >
-                          <span>Full Study</span>
-                          <ArrowUpRight className="w-4 h-4" />
-                        </Link>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setActiveCaseStudy(project);
-                            setActiveMediaView(project.videoUrl ? "video" : "schematic");
-                            setActiveModalVideoUrl(project.videoUrl || null);
-                          }}
-                          className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider bg-[#151C27] text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/50 hover:bg-[#1E2736] transition-colors"
-                        >
-                          <span>Quick Specs</span>
-                        </button>
-                      </div>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setActiveCaseStudy(project);
-                          setActiveMediaView(project.videoUrl ? "video" : "schematic");
-                          setActiveModalVideoUrl(project.videoUrl || null);
-                        }}
-                        className={`w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] ${
-                          isMainProject
-                            ? "bg-[#4D8DFF] text-[#080B10] font-semibold hover:bg-[#89B2FF]"
-                            : "bg-[#151C27] text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/50 hover:bg-[#1E2736]"
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveCaseStudy(project);
+                        setActiveMediaView(project.videoUrl ? "video" : "schematic");
+                        setActiveModalVideoUrl(project.videoUrl || null);
+                      }}
+                      className={`w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] ${
+                        isMainProject
+                          ? "bg-[#4D8DFF] text-[#080B10] font-semibold hover:bg-[#89B2FF]"
+                          : "bg-[#151C27] text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/50 hover:bg-[#1E2736]"
+                      }`}
+                    >
+                      <span>Check in Details</span>
+                      <ArrowUpRight
+                        className={`w-4 h-4 ${
+                          isMainProject ? "text-[#080B10]" : "text-[#4D8DFF]"
                         }`}
-                      >
-                        <span>Inspect Case Study</span>
-                        <ArrowUpRight
-                          className={`w-4 h-4 ${
-                            isMainProject ? "text-[#080B10]" : "text-[#4D8DFF]"
-                          }`}
-                        />
-                      </button>
-                    )}
+                      />
+                    </button>
                   </div>
                 </article>
               );
@@ -341,7 +322,7 @@ export const Portfolio = () => {
         open={!!activeCaseStudy}
         onOpenChange={(open) => !open && setActiveCaseStudy(null)}
       >
-        <DialogContent className="max-w-4xl max-h-[88vh] overflow-y-auto bg-[#10151D] border border-[#1E2736] text-[#F4F6FA] p-6 sm:p-8">
+        <DialogContent className="w-[95vw] sm:max-w-4xl max-h-[90vh] overflow-y-auto bg-[#10151D] border border-[#1E2736] text-[#F4F6FA] p-4 sm:p-6 sm:p-8">
           {activeCaseStudy && (
             <>
               <DialogHeader className="space-y-3 border-b border-[#1E2736] pb-5 text-left">
@@ -364,29 +345,6 @@ export const Portfolio = () => {
                 <DialogDescription className="text-sm text-[#A4ADBB]">
                   {activeCaseStudy.subtitle || activeCaseStudy.shortDescription}
                 </DialogDescription>
-
-                {activeCaseStudy.caseStudyUrl && (
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-gradient-to-r from-[#4D8DFF]/15 via-[#8B6CFF]/10 to-transparent border border-[#4D8DFF]/30 mt-2">
-                    <div className="flex items-center gap-2.5">
-                      <Sparkles className="w-4 h-4 text-[#4D8DFF] flex-shrink-0" />
-                      <div>
-                        <div className="text-xs font-mono font-semibold text-[#F4F6FA]">
-                          Dedicated Full-Bleed Project Page Available
-                        </div>
-                        <div className="text-[11px] text-[#A4ADBB]">
-                          10 deep-dive sections, 17 HD gallery screenshots, and 3 full walkthrough videos.
-                        </div>
-                      </div>
-                    </div>
-                    <Link
-                      to={activeCaseStudy.caseStudyUrl}
-                      className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-[#4D8DFF] text-[#080B10] hover:bg-[#89B2FF] transition-colors whitespace-nowrap self-start sm:self-auto"
-                    >
-                      <span>Open Full Case Study</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                )}
               </DialogHeader>
 
               <div className="space-y-8 pt-4 text-left">
@@ -440,7 +398,7 @@ export const Portfolio = () => {
                             </span>
                             {activeCaseStudy.additionalVideos.map((vid, idx) => {
                               const isSelected =
-                                (activeModalVideoUrl || activeCaseStudy.videoUrl) === vid.url;
+                                currentVideoUrl === vid.url;
                               return (
                                 <button
                                   key={idx}
@@ -456,14 +414,24 @@ export const Portfolio = () => {
                                 </button>
                               );
                             })}
+                            {currentVideoUrl && isEmbedIframe(currentVideoUrl) && (
+                              <a
+                                href={currentVideoUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono text-[#89B2FF] hover:bg-[#4D8DFF]/10 transition-colors border border-[#4D8DFF]/30 ml-auto"
+                              >
+                                <span>Open Drive ↗</span>
+                              </a>
+                            )}
                           </div>
                         )}
 
                       {activeMediaView === "video" ? (
-                        <div className="relative w-full h-72 sm:h-96 md:h-[420px] rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl">
-                          {isEmbedIframe(activeModalVideoUrl || activeCaseStudy.videoUrl) ? (
+                        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl">
+                          {isEmbedIframe(currentVideoUrl) ? (
                             <iframe
-                              src={getEmbedVideoUrl(activeModalVideoUrl || activeCaseStudy.videoUrl)!}
+                              src={getEmbedVideoUrl(currentVideoUrl)!}
                               title={`${activeCaseStudy.title} Video Demo`}
                               className="w-full h-full border-0"
                               allow="autoplay; fullscreen"
@@ -471,7 +439,7 @@ export const Portfolio = () => {
                             />
                           ) : (
                             <video
-                              src={activeModalVideoUrl || activeCaseStudy.videoUrl}
+                              src={currentVideoUrl}
                               controls
                               playsInline
                               className="w-full h-full object-contain bg-black"
@@ -489,15 +457,12 @@ export const Portfolio = () => {
                         {activeMediaView === "video"
                           ? activeCaseStudy.additionalVideos?.find(
                               (v) =>
-                                v.url ===
-                                (activeModalVideoUrl || activeCaseStudy.videoUrl)
+                                v.url === currentVideoUrl
                             )?.label
                             ? `Displaying: ${
                                 activeCaseStudy.additionalVideos.find(
                                   (v) =>
-                                    v.url ===
-                                    (activeModalVideoUrl ||
-                                      activeCaseStudy.videoUrl)
+                                    v.url === currentVideoUrl
                                 )?.label
                               } demo walkthrough.`
                             : "Interactive recording from Meta Quest 3 and Android cross-device production session."

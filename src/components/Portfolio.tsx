@@ -258,7 +258,7 @@ export const Portfolio = () => {
                           : "bg-[#151C27] text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/50 hover:bg-[#1E2736]"
                       }`}
                     >
-                      <span>Check in Details</span>
+                      <span>View Case Study</span>
                       <ArrowUpRight
                         className={`w-4 h-4 ${
                           isMainProject ? "text-[#080B10]" : "text-[#4D8DFF]"

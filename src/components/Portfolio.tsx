@@ -520,7 +520,7 @@ export const Portfolio = () => {
                             <span className="font-semibold text-[#89B2FF]">Part 1 (PC Authoring Studio):</span> Creates and manages 3D projects, ingests FBX/OBJ models with 360° inspection, assigns materials across 4 viewport modes (Mesh, Wireframe, Edge, Texture), sequences assembly/disassembly steps, binds part-level metadata (dimensions, tools, manuals, video clips), manages subsystem layers, and publishes ready bundles to the backend.
                           </div>
                           <div className="p-3 rounded-lg bg-[#0C1017]/80 border border-[#1E2736]/70">
-                            <span className="font-semibold text-[#B8A1FF]">Part 2 (Quest 3 MR &amp; Mobile Viewers):</span> Downloads projects on-demand from the backend for 1:1 room/tabletop passthrough inspection on Meta Quest 3 and mobile review on Android &amp; iOS. Features individual part selection with metadata HUDs, layer toggling, real-time expanded view with 1-click reset, 3-axis shader cross-section cutting, guided procedural training, and Agora RTC multi-device synchronization with live two-way voice.
+                            <span className="font-semibold text-[#B8A1FF]">Part 2 (Quest 3 MR &amp; Mobile Viewers):</span> Downloads projects on-demand from the backend for 1:1 room/tabletop passthrough inspection on Meta Quest 3 and mobile review on Android &amp; iOS. Features individual part selection with metadata HUDs, layer toggling, real-time expanded view with 1-click reset, 3-axis shader cross-section cutting, guided procedural training, and Photon multiplayer state sync with live voice, plus Agora RTC screen casting to web pages.
                           </div>
                         </div>
                       </div>
@@ -536,8 +536,11 @@ export const Portfolio = () => {
                         <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-emerald-400 border border-[#1E2736]">
                           Android &amp; iOS Touch
                         </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-emerald-400 border border-[#1E2736]">
+                          Photon PUN &amp; Voice
+                        </span>
                         <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-amber-400 border border-[#1E2736]">
-                          Agora RTC Networking
+                          Agora Webcast
                         </span>
                       </div>
                     </div>
@@ -551,7 +554,7 @@ export const Portfolio = () => {
                           <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">100% Architecture &amp; Delivery</div>
                         </div>
                         <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
-                          Full-stack Unity C#, HLSL shaders, OpenXR &amp; Agora RTC.
+                          Full-stack Unity C#, HLSL shaders, OpenXR, Photon &amp; Agora RTC.
                         </div>
                       </div>
 
@@ -568,12 +571,12 @@ export const Portfolio = () => {
 
                       <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
                         <div>
-                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Networking &amp; Voice</div>
-                          <div className="text-sm sm:text-base font-bold text-emerald-400">Agora RTC SDK</div>
-                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Real-Time Sync &amp; Audio</div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Multiplayer &amp; Webcast</div>
+                          <div className="text-sm sm:text-base font-bold text-emerald-400">Photon + Agora</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">PUN Voice + Web Stream</div>
                         </div>
                         <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
-                          Cross-device state replication, screen casting, and live voice chat.
+                          Photon multiplayer sync &amp; voice; Agora VR screen cast streaming to web pages.
                         </div>
                       </div>
 
@@ -1058,30 +1061,30 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    6. Agora RTC Screen Casting &amp; Multiplayer Sync
+                                    6. Agora Screen Cast &amp; Photon Multiplayer
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
-                                    Live Voice &amp; Viewport Casting
+                                    PUN State Sync + Web Screencast
                                   </span>
                                 </div>
                               </div>
                               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-emerald-400 border border-[#1E2736]">
-                                Agora RTC
+                                Photon + Agora
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Stream headset view to mobile tablets with bidirectional state sync and live voice chat.
+                              Multiplayer state sync &amp; voice via Photon; Quest 3 screen cast feeds directly to web pages via Agora.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Agora Screen Casting
+                              Photon State Sync
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Bi-Directional State Sync
+                              Photon Voice Chat
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Two-Way Spatial Audio
+                              Agora Web Feed Casting
                             </span>
                           </div>
                         </div>

@@ -183,6 +183,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Meta Quest 3",
       "Android",
       "iOS",
+      "Photon PUN & Voice",
       "Agora Video SDK",
       "Backend Integration",
     ],
@@ -196,7 +197,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
     roleTitle: "Sole Developer",
     ownershipScope: "Sole Developer",
     ownershipNote:
-      "Engineered entirely as sole developer—architected the two-part system separating PC-based project authoring from spatial Meta Quest 3 and mobile companion inspection, including bidirectional state synchronization and Agora Video SDK integration.",
+      "Engineered entirely as sole developer—architected the two-part system separating PC-based project authoring from spatial Meta Quest 3 and mobile companion inspection, including Photon multiplayer state sync/voice and Agora video screencast integration.",
     diagramType: "fiction-mech-xr",
     videoUrl:
       "https://drive.google.com/file/d/1-Nq5PV4sZDEReHngLBV7VVP1WOyfX2Wo/view?usp=sharing",
@@ -213,9 +214,15 @@ export const featuredProjects: ProjectCaseStudy[] = [
         previewUrl:
           "https://drive.google.com/file/d/1vMSK6kcbKgBzB4DkubT5pr6DlWdDVDp0/preview",
       },
+      {
+        label: "Agora Web Screencast Walkthrough",
+        url: "https://drive.google.com/file/d/1sBM3JkAlQuS77N_92jaN3d9fE7kj2blM/view?usp=sharing",
+        previewUrl:
+          "https://drive.google.com/file/d/1sBM3JkAlQuS77N_92jaN3d9fE7kj2blM/preview",
+      },
     ],
     mediaCaption:
-      "System Topology: PC Project Authoring Studio <-> Cloud Backend <-> Meta Quest 3 Mixed Reality Viewer & Android Companion via Agora Video SDK.",
+      "System Topology: PC Authoring Studio <-> Cloud Backend <-> Meta Quest 3 MR & Mobile (Photon Sync/Voice) + Agora Web Screencast.",
     caseStudy: {
       overview:
         "Fiction Mech is an interactive industrial 3D model visualization, mechanical analysis, and cross-device collaboration platform developed entirely by Sahil Vaghela as sole developer. The system is divided into two core components: a PC application for project creation, 3D model preparation, material customization, metadata binding, and cloud publishing; and spatial viewer applications for Meta Quest 3, Android, and iOS for 1:1 room-scale inspection, hand-tracked assembly manipulation, real-time 3-axis cross-sectioning, and synchronized multiplayer collaboration.",

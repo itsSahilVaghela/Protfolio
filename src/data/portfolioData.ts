@@ -173,7 +173,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 1,
     featuredTier: "primary",
     title: "Fiction Mech",
-    subtitle: "Dual-Component Industrial 3D Model Visualization & Collaborative XR",
+    subtitle: "PC Authoring Studio & Multi-Device XR Platform",
     category: "Industrial 3D Visualization / XR",
     filterGroup: "xr-multiuser",
     technologies: [
@@ -187,11 +187,11 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Backend Integration",
     ],
     shortDescription:
-      "Engineered solely as sole developer: A comprehensive industrial 3D visualization and collaboration system featuring a PC project authoring studio and spatial Meta Quest 3 Mixed Reality & mobile inspection viewers with Agora real-time voice and video.",
+      "Industrial 3D digital twin platform connecting a PC authoring studio with Meta Quest 3 MR and mobile companion viewers. Ingests CAD models, structures technical metadata, and enables real-time cross-device inspection with live voice.",
     highlights: [
-      "Architected and implemented end-to-end as sole developer across PC authoring, Meta Quest 3 MR, and mobile companions.",
-      "Two-part system architecture: PC application for 3D model ingestion, material design, metadata binding, and cloud publishing.",
-      "Meta Quest 3 mixed-reality viewer with full-color passthrough, room/tabletop placement, 6DoF & hand tracking.",
+      "PC Authoring Studio: Ingests 3D models, configures 4 viewport modes, and binds part metadata & assembly sequences.",
+      "Meta Quest 3 MR: 1:1 scale passthrough inspection, 6DoF hand tracking, and 3-axis internal cross-section cutting.",
+      "Agora Multi-Device Sync: Real-time part state synchronization across headset and mobile with live voice chat.",
     ],
     roleTitle: "Sole Developer",
     ownershipScope: "Sole Developer",

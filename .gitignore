@@ -36,6 +36,9 @@ yarn-error.log*
 # Superpowers scratch
 .superpowers/
 
+# Tooling and MCP cache
+.code-review-graph/
+
 # Media scratch files
 *.mp4
 public/pc-walkthrough-thumb.jpg

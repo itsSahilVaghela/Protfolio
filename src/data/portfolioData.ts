@@ -187,11 +187,11 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Backend Integration",
     ],
     shortDescription:
-      "Industrial 3D digital twin platform connecting a PC authoring studio with Meta Quest 3 MR and mobile companion viewers.",
+      "Interactive 3D model visualization and mechanical analysis platform built to inspect complex CAD assemblies, train maintenance procedures, and collaborate across devices.",
     highlights: [
-      "PC Studio: CAD ingestion, 4 viewport modes & metadata authoring",
-      "Quest 3 MR: 1:1 spatial passthrough & 3-axis shader cross-section",
-      "Agora Sync: Real-time multi-device replication & two-way voice",
+      "PC Authoring Studio: Ingests 3D models, configures 4 viewport modes, and binds part metadata & assembly sequences.",
+      "Quest 3 MR Inspection: 1:1 scale passthrough examination, individual part interaction, and 3-axis internal cross-section slicing.",
+      "Multiplayer Collaboration: Real-time cross-device session synchronization between VR headset and mobile with live two-way audio.",
     ],
     roleTitle: "Sole Developer",
     ownershipScope: "Sole Developer",

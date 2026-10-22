@@ -191,8 +191,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
     highlights: [
       "Architected and implemented end-to-end as sole developer across PC authoring, Meta Quest 3 MR, and mobile companions.",
       "Two-part system architecture: PC application for 3D model ingestion, material design, metadata binding, and cloud publishing.",
-      "Meta Quest 3 mixed-reality viewer with full-color passthrough, room/tabletop placement, 6DoF & hand tracking, and 3-axis shader cross-sectioning.",
-      "Bidirectional cross-device state synchronization and low-latency voice/video communication via Agora Video SDK.",
+      "Meta Quest 3 mixed-reality viewer with full-color passthrough, room/tabletop placement, 6DoF & hand tracking.",
     ],
     roleTitle: "Sole Developer",
     ownershipScope: "Sole Developer",

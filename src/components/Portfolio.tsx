@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -20,6 +19,8 @@ import {
   Play,
   Monitor,
   Glasses,
+  Users,
+  Radio,
 } from "lucide-react";
 import {
   featuredProjects,
@@ -484,163 +485,367 @@ export const Portfolio = () => {
 
                 {activeCaseStudy.id === "fiction-mech" ? (
                   <div className="space-y-6 pt-1 text-left">
-                    {/* At a Glance Specs Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
-                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
-                        <div className="text-sm font-bold text-[#4D8DFF]">Sole Developer</div>
-                        <div className="text-[11px] text-[#A4ADBB]">100% Architecture &amp; Delivery</div>
+                    {/* 1. High-Signal System Overview & Sole Developer Attribution */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-[#151C27] via-[#10151D] to-[#0C1017] border border-[#1E2736] space-y-3 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-[#4D8DFF]/5 rounded-full blur-3xl pointer-events-none" />
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4D8DFF]/10 border border-[#4D8DFF]/30">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#4D8DFF]" />
+                          <span className="font-mono text-[11px] uppercase tracking-wider text-[#89B2FF]">
+                            ARCHITECTURAL OVERVIEW · SOLE DEVELOPER
+                          </span>
+                        </div>
+                        <span className="font-mono text-xs text-[#778294] px-2.5 py-0.5 rounded bg-[#080B10] border border-[#1E2736]">
+                          100% Architecture &amp; Delivery
+                        </span>
                       </div>
-                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
-                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Target Runtimes</div>
-                        <div className="text-sm font-bold text-[#F4F6FA]">PC · Quest 3 · Android</div>
-                        <div className="text-[11px] text-[#A4ADBB]">Cross-Device Interaction</div>
+
+                      <div>
+                        <h4 className="text-base sm:text-lg font-bold text-[#F4F6FA] tracking-tight">
+                          Dual-Component Industrial 3D Visualization &amp; Multi-Device XR Collaboration
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] mt-2 leading-relaxed">
+                          Fiction Mech is a comprehensive industrial 3D model visualization, mechanical analysis, and cross-device collaboration platform engineered 100% by Sahil Vaghela as sole developer. The ecosystem bridges CAD preparation and runtime spatial inspection: engineering teams ingest CAD models and author rich metadata in the PC Windows Studio, then deploy seamlessly to standalone Meta Quest 3 headsets (featuring 1:1 room/tabletop passthrough, 6DoF hand tracking, and 3-axis shader cross-sectioning) and Android companion devices with bidirectional real-time state synchronization and Agora low-latency voice/video streaming.
+                        </p>
                       </div>
-                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
-                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Networking &amp; Voice</div>
-                        <div className="text-sm font-bold text-emerald-400">Agora RTC SDK</div>
-                        <div className="text-[11px] text-[#A4ADBB]">Real-Time Sync &amp; Audio</div>
-                      </div>
-                      <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736]">
-                        <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">VR Performance</div>
-                        <div className="text-sm font-bold text-amber-400">72+ FPS Standalone</div>
-                        <div className="text-[11px] text-[#A4ADBB]">Single-Pass Shader Clip</div>
+
+                      <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-[#1E2736]/60">
+                        <span className="text-[11px] font-mono text-[#778294]">Core System Pillars:</span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-[#89B2FF] border border-[#1E2736]">
+                          PC Windows Studio
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-[#B8A1FF] border border-[#1E2736]">
+                          Meta Quest 3 MR (OpenXR)
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-emerald-400 border border-[#1E2736]">
+                          Android Companion Touch
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-amber-400 border border-[#1E2736]">
+                          Agora RTC Networking
+                        </span>
                       </div>
                     </div>
 
-                    {/* Dual System Architecture - Quick Breakdown */}
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {/* Part One: PC Studio */}
-                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-3">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-7 h-7 rounded-lg bg-[#4D8DFF]/15 border border-[#4D8DFF]/30 flex items-center justify-center text-[#4D8DFF]">
-                              <Monitor className="w-3.5 h-3.5" />
-                            </div>
-                            <div>
-                              <h5 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#4D8DFF]">
-                                Part 1: PC Authoring Studio
-                              </h5>
-                              <span className="text-[11px] text-[#778294]">CAD Preparation &amp; Manifest Staging</span>
-                            </div>
-                          </div>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736]">
-                            Windows
-                          </span>
+                    {/* 2. Key Specifications Grid */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
+                          <div className="text-sm sm:text-base font-bold text-[#4D8DFF]">Sole Developer</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">100% Architecture &amp; Delivery</div>
                         </div>
-
-                        <ul className="space-y-2 text-xs text-[#A4ADBB]">
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Asset Ingestion:</strong> Windows explorer loader for 3D models (FBX/OBJ), textures, audio &amp; docs.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Material Customizer:</strong> PBR palette (Copper, Gold, Silver) + Hue, Saturation, Luminance &amp; Alpha sliders.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Part-Level Tech Docs:</strong> Attaches PDFs (<code className="text-[#89B2FF]">sensors.pdf</code>) &amp; demo clips with <code className="text-amber-400 font-bold">(i)</code> tree indicators.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Assembly Slider:</strong> Continuous <code className="text-[#89B2FF]">Assemble &lt;---&gt; Disassemble</code> timeline authoring.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Turntable &amp; Green Screen:</strong> Built-in <code className="text-rose-400 font-bold">• REC</code> 1080p MP4 capture for technical catalogs.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#4D8DFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Cloud Publishing:</strong> One-click packaging and upload to backend for instant viewer access.</span>
-                          </li>
-                        </ul>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          CAD ingestion, C# systems, HLSL shaders, state replication &amp; Agora RTC.
+                        </div>
                       </div>
 
-                      {/* Part Two: Quest 3 & Mobile */}
-                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-3">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <div className="w-7 h-7 rounded-lg bg-[#8B6CFF]/15 border border-[#8B6CFF]/30 flex items-center justify-center text-[#8B6CFF]">
-                              <Glasses className="w-3.5 h-3.5" />
-                            </div>
-                            <div>
-                              <h5 className="text-xs font-mono font-semibold uppercase tracking-wider text-[#8B6CFF]">
-                                Part 2: Quest 3 &amp; Mobile Viewers
-                              </h5>
-                              <span className="text-[11px] text-[#778294]">Spatial Inspection &amp; Multi-Device Review</span>
-                            </div>
-                          </div>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736]">
-                            Quest 3 · Android
-                          </span>
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Target Runtimes</div>
+                          <div className="text-sm sm:text-base font-bold text-[#F4F6FA]">PC · Quest 3 · Android</div>
+                          <div className="text-xs font-medium text-[#89B2FF] mt-0.5">Cross-Device Ecosystem</div>
                         </div>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          Native Windows authoring, standalone OpenXR APK, and touch mobile client.
+                        </div>
+                      </div>
 
-                        <ul className="space-y-2 text-xs text-[#A4ADBB]">
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Room &amp; Tabletop Passthrough:</strong> Full-color stereo passthrough surface anchoring in real space.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">6DoF &amp; Hand Tracking:</strong> Pinch interaction, raycasting, cyan selection outlines &amp; floating part HUDs.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">3-Axis Shader Cross-Section:</strong> Color-coded X (Red), Y (Green), Z (Blue) clipping sliders + 3D RGB gizmo.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Spatial Layer Deck:</strong> Subsystem toggles (containers, plates, fins, flaps, turbine_hull, pistons).</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Agora Real-Time Multiplayer:</strong> Bidirectional interaction sync + low-latency audio &amp; screencast.</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#8B6CFF] flex-shrink-0" />
-                            <span><strong className="text-[#F4F6FA]">Assembly Playback:</strong> Interactive step-by-step mechanical maintenance demonstration.</span>
-                          </li>
-                        </ul>
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Networking &amp; Voice</div>
+                          <div className="text-sm sm:text-base font-bold text-emerald-400">Agora RTC SDK</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Sub-100ms Sync &amp; Voice</div>
+                        </div>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          Deterministic command replication + low-latency spatial audio &amp; spectator casting.
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">VR Performance</div>
+                          <div className="text-sm sm:text-base font-bold text-amber-400">72+ FPS Standalone</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Snapdragon XR2 Gen 2</div>
+                        </div>
+                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
+                          Single-pass fragment discard clipping shader eliminating stencil fill-rate overhead.
+                        </div>
                       </div>
                     </div>
 
-                    {/* 4-Stage Pipeline (Compact) */}
-                    <div className="space-y-2">
+                    {/* 3. Industrial Uses & Practical Workflows */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                          <Wrench className="w-4 h-4 text-[#4D8DFF]" />
+                          <span>Industrial Uses &amp; Practical Workflows</span>
+                        </h4>
+                        <span className="text-[11px] font-mono text-[#778294] px-2 py-0.5 rounded bg-[#10151D] border border-[#1E2736]">
+                          4 Production Scenarios
+                        </span>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-3.5">
+                        {/* Use 1 */}
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-[#4D8DFF]/15 border border-[#4D8DFF]/30 flex items-center justify-center text-[#4D8DFF] flex-shrink-0">
+                                <Wrench className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  1. Assembly &amp; Maintenance Training
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">SOP Guidance &amp; Step Sequencing</span>
+                              </div>
+                            </div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-[#89B2FF] border border-[#1E2736]">
+                              Interactive SOP
+                            </span>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Interactive step-by-step disassembly sequence playback with continuous timeline scrubbing. Trainees inspect mechanical hierarchy in 1:1 true scale, pull up attached component PDF schematics (such as <code className="text-[#89B2FF]">sensors.pdf</code>), and review embedded video demonstrations directly in spatial context before touching physical machinery.
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Exploded View Slider</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Attached PDF Schematics</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Step Playback</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Disassembly Guidance</span>
+                          </div>
+                        </div>
+
+                        {/* Use 2 */}
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-[#8B6CFF]/15 border border-[#8B6CFF]/30 flex items-center justify-center text-[#8B6CFF] flex-shrink-0">
+                                <Layers className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  2. Engineering Design &amp; Tolerance Review
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">3-Axis Dynamic Cross-Section</span>
+                              </div>
+                            </div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-[#B8A1FF] border border-[#1E2736]">
+                              CAD Validation
+                            </span>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Real-time 3-axis (X, Y, Z) internal cross-section clipping allows multi-disciplinary engineering teams to inspect internal clearances, fluid channels, and nested tolerances without expensive physical sectioning. Subsystem layer toggles isolate containers, plates, fins, flaps, turbine hulls, and pistons with interactive 3D RGB gizmos.
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">3-Axis RGB Cutting</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">3D Coordinate Gizmo</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Subsystem Layer Deck</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Tolerance Verification</span>
+                          </div>
+                        </div>
+
+                        {/* Use 3 */}
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <Users className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  3. Field-Worker to Remote Supervisor Collaboration
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">Spatial XR to Mobile Tablet Sync</span>
+                              </div>
+                            </div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-emerald-400 border border-[#1E2736]">
+                              Agora RTC
+                            </span>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Synchronized multi-device collaboration. A frontline technician wearing Meta Quest 3 in the field shares their real-time spatial perspective and model state with an offsite supervisor using an Android tablet. Both users manipulate exploded views, highlight parts with cyan outlines, and converse over low-latency Agora voice channels.
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Bidirectional State Sync</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Low-Latency Agora Audio</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Spectator Streaming</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Shared Part Highlights</span>
+                          </div>
+                        </div>
+
+                        {/* Use 4 */}
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                                <Play className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  4. Interactive Technical Catalogs &amp; Media Export
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">Automated Turntable &amp; Green Screen</span>
+                              </div>
+                            </div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-amber-400 border border-[#1E2736]">
+                              1080p MP4 Rec
+                            </span>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            The PC Authoring Studio provides an automated 360° turntable presentation mode with integrated Green Screen (Chroma Key) backdrop and built-in 1080p MP4 recording. Marketing and sales teams generate high-resolution product demonstration videos and interactive Web/XR manifests directly from engineering CAD models without external DCC suites.
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">360° Turntable Mode</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Chroma Key Green Screen</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">1080p MP4 Recorder</span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">Cloud Package Export</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 4. Technical Analysis & System Architecture */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] flex items-center gap-2">
+                          <Cpu className="w-4 h-4 text-[#8B6CFF]" />
+                          <span>Technical Analysis &amp; System Architecture</span>
+                        </h4>
+                        <span className="text-[11px] font-mono text-[#778294] px-2 py-0.5 rounded bg-[#10151D] border border-[#1E2736]">
+                          Deep-Dive Implementation
+                        </span>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-3.5">
+                        {/* Analysis 1 */}
+                        <div className="p-4 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-[#4D8DFF]/15 border border-[#4D8DFF]/30 flex items-center justify-center text-[#4D8DFF] flex-shrink-0">
+                                <Monitor className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  1. PC CAD Ingestion &amp; PBR Shader Generator
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">Windows Explorer &amp; Dynamic Shaders</span>
+                              </div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Dynamic file ingestion for FBX and OBJ models through Windows Explorer file dialogs with automated scene tree generation. Features an in-engine PBR material authoring suite with copper, gold, and silver presets plus continuous Hue, Saturation, Luminance, and Alpha sliders with instant viewport feedback, saving serialized manifests to backend storage.
+                          </p>
+                          <div className="pt-2 border-t border-[#1E2736]/60">
+                            <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Architecture &amp; Subsystems:</div>
+                            <p className="text-[11px] font-mono text-[#89B2FF] leading-snug">
+                              Windows File Explorer API · Dynamic Mesh Importer · Custom HLSL PBR Shader Suite · JSON Metadata Serialization
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Analysis 2 */}
+                        <div className="p-4 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                                <Cpu className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  2. Standalone Quest 3 Snapdragon XR2 Gen 2 Optimization
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">72+ FPS Single-Pass Fragment Discard</span>
+                              </div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Industrial models contain dense geometric meshes that easily bottleneck standalone VR tile memory. Rather than relying on multi-pass stencil buffer slicing which overwhelms mobile GPU bandwidth, implemented a custom single-pass fragment discard clipping shader (<code className="text-amber-400 font-mono">clip()</code> in HLSL) using world-space bounding planes. Achieves zero stencil overhead and stable 72+ FPS.
+                          </p>
+                          <div className="pt-2 border-t border-[#1E2736]/60">
+                            <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Architecture &amp; Subsystems:</div>
+                            <p className="text-[11px] font-mono text-amber-400 leading-snug">
+                              HLSL Fragment Discard (clip) · Single-Pass Stereo Instanced · Mobile Tile Memory Optimization · Fixed Foveated Rendering
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Analysis 3 */}
+                        <div className="p-4 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-[#8B6CFF]/15 border border-[#8B6CFF]/30 flex items-center justify-center text-[#8B6CFF] flex-shrink-0">
+                                <GitBranch className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  3. Deterministic Cross-Platform State Sync
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">Quest 3 OpenXR 6DoF &lt;--&gt; Android Touch</span>
+                              </div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Bridges divergent input paradigms—OpenXR 6DoF hand tracking and raycast controllers on Quest 3 versus multi-touch gestures on Android. Employs a deterministic command-queue replication model that transmits part IDs, transform matrices, disassembly progress, and clipping plane coordinates with conflict resolution to ensure synchronized states without race conditions.
+                          </p>
+                          <div className="pt-2 border-t border-[#1E2736]/60">
+                            <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Architecture &amp; Subsystems:</div>
+                            <p className="text-[11px] font-mono text-[#B8A1FF] leading-snug">
+                              Deterministic Command Pattern · Binary Delta Serialization · Shared-Authority Controller · Touch-to-Spatial Raycast Mapping
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Analysis 4 */}
+                        <div className="p-4 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-2.5">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <Radio className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <h5 className="text-xs font-bold text-[#F4F6FA]">
+                                  4. Low-Latency Agora RTC Audio &amp; Screen Streaming
+                                </h5>
+                                <span className="text-[10px] font-mono text-[#778294]">Decoupled Background Socket Threads</span>
+                              </div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                            Native integration of Agora RTC C# SDK into the Unity runtime. Decoupled audio packet encoding and network socket polling from Unity&apos;s main render loop onto high-priority background worker threads to prevent frame drops in VR. Delivers sub-100ms bidirectional voice communication, secure token authentication, and spectator screen casting to remote tablets.
+                          </p>
+                          <div className="pt-2 border-t border-[#1E2736]/60">
+                            <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Architecture &amp; Subsystems:</div>
+                            <p className="text-[11px] font-mono text-emerald-400 leading-snug">
+                              Agora RTC C# Native Plugin · Non-Blocking Thread Marshalling · Real-Time Audio Mixing · Headset Viewport Streaming
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 5. End-to-End Execution Pipeline (4 Staged Nodes) */}
+                    <div className="space-y-2.5">
                       <div className="text-xs font-mono uppercase tracking-wider text-[#A4ADBB] flex items-center justify-between">
-                        <span>End-to-End Pipeline</span>
-                        <span className="text-[11px] text-[#778294]">4 Staged Nodes</span>
+                        <span className="flex items-center gap-2">
+                          <GitBranch className="w-4 h-4 text-[#4D8DFF]" />
+                          <span>End-to-End Execution Pipeline</span>
+                        </span>
+                        <span className="text-[11px] text-[#778294]">4 Staged Execution Nodes</span>
                       </div>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
                         {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (
-                          <div key={i} className="p-3 rounded-lg bg-[#0C1017] border border-[#1E2736]">
-                            <div className="text-[10px] font-mono text-[#4D8DFF] mb-0.5">{step.stage}</div>
-                            <div className="text-xs font-semibold text-[#F4F6FA] mb-1">{step.title}</div>
-                            <div className="text-[11px] text-[#778294] leading-snug line-clamp-2">{step.detail}</div>
+                          <div key={i} className="p-3.5 rounded-xl bg-[#0C1017] border border-[#1E2736] flex flex-col justify-between">
+                            <div>
+                              <div className="flex items-center justify-between gap-1 mb-1">
+                                <span className="text-[10px] font-mono text-[#4D8DFF]">{step.stage}</span>
+                                <span className="text-[10px] font-mono text-[#778294]">Node 0{i + 1}</span>
+                              </div>
+                              <div className="text-xs font-bold text-[#F4F6FA] mb-1.5">{step.title}</div>
+                            </div>
+                            <div className="text-[11px] text-[#A4ADBB] leading-snug">{step.detail}</div>
                           </div>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Quick Specs Call-to-Action to Full Case Study */}
-                    <div className="p-4 rounded-xl bg-gradient-to-r from-[#4D8DFF]/15 via-[#8B6CFF]/15 to-[#10151D] border border-[#4D8DFF]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                      <div>
-                        <div className="text-sm font-bold text-[#F4F6FA] flex items-center gap-2">
-                          <Sparkles className="w-4 h-4 text-[#4D8DFF]" />
-                          <span>Looking for Deep Architecture &amp; Verification Evidence?</span>
-                        </div>
-                        <p className="text-xs text-[#A4ADBB] mt-0.5">
-                          Inspect the complete 10-section case study with 17 HD screenshots, 3 video player switchers, and full engineering writeup.
-                        </p>
-                      </div>
-                      <Link
-                        to={activeCaseStudy.caseStudyUrl || "/project/fiction-mech"}
-                        onClick={() => setActiveCaseStudy(null)}
-                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-[#4D8DFF] text-[#080B10] hover:bg-[#89B2FF] transition-colors whitespace-nowrap shadow-md self-start sm:self-auto"
-                      >
-                        <span>Open Full 10-Section Study</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </Link>
                     </div>
                   </div>
                 ) : (

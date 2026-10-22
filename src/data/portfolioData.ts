@@ -173,7 +173,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 1,
     featuredTier: "primary",
     title: "Fiction Mech",
-    subtitle: "PC Authoring Studio & Multi-Device XR Platform",
+    subtitle: "Meta Quest 3 MR & PC Studio",
     category: "Industrial 3D Visualization / XR",
     filterGroup: "xr-multiuser",
     technologies: [
@@ -188,7 +188,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Backend Integration",
     ],
     shortDescription:
-      "Interactive 3D model visualization and mechanical analysis platform built to inspect complex CAD assemblies, train maintenance procedures, and collaborate across devices.",
+      "Interactive 3D CAD visualization and maintenance platform for PC and Quest 3 MR.",
     highlights: [
       "PC Authoring Studio: Ingests 3D models, configures 4 viewport modes, and binds part metadata & assembly sequences.",
       "Quest 3 MR Inspection: 1:1 scale passthrough examination, individual part interaction, and 3-axis internal cross-section slicing.",

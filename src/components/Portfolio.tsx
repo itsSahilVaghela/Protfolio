@@ -185,7 +185,7 @@ export const Portfolio = () => {
                           }`}
                         >
                           {isMainProject
-                            ? "Main Project · Sole Developer"
+                            ? "Sole Developer"
                             : isWorkedAlone
                               ? "Worked Alone"
                               : project.ownershipScope === "Sole Developer"

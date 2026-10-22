@@ -48,19 +48,14 @@ export const ProjectTechnicalVisual = ({
       <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#10151D]/90 border border-[#1E2736]">
         <span className="w-1.5 h-1.5 rounded-full bg-[#4D8DFF]" />
         <span className="font-mono text-[10px] tracking-wider uppercase text-[#A4ADBB]">
-          {project.diagramType === "fiction-mech-xr" && "PC AUTHORING STUDIO ↔ BACKEND ↔ QUEST 3 MR & MOBILE"}
-          {project.diagramType === "radicon-mr" && "BROCHURE VUFORIA -> QUEST 3 MR"}
-          {project.diagramType === "archviz-dxf" && "DXF / C++ ROOF TESSELLATION"}
-          {project.diagramType === "mimadim-subsystem" && "UE DATA ASSET -> SUBSYSTEM"}
-          {project.diagramType === "webar-uv" && "2048×2048 WEBAR UV UNWARP"}
-          {project.diagramType === "mediapipe-unity" && "MEDIAPIPE -> UNITY C# STREAM"}
-          {project.diagramType === "unity-games" && "MODULAR C# GAMEPLAY SYSTEMS"}
+          {project.diagramType === "fiction-mech-xr" && "PC Studio ↔ Cloud ↔ XR Viewers"}
+          {project.diagramType === "radicon-mr" && "Brochure Vuforia → Quest 3 MR"}
+          {project.diagramType === "archviz-dxf" && "DXF Roof Tessellation"}
+          {project.diagramType === "mimadim-subsystem" && "UE Subsystem Architecture"}
+          {project.diagramType === "webar-uv" && "WebAR UV Processing"}
+          {project.diagramType === "mediapipe-unity" && "MediaPipe → Unity Stream"}
+          {project.diagramType === "unity-games" && "Modular C# Systems"}
         </span>
-      </div>
-
-      {/* Bottom-right Honest Badge */}
-      <div className="absolute bottom-2.5 right-3 z-10 px-2 py-0.5 rounded bg-[#10151D]/85 border border-[#1E2736] font-mono text-[10px] text-[#778294]">
-        System Schematic
       </div>
 
       {/* SVG Schematics per project */}
@@ -261,155 +256,104 @@ export const ProjectTechnicalVisual = ({
 
       {project.diagramType === "fiction-mech-xr" && (
         <svg
-          viewBox="0 0 420 210"
-          className="w-full h-full max-h-[210px] relative z-0"
+          viewBox="0 0 420 200"
+          className="w-full h-full max-h-[200px] relative z-0"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Left Node: PC Authoring Studio */}
-          <g transform="translate(14, 38)">
+          {/* Node 1: PC Authoring Studio */}
+          <g transform="translate(18, 40)">
             <rect
               x="0"
               y="0"
-              width="112"
-              height="134"
-              rx="8"
+              width="108"
+              height="124"
+              rx="10"
               fill="#10151D"
               stroke="#4D8DFF"
-              strokeWidth="1.3"
+              strokeWidth="1.2"
+              strokeOpacity="0.8"
             />
-            <text x="10" y="19" fill="#4D8DFF" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
-              PC AUTHORING STUDIO
+            <text x="14" y="24" fill="#4D8DFF" fontSize="9" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
+              PC Studio
             </text>
-            <text x="10" y="32" fill="#A4ADBB" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Project Creation &amp; Prep
+            <text x="14" y="38" fill="#778294" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
+              CAD Ingestion
             </text>
-            {/* Desktop Monitor & Controls */}
-            <rect x="22" y="44" width="68" height="42" rx="4" fill="#151C27" stroke="#4D8DFF" strokeWidth="1" />
-            <line x1="56" y1="86" x2="56" y2="96" stroke="#4D8DFF" strokeWidth="1.5" />
-            <line x1="42" y1="96" x2="70" y2="96" stroke="#4D8DFF" strokeWidth="1.5" />
-            {/* Color swatches & PDF badge */}
-            <circle cx="34" cy="58" r="4" fill="#E24B4B" />
-            <circle cx="46" cy="58" r="4" fill="#F1C40F" />
-            <circle cx="58" cy="58" r="4" fill="#2ECC71" />
-            <rect x="68" y="54" width="14" height="8" rx="2" fill="#8B6CFF" />
-            <text x="10" y="112" fill="#38BDF8" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Materials · PDF/Video
-            </text>
-            <text x="10" y="123" fill="#778294" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Exploded Slider · • REC
+            {/* Minimalist Desktop Monitor Icon */}
+            <rect x="22" y="48" width="64" height="42" rx="4" fill="#151C27" stroke="#4D8DFF" strokeWidth="1" />
+            <polygon points="54,58 72,68 54,78 36,68" stroke="#38BDF8" strokeWidth="1.2" fill="rgba(56,189,248,0.15)" />
+            <line x1="54" y1="90" x2="54" y2="98" stroke="#4D8DFF" strokeWidth="1.5" />
+            <line x1="42" y1="98" x2="66" y2="98" stroke="#4D8DFF" strokeWidth="1.5" />
+            <text x="54" y="112" fill="#89B2FF" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="middle">
+              4 Viewport Modes
             </text>
           </g>
 
-          {/* Center Bridge: Cloud Backend & Agora */}
-          <g transform="translate(148, 38)">
+          {/* Node 2: Cloud Sync Bridge */}
+          <g transform="translate(156, 40)">
             <rect
               x="0"
               y="0"
-              width="114"
-              height="134"
-              rx="8"
+              width="108"
+              height="124"
+              rx="10"
               fill="#151C27"
               stroke="#8B6CFF"
-              strokeWidth="1.3"
+              strokeWidth="1.2"
+              strokeOpacity="0.8"
             />
-            <text x="10" y="19" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
-              CLOUD &amp; AGORA BRIDGE
+            <text x="14" y="24" fill="#F4F6FA" fontSize="9" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
+              Cloud Sync
             </text>
-            <text x="10" y="32" fill="#A4ADBB" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Publish &amp; Synchronization
+            <text x="14" y="38" fill="#778294" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
+              Photon &amp; Agora
             </text>
-            <circle cx="57" cy="66" r="22" fill="rgba(139,108,255,0.12)" stroke="#8B6CFF" strokeDasharray="3 2" />
-            <polygon
-              points="57,50 72,59 72,73 57,82 42,73 42,59"
-              stroke="#4D8DFF"
-              strokeWidth="1.5"
-              fill="rgba(77,141,255,0.2)"
-            />
-            <text x="10" y="106" fill="#38BDF8" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Cloud Manifest &amp; Mesh
-            </text>
-            <text x="10" y="118" fill="#A4ADBB" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Agora Audio/Video Stream
-            </text>
-            <text x="10" y="128" fill="#778294" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              2-Way State Authority
+            {/* Clean Cloud & Sync Hub Icon */}
+            <circle cx="54" cy="70" r="20" stroke="#8B6CFF" strokeWidth="1" strokeDasharray="3 3" fill="rgba(139,108,255,0.08)" />
+            <circle cx="54" cy="70" r="10" fill="#8B6CFF" fillOpacity="0.25" stroke="#B8A1FF" strokeWidth="1.2" />
+            <polygon points="54,64 60,70 54,76 48,70" fill="#38BDF8" />
+            <text x="54" y="112" fill="#B8A1FF" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="middle">
+              State &amp; Screencast
             </text>
           </g>
 
-          {/* Top Right: Meta Quest 3 MR */}
-          <g transform="translate(284, 30)">
+          {/* Node 3: Quest 3 MR & Mobile */}
+          <g transform="translate(294, 40)">
             <rect
               x="0"
               y="0"
-              width="122"
-              height="68"
-              rx="6"
+              width="108"
+              height="124"
+              rx="10"
               fill="#10151D"
               stroke="#4D8DFF"
               strokeWidth="1.2"
+              strokeOpacity="0.8"
             />
-            <text x="8" y="14" fill="#4D8DFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
-              META QUEST 3 (MR)
+            <text x="14" y="24" fill="#4D8DFF" fontSize="9" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
+              Quest 3 MR
             </text>
-            <text x="8" y="26" fill="#A4ADBB" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Passthrough · 6DoF &amp; Hands
+            <text x="14" y="38" fill="#778294" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
+              1:1 Passthrough
             </text>
-            <rect x="12" y="34" width="46" height="24" rx="8" fill="#151C27" stroke="#4D8DFF" strokeWidth="0.9" />
-            <circle cx="27" cy="46" r="4.5" stroke="#8B6CFF" strokeWidth="1" />
-            <circle cx="43" cy="46" r="4.5" stroke="#8B6CFF" strokeWidth="1" />
-            <text x="64" y="44" fill="#38BDF8" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              3-Axis Cut
-            </text>
-            <text x="64" y="54" fill="#778294" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Part HUD
+            {/* Minimalist VR Headset Icon */}
+            <rect x="22" y="52" width="64" height="34" rx="8" fill="#151C27" stroke="#4D8DFF" strokeWidth="1" />
+            <circle cx="42" cy="69" r="6" stroke="#8B6CFF" strokeWidth="1.2" fill="none" />
+            <circle cx="66" cy="69" r="6" stroke="#8B6CFF" strokeWidth="1.2" fill="none" />
+            <text x="54" y="112" fill="#89B2FF" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="middle">
+              3-Axis Cross-Section
             </text>
           </g>
 
-          {/* Bottom Right: Android Companion */}
-          <g transform="translate(284, 108)">
-            <rect
-              x="0"
-              y="0"
-              width="122"
-              height="64"
-              rx="6"
-              fill="#10151D"
-              stroke="#8B6CFF"
-              strokeWidth="1.2"
-            />
-            <text x="8" y="14" fill="#8B6CFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace" fontWeight="bold">
-              ANDROID COMPANION
-            </text>
-            <text x="8" y="26" fill="#A4ADBB" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Touch Review &amp; Cast
-            </text>
-            <rect x="12" y="32" width="38" height="24" rx="4" fill="#151C27" stroke="#8B6CFF" strokeWidth="0.9" />
-            <circle cx="31" cy="44" r="5" fill="rgba(77,141,255,0.4)" />
-            <text x="56" y="42" fill="#38BDF8" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Shared State
-            </text>
-            <text x="56" y="52" fill="#778294" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Live Spectate
-            </text>
-          </g>
+          {/* Pipeline Connector 1 (PC -> Cloud) */}
+          <line x1="126" y1="102" x2="156" y2="102" stroke="#4D8DFF" strokeWidth="1.5" />
+          <polygon points="156,99 160,102 156,105" fill="#4D8DFF" />
 
-          {/* Connector Arrows: PC to Cloud */}
-          <line x1="126" y1="95" x2="148" y2="95" stroke="#4D8DFF" strokeWidth="1.6" />
-          <polygon points="148,92 153,95 148,98" fill="#4D8DFF" />
-          <text x="128" y="87" fill="#4D8DFF" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-            Publish
-          </text>
-
-          {/* Connectors: Cloud to Quest 3 MR */}
-          <line x1="262" y1="64" x2="284" y2="64" stroke="#4D8DFF" strokeWidth="1.5" strokeDasharray="3 2" />
-          <polygon points="284,61 288,64 284,67" fill="#4D8DFF" />
-          <polygon points="266,61 262,64 266,67" fill="#4D8DFF" />
-
-          {/* Connectors: Cloud to Android */}
-          <line x1="262" y1="140" x2="284" y2="140" stroke="#8B6CFF" strokeWidth="1.5" strokeDasharray="3 2" />
-          <polygon points="284,137 288,140 284,143" fill="#8B6CFF" />
-          <polygon points="266,137 262,140 266,143" fill="#8B6CFF" />
+          {/* Pipeline Connector 2 (Cloud <-> XR) */}
+          <line x1="264" y1="102" x2="294" y2="102" stroke="#8B6CFF" strokeWidth="1.5" strokeDasharray="3 3" />
+          <polygon points="294,99 298,102 294,105" fill="#8B6CFF" />
+          <polygon points="268,99 264,102 268,105" fill="#8B6CFF" />
         </svg>
       )}
 

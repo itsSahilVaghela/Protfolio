@@ -199,7 +199,6 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ownershipNote:
       "Engineered entirely as sole developer—architected the two-part system separating PC-based project authoring from spatial Meta Quest 3 and mobile companion inspection, including bidirectional state synchronization and Agora Video SDK integration.",
     diagramType: "fiction-mech-xr",
-    caseStudyUrl: "/project/fiction-mech",
     videoUrl:
       "https://drive.google.com/file/d/1-Nq5PV4sZDEReHngLBV7VVP1WOyfX2Wo/view?usp=sharing",
     additionalVideos: [
@@ -214,12 +213,6 @@ export const featuredProjects: ProjectCaseStudy[] = [
         url: "https://drive.google.com/file/d/1vMSK6kcbKgBzB4DkubT5pr6DlWdDVDp0/view?usp=sharing",
         previewUrl:
           "https://drive.google.com/file/d/1vMSK6kcbKgBzB4DkubT5pr6DlWdDVDp0/preview",
-      },
-      {
-        label: "Cross-Device Motor Walkthrough",
-        url: "https://drive.google.com/file/d/17-TV9eok0MBA01NzHE0WI9nd5w9rTDQX/view?usp=drive_link",
-        previewUrl:
-          "https://drive.google.com/file/d/17-TV9eok0MBA01NzHE0WI9nd5w9rTDQX/preview",
       },
     ],
     mediaCaption:

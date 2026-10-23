@@ -35,7 +35,7 @@ Update `fiction-archviz` across `src/data/portfolioData.ts` and `src/components/
 - **Role Title:** `Unreal Engine C++ & XR Developer`
 - **Ownership Scope:** `Team Project — Core Systems Contributor`
 - **Ownership Note:** `Engineered the universal bidirectional WebSocket multiplayer pipeline (PC ↔ Meta Quest via Node.js server), built procedural wall tile cutting, offset & rotation alignment, created the VR 3D floating dock UI (WidgetHolderActor), and implemented dynamic room ceiling lighting auto-scaled to room dimensions.`
-- **Short Description:** `Multiuser architectural platform for PC and Meta Quest featuring 5-6 test rooms, real-time WebSocket sync, CAD/DXF ingestion, and dynamic tile/paint customization.`
+- **Short Description:** `Multiuser architectural platform for PC Desktop and Meta Quest standalone featuring 5-6 test rooms, real-time WebSocket sync, CAD/DXF ingestion, and dynamic tile/paint customization.`
 - **Highlights:**
   1. `Multiuser WebSocket Pipeline: Bidirectional real-time event sync connecting PC Desktop and Meta Quest VR via Node.js server.`
   2. `Procedural Tile Alignment: Live X/Y offset stepping, 90° rotation, wall-cut handling, and Matte/Glossy PBR toggling.`
@@ -70,14 +70,14 @@ When `activeCaseStudy.id === "fiction-archviz"`, render a custom executive case 
 
 ### 3.1 Overview Banner
 - Gradient container with badge: `ENTERPRISE ARCHITECTURAL PLATFORM · CORE SYSTEMS CONTRIBUTOR`.
-- Right badge: `5–6 Predefined Test Environments · Desktop PC, PC VR & Meta Quest`.
+- Right badge: `5–6 Predefined Test Environments · Desktop PC & Meta Quest Standalone`.
 - Headline: `Collaborative Architectural Visualization with Real-Time WebSocket Multiuser Sync`.
 - Description of platform and summary of developer's ownership.
-- Key tech pill tags: `Unreal Engine 5`, `C++`, `WebSocket (Node.js)`, `Meta Quest 3 / Link`, `LibTess2 / earcut`, `DXF / JSON`.
+- Key tech pill tags: `Unreal Engine 5`, `C++`, `WebSocket (Node.js)`, `Meta Quest Standalone`, `LibTess2 / earcut`, `DXF / JSON`.
 
 ### 3.2 Key Specifications Grid (4 Cards)
 1. **Developer Scope:** `Core Systems Contributor` (Multiplayer, Tile Cutting, VR UI, Lighting).
-2. **Target Runtimes:** `Windows PC · PC VR · Meta Quest Standalone` (Desktop mouse/keyboard + 6DoF VR).
+2. **Target Runtimes:** `Windows PC Desktop · Meta Quest Standalone VR` (Desktop mouse/keyboard + Standalone 6DoF VR).
 3. **Multiplayer Architecture:** `WebSocket Node Server` (Bidirectional real-time event pipeline).
 4. **Procedural Geometry:** `DXF / JSON + LibTess2` (C++ triangulation & dynamic boolean void cutters).
 

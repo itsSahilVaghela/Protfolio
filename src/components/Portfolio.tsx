@@ -72,7 +72,7 @@ export const Portfolio = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
   const [activeCaseStudy, setActiveCaseStudy] =
     useState<ProjectCaseStudy | null>(null);
-  const [activeMediaView, setActiveMediaView] = useState<"video" | "schematic">(
+  const [activeMediaView, setActiveMediaView] = useState<"video" | "photo" | "schematic">(
     "video"
   );
   const [activeModalVideoUrl, setActiveModalVideoUrl] = useState<string | null>(null);
@@ -402,10 +402,22 @@ export const Portfolio = () => {
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                           <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-1.5">
-                            <Play className="w-3.5 h-3.5 fill-[#4D8DFF]" />
-                            {activeMediaView === "video"
-                              ? "Live Production Video Demo"
-                              : "System Architecture Schematic"}
+                            {activeMediaView === "video" ? (
+                              <>
+                                <Play className="w-3.5 h-3.5 fill-[#4D8DFF]" />
+                                <span>Live Production Video Demo</span>
+                              </>
+                            ) : activeMediaView === "photo" ? (
+                              <>
+                                <Monitor className="w-3.5 h-3.5 text-[#4D8DFF]" />
+                                <span>Production Project Capture</span>
+                              </>
+                            ) : (
+                              <>
+                                <Cpu className="w-3.5 h-3.5 text-[#4D8DFF]" />
+                                <span>System Architecture Schematic</span>
+                              </>
+                            )}
                           </h4>
                         </div>
                         <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-[#0C1017] border border-[#1E2736]">
@@ -421,6 +433,20 @@ export const Portfolio = () => {
                             <Play className="w-3 h-3 fill-current" />
                             <span>Video Demo</span>
                           </button>
+                          {activeCaseStudy.mediaUrl && (
+                            <button
+                              type="button"
+                              onClick={() => setActiveMediaView("photo")}
+                              className={`flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono transition-colors ${
+                                activeMediaView === "photo"
+                                  ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
+                                  : "text-[#A4ADBB] hover:text-[#F4F6FA]"
+                              }`}
+                            >
+                              <Monitor className="w-3 h-3" />
+                              <span>Photo</span>
+                            </button>
+                          )}
                           <button
                             type="button"
                             onClick={() => setActiveMediaView("schematic")}
@@ -492,6 +518,20 @@ export const Portfolio = () => {
                             />
                           )}
                         </div>
+                      ) : activeMediaView === "photo" && activeCaseStudy.mediaUrl ? (
+                        <div className="relative w-full aspect-video max-h-[460px] rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl flex items-center justify-center">
+                          <img
+                            src={
+                              activeCaseStudy.mediaUrl.startsWith("http://") || activeCaseStudy.mediaUrl.startsWith("https://")
+                                ? activeCaseStudy.mediaUrl
+                                : `${import.meta.env.BASE_URL}${
+                                    activeCaseStudy.mediaUrl.startsWith("/") ? activeCaseStudy.mediaUrl.slice(1) : activeCaseStudy.mediaUrl
+                                  }`
+                            }
+                            alt={activeCaseStudy.title}
+                            className="w-full h-full object-contain bg-[#080B10]"
+                          />
+                        </div>
                       ) : (
                         <ProjectTechnicalVisual
                           project={activeCaseStudy}
@@ -512,7 +552,9 @@ export const Portfolio = () => {
                                     v.url === currentVideoUrl
                                 )?.label
                               } demo walkthrough.`
-                            : "Interactive recording from Meta Quest 3 and Android cross-device production session."
+                            : "Interactive recording from production session."
+                          : activeMediaView === "photo"
+                          ? "Production high-resolution screenshot."
                           : activeCaseStudy.mediaCaption}
                       </p>
                     </div>

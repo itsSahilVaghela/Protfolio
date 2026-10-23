@@ -635,8 +635,26 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ownershipNote:
       "Engineered the data-driven interior customization architecture (Data Assets + Master Registry) across predefined rooms for PC, implementing transform-preserving model/material swaps (beds, parquet, wallpapers, curtains) inside a centralized GameInstance subsystem.",
     diagramType: "mimadim-subsystem",
+    mediaUrl: "/projects/mimadim/mimadim-front.png",
+    videoUrl:
+      "https://drive.google.com/file/d/1J_URl718RMfafZvh78GFI7URtq6CQTWK/view?usp=sharing",
+    additionalVideos: [
+      {
+        label: "PC Customization & Predefined Rooms Walkthrough",
+        url: "https://drive.google.com/file/d/1J_URl718RMfafZvh78GFI7URtq6CQTWK/view?usp=sharing",
+        previewUrl:
+          "https://drive.google.com/file/d/1J_URl718RMfafZvh78GFI7URtq6CQTWK/preview",
+      },
+    ],
+    additionalImages: [
+      {
+        label: "High-Fidelity PC Interior Showcase",
+        url: "https://drive.google.com/file/d/18Dp5uU_V9fgVYKDu9ZnVGFEazYsqvo_s/view?usp=sharing",
+        previewUrl: "/projects/mimadim/mimadim-front.png",
+      },
+    ],
     mediaCaption:
-      "Engineering Architecture Diagram: Master Data Asset Registry -> GameInstance Customization Subsystem -> Transform-Preserving Actor Swap.",
+      "PC Video Demo & Architecture Diagram: Predefined Rooms -> Master Data Asset Registry -> GameInstance Subsystem -> Transform-Preserving Swapper.",
     caseStudy: {
       overview:
         "Mimadim Home Studio is a high-fidelity Unreal Engine interior visualization and furniture customization platform built specifically for high-end PC performance. The application places users inside predefined architectural rooms where they can dynamically test and swap furniture and surface finishes—including bed models, floor parquet, wallpapers, and curtains—under photorealistic real-time lighting.",

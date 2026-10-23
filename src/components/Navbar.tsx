@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download, Terminal, FileText, ExternalLink } from "lucide-react";
+import {
+  Menu,
+  X,
+  Download,
+  Terminal,
+  FileText,
+  ExternalLink,
+  Maximize2,
+  Minimize2,
+} from "lucide-react";
 import { profileData } from "@/data/portfolioData";
 import {
   Dialog,
@@ -22,6 +31,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isResumeFullscreen, setIsResumeFullscreen] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
 
   const resumeUrl = `${import.meta.env.BASE_URL}${profileData.resumeFileName}`;
@@ -201,9 +211,15 @@ export const Navbar = () => {
 
       {/* Resume Viewer Dialog Modal */}
       <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
-        <DialogContent className="w-[95vw] sm:max-w-5xl h-[90vh] max-h-[90vh] p-0 bg-[#0C1017] border border-[#1E2736] text-[#F4F6FA] flex flex-col overflow-hidden rounded-2xl shadow-2xl">
+        <DialogContent
+          className={
+            isResumeFullscreen
+              ? "!fixed !inset-0 !left-0 !top-0 !translate-x-0 !translate-y-0 !w-screen !h-screen !max-w-none !max-h-none !rounded-none !p-0 bg-[#0C1017] border-0 text-[#F4F6FA] flex flex-col overflow-hidden z-50 shadow-none"
+              : "!fixed !left-[50%] !top-[50%] !translate-x-[-50%] !translate-y-[-50%] !w-[96vw] !h-[94vh] !max-w-7xl !max-h-[94vh] !rounded-2xl !p-0 bg-[#0C1017] border border-[#1E2736] text-[#F4F6FA] flex flex-col overflow-hidden shadow-2xl z-50"
+          }
+        >
           {/* Header */}
-          <DialogHeader className="p-4 sm:px-6 border-b border-[#1E2736] bg-[#10151D] flex-shrink-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-left">
+          <DialogHeader className="p-3 sm:px-6 border-b border-[#1E2736] bg-[#10151D] flex-shrink-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-left">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-center text-[#4D8DFF] flex-shrink-0">
                 <FileText className="w-5 h-5" />
@@ -221,8 +237,27 @@ export const Navbar = () => {
               </div>
             </div>
 
-            {/* Quick Actions (Open Fullscreen + Download Button) */}
-            <div className="flex items-center gap-2 pr-6 sm:pr-8">
+            {/* Quick Actions (Fullscreen Toggle + Open Tab + Download Button) */}
+            <div className="flex items-center gap-2 pr-12 sm:pr-14">
+              <button
+                type="button"
+                onClick={() => setIsResumeFullscreen(!isResumeFullscreen)}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-[#151C27] text-[#A4ADBB] hover:text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/40 transition-colors"
+                title={isResumeFullscreen ? "Restore window size" : "Expand to edge-to-edge full screen"}
+              >
+                {isResumeFullscreen ? (
+                  <>
+                    <Minimize2 className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Compact</span>
+                  </>
+                ) : (
+                  <>
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Full Screen</span>
+                  </>
+                )}
+              </button>
+
               <a
                 href={resumeUrl}
                 target="_blank"
@@ -231,7 +266,7 @@ export const Navbar = () => {
                 title="Open resume in full browser tab"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Open in Tab</span>
+                <span className="hidden sm:inline">New Tab</span>
               </a>
 
               <a
@@ -246,16 +281,16 @@ export const Navbar = () => {
           </DialogHeader>
 
           {/* PDF Viewer Body */}
-          <div className="flex-1 w-full h-full bg-[#080B10] p-2 sm:p-4 overflow-hidden relative flex flex-col">
+          <div className="flex-1 w-full h-full bg-[#080B10] p-0 overflow-hidden relative flex flex-col">
             <iframe
               src={`${resumeUrl}#view=FitH`}
               title="Sahil Vaghela Technical Resume Preview"
-              className="w-full flex-1 rounded-xl border border-[#1E2736] bg-[#0C1017]"
+              className="w-full flex-1 border-0 bg-[#0C1017]"
             />
           </div>
 
           {/* Footer bar */}
-          <div className="px-4 sm:px-6 py-2.5 bg-[#10151D] border-t border-[#1E2736] flex flex-wrap items-center justify-between text-[11px] font-mono text-[#778294] flex-shrink-0">
+          <div className="px-4 sm:px-6 py-2 bg-[#10151D] border-t border-[#1E2736] flex flex-wrap items-center justify-between text-[11px] font-mono text-[#778294] flex-shrink-0">
             <span className="truncate">Sahil_Vaghela_Resume.pdf</span>
             <div className="flex items-center gap-3">
               <span>Looking to collaborate?</span>

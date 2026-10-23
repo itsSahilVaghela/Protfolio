@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download, Terminal } from "lucide-react";
+import { Menu, X, Download, Terminal, FileText, ExternalLink } from "lucide-react";
 import { profileData } from "@/data/portfolioData";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -14,6 +21,7 @@ const navLinks = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   const resumeUrl = `${import.meta.env.BASE_URL}${profileData.resumeFileName}`;
@@ -83,8 +91,8 @@ export const Navbar = () => {
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Navigation Links + Resume Action */}
+          <div className="hidden lg:flex items-center gap-1.5">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -106,20 +114,20 @@ export const Navbar = () => {
                 </a>
               );
             })}
-          </div>
 
-          {/* Desktop Download Resume Action */}
-          <div className="hidden lg:flex items-center">
-            <a
-              href={resumeUrl}
-              download="Sahil_Vaghela_Software_Developer_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-[#4D8DFF] text-[#080B10] hover:bg-[#4D8DFF]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B10]"
+            {/* Resume Button (Styled like Contact button, opens Resume Viewer with Download option) */}
+            <button
+              type="button"
+              onClick={() => setIsResumeOpen(true)}
+              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] inline-flex items-center gap-1.5 ${
+                isResumeOpen
+                  ? "bg-[#151C27] text-[#F4F6FA] border border-[#4D8DFF]"
+                  : "bg-[#151C27] text-[#F4F6FA] border border-[#4D8DFF]/40 hover:border-[#4D8DFF] hover:bg-[#1E2736]"
+              }`}
             >
-              <Download className="w-4 h-4" />
-              <span>Download Resume</span>
-            </a>
+              <FileText className="w-3.5 h-3.5 text-[#4D8DFF]" />
+              <span>Resume</span>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -167,23 +175,101 @@ export const Navbar = () => {
                 );
               })}
 
+              {/* Mobile Resume Button */}
               <div className="pt-2 mt-2 border-t border-[#1E2736]">
-                <a
-                  href={resumeUrl}
-                  download="Sahil_Vaghela_Software_Developer_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium bg-[#4D8DFF] text-[#080B10] hover:bg-[#4D8DFF]/90 transition-colors"
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsResumeOpen(true);
+                  }}
+                  className="w-full inline-flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium bg-[#151C27] text-[#F4F6FA] border border-[#4D8DFF]/40 hover:border-[#4D8DFF] transition-colors"
                 >
-                  <Download className="w-4 h-4" />
-                  <span>Download Resume</span>
-                </a>
+                  <span className="flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-[#4D8DFF]" />
+                    <span>View Resume</span>
+                  </span>
+                  <span className="text-xs font-mono text-[#89B2FF] px-2 py-0.5 rounded bg-[#080B10] border border-[#1E2736]">
+                    Preview &amp; Download
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         )}
       </nav>
+
+      {/* Resume Viewer Dialog Modal */}
+      <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
+        <DialogContent className="w-[95vw] sm:max-w-5xl h-[90vh] max-h-[90vh] p-0 bg-[#0C1017] border border-[#1E2736] text-[#F4F6FA] flex flex-col overflow-hidden rounded-2xl shadow-2xl">
+          {/* Header */}
+          <DialogHeader className="p-4 sm:px-6 border-b border-[#1E2736] bg-[#10151D] flex-shrink-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-left">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-center text-[#4D8DFF] flex-shrink-0">
+                <FileText className="w-5 h-5" />
+              </div>
+              <div>
+                <DialogTitle className="text-base sm:text-lg font-bold text-[#F4F6FA] flex flex-wrap items-center gap-2">
+                  <span>Sahil Vaghela — Technical Resume</span>
+                  <span className="text-[11px] font-mono font-normal px-2 py-0.5 rounded bg-[#151C27] text-[#4D8DFF] border border-[#4D8DFF]/30">
+                    Real-Time 3D &amp; XR
+                  </span>
+                </DialogTitle>
+                <DialogDescription className="text-xs text-[#778294] mt-0.5">
+                  Unreal Engine 5 (C++) · Unity (C#) · OpenXR · Procedural Geometry · Three.js
+                </DialogDescription>
+              </div>
+            </div>
+
+            {/* Quick Actions (Open Fullscreen + Download Button) */}
+            <div className="flex items-center gap-2 pr-6 sm:pr-8">
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-[#151C27] text-[#A4ADBB] hover:text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/40 transition-colors"
+                title="Open resume in full browser tab"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Open in Tab</span>
+              </a>
+
+              <a
+                href={resumeUrl}
+                download="Sahil_Vaghela_Resume.pdf"
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs font-mono font-semibold bg-[#4D8DFF] text-[#080B10] hover:bg-[#4D8DFF]/90 transition-colors shadow-sm"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </DialogHeader>
+
+          {/* PDF Viewer Body */}
+          <div className="flex-1 w-full h-full bg-[#080B10] p-2 sm:p-4 overflow-hidden relative flex flex-col">
+            <iframe
+              src={`${resumeUrl}#view=FitH`}
+              title="Sahil Vaghela Technical Resume Preview"
+              className="w-full flex-1 rounded-xl border border-[#1E2736] bg-[#0C1017]"
+            />
+          </div>
+
+          {/* Footer bar */}
+          <div className="px-4 sm:px-6 py-2.5 bg-[#10151D] border-t border-[#1E2736] flex flex-wrap items-center justify-between text-[11px] font-mono text-[#778294] flex-shrink-0">
+            <span className="truncate">Sahil_Vaghela_Resume.pdf</span>
+            <div className="flex items-center gap-3">
+              <span>Looking to collaborate?</span>
+              <a
+                href="#contact"
+                onClick={() => setIsResumeOpen(false)}
+                className="text-[#4D8DFF] hover:underline"
+              >
+                Contact Me →
+              </a>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 };

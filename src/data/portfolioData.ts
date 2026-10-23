@@ -452,6 +452,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ownershipNote:
       "Engineered the universal bidirectional WebSocket multiplayer pipeline (PC ↔ Meta Quest via Node.js server), built procedural wall tile cutting, offset & rotation alignment, created the VR 3D floating dock UI (WidgetHolderActor), and implemented dynamic room ceiling lighting auto-scaled to room dimensions.",
     diagramType: "archviz-dxf",
+    mediaUrl: "/projects/fiction-archviz/fiction-archviz-front.jpg",
     videoUrl:
       "https://drive.google.com/file/d/1LYbiSj1UK-4k4Fbe6XtMdoeAK6xFTh5v/view?usp=sharing",
     additionalVideos: [

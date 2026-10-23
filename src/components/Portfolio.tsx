@@ -476,6 +476,7 @@ export const Portfolio = () => {
                         <ProjectTechnicalVisual
                           project={activeCaseStudy}
                           variant="modal"
+                          forceSchematic
                         />
                       )}
 

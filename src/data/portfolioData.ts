@@ -426,89 +426,107 @@ export const featuredProjects: ProjectCaseStudy[] = [
     id: "fiction-archviz",
     priorityRank: 3,
     featuredTier: "primary",
-    title: "FictionArchviz",
-    subtitle: "Multiuser Desktop & VR Architectural Visualization Pipeline",
+    title: "Fiction ArchViz",
+    subtitle: "Multiuser Desktop & VR Architectural Visualization Platform",
     category: "Architectural Visualization / Real-Time 3D",
     filterGroup: "archviz-unreal",
-    technologies: ["Unreal Engine 5", "C++", "DXF", "JSON", "Meta Quest"],
+    technologies: [
+      "Unreal Engine 5",
+      "C++",
+      "WebSocket",
+      "Node.js",
+      "Meta Quest",
+      "LibTess2",
+      "DXF / JSON",
+    ],
     shortDescription:
-      "Developing a multiuser architectural-visualization application for desktop and VR, including floor-plan processing, procedural geometry generation, and real-time interactive visualization.",
+      "Multiuser architectural platform for PC Desktop and Meta Quest standalone featuring 5-6 test rooms, real-time WebSocket sync, CAD/DXF ingestion, and dynamic tile/paint customization.",
     highlights: [
-      "Floor-plan processing workflow to extract walls, windows, and doors into separate DXF layers.",
-      "C++ procedural roof-mesh generation from DXF/JSON building data with polygon-gap handling and tessellation.",
-      "VR see-through/X-ray overlay materials with consistent outline thickness across viewing distances.",
-      "Interior-lighting balance using skylights and Unreal lighting channels.",
-      "Server-manager subsystem debugging with color-coded on-screen telemetry and multiuser session documentation.",
+      "Multiuser WebSocket Pipeline: Bidirectional real-time event sync connecting PC Desktop and Meta Quest VR via Node.js server.",
+      "Procedural Tile Alignment: Live X/Y offset stepping, 90° rotation, wall-cut handling, and Matte/Glossy PBR toggling.",
+      "VR 3D Floating Dock: In-world WidgetHolderActor allowing users to grab, reposition, and pin material palettes anywhere in VR space.",
+      "Dynamic Room Lighting: Automatic ceiling light fixture generation and scaling based on runtime room bounding boxes.",
     ],
     roleTitle: "Unreal Engine C++ & XR Developer",
     ownershipScope: "Team Project — Core Systems Contributor",
     ownershipNote:
-      "Developed within the Invisible Fiction engineering team. My personal responsibilities focused on the floor-plan-to-DXF layer extraction workflow, C++ procedural roof geometry generation, VR X-ray material implementation, interior lighting channel setup, and multiuser server-session debugging.",
+      "Engineered the universal bidirectional WebSocket multiplayer pipeline (PC ↔ Meta Quest via Node.js server), built procedural wall tile cutting, offset & rotation alignment, created the VR 3D floating dock UI (WidgetHolderActor), and implemented dynamic room ceiling lighting auto-scaled to room dimensions.",
     diagramType: "archviz-dxf",
+    videoUrl:
+      "https://drive.google.com/file/d/1LYbiSj1UK-4k4Fbe6XtMdoeAK6xFTh5v/view?usp=sharing",
+    additionalVideos: [
+      {
+        label: "Multiuser Walkthrough & Material Customization",
+        url: "https://drive.google.com/file/d/1LYbiSj1UK-4k4Fbe6XtMdoeAK6xFTh5v/view?usp=sharing",
+        previewUrl:
+          "https://drive.google.com/file/d/1LYbiSj1UK-4k4Fbe6XtMdoeAK6xFTh5v/preview",
+      },
+    ],
     mediaCaption:
-      "Technical Pipeline Diagram: Floor-Plan Layer Extraction -> DXF/JSON Parsing -> C++ Roof Tessellation & VR Multiuser Sync. (Replace mediaUrl in portfolioData.ts when approved production captures are available.)",
+      "Walkthrough Video & System Topology: CAD/DXF Parser -> C++ Triangulation -> Multiuser WebSocket Node Server -> PC & Meta Quest Viewers.",
     caseStudy: {
       overview:
-        "FictionArchviz is a real-time multiuser architectural visualization application targeting both desktop workstations and Meta Quest VR headsets in Unreal Engine 5. It transforms 2D architectural floor plans and structured building data into navigable, collaborative 3D environments.",
+        "Fiction ArchViz is a real-time collaborative architectural visualization platform in Unreal Engine 5 deployed across Windows PC desktop and Meta Quest standalone VR. Featuring 5 to 6 predefined interactive test environments, the platform transforms CAD/DXF floor plans into 3D spaces with bidirectional WebSocket state synchronization, live tile alignment, grout customization, and dynamic room lighting.",
       problem:
-        "Converting architectural floor plans into clean 3D building geometry manually is time-consuming and error-prone—especially when input polygons contain small vertex gaps or complex roof footprints. Additionally, multiuser VR sessions require clear visual feedback for structural inspection and reliable session-state visibility during debugging.",
+        "Architectural clients and design teams need to review interior layouts and material finishes collaboratively across different hardware—desktop workstations and standalone VR headsets. Synchronizing live material swaps, camera positions, and custom tile cuts bidirectionally without latency or state divergence required a unified event pipeline, while procedural wall tiles required sub-millimeter seam alignment across adjacent walls and floors.",
       responsibilities: [
-        "Built a floor-plan processing pipeline that segments walls, windows, and doors from floor-plan images into distinct DXF layers.",
-        "Implemented C++ procedural geometry generation that ingests DXF/JSON building data to construct 3D roof meshes.",
-        "Handled polygon-gap tolerance and surface tessellation in C++ to produce watertight roof geometry from imperfect input contours.",
-        "Developed a VR see-through/X-ray overlay material maintaining consistent outline thickness.",
-        "Configured interior lighting balance using Skylight and Unreal Engine lighting channels.",
-        "Extended the server-manager subsystem with color-coded on-screen debug output and authored technical documentation for the multiuser session flow.",
+        "Architected and implemented the entire bidirectional WebSocket multiplayer pipeline connecting PC Desktop and Meta Quest VR through a dedicated Node.js server.",
+        "Engineered procedural tile cutting on walls, solving cut-off seams, 4-way X/Y offset stepping, 90° pattern rotation, and Matte/Glossy PBR toggling.",
+        "Built the VR 3D floating dock system (WidgetHolderActor) allowing headset users to grab, position, and pin material control palettes in world space.",
+        "Developed the DynamicRectLight actor that automatically calculates room bounding boxes to scale and position ceiling lights for photorealistic illumination.",
+        "Integrated dual locomotion systems (smooth walk vs point teleport) and top-down isometric dollhouse camera navigation (TopDownCameraActor).",
+        "Collaborated on CAD/DXF 2D-to-3D ingestion using DxfJsonReaderActor and C++ triangulation (LibTess2 / earcut).",
       ],
       technicalApproach:
-        "Separated structural semantics early in the data pipeline by isolating walls, doors, and windows into dedicated DXF layers before ingesting building footprints into Unreal Engine 5. In C++, parsed DXF/JSON coordinate data, resolved open contour gaps, and tessellated roof polygons into runtime mesh sections. Paired the geometry pipeline with custom VR shaders and subsystem-level network diagnostics.",
+        "Engineered a lightweight WebSocket event relay running on Node.js that serializes UI actions and material state into low-overhead JSON packets, reflecting changes bidirectionally between desktop and standalone Quest clients. On the rendering side, procedural tile UV math handles dynamic offsets and rotation with real-time grout joint geometry. Dynamic ceiling lighting scales automatically to room bounds, while the VR floating dock widget holder maintains spatial ergonomics.",
       architectureDetails: [
-        "2D-to-DXF Layer Segmentation: Automated extraction of architectural elements into clean layer hierarchies (WALLS, DOORS, WINDOWS).",
-        "C++ Procedural Roof Generator: Reads parsed DXF/JSON vertex loops, heals small polygon discontinuities, and runs triangulation/tessellation to generate roof meshes.",
-        "VR X-Ray Material Pass: Custom Unreal material graph rendering occluded structural elements with stable screen-space/world-space outline readability in VR.",
-        "Lighting Channel Isolation: Tuned Skylight and interior light channels so interior rooms receive balanced illumination without washing out exterior surfaces.",
-        "Server-Manager Subsystem Diagnostics: Added structured, color-coded on-screen telemetry to trace session discovery, host/client state transitions, and multiuser connectivity.",
+        "Bidirectional WebSocket Pipeline: Custom Node.js relay synchronizing user interactions, material states, and camera events across PC and Meta Quest in real time.",
+        "Procedural Tile Alignment Engine: 4-way X/Y offset buttons, 90° rotation, 1-click zero reset, and Matte/Glossy finish switching across 15+ catalog materials.",
+        "VR 3D Floating Dock (WidgetHolderActor): Grabbable, positionable 3D palette interface enabling seamless in-VR material inspection and editing.",
+        "Dynamic Room Lighting (DynamicRectLight): Runtime room boundary detection scaling ceiling rectangular lights for balanced photorealistic lighting.",
+        "CAD & Boolean Cutting Engine: DXF/JSON ingestion (DxfJsonReaderActor) with LibTess2/earcut triangulation and dynamic door/window boolean void cutters.",
+        "Grout & Wall Paint Systems: Millimeter joint width sliders, live color pickers, two-sided wall separation, and vertical/horizontal color gradients.",
       ],
       pipelineSteps: [
         {
           stage: "STAGE 01",
-          title: "Floor-Plan Extraction",
-          detail: "Isolate walls, windows, and doors into layered DXF vectors",
+          title: "CAD / DXF Ingestion",
+          detail: "Parse 2D floor plans from DXF & JSON via DxfJsonReaderActor",
         },
         {
           stage: "STAGE 02",
-          title: "DXF / JSON Ingestion",
-          detail: "Parse closed & open building contours with C++ gap healing",
+          title: "C++ Mesh Triangulation",
+          detail: "Generate procedural floor/ceiling meshes using LibTess2 & earcut",
         },
         {
           stage: "STAGE 03",
-          title: "C++ Roof Tessellation",
-          detail: "Triangulate footprint polygons into procedural UE5 roof meshes",
+          title: "Customization & Lighting",
+          detail: "Tile offset alignment, grout joint physics & DynamicRectLight",
         },
         {
           stage: "STAGE 04",
-          title: "VR Multiuser & Shaders",
-          detail: "Apply X-ray overlay materials, lighting channels & session telemetry",
+          title: "Multiuser WebSocket Sync",
+          detail: "Bidirectional event pipeline syncing PC Desktop & Meta Quest VR",
         },
       ],
       challenges: [
         {
           challenge:
-            "Source DXF/JSON building contours frequently contained minor vertex gaps or non-manifold edges that broke standard polygon triangulation.",
+            "Ensuring tile patterns and grout lines align seamlessly across adjoining walls and floor corners without visual seam distortion.",
           solution:
-            "Implemented gap-tolerance stitching and contour sanitization in C++ prior to tessellation so roof meshes generate cleanly without manual CAD cleanup.",
+            "Engineered procedural tile offset stepping along X and Y axes with 90° rotation and a copy/paste setup transferring alignment data across surfaces.",
         },
         {
           challenge:
-            "Diagnosing state desynchronization across desktop and Meta Quest multiuser sessions was slow when relying solely on raw log files.",
+            "Maintaining instantaneous state synchronization between mouse-driven desktop clients and 6DoF standalone Meta Quest headsets.",
           solution:
-            "Extended the server-manager subsystem with color-coded on-screen diagnostic output and documented the end-to-end session lifecycle for the team.",
+            "Built a universal event bus over WebSockets to a Node.js server, standardizing all user actions into lightweight payloads that execute symmetrically on both runtimes.",
         },
       ],
       outcomes: [
-        "Delivered a repeatable floor-plan-to-DXF layer extraction and C++ roof-mesh generation workflow inside Unreal Engine 5.",
-        "Improved VR spatial readability through the custom see-through/X-ray material and balanced interior skylight/channel lighting.",
-        "Streamlined multiuser session debugging across desktop and Meta Quest with clear on-screen subsystem telemetry and architecture documentation.",
+        "Delivered a robust collaborative architectural platform with 5-6 test rooms operating simultaneously across desktop PC and Meta Quest standalone VR.",
+        "Empowered design teams to test 15+ tile finishes, grout widths, solid paints, and linear gradients in real-time synchronized sessions.",
+        "Streamlined VR usability with grabbable 3D floating dock palettes and automated room ceiling illumination.",
       ],
     },
   },

@@ -440,17 +440,17 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "DXF / JSON",
     ],
     shortDescription:
-      "Multiuser architectural platform for PC Desktop and Meta Quest standalone featuring 5-6 test rooms, real-time WebSocket sync, CAD/DXF ingestion, and dynamic tile/paint customization.",
+      "Multiuser architectural platform for PC Desktop and Meta Quest standalone featuring 5 predefined rooms (Living Room, Bathroom, Kitchen, Bed Room, Kids Room), real-time WebSocket sync, and dynamic tile/paint customization.",
     highlights: [
+      "5 Predefined Interactive Rooms: Built and configured 5 showcase spaces (Living Room, Bathroom, Kitchen, Bed Room, Kids Room) to benchmark tile cutting, lighting, and VR mechanics.",
       "Multiuser WebSocket Pipeline: Bidirectional real-time event sync connecting PC Desktop and Meta Quest VR via Node.js server.",
       "Procedural Tile Alignment: Live X/Y offset stepping, 90° rotation, wall-cut handling, and Matte/Glossy PBR toggling.",
-      "VR 3D Floating Dock: In-world WidgetHolderActor allowing users to grab, reposition, and pin material palettes anywhere in VR space.",
-      "Dynamic Room Lighting: Automatic ceiling light fixture generation and scaling based on runtime room bounding boxes.",
+      "VR 3D Floating Dock & Dynamic Lights: In-world WidgetHolderActor UI palettes and room-bounds scaled DynamicRectLight fixtures.",
     ],
     roleTitle: "Unreal Engine C++ & XR Developer",
     ownershipScope: "Team Project — Core Systems Contributor",
     ownershipNote:
-      "Engineered the universal bidirectional WebSocket multiplayer pipeline (PC ↔ Meta Quest via Node.js server), built procedural wall tile cutting, offset & rotation alignment, created the VR 3D floating dock UI (WidgetHolderActor), and implemented dynamic room ceiling lighting auto-scaled to room dimensions.",
+      "Built and configured 5 predefined interactive showcase rooms (Living Room, Bathroom, Kitchen, Bed Room, Kids Room). Engineered the universal bidirectional WebSocket multiplayer pipeline (PC ↔ Meta Quest via Node.js server), built procedural wall tile cutting, offset & rotation alignment, created the VR 3D floating dock UI (WidgetHolderActor), and implemented dynamic ceiling lighting auto-scaled to room dimensions.",
     diagramType: "archviz-dxf",
     mediaUrl: "/projects/fiction-archviz/fiction-archviz-front.jpg",
     videoUrl:
@@ -467,10 +467,11 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Walkthrough Video & System Topology: CAD/DXF Parser -> C++ Triangulation -> Multiuser WebSocket Node Server -> PC & Meta Quest Viewers.",
     caseStudy: {
       overview:
-        "Fiction ArchViz is a real-time collaborative architectural visualization platform in Unreal Engine 5 deployed across Windows PC desktop and Meta Quest standalone VR. Featuring 5 to 6 predefined interactive test environments, the platform transforms CAD/DXF floor plans into 3D spaces with bidirectional WebSocket state synchronization, live tile alignment, grout customization, and dynamic room lighting.",
+        "Fiction ArchViz is a real-time collaborative architectural visualization platform in Unreal Engine 5 deployed across Windows PC desktop and Meta Quest standalone VR. Featuring 5 predefined interactive showcase environments (Living Room, Bathroom, Kitchen, Bed Room, Kids Room), the platform transforms CAD/DXF floor plans into 3D spaces with bidirectional WebSocket state synchronization, live tile alignment, grout customization, and dynamic room lighting.",
       problem:
         "Architectural clients and design teams need to review interior layouts and material finishes collaboratively across different hardware—desktop workstations and standalone VR headsets. Synchronizing live material swaps, camera positions, and custom tile cuts bidirectionally without latency or state divergence required a unified event pipeline, while procedural wall tiles required sub-millimeter seam alignment across adjacent walls and floors.",
       responsibilities: [
+        "Configured and built 5 predefined interactive showcase environments (Living Room, Bathroom, Kitchen, Bed Room, Kids Room) to stress-test materials, lighting, and VR navigation.",
         "Architected and implemented the entire bidirectional WebSocket multiplayer pipeline connecting PC Desktop and Meta Quest VR through a dedicated Node.js server.",
         "Engineered procedural tile cutting on walls, solving cut-off seams, 4-way X/Y offset stepping, 90° pattern rotation, and Matte/Glossy PBR toggling.",
         "Built the VR 3D floating dock system (WidgetHolderActor) allowing headset users to grab, position, and pin material control palettes in world space.",

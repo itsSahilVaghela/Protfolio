@@ -1488,7 +1488,7 @@ export const Portfolio = () => {
                           </span>
                         </div>
                         <span className="font-mono text-xs text-[#778294] px-2.5 py-0.5 rounded bg-[#080B10] border border-[#1E2736]">
-                          5–6 Predefined Test Environments · PC &amp; Quest Standalone
+                          5 Predefined Test Rooms · PC &amp; Quest Standalone
                         </span>
                       </div>
 
@@ -1497,7 +1497,7 @@ export const Portfolio = () => {
                           Collaborative Architectural Visualization with Real-Time WebSocket Multiuser Sync
                         </h4>
                         <p className="text-xs sm:text-sm text-[#A4ADBB] mt-1.5 leading-relaxed">
-                          Unreal Engine 5 platform converting 2D CAD floor plans into interactive 3D spaces with live bidirectional sync between PC Desktop and Meta Quest standalone VR.
+                          Unreal Engine 5 platform featuring 5 interactive rooms (Living Room, Bathroom, Kitchen, Bed Room, Kids Room) with live bidirectional sync between PC Desktop and Meta Quest standalone VR.
                         </p>
                       </div>
 
@@ -1512,10 +1512,10 @@ export const Portfolio = () => {
                           Meta Quest Standalone VR
                         </span>
                         <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-amber-400 border border-[#1E2736]">
-                          Procedural Tile Engine
+                          5 Predefined Rooms
                         </span>
                         <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-cyan-400 border border-[#1E2736]">
-                          C++ LibTess2 / earcut
+                          Procedural Tile Engine
                         </span>
                       </div>
                     </div>
@@ -1526,10 +1526,10 @@ export const Portfolio = () => {
                         <div>
                           <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
                           <div className="text-sm sm:text-base font-bold text-[#4D8DFF]">Core Contributor</div>
-                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Multiplayer, Tiles, VR &amp; Lights</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">5 Rooms, Multiplayer, Tiles &amp; VR</div>
                         </div>
                         <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
-                          Architected WebSocket sync, procedural tile cutting, VR floating dock, and auto-lighting.
+                          Built 5 showcase rooms, WebSocket sync, procedural tile cutting, and auto-lighting.
                         </div>
                       </div>
 
@@ -1569,7 +1569,42 @@ export const Portfolio = () => {
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {/* Ownership 1 */}
+                        {/* Ownership 1: 5 Predefined Rooms */}
+                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] hover:border-cyan-500/40 transition-colors flex flex-col justify-between space-y-2.5">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2">
+                                <div className="w-7 h-7 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 flex-shrink-0">
+                                  <Box className="w-3.5 h-3.5" />
+                                </div>
+                                <div>
+                                  <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
+                                    1. 5 Predefined Showcase Rooms
+                                  </h5>
+                                  <span className="text-[10px] font-mono text-[#778294]">
+                                    Living, Bath, Kitchen, Bed &amp; Kids
+                                  </span>
+                                </div>
+                              </div>
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-cyan-400 border border-[#1E2736]">
+                                Environments
+                              </span>
+                            </div>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Built 5 complete room environments to stress-test tile cuts, lighting, and VR mechanics.
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              5 Room Testbeds
+                            </span>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
+                              Interactive Spaces
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Ownership 2: WebSocket Multiuser */}
                         <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] hover:border-[#4D8DFF]/40 transition-colors flex flex-col justify-between space-y-2.5">
                           <div className="space-y-2">
                             <div className="flex items-start justify-between gap-2">
@@ -1579,7 +1614,7 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    1. WebSocket Multiuser Pipeline
+                                    2. WebSocket Multiuser Pipeline
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
                                     Node.js Event Bus (PC ↔ VR)
@@ -1604,7 +1639,7 @@ export const Portfolio = () => {
                           </div>
                         </div>
 
-                        {/* Ownership 2 */}
+                        {/* Ownership 3: Procedural Wall Tile Engine */}
                         <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] hover:border-purple-500/40 transition-colors flex flex-col justify-between space-y-2.5">
                           <div className="space-y-2">
                             <div className="flex items-start justify-between gap-2">
@@ -1614,7 +1649,7 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    2. Procedural Wall Tile Engine
+                                    3. Procedural Wall Tile Engine
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
                                     Seam Math &amp; 15+ Finish PBR
@@ -1639,7 +1674,7 @@ export const Portfolio = () => {
                           </div>
                         </div>
 
-                        {/* Ownership 3 */}
+                        {/* Ownership 4: VR Floating Dock & Dynamic Lights */}
                         <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] hover:border-emerald-500/40 transition-colors flex flex-col justify-between space-y-2.5">
                           <div className="space-y-2">
                             <div className="flex items-start justify-between gap-2">
@@ -1649,19 +1684,19 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    3. VR 3D Floating Dock
+                                    4. VR Dock &amp; Dynamic Lights
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
-                                    Grabbable UI &amp; Locomotion
+                                    WidgetHolder &amp; DynamicRectLight
                                   </span>
                                 </div>
                               </div>
                               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-emerald-400 border border-[#1E2736]">
-                                VR Interface
+                                VR &amp; Lighting
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Grabbable in-world palette widget for instant in-VR material configuration with dual locomotion.
+                              Grabbable in-VR tool palette and room-bounds calculated ceiling lighting fixtures.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
@@ -1669,42 +1704,7 @@ export const Portfolio = () => {
                               WidgetHolderActor
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Dual Locomotion
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Ownership 4 */}
-                        <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736] hover:border-amber-500/40 transition-colors flex flex-col justify-between space-y-2.5">
-                          <div className="space-y-2">
-                            <div className="flex items-start justify-between gap-2">
-                              <div className="flex items-center gap-2">
-                                <div className="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 flex-shrink-0">
-                                  <Sparkles className="w-3.5 h-3.5" />
-                                </div>
-                                <div>
-                                  <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    4. Dynamic Room Ceiling Lighting
-                                  </h5>
-                                  <span className="text-[10px] font-mono text-[#778294]">
-                                    Bounding Box Sizing &amp; Placement
-                                  </span>
-                                </div>
-                              </div>
-                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10151D] text-amber-400 border border-[#1E2736]">
-                                Dynamic Lighting
-                              </span>
-                            </div>
-                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Calculates room bounds automatically to scale and position ceiling fixtures for balanced illumination.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               DynamicRectLight
-                            </span>
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Auto-Scaled Bounds
                             </span>
                           </div>
                         </div>

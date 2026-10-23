@@ -697,6 +697,56 @@ export const Portfolio = () => {
                       </div>
                     </div>
 
+                    {/* Project Overview & Problem */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] mb-2 flex items-center gap-2">
+                          <FileCode2 className="w-4 h-4" />
+                          1. Project Overview
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.overview}
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] mb-2 flex items-center gap-2">
+                          <Wrench className="w-4 h-4" />
+                          2. Problem &amp; Technical Requirement
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.problem}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Role & Responsibilities */}
+                    <div className="p-4 sm:p-5 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                          <ShieldCheck className="w-4 h-4" />
+                          3. My Role &amp; Responsibilities ({activeCaseStudy.roleTitle})
+                        </h4>
+                        <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]">
+                          {activeCaseStudy.ownershipScope}
+                        </span>
+                      </div>
+
+                      <div className="p-3 rounded-lg bg-[#151C27]/80 border border-[#1E2736] text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                        <span className="font-semibold text-[#F4F6FA]">Architectural Ownership Scope:</span>{" "}
+                        {activeCaseStudy.ownershipNote}
+                      </div>
+
+                      <ul className="space-y-2 pt-1">
+                        {activeCaseStudy.caseStudy.responsibilities.map((resp, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#A4ADBB]">
+                            <CheckCircle2 className="w-4 h-4 text-[#4D8DFF] flex-shrink-0 mt-0.5" />
+                            <span className="leading-relaxed">{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
                     {/* 3. Part 1 — PC Authoring Studio */}
                     <div className="space-y-3">
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -1299,6 +1349,56 @@ export const Portfolio = () => {
                       </div>
                     </div>
 
+                    {/* Project Overview & Problem */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] mb-2 flex items-center gap-2">
+                          <FileCode2 className="w-4 h-4" />
+                          1. Project Overview
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.overview}
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] mb-2 flex items-center gap-2">
+                          <Wrench className="w-4 h-4" />
+                          2. Problem &amp; Technical Requirement
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.problem}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Role & Responsibilities */}
+                    <div className="p-4 sm:p-5 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                          <ShieldCheck className="w-4 h-4" />
+                          3. My Role &amp; Responsibilities ({activeCaseStudy.roleTitle})
+                        </h4>
+                        <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]">
+                          {activeCaseStudy.ownershipScope}
+                        </span>
+                      </div>
+
+                      <div className="p-3 rounded-lg bg-[#151C27]/80 border border-[#1E2736] text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                        <span className="font-semibold text-[#F4F6FA]">Architectural Ownership Scope:</span>{" "}
+                        {activeCaseStudy.ownershipNote}
+                      </div>
+
+                      <ul className="space-y-2 pt-1">
+                        {activeCaseStudy.caseStudy.responsibilities.map((resp, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#A4ADBB]">
+                            <CheckCircle2 className="w-4 h-4 text-[#4D8DFF] flex-shrink-0 mt-0.5" />
+                            <span className="leading-relaxed">{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
                     {/* 3. Core Capabilities Bento (4 Cards) */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
@@ -1554,6 +1654,56 @@ export const Portfolio = () => {
                           Bidirectional event sync reflecting real-time user actions instantly across clients.
                         </div>
                       </div>
+                    </div>
+
+                    {/* Project Overview & Problem */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] mb-2 flex items-center gap-2">
+                          <FileCode2 className="w-4 h-4" />
+                          1. Project Overview
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.overview}
+                        </p>
+                      </div>
+
+                      <div className="p-4 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] mb-2 flex items-center gap-2">
+                          <Wrench className="w-4 h-4" />
+                          2. Problem &amp; Technical Requirement
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                          {activeCaseStudy.caseStudy.problem}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Role & Responsibilities */}
+                    <div className="p-4 sm:p-5 rounded-xl bg-[#0C1017] border border-[#1E2736] space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-2">
+                          <ShieldCheck className="w-4 h-4" />
+                          3. My Role &amp; Responsibilities ({activeCaseStudy.roleTitle})
+                        </h4>
+                        <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-[#151C27] text-[#F4F6FA] border border-[#1E2736]">
+                          {activeCaseStudy.ownershipScope}
+                        </span>
+                      </div>
+
+                      <div className="p-3 rounded-lg bg-[#151C27]/80 border border-[#1E2736] text-xs sm:text-sm text-[#A4ADBB] leading-relaxed">
+                        <span className="font-semibold text-[#F4F6FA]">Architectural Ownership Scope:</span>{" "}
+                        {activeCaseStudy.ownershipNote}
+                      </div>
+
+                      <ul className="space-y-2 pt-1">
+                        {activeCaseStudy.caseStudy.responsibilities.map((resp, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#A4ADBB]">
+                            <CheckCircle2 className="w-4 h-4 text-[#4D8DFF] flex-shrink-0 mt-0.5" />
+                            <span className="leading-relaxed">{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
                     {/* 3. Core Developer Ownership (4 Highlight Cards) */}

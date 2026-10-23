@@ -9,6 +9,11 @@ export interface ChallengeItem {
   solution: string;
 }
 
+export interface ProjectCardCapsule {
+  tag: string;
+  detail: string;
+}
+
 export interface ProjectCaseStudy {
   id: string;
   priorityRank: number;
@@ -42,6 +47,7 @@ export interface ProjectCaseStudy {
     url: string;
     label: string;
   }[];
+  cardCapsules?: ProjectCardCapsule[];
   videoUrl?: string;
   mediaCaption: string;
   caseStudyUrl?: string;
@@ -199,6 +205,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Quest 3 MR Inspection: 1:1 scale passthrough examination, individual part interaction, and 3-axis internal cross-section slicing.",
       "Multiplayer Collaboration: Real-time cross-device session synchronization between VR headset and mobile with live two-way audio.",
     ],
+    cardCapsules: [
+      {
+        tag: "Dual-Runtime Architecture",
+        detail:
+          "PC CAD Authoring Studio coupled with standalone Meta Quest 3 MR Passthrough.",
+      },
+      {
+        tag: "Spatial Interaction & Shaders",
+        detail:
+          "1:1 hand tracking, exploded assembly slider, and real-time 3-axis GPU shader slicer.",
+      },
+      {
+        tag: "Cross-Platform Sync",
+        detail:
+          "Photon multiplayer state & two-way live voice sync, plus Agora webcast to web browsers.",
+      },
+    ],
     roleTitle: "Sole Developer",
     ownershipScope: "Sole Developer",
     ownershipNote:
@@ -327,6 +350,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Circular Showroom Carousel: Orbiting product ring with central hero focus and real-time shaft swapping.",
       "Radial Engineering HUD: Curved UI exposing product options, industry applications, catalogs, and manuals.",
     ],
+    cardCapsules: [
+      {
+        tag: "Dual-Vision Tracking",
+        detail:
+          "Vuforia printed brochure tracking combined with markerless ground-plane showroom.",
+      },
+      {
+        tag: "3D Catalog & Shaft Customizer",
+        detail:
+          "Orbiting circular gearbox carousel with real-time live mechanical shaft swapping.",
+      },
+      {
+        tag: "Radial Engineering HUD",
+        detail:
+          "Curved in-world radial arc UI providing instant access to specs, manuals, and catalogs.",
+      },
+    ],
     roleTitle: "Sole Developer",
     ownershipScope: "Sole Developer",
     ownershipNote:
@@ -447,6 +487,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Procedural Tile Alignment: Live X/Y offset stepping, 90° rotation, wall-cut handling, and Matte/Glossy PBR toggling.",
       "VR 3D Floating Dock & Dynamic Lights: In-world WidgetHolderActor UI palettes and room-bounds scaled DynamicRectLight fixtures.",
     ],
+    cardCapsules: [
+      {
+        tag: "5 Predefined Showcase Rooms",
+        detail:
+          "Living Room, Bathroom, Kitchen, Bed Room, and Kids Room built for feature benchmarking.",
+      },
+      {
+        tag: "WebSocket Multiuser Pipeline",
+        detail:
+          "Bidirectional real-time event bus connecting PC Desktop and Meta Quest standalone VR.",
+      },
+      {
+        tag: "Procedural Tile Engine & Lights",
+        detail:
+          "Fixed wall-cut seams with 4-way offset/rotation and room-bounds auto-scaling lights.",
+      },
+    ],
     roleTitle: "Unreal Engine C++ & XR Developer",
     ownershipScope: "Team Project — Core Systems Contributor",
     ownershipNote:
@@ -549,6 +606,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Preserved exact world/relative transforms (location, rotation, scale) when swapping furniture models.",
       "Refactored customization responsibilities toward a centralized GameInstance subsystem to support scalable selection, replacement, and future material workflows.",
     ],
+    cardCapsules: [
+      {
+        tag: "Data-Driven UE Subsystem",
+        detail:
+          "Modular architecture separating configuration data from runtime 3D rendering actors.",
+      },
+      {
+        tag: "Transform-Safe Swap Logic",
+        detail:
+          "Runtime mesh replacement preserving exact location, rotation, and scale matrices.",
+      },
+      {
+        tag: "GameInstance Centralization",
+        detail:
+          "Centralized selection state and asset registry supporting scalable catalog growth.",
+      },
+    ],
     roleTitle: "Unreal Engine Systems Developer",
     ownershipScope: "Team Project — Core Systems Contributor",
     ownershipNote:
@@ -635,6 +709,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "2048 × 2048 texture workflow designed for crisp real-time Three.js rendering.",
       "Dynamic texture application onto an animated 3D model directly in the browser.",
     ],
+    cardCapsules: [
+      {
+        tag: "Zero-Install WebAR",
+        detail:
+          "Optical sheet tracking and 3D projection directly in mobile browsers via MindAR.",
+      },
+      {
+        tag: "Live Perspective Unwarping",
+        detail:
+          "Homography math rectifies angled camera drawing feeds into 2048×2048 UV textures.",
+      },
+      {
+        tag: "Dynamic Three.js Shading",
+        detail:
+          "Real-time texture projection onto animated 3D character meshes at steady 60 FPS.",
+      },
+    ],
     roleTitle: "Web 3D & WebAR Developer",
     ownershipScope: "Sole Developer",
     ownershipNote:
@@ -720,6 +811,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Streamed real-time skeletal landmark and movement data into Unity (C#) to drive responsive player actions.",
       "Implemented gameplay mechanics, gesture thresholds, and UI improvements for arcade/PC installations.",
     ],
+    cardCapsules: [
+      {
+        tag: "Computer Vision Pipeline",
+        detail:
+          "Python MediaPipe skeletal & leg tracking streaming 3D landmark data into Unity.",
+      },
+      {
+        tag: "Low-Latency Input Bridge",
+        detail:
+          "Sub-16ms telemetry socket bridge driving real-time physics and player locomotion.",
+      },
+      {
+        tag: "Interactive Installations",
+        detail:
+          "Controller-free arcade gaming deployed across exhibition booths and live kiosks.",
+      },
+    ],
     roleTitle: "Unity C# & Computer Vision Developer",
     ownershipScope: "Team Project — Core Systems Contributor",
     ownershipNote:
@@ -804,6 +912,23 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Turbo Trail (Sub Developer): High-speed mobile game where players draw dynamic rubber trails that act as both pathway and shield.",
       "Cupping Muffins (Sub Developer): Ingredient-collection arcade game; reworked gameplay systems to support new food themes.",
       "Adapted existing game architectures into themed variants and implemented UI improvements across titles.",
+    ],
+    cardCapsules: [
+      {
+        tag: "Solo & Studio Releases",
+        detail:
+          "Catch the Object (Sole Developer end-to-end), Turbo Trail, and Cupping Muffins.",
+      },
+      {
+        tag: "Modular Gameplay C#",
+        detail:
+          "Dynamic trail physics, procedural item spawning, and decoupled game state loops.",
+      },
+      {
+        tag: "Themed Studio Reskinning",
+        detail:
+          "Architectural theme adaptation enabling rapid gameplay reskinning across releases.",
+      },
     ],
     roleTitle: "Unity C# Game Developer",
     ownershipScope: "Solo & Team Contributions",

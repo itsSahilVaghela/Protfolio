@@ -24,12 +24,12 @@
 **Files:**
 - Modify: `src/components/Portfolio.tsx` (`activeCaseStudy.id === "fiction-mech"` section)
 
-- [ ] **Step 1: Replace repetitive overview/banner/specs with unified Header, Challenge vs Deliverables, and 4 Technical Cards**
+- [x] **Step 1: Replace repetitive overview/banner/specs with unified Header, Challenge vs Deliverables, and 4 Technical Cards**
   - Header: Subtitle + 3 meta badges.
   - Challenge & Deliverables: 2-column card with 4 clean checkmarked bullets.
   - 4 Technical Cards: PC Authoring Studio, Quest 3 MR Inspection, 3-Axis Shader Slicing, Multiplayer Collaboration & Webcast.
 
-- [ ] **Step 2: Run type check**
+- [x] **Step 2: Run type check**
 ```bash
 npx tsc --noEmit
 ```
@@ -41,12 +41,12 @@ npx tsc --noEmit
 **Files:**
 - Modify: `src/components/Portfolio.tsx` (`activeCaseStudy.id === "radicon-powerbuild-xr"` section)
 
-- [ ] **Step 1: Replace repetitive sections with unified Header, Challenge vs Deliverables, and 4 Technical Cards**
+- [x] **Step 1: Replace repetitive sections with unified Header, Challenge vs Deliverables, and 4 Technical Cards**
   - Header: Subtitle + 3 meta badges.
   - Challenge & Deliverables: 2-column card with 4 clean checkmarked bullets.
   - 4 Technical Cards: Vuforia Brochure Tracking, Markerless Floor Showroom, Circular Carousel & Shaft Swap, Curved Radial HUD.
 
-- [ ] **Step 2: Run type check**
+- [x] **Step 2: Run type check**
 ```bash
 npx tsc --noEmit
 ```
@@ -58,12 +58,12 @@ npx tsc --noEmit
 **Files:**
 - Modify: `src/components/Portfolio.tsx` (`activeCaseStudy.id === "fiction-archviz"` section)
 
-- [ ] **Step 1: Replace repetitive sections with unified Header, Challenge vs Deliverables, and 4 Technical Cards**
+- [x] **Step 1: Replace repetitive sections with unified Header, Challenge vs Deliverables, and 4 Technical Cards**
   - Header: Subtitle + 3 meta badges.
   - Challenge & Deliverables: 2-column card with 4 clean checkmarked bullets.
   - 4 Technical Cards: 5 Predefined Showcase Rooms, WebSocket Multiuser Pipeline, Procedural Wall Tile Engine, VR Floating Dock & Dynamic Lights.
 
-- [ ] **Step 2: Run type check**
+- [x] **Step 2: Run type check**
 ```bash
 npx tsc --noEmit
 ```
@@ -75,12 +75,12 @@ npx tsc --noEmit
 **Files:**
 - Verify: `dist/`
 
-- [ ] **Step 1: Run production build**
+- [x] **Step 1: Run production build**
 ```bash
 npm run build
 ```
 
-- [ ] **Step 2: Verify git status and commit**
+- [x] **Step 2: Verify git status and commit**
 ```bash
 git add src/components/Portfolio.tsx dist/
 git commit -m "feat(portfolio): consolidate modals into non-repeating 3-tier executive view"

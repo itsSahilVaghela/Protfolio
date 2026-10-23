@@ -1484,7 +1484,7 @@ export const Portfolio = () => {
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#4D8DFF]/10 border border-[#4D8DFF]/30">
                           <ShieldCheck className="w-3.5 h-3.5 text-[#4D8DFF]" />
                           <span className="font-mono text-[11px] uppercase tracking-wider text-[#89B2FF]">
-                            ENTERPRISE ARCHITECTURAL PLATFORM · CORE SYSTEMS CONTRIBUTOR
+                            ENTERPRISE ARCHITECTURAL PLATFORM · CORE CONTRIBUTOR
                           </span>
                         </div>
                         <span className="font-mono text-xs text-[#778294] px-2.5 py-0.5 rounded bg-[#080B10] border border-[#1E2736]">
@@ -1497,7 +1497,7 @@ export const Portfolio = () => {
                           Collaborative Architectural Visualization with Real-Time WebSocket Multiuser Sync
                         </h4>
                         <p className="text-xs sm:text-sm text-[#A4ADBB] mt-1.5 leading-relaxed">
-                          Engineered in Unreal Engine 5 as core systems contributor. Converts 2D CAD/DXF floor plans into interactive, navigable 3D spaces with full bidirectional synchronization between Windows PC Desktop and standalone Meta Quest VR headsets.
+                          Unreal Engine 5 platform converting 2D CAD floor plans into interactive 3D spaces with live bidirectional sync between PC Desktop and Meta Quest standalone VR.
                         </p>
                       </div>
 
@@ -1520,8 +1520,8 @@ export const Portfolio = () => {
                       </div>
                     </div>
 
-                    {/* 2. Key Specifications Grid (4 Cards) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    {/* 2. Key Specifications Grid (3 Cards) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
                         <div>
                           <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
@@ -1554,17 +1554,6 @@ export const Portfolio = () => {
                           Bidirectional event sync reflecting real-time user actions instantly across clients.
                         </div>
                       </div>
-
-                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
-                        <div>
-                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">CAD &amp; Triangulation</div>
-                          <div className="text-sm sm:text-base font-bold text-purple-400">DXF / JSON + C++</div>
-                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">LibTess2 &amp; earcut</div>
-                        </div>
-                        <div className="text-[11px] text-[#778294] mt-2 pt-2 border-t border-[#1E2736]/60 leading-snug">
-                          Procedural floor/ceiling mesh triangulation and dynamic parametric boolean openings.
-                        </div>
-                      </div>
                     </div>
 
                     {/* 3. Core Developer Ownership (4 Highlight Cards) */}
@@ -1590,7 +1579,7 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    1. Universal Bidirectional WebSocket Pipeline
+                                    1. WebSocket Multiuser Pipeline
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
                                     Node.js Event Bus (PC ↔ VR)
@@ -1602,7 +1591,7 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Engineered cross-platform event bus over WebSockets. Any interaction on PC reflects instantly in VR and vice versa with zero state drift.
+                              Real-time bidirectional event bus synchronizing PC Desktop and Meta Quest VR with sub-100ms parity.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
@@ -1610,10 +1599,7 @@ export const Portfolio = () => {
                               WebSocket Node Server
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Bidirectional Parity
-                            </span>
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Low Latency
+                              PC ↔ VR Parity
                             </span>
                           </div>
                         </div>
@@ -1628,7 +1614,7 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    2. Procedural Wall Tile Cutting &amp; Alignment
+                                    2. Procedural Wall Tile Engine
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
                                     Seam Math &amp; 15+ Finish PBR
@@ -1640,15 +1626,12 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Solved wall tile cutting issues. Implemented 4-way X/Y offset stepping, 90° rotation, 1-click zero reset, and Matte/Glossy PBR finish switching.
+                              Fixed wall-cut seams with 4-way offset stepping, 90° rotation, and Matte/Glossy PBR swapping.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               Tile Cut Seam Math
-                            </span>
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              X/Y Step &amp; Rotate
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               Matte / Glossy PBR
@@ -1666,7 +1649,7 @@ export const Portfolio = () => {
                                 </div>
                                 <div>
                                   <h5 className="text-xs font-bold text-[#F4F6FA] leading-tight">
-                                    3. VR 3D Floating Dock &amp; Spatial Navigation
+                                    3. VR 3D Floating Dock
                                   </h5>
                                   <span className="text-[10px] font-mono text-[#778294]">
                                     Grabbable UI &amp; Locomotion
@@ -1678,7 +1661,7 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Built WidgetHolderActor letting VR users grab, position, or pin material palettes in 3D space. Integrated dual locomotion and dollhouse camera.
+                              Grabbable in-world palette widget for instant in-VR material configuration with dual locomotion.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
@@ -1686,10 +1669,7 @@ export const Portfolio = () => {
                               WidgetHolderActor
                             </span>
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Smooth &amp; Teleport
-                            </span>
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Dollhouse View
+                              Dual Locomotion
                             </span>
                           </div>
                         </div>
@@ -1716,7 +1696,7 @@ export const Portfolio = () => {
                               </span>
                             </div>
                             <p className="text-xs text-[#A4ADBB] leading-relaxed">
-                              Engineered DynamicRectLight calculating room bounds automatically to size and position ceiling rectangular lights for balanced photorealistic lighting.
+                              Calculates room bounds automatically to scale and position ceiling fixtures for balanced illumination.
                             </p>
                           </div>
                           <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/60">
@@ -1726,15 +1706,12 @@ export const Portfolio = () => {
                             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
                               Auto-Scaled Bounds
                             </span>
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#0C1017] text-[#778294] border border-[#1E2736]">
-                              Photorealistic Balance
-                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* 4. Platform Architecture Subsystems (6 Modular Cards) */}
+                    {/* 4. Platform Architectural Subsystems (Compact 6-Item Grid) */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
                         <h4 className="text-xs font-mono uppercase tracking-wider text-[#8B6CFF] flex items-center gap-2">
@@ -1746,89 +1723,41 @@ export const Portfolio = () => {
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                        <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2">
-                          <div>
-                            <div className="text-[10px] font-mono text-[#4D8DFF] uppercase tracking-wider mb-1">Grout Physics</div>
-                            <div className="text-xs font-bold text-[#F4F6FA] mb-1">Grout Customization &amp; Millimeter Readout</div>
-                            <p className="text-[11px] text-[#A4ADBB] leading-snug">
-                              Independent XY joint width sliders, live millimeter readouts on UI, and dynamic color picking.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1.5 border-t border-[#1E2736]/60">
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">Width Sliders</span>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">WBP_ColorPicker</span>
-                          </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-[#4D8DFF] uppercase tracking-wider mb-0.5">Grout Physics</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Grout Width Sliders</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Independent XY millimeter readouts</div>
                         </div>
 
-                        <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2">
-                          <div>
-                            <div className="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-1">Wall Finishes</div>
-                            <div className="text-xs font-bold text-[#F4F6FA] mb-1">Solid Wall Paint &amp; Linear Gradients</div>
-                            <p className="text-[11px] text-[#A4ADBB] leading-snug">
-                              Solid PBR paint, HSV/RGB color wheel, two-sided wall separation, and vertical/horizontal color gradients.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1.5 border-t border-[#1E2736]/60">
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">TwoSideWallActor</span>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">GradientActor</span>
-                          </div>
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-0.5">Wall Finishes</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Paint &amp; Gradients</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Solid PBR &amp; 2-sided wall separation</div>
                         </div>
 
-                        <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2">
-                          <div>
-                            <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider mb-1">Procedural CAD</div>
-                            <div className="text-xs font-bold text-[#F4F6FA] mb-1">CAD / DXF Ingestion Engine</div>
-                            <p className="text-[11px] text-[#A4ADBB] leading-snug">
-                              DxfJsonReaderActor parses 2D floor plans from DXF and JSON into 3D geometry via LibTess2 and earcut C++.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1.5 border-t border-[#1E2736]/60">
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">DxfJsonReader</span>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">LibTess2 Triangulation</span>
-                          </div>
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider mb-0.5">CAD Engine</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">DXF / JSON Ingestion</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">C++ LibTess2 &amp; earcut mesh generation</div>
                         </div>
 
-                        <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2">
-                          <div>
-                            <div className="text-[10px] font-mono text-amber-400 uppercase tracking-wider mb-1">Mesh Booleans</div>
-                            <div className="text-xs font-bold text-[#F4F6FA] mb-1">Dynamic Boolean Openings</div>
-                            <p className="text-[11px] text-[#A4ADBB] leading-snug">
-                              Cuts clean wall voids dynamically for parametric doors and windows without manual modeling.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1.5 border-t border-[#1E2736]/60">
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">DoorBooleanCutter</span>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">WindowBooleanCutter</span>
-                          </div>
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-amber-400 uppercase tracking-wider mb-0.5">Mesh Booleans</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Parametric Void Cutters</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Dynamic door &amp; window wall cutouts</div>
                         </div>
 
-                        <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2">
-                          <div>
-                            <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider mb-1">Preset Transfer</div>
-                            <div className="text-xs font-bold text-[#F4F6FA] mb-1">Copy &amp; Paste Setup</div>
-                            <p className="text-[11px] text-[#A4ADBB] leading-snug">
-                              1-click copy of active tile pattern, offset, and grout setup; paste directly onto adjoining surfaces.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1.5 border-t border-[#1E2736]/60">
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">CopyBtn / PasteBtn</span>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">Batch Application</span>
-                          </div>
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider mb-0.5">Presets</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Copy &amp; Paste Setup</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">1-click transfer across adjoining surfaces</div>
                         </div>
 
-                        <div className="p-3.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between space-y-2">
-                          <div>
-                            <div className="text-[10px] font-mono text-rose-400 uppercase tracking-wider mb-1">Subsystems</div>
-                            <div className="text-xs font-bold text-[#F4F6FA] mb-1">Instant Localization Subsystem</div>
-                            <p className="text-[11px] text-[#A4ADBB] leading-snug">
-                              Switches interface languages on the fly across UI widgets without reloading the level.
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1.5 border-t border-[#1E2736]/60">
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">SS_LocalizationManager</span>
-                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#0C1017] text-[#778294]">Zero Reload</span>
-                          </div>
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-rose-400 uppercase tracking-wider mb-0.5">Subsystem</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Runtime Localization</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Live language switch without level reloads</div>
                         </div>
                       </div>
                     </div>

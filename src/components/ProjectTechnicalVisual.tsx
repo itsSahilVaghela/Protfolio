@@ -290,15 +290,15 @@ export const ProjectTechnicalVisual = ({
             </text>
             <rect x="10" y="28" width="94" height="24" rx="4" fill="#151C27" stroke="#1E2736" />
             <text x="16" y="43" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              Type: Sofa_Assets[]
+              Type: Bed_Assets[]
             </text>
             <rect x="10" y="58" width="94" height="24" rx="4" fill="#151C27" stroke="#1E2736" />
             <text x="16" y="73" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              Type: Table_Assets[]
+              Type: Parquet_Floors[]
             </text>
             <rect x="10" y="88" width="94" height="24" rx="4" fill="#151C27" stroke="#1E2736" />
             <text x="16" y="103" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              Type: Lamp_Assets[]
+              Type: Wallpaper_Sets[]
             </text>
           </g>
 

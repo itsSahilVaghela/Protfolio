@@ -594,99 +594,109 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 4,
     featuredTier: "primary",
     title: "Mimadim Home Studio / Mimadim",
-    subtitle: "Data-Driven Unreal Engine Furniture Customization Architecture",
-    category: "VR Furniture Customization",
+    subtitle: "High-Fidelity PC Interior & Furniture Customization Architecture",
+    category: "PC Architectural Visualization / Real-Time 3D",
     filterGroup: "archviz-unreal",
-    technologies: ["Unreal Engine", "C++", "Blueprints", "Data Assets", "Subsystems"],
+    technologies: [
+      "Unreal Engine 5",
+      "C++",
+      "Blueprints",
+      "Data Assets",
+      "PC High Graphics",
+      "Lumen / PBR",
+    ],
     shortDescription:
-      "An interactive furniture-customization experience involving data-driven furniture selection, model replacement, and real-time interior visualization.",
+      "High-fidelity PC interior customization platform featuring predefined rooms to swap beds, floor parquet, wallpaper, and curtains in real time.",
     highlights: [
-      "Designed modular furniture Data Assets and a master Data Asset mapping furniture categories to available 3D assets.",
-      "Implemented runtime furniture selection and actor/mesh replacement logic.",
-      "Preserved exact world/relative transforms (location, rotation, scale) when swapping furniture models.",
-      "Refactored customization responsibilities toward a centralized GameInstance subsystem to support scalable selection, replacement, and future material workflows.",
+      "Predefined Showcase Rooms: Interactive architectural environments engineered for high-end PC to evaluate furniture layouts and finishes in real time.",
+      "Interior Customization: Dynamic, transform-safe swapping of bed models, floor parquet, wallpaper textures, and curtains.",
+      "Data-Driven Catalog: Modular Unreal Data Assets and Master Registry mapping item variants to photorealistic 3D assets and PBR materials.",
+      "GameInstance Subsystem: Centralized C++ state manager driving selection, transform caching, and high-fidelity runtime actor replacement.",
     ],
     cardCapsules: [
       {
-        tag: "Data-Driven UE Subsystem",
+        tag: "Predefined Showcase Rooms",
         detail:
-          "Modular architecture separating configuration data from runtime 3D rendering actors.",
+          "Interactive room environments configured for testing furniture layouts, spatial ergonomics, and lighting.",
       },
       {
-        tag: "Transform-Safe Swap Logic",
+        tag: "Interior Customization",
         detail:
-          "Runtime mesh replacement preserving exact location, rotation, and scale matrices.",
+          "Real-time swapping of beds, floor parquet, wallpapers, and curtains with photorealistic PBR materials.",
       },
       {
-        tag: "GameInstance Centralization",
+        tag: "High-Fidelity PC Graphics",
         detail:
-          "Centralized selection state and asset registry supporting scalable catalog growth.",
+          "Engineered specifically for PC hardware with advanced lighting, reflections, and transform-safe actor swaps.",
       },
     ],
     roleTitle: "Unreal Engine Systems Developer",
     ownershipScope: "Team Project — Core Systems Contributor",
     ownershipNote:
-      "Engineered the data-driven furniture catalog architecture (Data Assets + Master Mapping), model replacement with transform preservation, and the architectural refactor into a dedicated GameInstance subsystem.",
+      "Engineered the data-driven interior customization architecture (Data Assets + Master Registry) across predefined rooms for PC, implementing transform-preserving model/material swaps (beds, parquet, wallpapers, curtains) inside a centralized GameInstance subsystem.",
     diagramType: "mimadim-subsystem",
     mediaCaption:
       "Engineering Architecture Diagram: Master Data Asset Registry -> GameInstance Customization Subsystem -> Transform-Preserving Actor Swap.",
     caseStudy: {
       overview:
-        "Mimadim Home Studio is an interactive Unreal Engine interior visualization and VR customization application that enables users to inspect, select, and swap furniture models in real time within architectural spaces.",
+        "Mimadim Home Studio is a high-fidelity Unreal Engine interior visualization and furniture customization platform built specifically for high-end PC performance. The application places users inside predefined architectural rooms where they can dynamically test and swap furniture and surface finishes—including bed models, floor parquet, wallpapers, and curtains—under photorealistic real-time lighting.",
       problem:
-        "Hardcoding furniture references or scattering selection and replacement logic across level Blueprints and individual actor scripts creates tight coupling, makes adding new catalog items tedious, and risks losing placement transforms when swapping models.",
+        "Hardcoding furniture references or scattering mesh and material replacement logic across disparate level Blueprints leads to tight coupling, high memory overhead, and orientation reset bugs during runtime swaps. The system needed a centralized, scalable architecture that delivers photorealistic PC graphics without performance drops or placement misalignment.",
       responsibilities: [
-        "Created structured Unreal Data Assets representing individual furniture items and metadata.",
-        "Built a Master Data Asset mapping furniture types/categories to their corresponding available furniture assets.",
-        "Implemented runtime selection and model-replacement logic that preserves the target object's transform.",
-        "Refactored dispersed customization logic toward a dedicated GameInstance subsystem to centralize state and prepare for material customization.",
+        "Built structured Unreal Data Assets representing individual furniture items, floor parquet patterns, wallpaper textures, and curtain styles.",
+        "Designed a Master Data Asset registry mapping customization categories to available 3D assets across predefined showcase rooms.",
+        "Implemented runtime selection and model-replacement logic that strictly preserves the target object's world/relative transform matrices.",
+        "Engineered dynamic material and mesh swapping for beds, floor parquet, wallpaper sets, and curtains under photorealistic PC lighting.",
+        "Refactored customization logic into a dedicated GameInstance Subsystem to decouple room level scripts from the asset catalog.",
       ],
       technicalApproach:
-        "Adopted a data-driven architecture decoupling catalog content from runtime interaction code. By indexing furniture options through a Master Data Asset and routing selection/replacement calls through a centralized GameInstance subsystem, new furniture variants can be registered without modifying core interaction logic.",
+        "Adopted a data-driven architecture optimized for PC desktop fidelity. By decoupling catalog content into modular Data Assets and routing all room customization calls through a centralized GameInstance Subsystem, the platform enables instantaneous swapping of beds, parquet flooring, wallpapers, and curtains while maintaining photorealistic PBR shaders, dynamic lighting, and precise geometric transforms.",
       architectureDetails: [
-        "Furniture Data Assets: Encapsulate mesh references, category tags, and item metadata in asset-level structures.",
-        "Master Mapping Registry: Maps semantic furniture types (e.g., seating, tables, fixtures) to curated arrays of furniture Data Assets.",
-        "Transform-Preserving Replacement: Captures existing actor world/relative transform matrices before spawning or swapping the replacement furniture asset.",
-        "GameInstance Subsystem Refactor: Consolidates selection state, active target tracking, replacement execution, and extensibility hooks for material-instance swapping.",
+        "Predefined Architectural Rooms: Tailored high-fidelity PC environments configured with photorealistic lighting, reflections, and camera perspectives for furniture evaluation.",
+        "Customization Data Assets: Modular asset records encapsulating mesh references, PBR material instances, and metadata for beds, parquet, wallpapers, and curtains.",
+        "Master Mapping Registry: Centralized lookup tables mapping room categories and surface types to available 3D assets and material sets.",
+        "Transform-Safe Actor Swap: Caches world transform matrices before replacement to guarantee zero positional drift or pivot misalignment.",
+        "GameInstance Customization Subsystem: Central engine managing active room state, catalog queries, undo/redo states, and dynamic runtime material instantiation.",
       ],
       pipelineSteps: [
         {
-          stage: "DATA LAYER",
-          title: "Master Data Asset",
-          detail: "Maps furniture categories to modular Furniture Data Assets",
+          stage: "DATA ASSET",
+          title: "Master Registry",
+          detail: "Indexes beds, parquet, wallpapers & curtains by room category",
         },
         {
           stage: "SUBSYSTEM",
-          title: "GameInstance Subsystem",
-          detail: "Centralizes active selection, catalog queries & replacement rules",
+          title: "GameInstance Hub",
+          detail: "Centralizes catalog queries, active room state & swap handlers",
         },
         {
           stage: "TRANSFORM",
-          title: "State Capture & Swap",
-          detail: "Caches position/rotation/scale and instantiates selected model",
+          title: "Transform-Safe Swap",
+          detail: "Caches translation, rotation & scale matrices for seamless replacement",
         },
         {
-          stage: "EXTENSIBILITY",
-          title: "Material Workflow Ready",
-          detail: "Clean subsystem API prepared for runtime material customization",
+          stage: "PC FIDELITY",
+          title: "Photorealistic Render",
+          detail: "High-end PC lighting, PBR materials & real-time reflection evaluation",
         },
       ],
       challenges: [
         {
           challenge:
-            "Replacing furniture actors at runtime could reset orientation or offset placement if pivot conventions or parent attachments weren't respected.",
+            "Swapping complex furniture actors and surface materials at runtime caused transform drift and hitches under high-fidelity PC rendering settings.",
           solution:
-            "Explicitly cached and reapplied the target's transform state during replacement so swapped models remain aligned in the room layout.",
+            "Implemented a matrix-caching swap routine in the GameInstance Subsystem with asynchronous asset preloading to ensure instantaneous, pixel-perfect replacements.",
         },
         {
           challenge:
-            "Keeping customization logic maintainable as new requirements (such as future material customization) were introduced.",
+            "Expanding customization across multiple categories (beds, floors, walls, curtains) threatened to clutter room level Blueprints with duplicate logic.",
           solution:
-            "Refactored responsibilities out of scattered actor/Blueprint scripts into a single GameInstance subsystem with clear interfaces.",
+            "Architected a centralized GameInstance Subsystem with a Master Data Asset registry, allowing any predefined room to query and apply customizations via a unified API.",
         },
       ],
       outcomes: [
-        "Established a clean, data-driven catalog workflow allowing designers and developers to register new furniture assets via Data Assets.",
+        "Delivered a responsive high-fidelity PC interior customization platform allowing instant swaps of beds, parquet, wallpaper, and curtains.",
+        "Established a clean, data-driven catalog workflow enabling zero-code addition of new room furnishings and material variants.",
         "Centralized selection and replacement responsibilities into a maintainable Unreal GameInstance subsystem architecture.",
       ],
     },
@@ -1124,7 +1134,7 @@ export const experienceTimeline: ExperienceItem[] = [
       "FictionArchviz (Unreal Engine 5, C++): developing a desktop and Meta Quest multiuser architectural-visualization application.",
       "Built a floor-plan processing pipeline that extracts walls, windows, and doors into separate DXF layers, and implemented C++ procedural roof-mesh generation from DXF/JSON building data with polygon-gap handling and tessellation.",
       "Developed a VR see-through/X-ray overlay material with consistent outline thickness, balanced interior lighting with skylights and lighting channels, and extended the server-manager subsystem with color-coded debug output and session documentation.",
-      "Mimadim Home Studio / Mimadim (Unreal Engine): implemented furniture Data Assets, a master mapping Data Asset, and transform-preserving model replacement, refactoring customization responsibilities toward a GameInstance subsystem.",
+      "Mimadim Home Studio / Mimadim (Unreal Engine 5, C++): engineered high-fidelity PC interior customization in predefined rooms (swapping beds, floor parquet, wallpaper, and curtains) using modular Data Assets and a transform-safe GameInstance subsystem.",
       "Fiction Mech (Unity, OpenXR, Meta Quest 3): developed a 3D visualization application as sole developer featuring multiplayer and two-way control/communication between Quest 3 and Android via Agora Video SDK.",
       "Three.js: developed browser-based 3D game prototypes using AI-assisted coding workflows—reviewing, debugging, testing, and refining generated code.",
     ],

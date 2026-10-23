@@ -1807,6 +1807,243 @@ export const Portfolio = () => {
                       </div>
                     </div>
                   </div>
+                ) : activeCaseStudy.id === "mimadim-home-studio" ? (
+                  <div className="space-y-6 pt-1 text-left">
+                    {/* 1. Overview Banner */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-br from-[#151C27] via-[#10151D] to-[#0C1017] border border-[#1E2736] space-y-3 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-[#8B6CFF]/5 rounded-full blur-3xl pointer-events-none" />
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B6CFF]/10 border border-[#8B6CFF]/30">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#8B6CFF]" />
+                          <span className="font-mono text-[11px] uppercase tracking-wider text-[#B8A3FF]">
+                            PC INTERIOR ARCHITECTURE · CORE SYSTEMS CONTRIBUTOR
+                          </span>
+                        </div>
+                        <span className="font-mono text-xs text-[#778294] px-2.5 py-0.5 rounded bg-[#080B10] border border-[#1E2736]">
+                          Predefined Showcase Rooms · High-Fidelity PC
+                        </span>
+                      </div>
+
+                      <div>
+                        <h4 className="text-base sm:text-lg font-bold text-[#F4F6FA] tracking-tight">
+                          High-Fidelity PC Interior &amp; Furniture Customization Architecture
+                        </h4>
+                        <p className="text-xs sm:text-sm text-[#A4ADBB] mt-1.5 leading-relaxed">
+                          Unreal Engine 5 desktop experience featuring predefined showcase rooms to test and swap furniture (beds, floor parquet, wallpaper, and curtains) in real time with photorealistic graphics.
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#1E2736]/70">
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-[#89B2FF] border border-[#1E2736]">
+                          Unreal Engine 5
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-purple-400 border border-[#1E2736]">
+                          C++ / Blueprints
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-emerald-400 border border-[#1E2736]">
+                          Predefined Showcase Rooms
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-amber-400 border border-[#1E2736]">
+                          Data Assets Registry
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-cyan-400 border border-[#1E2736]">
+                          GameInstance Subsystem
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-[#151C27] text-rose-400 border border-[#1E2736]">
+                          High-End PC Graphics
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 2. Key Specifications Grid (3 Cards) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Developer Scope</div>
+                          <div className="text-sm sm:text-base font-bold text-[#8B6CFF]">Core Contributor</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Catalog Architecture &amp; Subsystem</div>
+                        </div>
+                        <div className="text-[11px] text-[#A4ADBB] mt-2 pt-2 border-t border-[#1E2736]">
+                          Data Assets, master mapping, transform caching, and subsystem refactoring.
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Target Platform</div>
+                          <div className="text-sm sm:text-base font-bold text-[#38BDF8]">High-End PC Desktop</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Photorealistic PBR &amp; Dynamic Lighting</div>
+                        </div>
+                        <div className="text-[11px] text-[#A4ADBB] mt-2 pt-2 border-t border-[#1E2736]">
+                          Engineered specifically for high graphical fidelity, reflections, and realtime material swaps.
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                        <div>
+                          <div className="text-[10px] font-mono uppercase text-[#778294] mb-1">Interactive Customization</div>
+                          <div className="text-sm sm:text-base font-bold text-emerald-400">Predefined Rooms</div>
+                          <div className="text-xs font-medium text-[#F4F6FA] mt-0.5">Bed · Parquet · Wallpaper · Curtains</div>
+                        </div>
+                        <div className="text-[11px] text-[#A4ADBB] mt-2 pt-2 border-t border-[#1E2736]">
+                          Instantaneous asset &amp; texture replacement with zero coordinate drift.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 3. Part 1: Predefined Rooms & Customization Capabilities (6 Bento Cards) */}
+                    <div className="space-y-3">
+                      <div className="text-xs font-mono uppercase tracking-wider text-[#A4ADBB] flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Palette className="w-4 h-4 text-[#8B6CFF]" />
+                          <span>Customization Capabilities &amp; Showcase Environments</span>
+                        </span>
+                        <span className="text-[11px] text-[#778294]">Predefined Rooms · 6 Concrete Modules</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                          <div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#080B10] text-[#89B2FF] border border-[#1E2736]">ROOM SHOWCASE</span>
+                            <h5 className="text-sm font-bold text-[#F4F6FA] mt-2 mb-1">Predefined Rooms</h5>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Interactive architectural spaces configured with tailored camera vantage points to test furniture placement.
+                            </p>
+                          </div>
+                          <div className="mt-2.5 pt-2 border-t border-[#1E2736]/60 text-[10px] font-mono text-[#778294]">
+                            Contextual Layout Testing
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                          <div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#080B10] text-purple-400 border border-[#1E2736]">FURNITURE SWAP</span>
+                            <h5 className="text-sm font-bold text-[#F4F6FA] mt-2 mb-1">Bed Variations</h5>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Dynamic actor replacement across bed frames, headboards, and mattress designs with preserved pivot alignment.
+                            </p>
+                          </div>
+                          <div className="mt-2.5 pt-2 border-t border-[#1E2736]/60 text-[10px] font-mono text-[#778294]">
+                            Transform-Safe Replacement
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                          <div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#080B10] text-emerald-400 border border-[#1E2736]">SURFACE FINISH</span>
+                            <h5 className="text-sm font-bold text-[#F4F6FA] mt-2 mb-1">Floor Parquet</h5>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Real-time switching between hardwood, herringbone, and chevron parquet with photorealistic PBR normal maps.
+                            </p>
+                          </div>
+                          <div className="mt-2.5 pt-2 border-t border-[#1E2736]/60 text-[10px] font-mono text-[#778294]">
+                            PBR Material Instances
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                          <div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#080B10] text-amber-400 border border-[#1E2736]">WALL STYLING</span>
+                            <h5 className="text-sm font-bold text-[#F4F6FA] mt-2 mb-1">Wallpaper Sets</h5>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Curated patterns, accent textures, and modern plaster finishes dynamically mapped to room perimeter geometries.
+                            </p>
+                          </div>
+                          <div className="mt-2.5 pt-2 border-t border-[#1E2736]/60 text-[10px] font-mono text-[#778294]">
+                            Seamless UV Projections
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                          <div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#080B10] text-cyan-400 border border-[#1E2736]">TEXTILE CUSTOMIZATION</span>
+                            <h5 className="text-sm font-bold text-[#F4F6FA] mt-2 mb-1">Curtains &amp; Drapery</h5>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Customizable window drapes with realistic fabric weave, light translucency, and complementary color schemes.
+                            </p>
+                          </div>
+                          <div className="mt-2.5 pt-2 border-t border-[#1E2736]/60 text-[10px] font-mono text-[#778294]">
+                            Subsurface Fabric Shading
+                          </div>
+                        </div>
+
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-[#151C27] border border-[#1E2736] flex flex-col justify-between">
+                          <div>
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#080B10] text-rose-400 border border-[#1E2736]">PC GRAPHICS</span>
+                            <h5 className="text-sm font-bold text-[#F4F6FA] mt-2 mb-1">Photorealistic PC Fidelity</h5>
+                            <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                              Engineered specifically for high-end PC GPUs with dynamic lighting, realistic reflections, and crisp texture resolution.
+                            </p>
+                          </div>
+                          <div className="mt-2.5 pt-2 border-t border-[#1E2736]/60 text-[10px] font-mono text-[#778294]">
+                            High-End Unreal 5 Rendering
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 4. Part 2: Technical Architecture & C++ Subsystem (4 Bento Cards) */}
+                    <div className="space-y-3">
+                      <div className="text-xs font-mono uppercase tracking-wider text-[#A4ADBB] flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <Cpu className="w-4 h-4 text-[#4D8DFF]" />
+                          <span>Technical Architecture &amp; C++ Systems</span>
+                        </span>
+                        <span className="text-[11px] text-[#778294]">Decoupled Data-Driven Pattern</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider mb-0.5">Data Layer</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Master Data Assets</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Modular catalog indexing beds, parquet, wallpaper &amp; curtains</div>
+                        </div>
+
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-amber-400 uppercase tracking-wider mb-0.5">Transform Safety</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Matrix-Cached Swap</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Zero positional or rotation drift during actor replacement</div>
+                        </div>
+
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider mb-0.5">Subsystem</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">UGameInstance Subsystem</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Centralized state manager decoupled from level Blueprints</div>
+                        </div>
+
+                        <div className="p-3 rounded-xl bg-[#151C27] border border-[#1E2736]">
+                          <div className="text-[10px] font-mono text-rose-400 uppercase tracking-wider mb-0.5">PBR Shaders</div>
+                          <div className="text-xs font-bold text-[#F4F6FA]">Material Instancing</div>
+                          <div className="text-[11px] text-[#778294] mt-0.5">Live texture parameter updates without shader recompiles</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 5. Execution Pipeline */}
+                    <div className="space-y-2.5">
+                      <div className="text-xs font-mono uppercase tracking-wider text-[#A4ADBB] flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <GitBranch className="w-4 h-4 text-[#8B6CFF]" />
+                          <span>4-Stage End-to-End Pipeline</span>
+                        </span>
+                        <span className="text-[11px] text-[#778294]">Data Definition to Photorealistic Render</span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                        {activeCaseStudy.caseStudy.pipelineSteps.map((step, i) => (
+                          <div key={i} className="p-3.5 rounded-xl bg-[#0C1017] border border-[#1E2736] flex flex-col justify-between">
+                            <div>
+                              <div className="flex items-center justify-between gap-1 mb-1">
+                                <span className="text-[10px] font-mono text-[#8B6CFF]">{step.stage}</span>
+                                <span className="text-[10px] font-mono text-[#778294]">Node 0{i + 1}</span>
+                              </div>
+                              <div className="text-xs font-bold text-[#F4F6FA] mb-1.5">{step.title}</div>
+                            </div>
+                            <div className="text-[11px] text-[#A4ADBB] leading-snug">{step.detail}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <>
                     {/* 1. Overview & 2. Problem / Requirement */}

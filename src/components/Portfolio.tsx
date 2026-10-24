@@ -192,7 +192,7 @@ export const Portfolio = () => {
                           className={`px-2.5 py-0.5 rounded text-[11px] font-mono border ${
                             isMainProject
                               ? "bg-[#4D8DFF]/15 text-[#89B2FF] border-[#4D8DFF]/40 font-semibold"
-                              : isWorkedAlone
+                              : isWorkedAlone || project.ownershipScope.includes("Sole Developer")
                                 ? "bg-emerald-500/10 text-emerald-300 border-emerald-500/30"
                                 : "bg-[#151C27] text-[#A4ADBB] border-[#1E2736]"
                           }`}
@@ -201,7 +201,7 @@ export const Portfolio = () => {
                             ? "Sole Developer"
                             : isWorkedAlone
                               ? "Worked Alone"
-                              : project.ownershipScope === "Sole Developer"
+                              : project.ownershipScope.includes("Sole Developer")
                                 ? "Sole Developer"
                                 : project.ownershipScope === "Solo & Team Contributions"
                                   ? "Solo & Team"

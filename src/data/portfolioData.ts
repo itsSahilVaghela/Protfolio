@@ -763,7 +763,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       },
     ],
     roleTitle: "Web 3D & WebAR Developer",
-    ownershipScope: "Sole Developer (AI-Assisted)",
+    ownershipScope: "Sole Developer",
     ownershipNote:
       "Sole Developer — engineered with AI-assisted workflows using Google Antigravity, Claude, and ChatGPT for GPU homography shader development, MindAR optical tracking, and Electron kiosk integration.",
     diagramType: "webar-uv",
@@ -880,7 +880,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       },
     ],
     roleTitle: "Lead Web 3D & Computer Vision Developer",
-    ownershipScope: "Sole Developer (AI-Assisted)",
+    ownershipScope: "Sole Developer",
     ownershipNote:
       "Sole Developer — engineered with AI-accelerated workflows using Google Antigravity, Claude, and ChatGPT to architect the in-browser YOLO11n vest detector, kinematic motion smoothing, and Three.js game loops.",
     diagramType: "pose-detection",

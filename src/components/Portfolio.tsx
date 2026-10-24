@@ -308,19 +308,19 @@ export const Portfolio = () => {
             })}
           </div>
 
-          {/* Secondary Archive: Additional XR, Client & Prototype Projects */}
+          {/* Secondary Archive: Internship Projects */}
           <div className="mt-16 pt-12 border-t border-[#1E2736]">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
               <div>
                 <h3 className="text-lg font-bold text-[#F4F6FA]">
-                  Additional XR, Client &amp; Browser 3D Work
+                  Internship Projects
                 </h3>
                 <p className="text-sm text-[#778294]">
-                  Earlier AR/MR client deliveries and browser-based 3D prototypes
+                  Computer vision body tracking and interactive prototypes developed during internship
                 </p>
               </div>
               <span className="font-mono text-xs text-[#778294]">
-                ARCHIVE // {additionalProjects.length} PROJECTS
+                INTERNSHIP // {additionalProjects.length} PROJECTS
               </span>
             </div>
 
@@ -335,9 +335,22 @@ export const Portfolio = () => {
                       <span className="text-xs font-mono text-[#8B6CFF]">
                         {item.category}
                       </span>
-                      <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#151C27] text-[#A4ADBB] border border-[#1E2736]">
-                        {item.role}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        {item.videoUrl && (
+                          <a
+                            href={item.videoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-[#4D8DFF]/15 text-[#89B2FF] border border-[#4D8DFF]/30 hover:bg-[#4D8DFF]/25 transition-colors"
+                          >
+                            <Play className="w-2.5 h-2.5 fill-[#89B2FF]" />
+                            Video
+                          </a>
+                        )}
+                        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#151C27] text-[#A4ADBB] border border-[#1E2736]">
+                          {item.role}
+                        </span>
+                      </div>
                     </div>
                     <h4 className="text-base font-semibold text-[#F4F6FA] mb-2">
                       {item.title}

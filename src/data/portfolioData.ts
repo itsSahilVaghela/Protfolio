@@ -79,6 +79,7 @@ export interface AdditionalWorkItem {
   technologies: string[];
   description: string;
   highlights: string[];
+  videoUrl?: string;
 }
 
 export interface SkillGroup {
@@ -1054,6 +1055,28 @@ export const featuredProjects: ProjectCaseStudy[] = [
 
 export const additionalProjects: AdditionalWorkItem[] = [
   {
+    id: "alien-runner-body-tracking",
+    title: "Alien Runner: Computer Vision Body Tracking",
+    category: "AI & Motion Gaming (Internship)",
+    role: "CV & Tracking Developer (Team of 2)",
+    technologies: [
+      "Python",
+      "OpenCV",
+      "MediaPipe",
+      "Unity",
+      "C#",
+      "Socket Telemetry",
+    ],
+    description:
+      "Two-person internship project at Invisible Fiction. Teammate developed the Unity 3D endless runner (Alien Runner), while I built the Python computer-vision body tracking module using OpenCV and MediaPipe. Streamed real-time movement telemetry to Unity to trigger in-game player events: move left, move right, jump, and duck/swipe down.",
+    highlights: [
+      "Team of 2 developers: owned full Python computer-vision and pose-tracking pipeline while teammate developed Unity endless runner game.",
+      "Extracted 33 skeletal landmarks in real time from live camera feeds using MediaPipe and OpenCV.",
+      "Engineered low-latency data bridge streaming player movement telemetry from Python into Unity runtime.",
+      "Mapped live physical movements to in-game actions: lateral lane shifting (left/right), jumping, and downward ducking/swiping.",
+    ],
+  },
+  {
     id: "ar-qr-hololens",
     title: "QR-Triggered AR Model Visualization",
     category: "Enterprise AR (HoloLens & Mobile)",
@@ -1063,18 +1086,6 @@ export const additionalProjects: AdditionalWorkItem[] = [
       "An AR application that detects QR markers to anchor and visualize 3D engineering models across HoloLens and mobile AR devices.",
     highlights: [
       "Marker-driven spatial alignment and model visualization using ARCore and Vuforia tooling.",
-    ],
-  },
-  {
-    id: "threejs-browser-prototypes",
-    title: "Three.js Browser 3D Prototypes",
-    category: "Web 3D / Browser Prototyping",
-    role: "Developer",
-    technologies: ["Three.js", "JavaScript", "WebGL", "AI-Assisted Workflows"],
-    description:
-      "Browser-based 3D game and interactive prototypes developed using Three.js and AI-assisted coding workflows.",
-    highlights: [
-      "Focused on code review, architectural debugging, runtime testing, and refining generated WebGL/Three.js code.",
     ],
   },
 ];

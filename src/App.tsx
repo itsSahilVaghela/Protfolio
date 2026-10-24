@@ -44,8 +44,13 @@ const ScrollToTop = () => {
   return null;
 };
 
+const basename =
+  typeof window !== "undefined" && window.location.pathname.startsWith("/Protfolio")
+    ? "/Protfolio"
+    : "";
+
 const App = () => (
-  <BrowserRouter basename="/Protfolio">
+  <BrowserRouter basename={basename}>
     <ScrollToTop />
     <>
       <Routes>

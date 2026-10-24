@@ -25,7 +25,8 @@ export const Hero = () => {
         className="hero-art-image absolute inset-0 -z-20 h-full w-full object-cover"
         src={`${import.meta.env.BASE_URL}hero-engine-view.png`}
         alt="Real-time 3D and game engine visualization"
-        fetchPriority="high"
+        // @ts-expect-error React DOM custom attribute
+        fetchpriority="high"
       />
       <div className="hero-art-shade pointer-events-none absolute inset-0 -z-10" />
       <div className="hero-grain pointer-events-none absolute inset-0 -z-10" />

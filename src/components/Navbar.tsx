@@ -17,7 +17,6 @@ export const Navbar = () => {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const resumeUrl = `${import.meta.env.BASE_URL}${profileData.resumeFileName}`;
 
   useEffect(() => {
     const handleScroll = () => {

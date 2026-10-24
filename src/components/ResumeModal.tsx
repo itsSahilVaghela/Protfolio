@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import resumePage1Asset from "@/assets/resume-page-1.png";
+import resumePage2Asset from "@/assets/resume-page-2.png";
 import {
   Dialog,
   DialogContent,
@@ -42,8 +44,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const resumeUrl = `${import.meta.env.BASE_URL}${profileData.resumeFileName}`;
-  const page1Image = `${import.meta.env.BASE_URL}resume-page-1.png`;
-  const page2Image = `${import.meta.env.BASE_URL}resume-page-2.png`;
+  const page1Image = resumePage1Asset || `${import.meta.env.BASE_URL}resume-page-1.png`;
+  const page2Image = resumePage2Asset || `${import.meta.env.BASE_URL}resume-page-2.png`;
 
   const handleCopy = (text: string, fieldName: string) => {
     navigator.clipboard.writeText(text);
@@ -66,8 +68,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
       <DialogContent
         className={
           isFullscreen
-            ? "!fixed !inset-0 !left-0 !top-0 !translate-x-0 !translate-y-0 !w-screen !h-screen !max-w-none !max-h-none !rounded-none !p-0 bg-[#0C1017] border-0 text-[#F4F6FA] flex flex-col overflow-hidden z-50 shadow-none"
-            : "!fixed !left-[50%] !top-[50%] !translate-x-[-50%] !translate-y-[-50%] !w-[96vw] !h-[92vh] !max-w-7xl !max-h-[94vh] !rounded-2xl !p-0 bg-[#0C1017] border border-[#1E2736] text-[#F4F6FA] flex flex-col overflow-hidden shadow-2xl z-50"
+            ? "!fixed !inset-0 !left-0 !top-0 !translate-x-0 !translate-y-0 !w-screen !h-screen !max-w-none !max-h-none !rounded-none !p-0 bg-[#0C1017] border-0 text-[#F4F6FA] !flex !flex-col overflow-hidden z-50 shadow-none !gap-0"
+            : "!fixed !left-[50%] !top-[50%] !translate-x-[-50%] !translate-y-[-50%] !w-[96vw] !h-[92vh] !max-w-7xl !max-h-[94vh] !rounded-2xl !p-0 bg-[#0C1017] border border-[#1E2736] text-[#F4F6FA] !flex !flex-col overflow-hidden shadow-2xl z-50 !gap-0"
         }
       >
         {/* Top Header Bar */}
@@ -122,7 +124,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
         </DialogHeader>
 
         {/* 40 / 60 Main Layout Grid */}
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
+        <div className="flex-1 min-h-0 w-full grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
           {/* ======================================================== */}
           {/* LEFT COLUMN (40%): ABOUT MYSELF & DIRECT CONTACT DETAILS */}
           {/* ======================================================== */}

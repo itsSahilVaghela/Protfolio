@@ -724,101 +724,106 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 5,
     featuredTier: "primary",
     title: "WebAR Coloring Book",
-    subtitle: "Live Webcam Drawing Capture & 2048×2048 GPU Texture Unwarping",
-    category: "WebAR / Browser-Based 3D",
+    subtitle: "54-Sheet MindAR Optical Tracking & 2048×2048 GPU Texture Unwarping",
+    category: "WebAR / In-Browser 3D",
     filterGroup: "web3d-ar",
-    technologies: ["Three.js", "MindAR", "JavaScript", "GPU texture workflow"],
+    technologies: ["Three.js", "MindAR", "WebAR", "GLSL / GPU Unwarp", "Electron"],
     shortDescription:
-      "A browser-based interactive coloring-book experience that tracks a physical drawing sheet and maps its live colors onto an animated 3D model.",
+      "Browser-based AR station tracking physical coloring sheets, extracting artwork via GPU homography unwarp, and projecting live colors onto animated 3D characters.",
     highlights: [
-      "Optical image tracking of a physical coloring sheet through a device webcam using MindAR.",
-      "Live drawing capture from the camera feed as the user colors the physical page.",
-      "Perspective texture unwarping to rectify the angled camera view into UV space.",
-      "2048 × 2048 texture workflow designed for crisp real-time Three.js rendering.",
-      "Dynamic texture application onto an animated 3D model directly in the browser.",
+      "Optical image tracking across 54 physical drawing sheets and 6 categories using MindAR.",
+      "Real-time 2048×2048 GPU perspective unwarp converting angled camera feed to flat UV space.",
+      "Live dynamic diffuse mapping onto rigged, animated Three.js FBX character models.",
+      "Packaged into Electron kiosk station with Laravel Reverb WebSocket remote therapy controls.",
     ],
     cardCapsules: [
       {
         tag: "Zero-Install WebAR",
         detail:
-          "Optical sheet tracking and 3D projection directly in mobile browsers via MindAR.",
+          "Optical tracking for 54 sheets directly in browser via MindAR.",
       },
       {
-        tag: "Live Perspective Unwarping",
+        tag: "2048² GPU Unwarping",
         detail:
-          "Homography math rectifies angled camera drawing feeds into 2048×2048 UV textures.",
+          "Homography shader rectifies angled camera drawing into sharp UV maps.",
       },
       {
-        tag: "Dynamic Three.js Shading",
+        tag: "Live Rigged Projection",
         detail:
-          "Real-time texture projection onto animated 3D character meshes at steady 60 FPS.",
+          "Dynamic material pipeline updates animated Three.js meshes at 60 FPS.",
       },
     ],
     roleTitle: "Web 3D & WebAR Developer",
     ownershipScope: "Sole Developer",
     ownershipNote:
-      "Designed and implemented the browser-based Three.js + MindAR tracking, perspective texture-unwarping pipeline (2048 × 2048), and animated 3D model integration.",
+      "Designed and engineered the in-browser Three.js + MindAR tracking engine, 2048×2048 GPU homography unwarper, animated FBX character pipeline, and Electron kiosk clinical station.",
     diagramType: "webar-uv",
     mediaCaption:
-      "WebAR Pipeline Diagram: Webcam Feed & MindAR Pose -> Homography / Perspective Unwarp -> 2048×2048 Dynamic Texture -> Animated Three.js Mesh.",
+      "WebAR Pipeline: Camera Stream & MindAR Pose -> GPU Perspective Homography Unwarp -> 2048×2048 Dynamic Texture -> Rigged Three.js Character Mesh.",
     caseStudy: {
       overview:
-        "WebAR Coloring Book is a zero-install, browser-based augmented reality experience built with Three.js and MindAR. It tracks a physical printed drawing sheet via the user's webcam, extracts the hand-colored artwork in real time, unwarps perspective distortion into a 2048 × 2048 texture, and applies it live onto an animated 3D character.",
+        "WebAR Coloring Book is a zero-install, browser-based augmented reality therapy station built with Three.js and MindAR. It detects hand-colored physical drawings, extracts color texture in real time via GPU perspective rectification, and maps it live onto animated 3D characters (African Elephant, Jungle Safari animals, etc.) inside browser and Electron kiosk environments.",
       problem:
-        "Mapping a physical drawing onto a 3D model in real time inside a mobile or desktop web browser requires solving two technical problems simultaneously: accurately tracking the sheet's 3D pose from an angled camera feed, and rectifying (unwarping) the perspective-skewed camera region into a high-resolution UV texture without stalling the render loop.",
+        "Mapping physical drawings onto 3D models in real time presents three simultaneous challenges: capturing angled paper without blurring UV texture seams, maintaining steady 60 FPS while running optical feature tracking alongside 2048×2048 GPU texture updates and skeletal animation, and orchestrating remote sessions across Flutter mobile apps and Laravel Reverb WebSockets.",
       responsibilities: [
-        "Implemented marker/image tracking of the physical drawing sheet using MindAR and Three.js.",
-        "Built the live webcam capture and perspective texture-unwarping workflow.",
-        "Configured a 2048 × 2048 dynamic texture pipeline to preserve drawing sharpness on the 3D mesh.",
-        "Integrated animated 3D model playback in Three.js with real-time material map updates.",
+        "Implemented multi-target optical tracking for 54 physical drawing sheets across 6 animal/safari categories using MindAR.",
+        "Engineered GPU homography perspective unwarping shader pass to convert skewed camera feeds into flat 2048×2048 textures.",
+        "Built dynamic CanvasTexture pipeline binding live colors to rigged Three.js FBX models running skeletal animation clips.",
+        "Wrapped experience into an Electron clinical kiosk station featuring WebSocket session launch, timer HUDs, and therapist controls.",
       ],
       technicalApproach:
-        "Combined MindAR's image-target tracking matrices with a perspective rectification pass that samples the detected sheet region from the live video stream and projects it into a normalized 2048 × 2048 texture buffer. Bound the resulting dynamic texture to the animated Three.js model's material so colors update live as the user draws.",
+        "Combined MindAR's 6-DoF image-target tracking matrices with an offscreen WebGL render-target homography unwarper that rectifies the detected 4-point paper quad into a normalized 2048×2048 buffer every frame. Bound the resulting dynamic texture directly to the animated Three.js model's material, keeping brushstrokes crisp across complex mesh topologies with zero UV bleed.",
       architectureDetails: [
-        "Optical Pose Estimation: MindAR tracks feature points on the physical drawing sheet to compute camera-relative transform matrices.",
-        "Perspective Texture Unwarping: Maps the 4-corner tracked quad from camera screen space back into flat UV texture coordinates.",
-        "2048 × 2048 GPU Texture Workflow: High-resolution texture buffer sized for sharp line and color fidelity while maintaining real-time browser rendering.",
-        "Animated 3D Character Integration: Three.js skeletal animation mixer running concurrently with live diffuse map updates.",
+        "Optical Marker Pose (MindAR): 6-DoF tracking matrix estimation matching 54 target sheets across 6 categories in real time.",
+        "GPU Perspective Unwarp (Homography Pass): 4-corner quad rectification converting angled camera paper to flat 2048×2048 UV texture space.",
+        "Dynamic Diffuse Mapping: WebGL offscreen render-target bound as CanvasTexture to Three.js materials without render stalling.",
+        "Skeletal Animation & Kiosk Integration: Concurrent Three.js AnimationMixer execution wrapped in Electron kiosk with WebSocket remote dispatch.",
       ],
       pipelineSteps: [
         {
           stage: "STEP 01",
           title: "Webcam & MindAR Track",
-          detail: "Detect physical sheet corners & pose matrix in video stream",
+          detail: "Detect physical sheet corners and 6-DoF pose matrix in video feed",
         },
         {
           stage: "STEP 02",
-          title: "Perspective Unwarp",
-          detail: "Rectify skewed camera quad into normalized flat UV space",
+          title: "GPU Perspective Unwarp",
+          detail: "Homography shader rectifies skewed quad into normalized UV space",
         },
         {
           stage: "STEP 03",
-          title: "2048 × 2048 Texture",
-          detail: "Update dynamic GPU texture buffer for crisp color mapping",
+          title: "2048 × 2048 Dynamic Buffer",
+          detail: "High-resolution GPU render-target preserves crisp line art and colors",
         },
         {
           stage: "STEP 04",
-          title: "Animated 3D Render",
-          detail: "Bind live texture to animated Three.js character mesh",
+          title: "Rigged Three.js Animation",
+          detail: "Live texture mapped to animated FBX character running at 60 FPS",
         },
       ],
       challenges: [
         {
           challenge:
-            "Low-resolution capture buffers cause blurry, pixelated seams when mapped across a 3D character's UV islands.",
+            "Low-resolution camera sampling causes blurry, illegible brushstrokes and visible texture seams on curved 3D meshes.",
           solution:
-            "Implemented a 2048 × 2048 texture-unwarping workflow tailored for real-time rendering so hand-drawn strokes remain legible on the 3D mesh.",
+            "Developed a dedicated 2048×2048 GPU render-target unwarper preserving pencil stroke clarity on high-density geometry.",
         },
         {
           challenge:
-            "Viewing the paper at steep camera angles introduces perspective foreshortening across the drawing region.",
+            "Coloring sheets placed at 45° steep angles introduce heavy trapezoidal perspective distortion.",
           solution:
-            "Used tracked target coordinates to unwarp the captured region into flat texture space before updating the Three.js material.",
+            "Implemented real-time 4-point homography projective matrix math resolving perspective foreshortening each frame.",
+        },
+        {
+          challenge:
+            "Clinical pediatric patients cannot navigate complex web browser settings or file menus.",
+          solution:
+            "Built automated WebSocket session dispatch launching directly into active target tracking with automatic countdown HUDs.",
         },
       ],
       outcomes: [
-        "Delivered an interactive browser-based WebAR coloring experience requiring no native app installation.",
-        "Achieved sharp live texture projection onto an animated 3D model using the 2048 × 2048 unwarping workflow.",
+        "Delivered zero-install browser and Electron AR station supporting 54 physical coloring sheets across 6 categories.",
+        "Achieved crisp 60 FPS live texture projection onto rigged 3D models with 2048×2048 dynamic GPU unwarping.",
       ],
     },
   },

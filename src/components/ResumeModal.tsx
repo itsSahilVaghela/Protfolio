@@ -38,10 +38,20 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
   open,
   onOpenChange,
 }) => {
-  const [currentPage, setCurrentPage] = useState<1 | 2>(1);
   const [zoomLevel, setZoomLevel] = useState<number>(100);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const page1Ref = React.useRef<HTMLDivElement>(null);
+  const page2Ref = React.useRef<HTMLDivElement>(null);
+
+  const scrollToPage = (page: 1 | 2) => {
+    if (page === 1) {
+      page1Ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      page2Ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const resumeUrl = `${import.meta.env.BASE_URL}${profileData.resumeFileName}`;
   const page1Image = resumePage1Asset || `${import.meta.env.BASE_URL}resume-page-1.png`;
@@ -391,29 +401,25 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
           <div className="lg:col-span-7 xl:col-span-8 p-3 sm:p-5 bg-[#080B10] flex flex-col overflow-hidden space-y-3">
             {/* Viewer Controls Toolbar */}
             <div className="flex flex-wrap items-center justify-between gap-2 p-2 rounded-xl bg-[#10151D] border border-[#1E2736]">
-              {/* Page 1 / Page 2 Switcher */}
-              <div className="inline-flex items-center p-0.5 rounded-lg bg-[#080B10] border border-[#1E2736]">
+              {/* Continuous Scroll View Info & Page Jump Pills */}
+              <div className="inline-flex items-center gap-1.5 p-0.5 rounded-lg bg-[#080B10] border border-[#1E2736]">
+                <span className="px-2.5 py-1 text-xs font-mono text-[#A4ADBB] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#4D8DFF]" />
+                  <span>2 Pages · Continuous</span>
+                </span>
                 <button
                   type="button"
-                  onClick={() => setCurrentPage(1)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all ${
-                    currentPage === 1
-                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
-                      : "text-[#A4ADBB] hover:text-[#F4F6FA]"
-                  }`}
+                  onClick={() => scrollToPage(1)}
+                  className="px-2.5 py-1 rounded text-xs font-mono text-[#778294] hover:text-[#F4F6FA] hover:bg-[#151C27] transition-colors"
                 >
-                  Page 1: Experience &amp; Skills
+                  Page 1
                 </button>
                 <button
                   type="button"
-                  onClick={() => setCurrentPage(2)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all ${
-                    currentPage === 2
-                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
-                      : "text-[#A4ADBB] hover:text-[#F4F6FA]"
-                  }`}
+                  onClick={() => scrollToPage(2)}
+                  className="px-2.5 py-1 rounded text-xs font-mono text-[#778294] hover:text-[#F4F6FA] hover:bg-[#151C27] transition-colors"
                 >
-                  Page 2: Projects &amp; Education
+                  Page 2
                 </button>
               </div>
 
@@ -464,40 +470,55 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               </div>
             </div>
 
-            {/* High-Resolution Resume Image Display Canvas */}
-            <div className="flex-1 overflow-auto rounded-xl border border-[#1E2736] bg-[#05070A] flex items-start justify-center p-2 sm:p-5 relative select-none">
+            {/* High-Resolution Resume Image Display Canvas - Single Continuous Scroll */}
+            <div className="flex-1 overflow-auto rounded-xl border border-[#1E2736] bg-[#05070A] flex flex-col items-center p-3 sm:p-6 relative select-none scroll-smooth">
               <div
                 style={{
                   width: `${zoomLevel}%`,
                   maxWidth: zoomLevel === 100 ? "100%" : "none",
                 }}
-                className="transition-all duration-150 flex flex-col items-center"
+                className="transition-all duration-150 flex flex-col items-center space-y-6"
               >
-                <img
-                  src={currentPage === 1 ? page1Image : page2Image}
-                  alt={`Sahil Vaghela Resume Page ${currentPage}`}
-                  className="w-full h-auto rounded-lg shadow-2xl border border-white/5 bg-white"
-                  loading="eager"
-                />
+                {/* Page 1 */}
+                <div ref={page1Ref} className="w-full flex flex-col items-center space-y-2">
+                  <div className="w-full flex items-center justify-between text-[10px] font-mono text-[#778294] px-1">
+                    <span>PAGE 1 — EXPERIENCE &amp; SKILLS</span>
+                    <span>1 / 2</span>
+                  </div>
+                  <img
+                    src={page1Image}
+                    alt="Sahil Vaghela Resume Page 1"
+                    className="w-full h-auto rounded-lg shadow-2xl border border-white/5 bg-white"
+                    loading="eager"
+                  />
+                </div>
+
+                {/* Page 2 */}
+                <div ref={page2Ref} className="w-full flex flex-col items-center space-y-2 pt-2">
+                  <div className="w-full flex items-center justify-between text-[10px] font-mono text-[#778294] px-1">
+                    <span>PAGE 2 — PROJECTS &amp; EDUCATION</span>
+                    <span>2 / 2</span>
+                  </div>
+                  <img
+                    src={page2Image}
+                    alt="Sahil Vaghela Resume Page 2"
+                    className="w-full h-auto rounded-lg shadow-2xl border border-white/5 bg-white"
+                    loading="eager"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Bottom Status & Switcher Helper */}
+            {/* Bottom Status & Continuous Scroll Indicator */}
             <div className="flex items-center justify-between text-[11px] font-mono text-[#778294] px-1 flex-shrink-0">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span>
-                  High-DPI 300 DPI Render · Displaying Page {currentPage} of 2
+                  High-DPI 300 DPI Render · Complete 2-Page Document
                 </span>
               </div>
-              <div className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => setCurrentPage(currentPage === 1 ? 2 : 1)}
-                  className="text-[#4D8DFF] hover:underline"
-                >
-                  {currentPage === 1 ? "Go to Page 2 →" : "← Back to Page 1"}
-                </button>
+              <div className="flex items-center gap-3 text-xs">
+                <span className="text-[#A4ADBB]">Scroll down to view Page 2</span>
               </div>
             </div>
           </div>

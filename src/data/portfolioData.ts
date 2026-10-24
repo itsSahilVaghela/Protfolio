@@ -30,6 +30,7 @@ export interface ProjectCaseStudy {
     | "Main Project — Sole Lead with 1 Junior"
     | "Sole Developer (Worked Alone)"
     | "Sole Developer"
+    | "Sole Developer (AI-Assisted)"
     | "Team Project — Core Systems Contributor"
     | "Solo & Team Contributions";
   ownershipNote: string;
@@ -728,10 +729,17 @@ export const featuredProjects: ProjectCaseStudy[] = [
     subtitle: "54-Sheet MindAR Optical Tracking & 2048×2048 GPU Texture Unwarping",
     category: "WebAR / In-Browser 3D",
     filterGroup: "web3d-ar",
-    technologies: ["Three.js", "MindAR", "WebAR", "GLSL / GPU Unwarp", "Electron"],
+    technologies: [
+      "Three.js",
+      "MindAR",
+      "AI-Assisted (Antigravity · Claude · ChatGPT)",
+      "GLSL / GPU Unwarp",
+      "Electron",
+    ],
     shortDescription:
       "Browser-based AR station tracking physical coloring sheets, extracting artwork via GPU homography unwarp, and projecting live colors onto animated 3D characters.",
     highlights: [
+      "Built as Sole Developer using AI-assisted pair-programming (Google Antigravity, Claude, ChatGPT) for shader math and architecture.",
       "Optical image tracking across 54 physical drawing sheets and 6 categories using MindAR.",
       "Real-time 2048×2048 GPU perspective unwarp converting angled camera feed to flat UV space.",
       "Live dynamic diffuse mapping onto rigged, animated Three.js FBX character models.",
@@ -749,24 +757,25 @@ export const featuredProjects: ProjectCaseStudy[] = [
           "Homography shader rectifies angled camera drawing into sharp UV maps.",
       },
       {
-        tag: "Live Rigged Projection",
+        tag: "AI-Accelerated Dev",
         detail:
-          "Dynamic material pipeline updates animated Three.js meshes at 60 FPS.",
+          "Built with Google Antigravity, Claude, and ChatGPT for rapid GPU shader & 3D logic.",
       },
     ],
     roleTitle: "Web 3D & WebAR Developer",
-    ownershipScope: "Sole Developer",
+    ownershipScope: "Sole Developer (AI-Assisted)",
     ownershipNote:
-      "Designed and engineered the in-browser Three.js + MindAR tracking engine, 2048×2048 GPU homography unwarper, animated FBX character pipeline, and Electron kiosk clinical station.",
+      "Sole Developer — engineered with AI-assisted workflows using Google Antigravity, Claude, and ChatGPT for GPU homography shader development, MindAR optical tracking, and Electron kiosk integration.",
     diagramType: "webar-uv",
     mediaCaption:
       "WebAR Pipeline: Camera Stream & MindAR Pose -> GPU Perspective Homography Unwarp -> 2048×2048 Dynamic Texture -> Rigged Three.js Character Mesh.",
     caseStudy: {
       overview:
-        "WebAR Coloring Book is a zero-install, browser-based augmented reality therapy station built with Three.js and MindAR. It detects hand-colored physical drawings, extracts color texture in real time via GPU perspective rectification, and maps it live onto animated 3D characters (African Elephant, Jungle Safari animals, etc.) inside browser and Electron kiosk environments.",
+        "WebAR Coloring Book is a zero-install, browser-based augmented reality therapy station built with Three.js and MindAR. Developed with AI-accelerated engineering (Google Antigravity, Claude, ChatGPT), it detects hand-colored physical drawings, extracts color texture in real time via GPU perspective rectification, and maps it live onto animated 3D characters (African Elephant, Jungle Safari animals, etc.) inside browser and Electron kiosk environments.",
       problem:
         "Mapping physical drawings onto 3D models in real time presents three simultaneous challenges: capturing angled paper without blurring UV texture seams, maintaining steady 60 FPS while running optical feature tracking alongside 2048×2048 GPU texture updates and skeletal animation, and orchestrating remote sessions across Flutter mobile apps and Laravel Reverb WebSockets.",
       responsibilities: [
+        "Architected and implemented entire application as Sole Developer using AI pair-programming with Google Antigravity, Claude, and ChatGPT.",
         "Implemented multi-target optical tracking for 54 physical drawing sheets across 6 animal/safari categories using MindAR.",
         "Engineered GPU homography perspective unwarping shader pass to convert skewed camera feeds into flat 2048×2048 textures.",
         "Built dynamic CanvasTexture pipeline binding live colors to rigged Three.js FBX models running skeletal animation clips.",
@@ -775,6 +784,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       technicalApproach:
         "Combined MindAR's 6-DoF image-target tracking matrices with an offscreen WebGL render-target homography unwarper that rectifies the detected 4-point paper quad into a normalized 2048×2048 buffer every frame. Bound the resulting dynamic texture directly to the animated Three.js model's material, keeping brushstrokes crisp across complex mesh topologies with zero UV bleed.",
       architectureDetails: [
+        "AI-Accelerated Toolchain: Rapid shader math iteration, homography projection, and Electron IPC structuring developed with Google Antigravity, Claude, and ChatGPT.",
         "Optical Marker Pose (MindAR): 6-DoF tracking matrix estimation matching 54 target sheets across 6 categories in real time.",
         "GPU Perspective Unwarp (Homography Pass): 4-corner quad rectification converting angled camera paper to flat 2048×2048 UV texture space.",
         "Dynamic Diffuse Mapping: WebGL offscreen render-target bound as CanvasTexture to Three.js materials without render stalling.",
@@ -836,15 +846,21 @@ export const featuredProjects: ProjectCaseStudy[] = [
     subtitle: "In-Browser MediaPipe Pose & YOLO11n ONNX Vest Tracking in Three.js",
     category: "Web 3D Games / Computer Vision",
     filterGroup: "cv-games",
-    technologies: ["Three.js", "MediaPipe Pose", "YOLO11 ONNX", "onnxruntime-web", "WebGPU"],
+    technologies: [
+      "Three.js",
+      "MediaPipe Pose",
+      "YOLO11 ONNX",
+      "AI-Assisted (Antigravity · Claude · ChatGPT)",
+      "WebGPU",
+    ],
     shortDescription:
       "Suite of browser-based 3D motion games driven by MediaPipe body tracking and an in-browser YOLO11n ONNX AI model that locks player tracking to clinical safety vests.",
     highlights: [
-      "Built complete 3D game suite solely in Three.js: Endless Runner, Car Dodge, Flying Game, Shape Catcher.",
+      "Built as Sole Developer using AI-assisted pair-programming (Google Antigravity, Claude, ChatGPT) for ONNX WebGPU pipelines and 3D gameplay.",
+      "Complete 3D game suite solely in Three.js: Endless Runner, Car Dodge, Flying Game, Shape Catcher.",
       "Real-time 33-landmark skeletal tracking at 60 FPS using browser MediaPipe Pose.",
       "In-browser YOLO11n ONNX inference via onnxruntime-web (WebGPU/WASM) for patient vest gating.",
       "Solved multi-person clinic interference: auto-crops pose tracking exclusively to vest wearer.",
-      "Zero native game engine runtime: 100% web-native deployment with WebSocket therapist dispatch.",
     ],
     cardCapsules: [
       {
@@ -858,24 +874,25 @@ export const featuredProjects: ProjectCaseStudy[] = [
           "Browser WebGPU inference tracks safety vest to isolate patient from crowd.",
       },
       {
-        tag: "60 FPS Skeletal Tracking",
+        tag: "AI-Accelerated Dev",
         detail:
-          "MediaPipe 33-landmark pose streaming directly into 3D gameplay loops.",
+          "Built with Google Antigravity, Claude, and ChatGPT for ONNX WebGPU & kinematic math.",
       },
     ],
     roleTitle: "Lead Web 3D & Computer Vision Developer",
-    ownershipScope: "Sole Developer",
+    ownershipScope: "Sole Developer (AI-Assisted)",
     ownershipNote:
-      "Engineered the browser-native Three.js game collection, onnxruntime-web YOLO11n vest-isolation model, MediaPipe Pose pipeline, and kinematic gesture recognition.",
+      "Sole Developer — engineered with AI-accelerated workflows using Google Antigravity, Claude, and ChatGPT to architect the in-browser YOLO11n vest detector, kinematic motion smoothing, and Three.js game loops.",
     diagramType: "pose-detection",
     mediaCaption:
       "AI Tracking Pipeline: Camera Stream -> YOLO11n ONNX Vest Isolation -> MediaPipe Pose ROI -> Kinematic Gesture Engine -> 60 FPS Three.js Game Loop.",
     caseStudy: {
       overview:
-        "Motion-Controlled AI Games is a suite of real-time browser-based 3D motion games built solely with Three.js, MediaPipe Pose, and an in-browser YOLO11n ONNX computer vision model. It tracks full-body skeletal movement to control interactive games (Endless Runner, Car Traffic Dodge, 3D Flying Game, Shape Catcher, Boat Runner) without game controllers or native engine installations.",
+        "Motion-Controlled AI Games is a suite of real-time browser-based 3D motion games built solely with Three.js, MediaPipe Pose, and an in-browser YOLO11n ONNX computer vision model. Developed with AI-assisted engineering (Google Antigravity, Claude, ChatGPT), it tracks full-body skeletal movement to control interactive games (Endless Runner, Car Traffic Dodge, 3D Flying Game, Shape Catcher, Boat Runner) without game controllers or native engine installations.",
       problem:
         "In clinical therapy and arcade spaces, multiple clinicians and bystanders appear in the camera frame, causing single-person pose estimators to jump erratically between subjects. The challenge required executing deep-learning object detection, 33-landmark pose estimation, and a 3D WebGL render loop concurrently inside a standard web browser at a locked 60 FPS while translating noisy coordinates into crisp gameplay controls.",
       responsibilities: [
+        "Architected and implemented entire application as Sole Developer using AI pair-programming with Google Antigravity, Claude, and ChatGPT.",
         "Engineered the complete 3D game suite solely in Three.js (Endless Runner, Car Dodge, 3D Flying, Shape Catcher, Arcade Boat).",
         "Integrated in-browser YOLO11n ONNX inference via onnxruntime-web with WebGPU/WASM hardware acceleration.",
         "Built dynamic anatomical ROI cropping isolating the safety vest wearer and feeding clean frames to MediaPipe Pose.",
@@ -884,6 +901,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       technicalApproach:
         "Executed custom-trained YOLO11n ONNX object detection on incoming webcam frames to locate the patient's high-visibility safety vest. Automatically cropped the video stream to the vest wearer's full anatomical boundary and fed only that cropped region to MediaPipe Pose, bypassing bystanders completely. Remapped detected 33 skeletal landmarks back to global coordinates and computed kinematic steering/jumping vectors to drive Three.js games at 60 FPS.",
       architectureDetails: [
+        "AI-Accelerated Engineering: Developed via Google Antigravity, Claude, and ChatGPT for WebGPU ONNX execution, landmark remapping, and game mechanics.",
         "In-Browser YOLO11n ONNX (WebGPU): Custom model (best.onnx) detects patient safety vest box [vx, vy, vw, vh] with NMS filtering.",
         "Anatomical ROI Crop & Remapping: Offscreen canvas crops video stream to vest wearer, isolating patient and eliminating bystander interference.",
         "MediaPipe Pose (33 Landmarks): Tracks joints at 60 FPS with velocity clamping and exponential moving average (EMA) smoothing.",

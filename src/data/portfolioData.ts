@@ -39,6 +39,7 @@ export interface ProjectCaseStudy {
     | "fiction-mech-xr"
     | "radicon-mr"
     | "webar-uv"
+    | "pose-detection"
     | "mediapipe-unity"
     | "unity-games";
   /** Optional genuine screenshot or video path when added to public/assets */
@@ -831,101 +832,108 @@ export const featuredProjects: ProjectCaseStudy[] = [
     id: "motion-controlled-games",
     priorityRank: 6,
     featuredTier: "primary",
-    title: "Motion-Controlled Games",
-    subtitle: "Alien Runner & Football Cup — MediaPipe Body/Leg Tracking in Unity",
-    category: "Game Development / Computer Vision",
+    title: "Motion-Controlled AI Games",
+    subtitle: "In-Browser MediaPipe Pose & YOLO11n ONNX Vest Tracking in Three.js",
+    category: "Web 3D Games / Computer Vision",
     filterGroup: "cv-games",
-    technologies: ["Unity", "C#", "MediaPipe", "Python"],
+    technologies: ["Three.js", "MediaPipe Pose", "YOLO11 ONNX", "onnxruntime-web", "WebGPU"],
     shortDescription:
-      "Interactive games that use body and leg movement tracking to drive gameplay, integrating movement data from MediaPipe into Unity.",
+      "Suite of browser-based 3D motion games driven by MediaPipe body tracking and an in-browser YOLO11n ONNX AI model that locks player tracking to clinical safety vests.",
     highlights: [
-      "Featured titles: Alien Runner (full-body gesture runner) and Football Cup (leg-tracking soccer game).",
-      "Built the movement-tracking pipeline in Python using MediaPipe pose/landmark detection.",
-      "Streamed real-time skeletal landmark and movement data into Unity (C#) to drive responsive player actions.",
-      "Implemented gameplay mechanics, gesture thresholds, and UI improvements for arcade/PC installations.",
+      "Built complete 3D game suite solely in Three.js: Endless Runner, Car Dodge, Flying Game, Shape Catcher.",
+      "Real-time 33-landmark skeletal tracking at 60 FPS using browser MediaPipe Pose.",
+      "In-browser YOLO11n ONNX inference via onnxruntime-web (WebGPU/WASM) for patient vest gating.",
+      "Solved multi-person clinic interference: auto-crops pose tracking exclusively to vest wearer.",
+      "Zero native game engine runtime: 100% web-native deployment with WebSocket therapist dispatch.",
     ],
     cardCapsules: [
       {
-        tag: "Computer Vision Pipeline",
+        tag: "Pure Three.js Suite",
         detail:
-          "Python MediaPipe skeletal & leg tracking streaming 3D landmark data into Unity.",
+          "5+ motion arcade games built natively in Three.js with zero Unity runtime.",
       },
       {
-        tag: "Low-Latency Input Bridge",
+        tag: "YOLO11n ONNX AI Gate",
         detail:
-          "Sub-16ms telemetry socket bridge driving real-time physics and player locomotion.",
+          "Browser WebGPU inference tracks safety vest to isolate patient from crowd.",
       },
       {
-        tag: "Interactive Installations",
+        tag: "60 FPS Skeletal Tracking",
         detail:
-          "Controller-free arcade gaming deployed across exhibition booths and live kiosks.",
+          "MediaPipe 33-landmark pose streaming directly into 3D gameplay loops.",
       },
     ],
-    roleTitle: "Unity C# & Computer Vision Developer",
-    ownershipScope: "Team Project — Core Systems Contributor",
+    roleTitle: "Lead Web 3D & Computer Vision Developer",
+    ownershipScope: "Sole Developer",
     ownershipNote:
-      "Prototyped and integrated the Python MediaPipe movement-recognition pipeline, data streaming into Unity, player movement binding for Alien Runner and Football Cup, and UI updates.",
-    diagramType: "mediapipe-unity",
+      "Engineered the browser-native Three.js game collection, onnxruntime-web YOLO11n vest-isolation model, MediaPipe Pose pipeline, and kinematic gesture recognition.",
+    diagramType: "pose-detection",
     mediaCaption:
-      "Computer Vision Pipeline Diagram: Camera Feed -> Python MediaPipe Pose Landmarks -> Low-Latency Stream -> Unity C# Character Controller.",
+      "AI Tracking Pipeline: Camera Stream -> YOLO11n ONNX Vest Isolation -> MediaPipe Pose ROI -> Kinematic Gesture Engine -> 60 FPS Three.js Game Loop.",
     caseStudy: {
       overview:
-        "Motion-Controlled Games comprises two interactive PC titles—Alien Runner and Football Cup—developed at Invisible Fiction. Both games replace traditional gamepads with camera-based human movement recognition, translating real-world body gestures and leg kicks into immediate in-game character actions.",
+        "Motion-Controlled AI Games is a suite of real-time browser-based 3D motion games built solely with Three.js, MediaPipe Pose, and an in-browser YOLO11n ONNX computer vision model. It tracks full-body skeletal movement to control interactive games (Endless Runner, Car Traffic Dodge, 3D Flying Game, Shape Catcher, Boat Runner) without game controllers or native engine installations.",
       problem:
-        "Controller-free interactive games require reliable pose extraction from a standard camera feed and a low-latency bridge to transfer landmark coordinates from Python's MediaPipe ecosystem into a running Unity C# game loop without jitter or input lag.",
+        "In clinical therapy and arcade spaces, multiple clinicians and bystanders appear in the camera frame, causing single-person pose estimators to jump erratically between subjects. The challenge required executing deep-learning object detection, 33-landmark pose estimation, and a 3D WebGL render loop concurrently inside a standard web browser at a locked 60 FPS while translating noisy coordinates into crisp gameplay controls.",
       responsibilities: [
-        "Prototyped human-movement recognition in Python using MediaPipe pose and landmark tracking.",
-        "Built the data-streaming bridge sending real-time tracking coordinates from Python into Unity.",
-        "Integrated body-gesture controls into Alien Runner and leg-movement kicking mechanics into Football Cup.",
-        "Implemented responsive gameplay tuning and UI improvements for clear player feedback.",
+        "Engineered the complete 3D game suite solely in Three.js (Endless Runner, Car Dodge, 3D Flying, Shape Catcher, Arcade Boat).",
+        "Integrated in-browser YOLO11n ONNX inference via onnxruntime-web with WebGPU/WASM hardware acceleration.",
+        "Built dynamic anatomical ROI cropping isolating the safety vest wearer and feeding clean frames to MediaPipe Pose.",
+        "Developed kinematic motion filters, gesture recognition algorithms, and directional audio cueing systems.",
       ],
       technicalApproach:
-        "Extracted normalized body and lower-limb landmarks in Python using MediaPipe, filtered pose transitions into actionable movement states, and transmitted the tracking stream to Unity (C#). Inside Unity, mapped incoming landmark data to character locomotion, lane switching, and kick trajectories.",
+        "Executed custom-trained YOLO11n ONNX object detection on incoming webcam frames to locate the patient's high-visibility safety vest. Automatically cropped the video stream to the vest wearer's full anatomical boundary and fed only that cropped region to MediaPipe Pose, bypassing bystanders completely. Remapped detected 33 skeletal landmarks back to global coordinates and computed kinematic steering/jumping vectors to drive Three.js games at 60 FPS.",
       architectureDetails: [
-        "MediaPipe Pose Extraction (Python): Captures webcam frames and computes 3D/2D body and leg landmarks in real time.",
-        "Python-to-Unity Telemetry Stream: Transfers serialized landmark vectors and gesture triggers into the Unity runtime.",
-        "Alien Runner Controller (Unity C#): Maps upper/full-body lean, jump, and gesture states to obstacle-dodging locomotion.",
-        "Football Cup Controller (Unity C#): Translates lower-body leg swing and foot vectors into directional soccer kicks and goalkeeper interactions.",
+        "In-Browser YOLO11n ONNX (WebGPU): Custom model (best.onnx) detects patient safety vest box [vx, vy, vw, vh] with NMS filtering.",
+        "Anatomical ROI Crop & Remapping: Offscreen canvas crops video stream to vest wearer, isolating patient and eliminating bystander interference.",
+        "MediaPipe Pose (33 Landmarks): Tracks joints at 60 FPS with velocity clamping and exponential moving average (EMA) smoothing.",
+        "Pure Three.js Game Suite: Procedural tracks, obstacle pooling, dynamic lighting, and threat-based audio cues without any native engine dependency.",
       ],
       pipelineSteps: [
         {
-          stage: "CAPTURE",
-          title: "Camera Input",
-          detail: "Live player video feed captured at interactive frame rates",
+          stage: "STEP 01",
+          title: "Webcam & YOLO11n AI",
+          detail: "In-browser ONNX model detects clinical safety vest bounding box",
         },
         {
-          stage: "VISION",
-          title: "MediaPipe (Python)",
-          detail: "Extract body & leg skeletal landmarks and movement vectors",
+          stage: "STEP 02",
+          title: "Anatomical ROI Crop",
+          detail: "Video feed cropped exclusively to vest wearer, ignoring bystanders",
         },
         {
-          stage: "TRANSPORT",
-          title: "Data Bridge",
-          detail: "Stream real-time tracking coordinates from Python to Unity",
+          stage: "STEP 03",
+          title: "MediaPipe 33 Landmarks",
+          detail: "Pose estimator tracks 33 skeletal keypoints on isolated patient ROI",
         },
         {
-          stage: "GAMEPLAY",
-          title: "Unity C# Controllers",
-          detail: "Drive Alien Runner locomotion & Football Cup kick physics",
+          stage: "STEP 04",
+          title: "Native Three.js 60 FPS",
+          detail: "Kinematic gestures drive 3D lane jumps, leans, and item reaches",
         },
       ],
       challenges: [
         {
           challenge:
-            "Raw webcam pose landmarks exhibit frame-to-frame micro-jitter and varying player body proportions.",
+            "Multi-person hospital environments cause pose estimators to jump erratically between patient and therapists.",
           solution:
-            "Normalized movement thresholds and smoothed input transitions in Unity C# so player actions feel deliberate and responsive.",
+            "Layered YOLO11n ONNX vest detection as an exclusive spatial mask before pose estimation, locking tracking to the patient.",
         },
         {
           challenge:
-            "Ensuring players immediately understand how physical movements map to on-screen game state.",
+            "Heavy computational load of running ONNX inference, MediaPipe pose, and WebGL 3D rendering in a single browser thread.",
           solution:
-            "Updated in-game UI feedback and calibration cues across both Alien Runner and Football Cup.",
+            "Leveraged WebGPU / WASM SIMD execution in onnxruntime-web, decoupled inference cadences, and used Three.js geometry instancing.",
+        },
+        {
+          challenge:
+            "Minor patient tremors or camera sensor jitter caused jarring jumps in avatar position and gameplay controls.",
+          solution:
+            "Implemented kinematic deadzones and low-pass smoothing filters to produce arcade-responsive, clinical-grade input feel.",
         },
       ],
       outcomes: [
-        "Successfully evolved the early AI internship MediaPipe prototype into two playable motion-controlled Unity PC games (Alien Runner and Football Cup).",
-        "Delivered responsive controller-free gameplay driven by live body and leg movement tracking.",
+        "Successfully deployed 100% web-native 3D motion game suite eliminating native engine installs and specialized hardware controllers.",
+        "Maintained steady 60 FPS performance across all 5+ games while running concurrent AI vest detection and skeletal tracking.",
       ],
     },
   },

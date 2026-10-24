@@ -158,7 +158,7 @@ export const ProjectTechnicalVisual = ({
           {project.diagramType === "archviz-dxf" && "DXF Roof Tessellation"}
           {project.diagramType === "mimadim-subsystem" && "UE Subsystem Architecture"}
           {project.diagramType === "webar-uv" && "WebAR UV Processing"}
-          {project.diagramType === "mediapipe-unity" && "MediaPipe → Unity Stream"}
+          {(project.diagramType === "pose-detection" || project.diagramType === "mediapipe-unity") && "YOLO ONNX → MediaPipe → Three.js"}
           {project.diagramType === "unity-games" && "Modular C# Systems"}
         </span>
       </div>
@@ -599,63 +599,82 @@ export const ProjectTechnicalVisual = ({
         </svg>
       )}
 
-      {project.diagramType === "mediapipe-unity" && (
+      {(project.diagramType === "pose-detection" || project.diagramType === "mediapipe-unity") && (
         <svg
           viewBox="0 0 420 210"
           className="w-full h-full max-h-[210px] relative z-0"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Left: MediaPipe Pose Landmarks */}
-          <g transform="translate(20, 38)">
-            <rect x="0" y="0" width="146" height="134" rx="6" fill="#10151D" stroke="#1E2736" />
-            <text x="12" y="18" fill="#4D8DFF" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              PYTHON MEDIAPIPE POSE
+          {/* Step 1: Camera & YOLO11n Vest Isolation */}
+          <g transform="translate(14, 38)">
+            <rect x="0" y="0" width="116" height="132" rx="6" fill="#10151D" stroke="#1E2736" />
+            <text x="8" y="17" fill="#4D8DFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
+              YOLO11 ONNX (WEBGPU)
             </text>
-            {/* Skeletal nodes */}
-            <circle cx="73" cy="36" r="6" stroke="#38BDF8" strokeWidth="1.5" />
-            <line x1="73" y1="42" x2="73" y2="78" stroke="#4D8DFF" strokeWidth="1.6" />
-            <line x1="46" y1="54" x2="100" y2="54" stroke="#4D8DFF" strokeWidth="1.6" />
-            <line x1="46" y1="54" x2="36" y2="74" stroke="#8B6CFF" strokeWidth="1.5" />
-            <line x1="100" y1="54" x2="110" y2="40" stroke="#8B6CFF" strokeWidth="1.5" />
-            <line x1="73" y1="78" x2="54" y2="112" stroke="#4D8DFF" strokeWidth="1.6" />
-            <line x1="73" y1="78" x2="96" y2="106" stroke="#38BDF8" strokeWidth="1.8" />
-            <circle cx="46" cy="54" r="3" fill="#4D8DFF" />
-            <circle cx="100" cy="54" r="3" fill="#4D8DFF" />
-            <circle cx="73" cy="78" r="3" fill="#8B6CFF" />
-            <circle cx="54" cy="112" r="3" fill="#4D8DFF" />
-            <circle cx="96" cy="106" r="3.5" fill="#38BDF8" />
-          </g>
-
-          {/* Stream Arrow */}
-          <g transform="translate(174, 92)">
-            <line x1="0" y1="12" x2="64" y2="12" stroke="#4D8DFF" strokeWidth="1.6" strokeDasharray="4 3" />
-            <polygon points="64,8 72,12 64,16" fill="#4D8DFF" />
-            <text x="6" y="4" fill="#A4ADBB" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              Landmark Stream
+            <rect x="15" y="28" width="86" height="80" rx="4" fill="#080B10" stroke="#1E2736" strokeDasharray="3 2" />
+            <rect x="33" y="44" width="50" height="46" rx="3" fill="rgba(77,141,255,0.15)" stroke="#22C55E" strokeWidth="1.6" />
+            <text x="36" y="40" fill="#22C55E" fontSize="7" fontFamily="JetBrains Mono, monospace">
+              VEST: 0.94
+            </text>
+            <text x="8" y="122" fill="#778294" fontSize="7" fontFamily="JetBrains Mono, monospace">
+              Patient ROI Isolation
             </text>
           </g>
 
-          {/* Right: Unity Gameplay Controllers */}
-          <g transform="translate(254, 38)">
-            <rect x="0" y="0" width="146" height="134" rx="6" fill="#151C27" stroke="#8B6CFF" strokeWidth="1.3" />
-            <text x="12" y="18" fill="#8B6CFF" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              UNITY C# CONTROLLERS
+          {/* Flow Line 1 */}
+          <line x1="130" y1="104" x2="150" y2="104" stroke="#4D8DFF" strokeWidth="1.5" strokeDasharray="4 2" />
+
+          {/* Step 2: MediaPipe 33-Landmark Pose on Cropped ROI */}
+          <g transform="translate(150, 38)">
+            <rect x="0" y="0" width="116" height="132" rx="6" fill="#10151D" stroke="#1E2736" />
+            <text x="8" y="17" fill="#8B6CFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
+              MEDIAPIPE POSE (60FPS)
             </text>
-            <rect x="12" y="30" width="122" height="42" rx="5" fill="#10151D" stroke="#1E2736" />
-            <text x="20" y="47" fill="#F4F6FA" fontSize="8.5" fontFamily="JetBrains Mono, monospace">
-              Alien Runner
+            {/* Skeletal wireframe */}
+            <circle cx="58" cy="36" r="6" stroke="#38BDF8" strokeWidth="1.4" />
+            <line x1="58" y1="42" x2="58" y2="76" stroke="#8B6CFF" strokeWidth="1.6" />
+            <line x1="34" y1="52" x2="82" y2="52" stroke="#8B6CFF" strokeWidth="1.6" />
+            <line x1="34" y1="52" x2="26" y2="70" stroke="#4D8DFF" strokeWidth="1.4" />
+            <line x1="82" y1="52" x2="90" y2="40" stroke="#4D8DFF" strokeWidth="1.4" />
+            <line x1="58" y1="76" x2="44" y2="104" stroke="#8B6CFF" strokeWidth="1.6" />
+            <line x1="58" y1="76" x2="74" y2="100" stroke="#38BDF8" strokeWidth="1.6" />
+            <circle cx="34" cy="52" r="2.5" fill="#4D8DFF" />
+            <circle cx="82" cy="52" r="2.5" fill="#4D8DFF" />
+            <circle cx="58" cy="76" r="2.5" fill="#8B6CFF" />
+            <circle cx="44" cy="104" r="2.5" fill="#4D8DFF" />
+            <circle cx="74" cy="100" r="3" fill="#38BDF8" />
+            <text x="8" y="122" fill="#778294" fontSize="7" fontFamily="JetBrains Mono, monospace">
+              33 Landmark Vectors
             </text>
-            <text x="20" y="61" fill="#A4ADBB" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              Full-Body Gesture Input
+          </g>
+
+          {/* Flow Line 2 */}
+          <line x1="266" y1="104" x2="286" y2="104" stroke="#8B6CFF" strokeWidth="1.5" strokeDasharray="4 2" />
+
+          {/* Step 3: Pure Three.js 3D Games */}
+          <g transform="translate(286, 38)">
+            <rect x="0" y="0" width="118" height="132" rx="6" fill="#151C27" stroke="#4D8DFF" strokeWidth="1.2" />
+            <text x="8" y="17" fill="#4D8DFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
+              THREE.JS 3D GAMES
+            </text>
+            <rect x="8" y="28" width="102" height="38" rx="4" fill="#10151D" stroke="#1E2736" />
+            <text x="14" y="44" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
+              Endless Runner
+            </text>
+            <text x="14" y="56" fill="#A4ADBB" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
+              Lane Jump &amp; Dodge
             </text>
 
-            <rect x="12" y="80" width="122" height="42" rx="5" fill="#10151D" stroke="#1E2736" />
-            <text x="20" y="97" fill="#F4F6FA" fontSize="8.5" fontFamily="JetBrains Mono, monospace">
-              Football Cup
+            <rect x="8" y="70" width="102" height="38" rx="4" fill="#10151D" stroke="#1E2736" />
+            <text x="14" y="86" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
+              Car Traffic Dodge
             </text>
-            <text x="20" y="111" fill="#A4ADBB" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              Leg-Tracking Kick Vector
+            <text x="14" y="98" fill="#A4ADBB" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
+              Lean Steering @ 60FPS
+            </text>
+            <text x="8" y="122" fill="#22C55E" fontSize="7" fontFamily="JetBrains Mono, monospace">
+              100% In-Browser 3D
             </text>
           </g>
         </svg>

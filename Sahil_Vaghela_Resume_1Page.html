@@ -22,7 +22,7 @@
       --primary: #0284c7;
       --primary-dark: #0369a1;
       --border-color: #cbd5e1;
-      --line-height: 1.28;
+      --line-height: 1.30;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -32,7 +32,7 @@
       color: var(--text-main);
       background-color: #f1f5f9;
       line-height: var(--line-height);
-      font-size: 8.9pt;
+      font-size: 9.1pt;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -44,7 +44,7 @@
       z-index: 100;
       background: #0f172a;
       color: #f8fafc;
-      padding: 8px 16px;
+      padding: 9px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -111,14 +111,14 @@
     .page-container {
       display: flex;
       justify-content: center;
-      padding: 14px 12px;
+      padding: 16px 12px;
     }
 
     .resume-sheet {
       width: 8.5in;
       min-height: 11in;
       background: #ffffff;
-      padding: 0.34in 0.44in;
+      padding: 0.36in 0.44in;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       border-radius: 2px;
     }
@@ -126,27 +126,27 @@
     /* Header */
     header {
       text-align: center;
-      margin-bottom: 5px;
-      padding-bottom: 4px;
+      margin-bottom: 6px;
+      padding-bottom: 5px;
       border-bottom: 2px solid var(--text-main);
     }
 
     h1 {
-      font-size: 18.5pt;
+      font-size: 19pt;
       font-weight: 800;
       letter-spacing: 0.4px;
       color: #0284c7;
       text-transform: uppercase;
       line-height: 1.1;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
     }
 
     .headline {
-      font-size: 10.3pt;
+      font-size: 10.4pt;
       font-weight: 700;
       color: var(--text-main);
       letter-spacing: 0.2px;
-      margin-bottom: 2.5px;
+      margin-bottom: 3px;
     }
 
     .contact-line {
@@ -169,13 +169,13 @@
 
     /* Section Headings */
     .section-title {
-      font-size: 9.1pt;
+      font-size: 9.2pt;
       font-weight: 800;
       color: var(--text-main);
       text-transform: uppercase;
       letter-spacing: 0.7px;
-      margin-top: 5px;
-      margin-bottom: 2px;
+      margin-top: 6px;
+      margin-bottom: 2.5px;
       padding-bottom: 1px;
       border-bottom: 1.2px solid #94a3b8;
       display: flex;
@@ -185,25 +185,25 @@
 
     /* Summary */
     .summary-text {
-      font-size: 8.5pt;
+      font-size: 8.6pt;
       color: var(--text-muted);
       text-align: justify;
-      line-height: 1.29;
-      margin-bottom: 2.5px;
+      line-height: 1.30;
+      margin-bottom: 3px;
     }
 
     /* Skills Grid */
     .skills-list {
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      margin-bottom: 2.5px;
-      font-size: 8.4pt;
+      gap: 1.2px;
+      margin-bottom: 3px;
+      font-size: 8.5pt;
     }
 
     .skill-row {
       display: flex;
-      line-height: 1.26;
+      line-height: 1.28;
     }
 
     .skill-label {
@@ -217,16 +217,16 @@
       color: var(--text-muted);
     }
 
-    /* Experience */
+    /* Experience Header */
     .job-block {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .job-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.9pt;
+      font-size: 9.1pt;
     }
 
     .company-name {
@@ -235,7 +235,7 @@
     }
 
     .location {
-      font-size: 8.1pt;
+      font-size: 8.2pt;
       color: var(--text-subtle);
       font-weight: 500;
     }
@@ -244,9 +244,9 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.6pt;
+      font-size: 8.7pt;
       margin-top: 0.5px;
-      margin-bottom: 1px;
+      margin-bottom: 3px;
     }
 
     .role-title {
@@ -260,53 +260,37 @@
       font-weight: 600;
     }
 
-    /* Bullet Points */
+    /* Project Bullets within Experience */
     ul.bullet-list {
       list-style-type: disc;
       padding-left: 13px;
       display: flex;
       flex-direction: column;
-      gap: 1.3px;
+      gap: 3.5px;
     }
 
     ul.bullet-list li {
-      font-size: 8.3pt;
+      font-size: 8.5pt;
       color: var(--text-muted);
-      line-height: 1.27;
+      line-height: 1.30;
     }
 
     ul.bullet-list li strong {
       color: var(--text-main);
-      font-weight: 600;
-    }
-
-    /* Projects */
-    .project-item {
-      margin-bottom: 2.5px;
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-size: 8.6pt;
-      margin-bottom: 0.5px;
-    }
-
-    .project-title {
       font-weight: 700;
-      color: var(--text-main);
     }
 
-    .project-tags {
+    .project-tag {
       font-family: var(--font-mono);
       font-size: 7.2pt;
       color: var(--primary-dark);
       background: #f0f9ff;
       border: 1px solid #bae6fd;
-      padding: 0.5px 4.5px;
+      padding: 0px 4px;
       border-radius: 3px;
-      font-weight: 500;
+      font-weight: 600;
+      margin-left: 4px;
+      white-space: nowrap;
     }
 
     /* Education */
@@ -314,7 +298,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.8pt;
+      font-size: 8.9pt;
     }
 
     .degree {
@@ -323,7 +307,7 @@
     }
 
     .edu-inst {
-      font-size: 8.3pt;
+      font-size: 8.4pt;
       color: var(--text-muted);
       margin-top: 0.5px;
       display: flex;
@@ -340,17 +324,17 @@
     }
 
     .coursework {
-      font-size: 8pt;
+      font-size: 8.1pt;
       color: var(--text-subtle);
       margin-top: 1px;
-      line-height: 1.23;
+      line-height: 1.25;
     }
 
     /* Print Stylesheet (Strict 1-Page Letter/A4) */
     @media print {
       body {
         background: #ffffff !important;
-        font-size: 8.7pt !important;
+        font-size: 8.8pt !important;
       }
 
       .screen-toolbar {
@@ -376,7 +360,7 @@
         color: var(--text-main) !important;
       }
 
-      .contact-line a, .role-title, .project-tags {
+      .contact-line a, .role-title, .project-tag {
         color: var(--primary-dark) !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -384,7 +368,7 @@
 
       @page {
         size: letter portrait;
-        margin: 0.32in 0.38in 0.28in 0.38in;
+        margin: 0.32in 0.40in 0.30in 0.40in;
       }
     }
   </style>
@@ -434,7 +418,7 @@
       <section>
         <h2 class="section-title">Professional Summary</h2>
         <p class="summary-text">
-          Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (<strong>9.11 CGPA</strong>) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and browser-native WebGL / Computer Vision architectures.
+          Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (<strong>9.11 CGPA</strong>) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and cross-device mixed reality applications.
         </p>
       </section>
 
@@ -465,9 +449,9 @@
         </div>
       </section>
 
-      <!-- Professional Experience -->
+      <!-- Unified Experience & Key Projects Section -->
       <section>
-        <h2 class="section-title">Professional Experience</h2>
+        <h2 class="section-title">Professional Experience & Key Projects</h2>
         
         <div class="job-block">
           <div class="job-header">
@@ -476,63 +460,31 @@
           </div>
 
           <div class="role-row">
-            <span class="role-title">Software & Engine Developer (Unreal Engine 5 & Unity)</span>
-            <span class="period">Feb 2026 – Present</span>
+            <span class="role-title">Software & Engine Developer <span style="font-weight: 500; color: #475569; font-size: 8pt;">(Promoted: AI Intern → Jr. Unity Developer → Software & Engine Developer)</span></span>
+            <span class="period">Feb 2023 – Present</span>
           </div>
+          
           <ul class="bullet-list">
-            <li><strong>Fiction Mech (Meta Quest 3 & Android — Sole Developer):</strong> Delivered end-to-end industrial XR application connecting PC authoring with standalone Quest 3 and mobile; engineered custom 3-axis shader clipping plane and Agora SDK telemetry synchronization under a strict 72+ FPS budget.</li>
-            <li><strong>Fiction ArchViz (UE5, C++ & Quest VR):</strong> Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 triangulation. Built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.</li>
-            <li><strong>Mimadim Home Studio (UE5, C++ PC Fidelity):</strong> Engineered modular interior customization architecture enabling real-time swapping of beds, parquet flooring, wallpapers, and curtains. Built GameInstance Subsystem and Data Assets with matrix caching to eliminate transform drift and memory leaks.</li>
-            <li><strong>Graphics & Performance Optimization:</strong> Authored HLSL/Shader Graph see-through X-ray materials, optimized Skylight/Lumen lighting channels, and eliminated redundant draw-calls for standalone mobile VR hardware.</li>
-          </ul>
-        </div>
-
-        <div class="job-block">
-          <div class="role-row">
-            <span class="role-title">Junior Unity & XR Developer</span>
-            <span class="period">May 2023 – Feb 2026</span>
-          </div>
-          <ul class="bullet-list">
-            <li><strong>Radicon Powerbuild AR/MR (Sole Developer):</strong> Engineered commercial industrial gearbox showroom on Android and Meta Quest 3, pairing Vuforia brochure image-target tracking with markerless ground-plane floor placement and dynamic shaft configuration.</li>
-            <li><strong>Computer Vision Gameplay (MediaPipe):</strong> Streamed 33-point real-time skeletal landmarks over UDP sockets into Unity at 30+ FPS, translating physical player kicks, jumps, and gestures into controller-free gameplay (<em>Alien Runner</em>, <em>Football Cup</em>).</li>
-            <li><strong>Commercial In-House Titles:</strong> Delivered gameplay mechanics, level progression state-machine stabilization, and UI overhauls across studio titles (<em>Turbo Trail</em>, <em>Cupping Muffins</em>, and sole development on <em>Catch the Object</em>).</li>
-          </ul>
-        </div>
-
-        <div class="job-block">
-          <div class="role-row">
-            <span class="role-title">Artificial Intelligence Intern</span>
-            <span class="period">Feb 2023 – May 2023</span>
-          </div>
-          <ul class="bullet-list">
-            <li><strong>Computer Vision Prototyping:</strong> Built real-time human pose recognition in Python using OpenCV and MediaPipe, establishing the IPC communication layer that was subsequently productized into live games.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Key Technical Projects (Zero Overlap with Work Experience) -->
-      <section>
-        <h2 class="section-title">Key Technical Projects (Independent / Advanced R&D)</h2>
-
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-title">WebAR Coloring Book — GPU Texture Unwarping Engine <span style="font-size: 7.6pt; font-weight: 600; color: #0284c7;">(Sole Developer)</span></span>
-            <span class="project-tags">Three.js • MindAR • WebGL • GLSL • Web Audio API • Electron</span>
-          </div>
-          <ul class="bullet-list">
-            <li>Built browser-native WebAR tracking 54 physical drawing sheets via MindAR, rectifying camera perspective via 60 FPS 2048×2048 GPU homography unwarp shader to wrap live crayon strokes onto animated 3D character meshes.</li>
-            <li>Integrated Web Audio API multilingual voice feedback, packaging the platform into an Electron kiosk station with WebSocket remote controls.</li>
-          </ul>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-title">Motion-Controlled AI Games Suite <span style="font-size: 7.6pt; font-weight: 600; color: #0284c7;">(Sole Developer)</span></span>
-            <span class="project-tags">Three.js • MediaPipe Pose • YOLO11n ONNX • onnxruntime-web • WebGPU</span>
-          </div>
-          <ul class="bullet-list">
-            <li>Engineered 15 browser-based 3D motion games in pure Three.js without game engine runtime, driven by real-time 33-landmark MediaPipe Pose tracking at 60 FPS.</li>
-            <li>Integrated in-browser YOLO11n ONNX neural network inference (<code>onnxruntime-web</code> WebGPU) to isolate patient clinical safety vests, eliminating background crowd tracking interference.</li>
+            <li>
+              <strong>Fiction Mech (Meta Quest 3 MR & PC Studio — Sole Developer):</strong><span class="project-tag">Unity • C# • OpenXR • Quest 3 • Agora</span><br>
+              Delivered an end-to-end industrial XR application connecting PC authoring with standalone Quest 3 (OpenXR) and Android mobile; engineered custom 3-axis RGB GPU shader clipping plane and Agora SDK telemetry synchronization (&lt;100ms latency) under a strict 72+ FPS mobile VR budget.
+            </li>
+            <li>
+              <strong>Radicon Powerbuild AR/MR (Industrial Machinery Showroom — Sole Developer):</strong><span class="project-tag">Unity • C# • Vuforia • Quest 3 • Android</span><br>
+              Engineered commercial gearbox visualization on Android and Meta Quest 3, pairing Vuforia brochure image-target tracking with markerless ground-plane floor placement, dynamic mechanical shaft configuration, and an in-world curved radial HUD connecting to technical catalogs.
+            </li>
+            <li>
+              <strong>Fiction ArchViz (Multiuser CAD-to-VR Engine):</strong><span class="project-tag">Unreal Engine 5 • C++ • DXF/JSON • LibTess2 • WebSocket</span><br>
+              Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 polygon triangulation; built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
+            </li>
+            <li>
+              <strong>Mimadim Home Studio (High-Fidelity PC Customization):</strong><span class="project-tag">UE5 • C++ • Data Assets • Subsystems • Lumen</span><br>
+              Engineered data-driven interior showroom using UE5 GameInstance Subsystem and modular Data Assets; implemented matrix-caching swap routines ensuring zero positional drift and zero memory leaks during runtime furniture, parquet, and wallpaper replacements under photorealistic Lumen PBR.
+            </li>
+            <li>
+              <strong>Computer Vision & Studio Game Engineering:</strong><span class="project-tag">Unity C# • MediaPipe • Python • UDP Sockets</span><br>
+              Streamed 33-point real-time skeletal landmarks over UDP sockets into Unity at 30+ FPS for motion-controlled gaming (<em>Alien Runner</em>, <em>Football Cup</em>); stabilized level-progression state machines, physics, and UI across commercial titles (<em>Turbo Trail</em>, <em>Cupping Muffins</em>, and sole development on <em>Catch the Object</em>).
+            </li>
           </ul>
         </div>
       </section>
@@ -564,41 +516,33 @@ Kheda, Gujarat, India • +91 63519 55141 • vaghelasahil1104@gmail.com
 Portfolio: https://itssahilvaghela.github.io/Protfolio/ • GitHub: https://github.com/itssahilvaghela • LinkedIn: https://www.linkedin.com/in/sahil-vaghela-ba4822250
 
 PROFESSIONAL SUMMARY
-Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (9.11 CGPA) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and browser-native WebGL / Computer Vision architectures.
+Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (9.11 CGPA) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and cross-device mixed reality applications.
 
 TECHNICAL SKILLS
 - Programming: C++, C#, Python, JavaScript / TypeScript, C, SQL
 - Engines & 3D Systems: Unreal Engine 5 (C++, Subsystems, Blueprints), Unity (C#, URP), Three.js, WebGL, OpenXR
 - Software Engineering: Procedural Mesh Generation, Data-Driven Design, Subsystem Architecture, CAD (DXF/JSON) Parsing, Memory Optimization, Multithreading, REST APIs, Git/GitHub
 - XR, CV & AI: Meta Quest 3, Mixed Reality (Passthrough), MediaPipe (Pose Tracking), OpenCV, Vuforia, YOLO11n ONNX, ARCore, Agora Video SDK, WebSockets / UDP
-- Tools & Platforms: Visual Studio, Rider, CMake, Blender, Figma, Windows, Linux, Agentic AI Tooling
+- Tools & Platforms: Visual Studio, Rider, CMake, Blender, Figma, Windows, Linux, Agentic AI Workflows
 
-PROFESSIONAL EXPERIENCE
+PROFESSIONAL EXPERIENCE & KEY PROJECTS
 Invisible Fiction — Gujarat, India
-Software & Engine Developer (Unreal Engine 5 & Unity) | Feb 2026 – Present
-- Fiction Mech (Meta Quest 3 & Android — Sole Developer): Delivered end-to-end industrial XR application connecting PC authoring with standalone Quest 3 and mobile; engineered custom 3-axis shader clipping plane and Agora SDK telemetry synchronization under a strict 72+ FPS budget.
-- Fiction ArchViz (UE5, C++ & Quest VR): Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 triangulation. Built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
-- Mimadim Home Studio (UE5, C++ PC Fidelity): Engineered modular interior customization architecture enabling real-time swapping of beds, parquet flooring, wallpapers, and curtains. Built GameInstance Subsystem and Data Assets with matrix caching to eliminate transform drift and memory leaks.
-- Graphics & Performance Optimization: Authored HLSL/Shader Graph see-through X-ray materials, optimized Skylight/Lumen lighting channels, and eliminated redundant draw-calls for standalone mobile VR hardware.
+Software & Engine Developer (Promoted: AI Intern → Jr. Unity Developer → Software & Engine Developer) | Feb 2023 – Present
 
-Junior Unity & XR Developer | May 2023 – Feb 2026
-- Radicon Powerbuild AR/MR (Sole Developer): Engineered commercial industrial gearbox showroom on Android and Meta Quest 3, pairing Vuforia brochure image-target tracking with markerless ground-plane floor placement and dynamic shaft configuration.
-- Computer Vision Gameplay (MediaPipe): Streamed 33-point real-time skeletal landmarks over UDP sockets into Unity at 30+ FPS, translating physical player kicks, jumps, and gestures into controller-free gameplay (Alien Runner, Football Cup).
-- Commercial In-House Titles: Delivered gameplay mechanics, level progression state-machine stabilization, and UI overhauls across studio titles (Turbo Trail, Cupping Muffins, and sole development on Catch the Object).
+- Fiction Mech (Meta Quest 3 MR & PC Studio — Sole Developer): [Unity • C# • OpenXR • Quest 3 • Agora]
+  Delivered an end-to-end industrial XR application connecting PC authoring with standalone Quest 3 (OpenXR) and Android mobile; engineered custom 3-axis RGB GPU shader clipping plane and Agora SDK telemetry synchronization (<100ms latency) under a strict 72+ FPS mobile VR budget.
 
-Artificial Intelligence Intern | Feb 2023 – May 2023
-- Computer Vision Prototyping: Built real-time human pose recognition in Python using OpenCV and MediaPipe, establishing the IPC communication layer that was subsequently productized into live games.
+- Radicon Powerbuild AR/MR (Industrial Machinery Showroom — Sole Developer): [Unity • C# • Vuforia • Quest 3 • Android]
+  Engineered commercial gearbox visualization on Android and Meta Quest 3, pairing Vuforia brochure image-target tracking with markerless ground-plane floor placement, dynamic mechanical shaft configuration, and an in-world curved radial HUD connecting to technical catalogs.
 
-KEY TECHNICAL PROJECTS (INDEPENDENT / ADVANCED R&D)
-WebAR Coloring Book — GPU Texture Unwarping Engine (Sole Developer)
-[Three.js • MindAR • WebGL • GLSL • Web Audio API • Electron]
-- Built browser-native WebAR tracking 54 physical drawing sheets via MindAR, rectifying camera perspective via 60 FPS 2048×2048 GPU homography unwarp shader to wrap live crayon strokes onto animated 3D character meshes.
-- Integrated Web Audio API multilingual voice feedback, packaging the platform into an Electron kiosk station with WebSocket remote controls.
+- Fiction ArchViz (Multiuser CAD-to-VR Engine): [Unreal Engine 5 • C++ • DXF/JSON • LibTess2 • WebSocket]
+  Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 polygon triangulation; built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
 
-Motion-Controlled AI Games Suite (Sole Developer)
-[Three.js • MediaPipe Pose • YOLO11n ONNX • onnxruntime-web • WebGPU]
-- Engineered 15 browser-based 3D motion games in pure Three.js without game engine runtime, driven by real-time 33-landmark MediaPipe Pose tracking at 60 FPS.
-- Integrated in-browser YOLO11n ONNX neural network inference (onnxruntime-web WebGPU) to isolate patient clinical safety vests, eliminating background crowd tracking interference.
+- Mimadim Home Studio (High-Fidelity PC Customization): [UE5 • C++ • Data Assets • Subsystems • Lumen]
+  Engineered data-driven interior showroom using UE5 GameInstance Subsystem and modular Data Assets; implemented matrix-caching swap routines ensuring zero positional drift and zero memory leaks during runtime furniture, parquet, and wallpaper replacements under photorealistic Lumen PBR.
+
+- Computer Vision & Studio Game Engineering: [Unity C# • MediaPipe • Python • UDP Sockets]
+  Streamed 33-point real-time skeletal landmarks over UDP sockets into Unity at 30+ FPS for motion-controlled gaming (Alien Runner, Football Cup); stabilized level-progression state machines, physics, and UI across commercial titles (Turbo Trail, Cupping Muffins, and sole development on Catch the Object).
 
 EDUCATION & ACADEMIC ACHIEVEMENTS
 Bachelor of Engineering (B.E.) in Computer Engineering | Graduated: 2023

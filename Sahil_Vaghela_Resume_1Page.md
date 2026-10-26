@@ -6,7 +6,7 @@ Kheda, Gujarat, India • +91 63519 55141 • [vaghelasahil1104@gmail.com](mailt
 ---
 
 ## PROFESSIONAL SUMMARY
-Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (**9.11 CGPA**) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and browser-native WebGL / Computer Vision architectures.
+Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (**9.11 CGPA**) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and cross-device mixed reality applications.
 
 ---
 
@@ -19,36 +19,25 @@ Software Engineer with 3+ years architecting real-time 3D, spatial computing (Me
 
 ---
 
-## PROFESSIONAL EXPERIENCE
+## PROFESSIONAL EXPERIENCE & KEY PROJECTS
 
 ### **Invisible Fiction** — Gujarat, India  
-**Software & Engine Developer (Unreal Engine 5 & Unity)** | *Feb 2026 – Present*  
-- **Fiction Mech (Meta Quest 3 & Android — Sole Developer):** Delivered end-to-end industrial XR application connecting PC authoring with standalone Quest 3 and mobile; engineered custom 3-axis shader clipping plane and Agora SDK telemetry synchronization under a strict 72+ FPS budget.
-- **Fiction ArchViz (UE5, C++ & Quest VR):** Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 triangulation. Built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
-- **Mimadim Home Studio (UE5, C++ PC Fidelity):** Engineered modular interior customization architecture enabling real-time swapping of beds, parquet flooring, wallpapers, and curtains. Built GameInstance Subsystem and Data Assets with matrix caching to eliminate transform drift and memory leaks.
-- **Graphics & Performance Optimization:** Authored HLSL/Shader Graph see-through X-ray materials, optimized Skylight/Lumen lighting channels, and eliminated redundant draw-calls for standalone mobile VR hardware.
+**Software & Engine Developer** *(Promoted: AI Intern → Jr. Unity Developer → Software & Engine Developer)* | *Feb 2023 – Present*  
 
-**Junior Unity & XR Developer** | *May 2023 – Feb 2026*  
-- **Radicon Powerbuild AR/MR (Sole Developer):** Engineered commercial industrial gearbox showroom on Android and Meta Quest 3, pairing Vuforia brochure image-target tracking with markerless ground-plane floor placement and dynamic shaft configuration.
-- **Computer Vision Gameplay (MediaPipe):** Streamed 33-point real-time skeletal landmarks over UDP sockets into Unity at 30+ FPS, translating physical player kicks, jumps, and gestures into controller-free gameplay (*Alien Runner*, *Football Cup*).
-- **Commercial In-House Titles:** Delivered gameplay mechanics, level progression state-machine stabilization, and UI overhauls across studio titles (*Turbo Trail*, *Cupping Muffins*, and sole development on *Catch the Object*).
+- **Fiction Mech (Meta Quest 3 MR & PC Studio — Sole Developer):**  
+  Delivered an end-to-end industrial XR application connecting PC authoring with standalone Quest 3 (OpenXR) and Android mobile; engineered custom 3-axis RGB GPU shader clipping plane and Agora SDK telemetry synchronization (<100ms latency) under a strict 72+ FPS mobile VR budget.
 
-**Artificial Intelligence Intern** | *Feb 2023 – May 2023*  
-- **Computer Vision Prototyping:** Built real-time human pose recognition in Python using OpenCV and MediaPipe, establishing the IPC communication layer that was subsequently productized into live games.
+- **Radicon Powerbuild AR/MR (Industrial Machinery Showroom — Sole Developer):**  
+  Engineered commercial gearbox visualization on Android and Meta Quest 3, pairing Vuforia brochure image-target tracking with markerless ground-plane floor placement, dynamic mechanical shaft configuration, and an in-world curved radial HUD connecting to technical catalogs.
 
----
+- **Fiction ArchViz (Multiuser CAD-to-VR Engine — UE5 C++ & Quest VR):**  
+  Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 polygon triangulation; built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
 
-## KEY TECHNICAL PROJECTS (INDEPENDENT / ADVANCED R&D)
+- **Mimadim Home Studio (High-Fidelity PC Customization — UE5 C++):**  
+  Engineered data-driven interior showroom using UE5 GameInstance Subsystem and modular Data Assets; implemented matrix-caching swap routines ensuring zero positional drift and zero memory leaks during runtime furniture, parquet, and wallpaper replacements under photorealistic Lumen PBR.
 
-**WebAR Coloring Book — GPU Texture Unwarping Engine** `[Sole Developer]`  
-*Three.js • MindAR • WebGL • GLSL • Web Audio API • Electron*  
-- Built browser-native WebAR tracking 54 physical drawing sheets via MindAR, rectifying camera perspective via 60 FPS 2048×2048 GPU homography unwarp shader to wrap live crayon strokes onto animated 3D character meshes.
-- Integrated Web Audio API multilingual voice feedback, packaging the platform into an Electron kiosk station with WebSocket remote controls.
-
-**Motion-Controlled AI Games Suite** `[Sole Developer]`  
-*Three.js • MediaPipe Pose • YOLO11n ONNX • onnxruntime-web • WebGPU*  
-- Engineered 15 browser-based 3D motion games in pure Three.js without game engine runtime, driven by real-time 33-landmark MediaPipe Pose tracking at 60 FPS.
-- Integrated in-browser YOLO11n ONNX neural network inference (`onnxruntime-web` WebGPU) to isolate patient clinical safety vests, eliminating background crowd tracking interference.
+- **Computer Vision & Studio Game Engineering (Unity C# & MediaPipe):**  
+  Streamed 33-point real-time skeletal landmarks over UDP sockets into Unity at 30+ FPS for motion-controlled gaming (*Alien Runner*, *Football Cup*); stabilized level-progression state machines, physics, and UI across commercial titles (*Turbo Trail*, *Cupping Muffins*, and sole development on *Catch the Object*).
 
 ---
 

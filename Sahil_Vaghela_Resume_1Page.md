@@ -6,7 +6,7 @@ Kheda, Gujarat, India • +91 63519 55141 • [vaghelasahil1104@gmail.com](mailt
 ---
 
 ## PROFESSIONAL SUMMARY
-Computer Engineering graduate (**9.11 CGPA**) and Software Developer with 3+ years architecting high-performance real-time systems, procedural geometry pipelines, and cross-platform applications in C++, C#, and Python. Proven track record delivering flagship spatial computing applications (**Fiction Mech**, **Radicon Powerbuild AR/MR**), production Unreal Engine 5 subsystems, and low-latency computer vision tracking.
+Software Engineer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance engine systems in C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (**9.11 CGPA**) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and browser-native WebGL / Computer Vision architectures.
 
 ---
 
@@ -14,7 +14,7 @@ Computer Engineering graduate (**9.11 CGPA**) and Software Developer with 3+ yea
 - **Programming Languages:** C++, C#, Python, JavaScript / TypeScript, C, SQL
 - **Engines & 3D Systems:** Unreal Engine 5 (C++, Subsystems, Blueprints), Unity (C#, URP), Three.js, WebGL, OpenXR
 - **Software Engineering:** Procedural Mesh Generation, Data-Driven Design, Subsystem Architecture, CAD (DXF/JSON) Parsing, Memory Optimization, Multithreading, REST APIs, Git/GitHub
-- **XR, Computer Vision & Networking:** Meta Quest 3, Mixed Reality (Passthrough), MediaPipe (Pose Tracking), OpenCV, Vuforia, ARCore, Agora Real-Time Video SDK, WebSockets / UDP
+- **XR, Computer Vision & AI:** Meta Quest 3, Mixed Reality (Passthrough), MediaPipe (Pose Tracking), OpenCV, Vuforia, YOLO11n ONNX, ARCore, Agora Video SDK, WebSockets / UDP
 - **Tools & Platforms:** Visual Studio, Rider, CMake, Blender, Figma, Windows, Linux, Agentic AI Tooling
 
 ---
@@ -23,9 +23,9 @@ Computer Engineering graduate (**9.11 CGPA**) and Software Developer with 3+ yea
 
 ### **Invisible Fiction** — Gujarat, India  
 **Software & Engine Developer (Unreal Engine 5 & Unity)** | *Feb 2026 – Present*  
+- **Fiction Mech (Meta Quest 3 & Android — Sole Developer):** Delivered end-to-end industrial XR application connecting PC authoring with standalone Quest 3 and mobile; engineered custom 3-axis shader clipping plane and Agora SDK telemetry synchronization under a strict 72+ FPS budget.
 - **Fiction ArchViz (UE5, C++ & Quest VR):** Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 triangulation. Built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
 - **Mimadim Home Studio (UE5, C++ PC Fidelity):** Engineered modular interior customization architecture enabling real-time swapping of beds, parquet flooring, wallpapers, and curtains. Built GameInstance Subsystem and Data Assets with matrix caching to eliminate transform drift and memory leaks.
-- **Fiction Mech (Meta Quest 3 & Android — Sole Developer):** Delivered end-to-end industrial XR application connecting PC authoring with standalone Quest 3 and mobile; engineered custom 3-axis shader clipping plane and Agora SDK telemetry synchronization under a strict 72+ FPS budget.
 - **Graphics & Performance Optimization:** Authored HLSL/Shader Graph see-through X-ray materials, optimized Skylight/Lumen lighting channels, and eliminated redundant draw-calls for standalone mobile VR hardware.
 
 **Junior Unity & XR Developer** | *May 2023 – Feb 2026*  
@@ -34,31 +34,21 @@ Computer Engineering graduate (**9.11 CGPA**) and Software Developer with 3+ yea
 - **Commercial In-House Titles:** Delivered gameplay mechanics, level progression state-machine stabilization, and UI overhauls across studio titles (*Turbo Trail*, *Cupping Muffins*, and sole development on *Catch the Object*).
 
 **Artificial Intelligence Intern** | *Feb 2023 – May 2023*  
-- **Computer Vision Prototyping:** Built real-time human pose recognition in Python using OpenCV and MediaPipe, establishing the IPC communication layer that was subsequently productized into production titles.
+- **Computer Vision Prototyping:** Built real-time human pose recognition in Python using OpenCV and MediaPipe, establishing the IPC communication layer that was subsequently productized into live games.
 
 ---
 
-## KEY TECHNICAL PROJECTS
+## KEY TECHNICAL PROJECTS (INDEPENDENT / ADVANCED R&D)
 
-**Fiction Mech — Mixed Reality & Multi-Device Studio** `[Sole Developer]`  
-*Unity • C# • OpenXR • Meta Quest 3 • Agora Video SDK • Android*  
-- Engineered industrial 3D digital twin platform with real-time bidirectional control, telemetry sync, and live audio/video streaming between Quest 3 (passthrough) and Android companion devices with <100ms sync latency.
-- Programmed 6DoF hand-tracking pinch gestures and real-time 3-axis RGB GPU clipping planes for internal mechanical inspection.
+**WebAR Coloring Book — GPU Texture Unwarping Engine** `[Sole Developer]`  
+*Three.js • MindAR • WebGL • GLSL • Web Audio API • Electron*  
+- Built browser-native WebAR tracking 54 physical drawing sheets via MindAR, rectifying camera perspective via 60 FPS 2048×2048 GPU homography unwarp shader to wrap live crayon strokes onto animated 3D character meshes.
+- Integrated Web Audio API multilingual voice feedback, packaging the platform into an Electron kiosk station with WebSocket remote controls.
 
-**Radicon Powerbuild AR/MR — Industrial Mixed Reality Showroom** `[Sole Developer]`  
-*Unity • C# • Meta Quest 3 • Vuforia • ARCore • Android*  
-- Built dual-mode industrial product visualization: Vuforia tracking animating printed brochures with 3D gearbox assemblies, and markerless floor tracking for full-scale factory showroom placement.
-- Implemented an orbiting 3D carousel, real-time shaft swapping, and an in-world curved radial HUD for technical catalogs.
-
-**Fiction ArchViz — Multiuser CAD-to-VR Engine**  
-*Unreal Engine 5 • C++ • OpenXR • DXF/JSON • LibTess2 • WebSocket Node Server*  
-- Built automated 2D-to-3D CAD floor plan mesh generation with LibTess2 triangulation and gap resolution across 5 predefined rooms.
-- Engineered procedural tile cutting, X/Y offset stepping, grout joint customization, and bidirectional PC ↔ Quest WebSocket sync.
-
-**Mimadim Home Studio — High-Fidelity PC Customization Architecture**  
-*Unreal Engine 5 • C++ • Blueprints • Data Assets • GameInstance Subsystem • Lumen*  
-- Engineered data-driven interior showroom for high-end PC, dynamically swapping beds, parquet, wallpapers, and curtains under photorealistic PBR lighting.
-- Developed centralized GameInstance Subsystem with matrix-safe transform preservation, ensuring zero positional drift across actor swaps.
+**Motion-Controlled AI Games Suite** `[Sole Developer]`  
+*Three.js • MediaPipe Pose • YOLO11n ONNX • onnxruntime-web • WebGPU*  
+- Engineered 15 browser-based 3D motion games in pure Three.js without game engine runtime, driven by real-time 33-landmark MediaPipe Pose tracking at 60 FPS.
+- Integrated in-browser YOLO11n ONNX neural network inference (`onnxruntime-web` WebGPU) to isolate patient clinical safety vests, eliminating background crowd tracking interference.
 
 ---
 

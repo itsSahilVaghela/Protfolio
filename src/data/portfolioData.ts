@@ -986,75 +986,75 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 7,
     featuredTier: "secondary",
     title: "Unity Game Development",
-    subtitle: "Turbo Trail, Cupping Muffins, Catch the Object & Themed Variants",
+    subtitle: "Turbo Trail, Cupping Muffins, Catch the Object & Themed Studio Variants",
     category: "Game Development",
     filterGroup: "cv-games",
     technologies: ["Unity", "C#"],
     shortDescription:
-      "In-house PC and mobile Unity/C# games including Turbo Trail, Cupping Muffins, Catch the Object, and themed adaptations—covering gameplay implementation, system adaptation, and UI updates.",
+      "In-house PC and mobile Unity/C# games at Invisible Fiction including Turbo Trail (finger rubber trail physics), Cupping Muffins (adapted for Burger, Mocktail, and Milkshake), and Catch the Object (sole developer casual arcade).",
     highlights: [
       "Catch the Object (Sole Developer): Complete solo development of a casual arcade game from concept to release.",
-      "Turbo Trail (Sub Developer): High-speed mobile game where players draw dynamic rubber trails that act as both pathway and shield.",
-      "Cupping Muffins (Sub Developer): Ingredient-collection arcade game; reworked gameplay systems to support new food themes.",
-      "Adapted existing game architectures into themed variants and implemented UI improvements across titles.",
+      "Turbo Trail (Sub Developer): High-speed mobile game where players drag fingers to forge dynamic rubber trails that guide balls and shield against obstacles.",
+      "Cupping Muffins (Sub Developer): Perpetual moving cup ingredient collection game; reworked systems to support Burger, Mocktail, and Milkshake themes.",
+      "Role: JR. Game Developer delivering modular C# gameplay mechanics, physics interactions, and responsive UI.",
     ],
     cardCapsules: [
       {
-        tag: "Solo & Studio Releases",
+        tag: "Turbo Trail (Sub Dev)",
         detail:
-          "Catch the Object (Sole Developer end-to-end), Turbo Trail, and Cupping Muffins.",
+          "Dynamic rubber trail drawing serving as both player pathway and shield against spikes & barriers.",
       },
       {
-        tag: "Modular Gameplay C#",
+        tag: "Cupping Muffins (Sub Dev)",
         detail:
-          "Dynamic trail physics, procedural item spawning, and decoupled game state loops.",
+          "Moving cup collecting ingredients; refactored and adapted into Burger, Mocktail, and Milkshake editions.",
       },
       {
-        tag: "Themed Studio Reskinning",
+        tag: "Catch the Object (Solo)",
         detail:
-          "Architectural theme adaptation enabling rapid gameplay reskinning across releases.",
+          "Sole developer end-to-end: falling item values, negative hazard objects, and basket controls.",
       },
     ],
-    roleTitle: "Unity C# Game Developer",
+    roleTitle: "Junior Game Developer (Unity C#)",
     ownershipScope: "Solo & Team Contributions",
     ownershipNote:
-      "Sole Developer on Catch the Object (end-to-end implementation). Sub Developer / Team Contributor on Turbo Trail, Cupping Muffins, and themed game variants.",
+      "Junior Game Developer at Invisible Fiction: Sole Developer on Catch the Object; Sub Developer on Turbo Trail, Cupping Muffins (with Burger, Mocktail, and Milkshake adaptations), and in-house studio titles.",
     diagramType: "unity-games",
     mediaCaption:
       "Gameplay Systems Overview: Core Unity C# Loop -> Modular Mechanics & Physics -> Theme Adaptation & Responsive UI.",
     caseStudy: {
       overview:
-        "A collection of in-house mobile and casual games built in Unity (C#) at Invisible Fiction, spanning solo-developed casual titles and collaborative mobile arcade games adapted across multiple themed releases.",
+        "A suite of in-house mobile and casual games developed in Unity (C#) at Invisible Fiction. Spans solo development on Catch the Object alongside sub-developer contributions to Turbo Trail's dynamic trail-drawing mechanics and Cupping Muffins' multi-theme culinary expansions.",
       problem:
         "Fast-paced studio game production requires reusable C# gameplay loops, clean UI state management, and modular asset/theme hooks so existing game mechanics can be rapidly reskinned or adapted into new themed variants without rewriting core logic.",
       responsibilities: [
-        "Catch the Object (Sole Developer): Designed and programmed the complete game loop, spawning system, scoring rules, and UI from scratch.",
-        "Turbo Trail (Team Contributor): Contributed to gameplay mechanics and UI for a high-speed mobile game featuring dynamic drawn rubber trails.",
-        "Cupping Muffins (Team Contributor): Updated gameplay mechanics, obstacle/ingredient logic, and reworked systems for new food themes.",
-        "Implemented UI polish, menu flows, and responsive layout updates across multiple Unity projects.",
+        "Catch the Object (Sole Developer): Programmed complete game loop, weighted falling item spawners, point/penalty rules, and UI from scratch.",
+        "Turbo Trail (Sub Developer): Implemented dynamic rubber trail drawing physics that propel the ball forward while shielding against spikes and barriers.",
+        "Cupping Muffins (Sub Developer): Re-architected gameplay and ingredient collection systems to adapt the game into Burger, Mocktail, and Milkshake variants.",
+        "Engineered responsive UI systems, HUD feedback, and cross-resolution mobile scaling across titles.",
       ],
       technicalApproach:
         "Structured gameplay controllers, object spawners, collision handlers, and UI managers in modular C# scripts within Unity. Decoupled visual theme assets and scoring parameters from core movement/collision logic to streamline themed variant production.",
       architectureDetails: [
         "Catch the Object (Solo Architecture): Self-contained C# game loop managing basket input, weighted item spawning, score/penalty evaluation, and game-over states.",
         "Turbo Trail Mechanics: Dynamic trail-drawing interaction serving simultaneously as player pathway and obstacle shield.",
-        "Cupping Muffins Theme Adaptation: Refactored collectible and obstacle definitions to support multiple culinary themes and updated UI screens.",
+        "Cupping Muffins Theme Adaptation: Refactored collectible and obstacle definitions to support Burger, Mocktail, and Milkshake themes.",
       ],
       pipelineSteps: [
         {
           stage: "INPUT & PHYSICS",
           title: "Player Controllers",
-          detail: "Touch trail drawing, basket movement & collision detection",
+          detail: "Finger rubber trail drawing, basket movement & collision detection",
         },
         {
           stage: "GAME LOOP",
           title: "Spawners & Scoring",
-          detail: "Configurable obstacle/collectible waves and rule evaluation",
+          detail: "Configurable obstacle/collectible waves and point/penalty evaluation",
         },
         {
           stage: "ADAPTATION",
           title: "Themed Variants",
-          detail: "Modular content replacement for multi-theme game releases",
+          detail: "Burger, Mocktail & Milkshake modular content replacement",
         },
         {
           stage: "INTERFACE",
@@ -1065,14 +1065,20 @@ export const featuredProjects: ProjectCaseStudy[] = [
       challenges: [
         {
           challenge:
-            "Adapting existing games into new themed variants quickly without introducing regressions in core gameplay feel.",
+            "Adapting Cupping Muffins into multiple culinary themes without introducing regressions in core movement feel.",
           solution:
-            "Separated theme-specific visuals and UI elements from core C# movement and scoring scripts.",
+            "Decoupled food asset definitions and ingredient recipes from the perpetual cup movement loop, creating a reusable data-driven theme architecture.",
+        },
+        {
+          challenge:
+            "Balancing dynamic finger-drawn trail physics in Turbo Trail to simultaneously act as responsive pathway and reliable obstacle shield.",
+          solution:
+            "Implemented parameterized mesh generation along touch drag paths with optimized 2D edge colliders and impulse normal calculation.",
         },
       ],
       outcomes: [
         "Shipped Catch the Object independently as sole developer from concept to release.",
-        "Delivered gameplay updates, themed variants, and UI improvements across Turbo Trail and Cupping Muffins.",
+        "Successfully delivered Turbo Trail and deployed Burger, Mocktail, and Milkshake themed adaptations of Cupping Muffins.",
       ],
     },
   },
@@ -1081,36 +1087,49 @@ export const featuredProjects: ProjectCaseStudy[] = [
 export const additionalProjects: AdditionalWorkItem[] = [
   {
     id: "alien-runner-body-tracking",
-    title: "Alien Runner: Computer Vision Body Tracking",
-    category: "AI & Motion Gaming (Internship)",
-    role: "CV & Tracking Developer (Team of 2)",
+    title: "Alien Runner: Motion Sensing Endless Runner",
+    category: "AI & Motion Gaming (In-House)",
+    role: "Sub Developer · JR. Game Developer",
     technologies: [
-      "Python",
-      "OpenCV",
-      "MediaPipe",
       "Unity",
       "C#",
-      "Socket Telemetry",
+      "MediaPipe Unity",
+      "Python",
+      "OpenCV",
     ],
     description:
-      "Two-person internship project at Invisible Fiction. Teammate developed the Unity 3D endless runner (Alien Runner), while I built the Python computer-vision body tracking module using OpenCV and MediaPipe. Streamed real-time movement telemetry to Unity to trigger in-game player events: move left, move right, jump, and duck/swipe down.",
+      "A motion-sensing PC endless runner where players control character movement through their own body gestures. Integrated MediaPipe Unity for movement detection, transferred real-time motion data to Unity, and upgraded the in-game UI.",
     highlights: [
-      "Team of 2 developers: owned full Python computer-vision and pose-tracking pipeline while teammate developed Unity endless runner game.",
-      "Extracted 33 skeletal landmarks in real time from live camera feeds using MediaPipe and OpenCV.",
-      "Engineered low-latency data bridge streaming player movement telemetry from Python into Unity runtime.",
-      "Mapped live physical movements to in-game actions: lateral lane shifting (left/right), jumping, and downward ducking/swiping.",
+      "Sub Developer for in-house Unity game; implemented MediaPipe Unity movement detection system.",
+      "Transferred real-time body tracking data into Unity to drive jump, duck, and lane-switch actions.",
+      "Upgraded UI and player feedback systems for enhanced gameplay feel.",
+    ],
+  },
+  {
+    id: "football-cup-body-tracking",
+    title: "Football Cup: MediaPipe Leg Tracking",
+    category: "AI & Motion Gaming (In-House)",
+    role: "Sub Developer · JR. Game Developer",
+    technologies: ["Unity", "C#", "MediaPipe Unity"],
+    description:
+      "An innovative PC game revolutionizing virtual soccer with body-detection technology. Translates players' live physical leg movements, kicks, passes, and shots into real-time on-screen soccer actions.",
+    highlights: [
+      "Integrated MediaPipe Unity for live body and leg gesture detection.",
+      "Engineered real-time data bridge streaming physical kicks and movement data into Unity gameplay.",
+      "Delivered intuitive soccer controls translating real-world motion into responsive gameplay events.",
     ],
   },
   {
     id: "ar-qr-hololens",
     title: "QR-Triggered AR Model Visualization",
     category: "Enterprise AR (HoloLens & Mobile)",
-    role: "Sole Developer",
+    role: "JR. Game Developer",
     technologies: ["Unity", "C#", "HoloLens", "ARCore", "Vuforia"],
     description:
-      "An AR application that detects QR markers to anchor and visualize 3D engineering models across HoloLens and mobile AR devices.",
+      "An in-house AR application that detects QR markers to anchor and visualize 3D engineering models across HoloLens and mobile AR devices using ARCore and Vuforia.",
     highlights: [
       "Marker-driven spatial alignment and model visualization using ARCore and Vuforia tooling.",
+      "Integrated responsive spatial anchoring across mobile AR and HoloLens hardware.",
     ],
   },
 ];

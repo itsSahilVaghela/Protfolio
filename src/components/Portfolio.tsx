@@ -337,23 +337,23 @@ export const Portfolio = () => {
             })}
           </div>
 
-          {/* Secondary Archive: Internship Projects */}
+          {/* Secondary Archive: In-House Studio Games & Prototypes */}
           <div className="mt-16 pt-12 border-t border-[#1E2736]">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
               <div>
                 <h3 className="text-lg font-bold text-[#F4F6FA]">
-                  Internship Projects
+                  In-House Studio Games &amp; Prototypes
                 </h3>
                 <p className="text-sm text-[#778294]">
-                  Computer vision body tracking and interactive prototypes developed during internship
+                  Motion sensing, MediaPipe tracking, and enterprise AR applications developed at Invisible Fiction
                 </p>
               </div>
               <span className="font-mono text-xs text-[#778294]">
-                INTERNSHIP // {additionalProjects.length} PROJECTS
+                IN-HOUSE ARCHIVE // {additionalProjects.length} PROJECTS
               </span>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-3 gap-5">
               {additionalProjects.map((item) => (
                 <div
                   key={item.id}

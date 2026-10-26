@@ -23,8 +23,8 @@ Computer Engineering graduate (**9.11 CGPA**) and Software Developer with 3+ yea
 
 ### **Invisible Fiction** — Gujarat, India  
 **Software & Engine Developer (Unreal Engine 5 & Unity)** | *Feb 2026 – Present*  
-- **Automated CAD-to-3D Pipeline (UE5, C++):** Architected runtime ingestion of multi-layer DXF/JSON blueprints, using LibTess2 polygon triangulation and gap-resolution to procedurally generate watertight 3D walls, windows, and roofs without manual 3D modeling turnaround.
-- **Modular Customization Architecture (UE5, C++):** Engineered data-driven interior customization using UE5 GameInstance Subsystems and Data Assets, implementing transform matrix caching to guarantee zero positional drift and zero memory leaks during runtime furniture/finish swaps.
+- **Fiction ArchViz (UE5, C++ & Quest VR):** Architected runtime CAD-to-3D pipeline parsing multi-layer DXF/JSON blueprints to procedurally generate 3D walls, windows, and roofs via LibTess2 triangulation. Built 5 predefined showcase rooms with procedural tile cutting, grout customization, and bidirectional PC ↔ Quest WebSocket sync.
+- **Mimadim Home Studio (UE5, C++ PC Fidelity):** Engineered modular interior customization architecture enabling real-time swapping of beds, parquet flooring, wallpapers, and curtains. Built GameInstance Subsystem and Data Assets with matrix caching to eliminate transform drift and memory leaks.
 - **Fiction Mech (Meta Quest 3 & Android — Sole Developer):** Delivered end-to-end industrial XR application connecting PC authoring with standalone Quest 3 and mobile; engineered custom 3-axis shader clipping plane and Agora SDK telemetry synchronization under a strict 72+ FPS budget.
 - **Graphics & Performance Optimization:** Authored HLSL/Shader Graph see-through X-ray materials, optimized Skylight/Lumen lighting channels, and eliminated redundant draw-calls for standalone mobile VR hardware.
 
@@ -50,13 +50,15 @@ Computer Engineering graduate (**9.11 CGPA**) and Software Developer with 3+ yea
 - Built dual-mode industrial product visualization: Vuforia tracking animating printed brochures with 3D gearbox assemblies, and markerless floor tracking for full-scale factory showroom placement.
 - Implemented an orbiting 3D carousel, real-time shaft swapping, and an in-world curved radial HUD for technical catalogs.
 
-**FictionArchviz & Mimadim — Procedural CAD & Architecture Engine**  
-*Unreal Engine 5 • C++ • OpenXR • DXF/JSON • Subsystems*  
-- Created collaborative architectural visualization supporting simultaneous PC and Meta Quest VR clients, featuring runtime DXF/JSON polygon triangulation and modular Data Asset customization.
+**Fiction ArchViz — Multiuser CAD-to-VR Engine**  
+*Unreal Engine 5 • C++ • OpenXR • DXF/JSON • LibTess2 • WebSocket Node Server*  
+- Built automated 2D-to-3D CAD floor plan mesh generation with LibTess2 triangulation and gap resolution across 5 predefined rooms.
+- Engineered procedural tile cutting, X/Y offset stepping, grout joint customization, and bidirectional PC ↔ Quest WebSocket sync.
 
-**WebAR Coloring Book & AI Motion Games** `[Sole Developer]`  
-*Three.js • MindAR • MediaPipe • GLSL Homography Shader • Electron*  
-- Built browser-native WebAR tracking 54 physical drawing sheets, rectifying camera perspective via 60 FPS 2048×2048 GPU homography unwarp to wrap live crayon strokes onto animated 3D character meshes.
+**Mimadim Home Studio — High-Fidelity PC Customization Architecture**  
+*Unreal Engine 5 • C++ • Blueprints • Data Assets • GameInstance Subsystem • Lumen*  
+- Engineered data-driven interior showroom for high-end PC, dynamically swapping beds, parquet, wallpapers, and curtains under photorealistic PBR lighting.
+- Developed centralized GameInstance Subsystem with matrix-safe transform preservation, ensuring zero positional drift across actor swaps.
 
 ---
 

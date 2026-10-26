@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sahil Vaghela — Technical Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Reset & Variable Tokens */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-subtle: #64748b;
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --border-color: #cbd5e1;
+      --line-height: 1.34;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background-color: #f1f5f9;
+      line-height: var(--line-height);
+      font-size: 9.2pt;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Screen-Only Floating Action Toolbar */
+    .screen-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .toolbar-title {
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-ats {
+      background: #0284c7;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #0369a1;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #e2e8f0;
+      border-color: #475569;
+    }
+    .btn-outline:hover {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    /* Page Canvas */
+    .page-container {
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .resume-sheet {
+      width: 8.5in;
+      min-height: 11in;
+      background: #ffffff;
+      padding: 0.42in 0.48in;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 2px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 9px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid var(--text-main);
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #0284c7;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .headline {
+      font-size: 10.8pt;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.2px;
+      margin-bottom: 4px;
+    }
+
+    .contact-line {
+      font-size: 8.6pt;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+    }
+
+    .contact-line a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 9.4pt;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 8px;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1.2px solid #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.8pt;
+      color: var(--text-muted);
+      text-align: justify;
+      line-height: 1.34;
+      margin-bottom: 4px;
+    }
+
+    /* Skills Grid */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 4px;
+      font-size: 8.7pt;
+    }
+
+    .skill-row {
+      display: flex;
+      line-height: 1.3;
+    }
+
+    .skill-label {
+      width: 148px;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .skill-value {
+      color: var(--text-muted);
+    }
+
+    /* Experience */
+    .job-block {
+      margin-bottom: 5px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.3pt;
+    }
+
+    .company-name {
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .location {
+      font-size: 8.5pt;
+      color: var(--text-subtle);
+      font-weight: 500;
+    }
+
+    .role-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.9pt;
+      margin-top: 1px;
+      margin-bottom: 2px;
+    }
+
+    .role-title {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .period {
+      font-size: 8.4pt;
+      color: var(--text-subtle);
+      font-weight: 600;
+      font-family: var(--font-sans);
+    }
+
+    /* Bullet Points */
+    ul.bullet-list {
+      list-style-type: disc;
+      padding-left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    ul.bullet-list li {
+      font-size: 8.6pt;
+      color: var(--text-muted);
+      line-height: 1.32;
+    }
+
+    ul.bullet-list li strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Projects */
+    .project-item {
+      margin-bottom: 4px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.9pt;
+      margin-bottom: 1.5px;
+    }
+
+    .project-title {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-tags {
+      font-family: var(--font-mono);
+      font-size: 7.6pt;
+      color: var(--primary-dark);
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 0.5px 5px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* Education */
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.1pt;
+    }
+
+    .degree {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .edu-inst {
+      font-size: 8.6pt;
+      color: var(--text-muted);
+      margin-top: 0.5px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .gpa-pill {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 0px 5px;
+      border-radius: 3px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .coursework {
+      font-size: 8.3pt;
+      color: var(--text-subtle);
+      margin-top: 1.5px;
+      line-height: 1.28;
+    }
+
+    /* Print Stylesheet (Strict 1-Page Letter/A4) */
+    @media print {
+      body {
+        background: #ffffff !important;
+        font-size: 9pt !important;
+      }
+
+      .screen-toolbar {
+        display: none !important;
+      }
+
+      .page-container {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .resume-sheet {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: var(--text-main) !important;
+      }
+
+      .contact-line a, .role-title, .project-tags {
+        color: var(--primary-dark) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      @page {
+        size: letter portrait;
+        margin: 0.38in 0.44in 0.35in 0.44in;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Screen Toolbar (Hidden on Print) -->
+  <aside class="screen-toolbar no-print">
+    <div class="toolbar-title">
+      <span>Sahil Vaghela — 1-Page Recruiter Master Resume</span>
+      <span class="badge-ats">10/10 ATS Ready</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn btn-outline" onclick="copyMarkdown()">Copy Text</button>
+      <a class="btn btn-outline" href="https://itssahilvaghela.github.io/Protfolio/" target="_blank" rel="noopener noreferrer">Visit Portfolio ↗</a>
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / Save as PDF
+      </button>
+    </div>
+  </aside>
+
+  <!-- Document Canvas -->
+  <main class="page-container">
+    <article class="resume-sheet">
+      
+      <!-- Header -->
+      <header>
+        <h1>Sahil Vaghela</h1>
+        <div class="headline">Software Engineer — Real-Time 3D, Systems & XR</div>
+        <div class="contact-line">
+          <span>Kheda, Gujarat, India</span>
+          <span>•</span>
+          <a href="tel:+916351955141">+91 63519 55141</a>
+          <span>•</span>
+          <a href="mailto:vaghelasahil1104@gmail.com">vaghelasahil1104@gmail.com</a>
+          <span>•</span>
+          <a href="https://itssahilvaghela.github.io/Protfolio/" target="_blank" rel="noopener noreferrer">itssahilvaghela.github.io/Protfolio</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/sahil-vaghela-ba4822250" target="_blank" rel="noopener noreferrer">linkedin.com/in/sahil-vaghela-ba4822250</a>
+        </div>
+      </header>
+
+      <!-- Professional Summary -->
+      <section>
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary-text">
+          Computer Engineering graduate (<strong>9.11 CGPA</strong>) and Software Developer with 3+ years architecting high-performance real-time systems, procedural geometry pipelines, and cross-platform applications in C++, C#, and Python. Proven track record delivering production Unreal Engine 5 subsystems, Meta Quest 3 / OpenXR spatial computing, and low-latency computer vision tracking.
+        </p>
+      </section>
+
+      <!-- Technical Skills -->
+      <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-list">
+          <div class="skill-row">
+            <span class="skill-label">Programming:</span>
+            <span class="skill-value">C++, C#, Python, JavaScript / TypeScript, C, SQL</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Engines & 3D Systems:</span>
+            <span class="skill-value">Unreal Engine 5 (C++, Subsystems, Blueprints), Unity (C#, URP), Three.js, WebGL, OpenXR</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Software Engineering:</span>
+            <span class="skill-value">Procedural Mesh Generation, Data-Driven Design, Subsystem Architecture, CAD (DXF/JSON) Parsing, Memory Optimization, REST APIs, Git/GitHub</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">XR, CV & Networking:</span>
+            <span class="skill-value">Meta Quest 3, Mixed Reality (Passthrough), MediaPipe (Pose Tracking), OpenCV, ARCore, Agora Real-Time Video SDK, WebSockets / UDP</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Tools & Platforms:</span>
+            <span class="skill-value">Visual Studio, Rider, CMake, Blender, Figma, Windows, Linux, Agentic AI Workflows</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Experience -->
+      <section>
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="job-block">
+          <div class="job-header">
+            <span class="company-name">Invisible Fiction</span>
+            <span class="location">Gujarat, India</span>
+          </div>
+
+          <div class="role-row">
+            <span class="role-title">Software & Engine Developer (Unreal Engine 5 & Unity)</span>
+            <span class="period">Feb 2026 – Present</span>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Architected an automated CAD-to-3D pipeline</strong> in Unreal Engine 5 (C++), parsing multi-layer DXF/JSON blueprints to procedurally generate 3D architectural meshes, roofs, and walls with runtime polygon triangulation and gap resolution, eliminating manual 3D modeling turnaround.</li>
+            <li><strong>Engineered a modular runtime customization system</strong> using UE5 C++ Subsystems and Data Assets, enabling seamless swapping of furniture/finishes while guaranteeing transform persistence and zero memory leaks across room transitions.</li>
+            <li><strong>Spearheaded end-to-end development of Fiction Mech</strong> as sole engineer: a cross-platform XR industrial application on Meta Quest 3 (OpenXR) with bidirectional low-latency control and real-time audio/video streaming to companion Android devices via Agora SDK.</li>
+            <li><strong>Authored custom HLSL/Shader Graph see-through X-ray materials</strong> and optimized UE5 lighting channels (Skylight/Lumen) and draw-calls to achieve target 72+ FPS performance on standalone VR headsets.</li>
+          </ul>
+        </div>
+
+        <div class="job-block">
+          <div class="role-row">
+            <span class="role-title">Junior Unity & XR Developer</span>
+            <span class="period">May 2023 – Feb 2026</span>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Built low-latency computer vision gameplay pipelines</strong> by streaming real-time MediaPipe skeletal landmarks (33 body points) into Unity via UDP sockets, powering motion-controlled commercial games at 30+ FPS.</li>
+            <li><strong>Engineered gameplay mechanics, physics controllers, and responsive UI systems</strong> across multiple commercial mobile/PC titles (<em>Turbo Trail</em>, <em>Cupping Muffins</em>, <em>Catch the Object</em>), shipping client-branded adaptations on tight schedules.</li>
+            <li><strong>Deployed enterprise AR tracking solutions</strong> on Microsoft HoloLens and mobile using Vuforia and ARCore, implementing QR-code localization and spatial anchoring for industrial machinery inspection.</li>
+          </ul>
+        </div>
+
+        <div class="job-block">
+          <div class="role-row">
+            <span class="role-title">Artificial Intelligence Intern</span>
+            <span class="period">Feb 2023 – May 2023</span>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Prototyped real-time human pose estimation pipelines</strong> in Python using OpenCV and MediaPipe, establishing the core network IPC communication layer that was subsequently productized into live motion-controlled games.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Key Technical Projects -->
+      <section>
+        <h2 class="section-title">Key Technical Projects</h2>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">WebAR 3D Interactive & GPU Texture Unwarping Engine</span>
+            <span class="project-tags">Three.js • MindAR • WebGL • GLSL</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Engineered an in-browser WebAR application that tracks physical coloring pages via webcam and maps live hand-colored textures onto animated 3D character models in real-time.</li>
+            <li>Implemented a high-performance 2048 × 2048 UV texture extraction and unwarping pipeline running entirely client-side at 60 FPS without server overhead.</li>
+          </ul>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">FictionArchviz Multiuser CAD-to-VR Engine</span>
+            <span class="project-tags">Unreal Engine 5 • C++ • OpenXR • DXF</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Created a synchronized architectural visualization system supporting simultaneous PC and Meta Quest VR clients, featuring runtime DXF/JSON wall/roof polygon triangulation and spatial voice communication.</li>
+          </ul>
+        </div>
+
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-title">Motion-Controlled Computer Vision Games</span>
+            <span class="project-tags">Unity • C# • MediaPipe • Python • UDP</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Developed gesture- and pose-controlled interactive games (<em>Alien Runner</em>, <em>Football Cup</em>), converting 30 FPS webcam video feeds into 33-point skeletal coordinate streams over UDP to control game physics without wearables.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <h2 class="section-title">Education & Academic Achievements</h2>
+        <div class="edu-header">
+          <span class="degree">Bachelor of Engineering (B.E.) in Computer Engineering</span>
+          <span class="period">Graduated: 2023</span>
+        </div>
+        <div class="edu-inst">
+          <span>Ipcowala Institute of Engineering and Technology — Gujarat, India</span>
+          <span class="gpa-pill">CGPA: 9.11 / 10.0</span>
+        </div>
+        <div class="coursework">
+          <strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented Programming, Computer Graphics, Database Systems, Operating Systems, Computer Networks. &nbsp;•&nbsp; <strong>Languages:</strong> English (Professional), Hindi, Gujarati.
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <script>
+    function copyMarkdown() {
+      const text = `SAHIL VAGHELA
+Software Engineer — Real-Time 3D, Systems & XR
+Kheda, Gujarat, India • +91 63519 55141 • vaghelasahil1104@gmail.com
+Portfolio: https://itssahilvaghela.github.io/Protfolio/ • LinkedIn: https://www.linkedin.com/in/sahil-vaghela-ba4822250
+
+PROFESSIONAL SUMMARY
+Computer Engineering graduate (9.11 CGPA) and Software Developer with 3+ years architecting high-performance real-time systems, procedural geometry pipelines, and cross-platform applications in C++, C#, and Python. Proven track record delivering production Unreal Engine 5 subsystems, Meta Quest 3 / OpenXR spatial computing, and low-latency computer vision tracking.
+
+TECHNICAL SKILLS
+- Programming: C++, C#, Python, JavaScript / TypeScript, C, SQL
+- Engines & 3D Systems: Unreal Engine 5 (C++, Subsystems, Blueprints), Unity (C#, URP), Three.js, WebGL, OpenXR
+- Software Engineering: Procedural Mesh Generation, Data-Driven Design, Subsystem Architecture, CAD (DXF/JSON) Parsing, Memory Optimization, REST APIs, Git/GitHub
+- XR, CV & Networking: Meta Quest 3, Mixed Reality (Passthrough), MediaPipe (Pose Tracking), OpenCV, ARCore, Agora Real-Time Video SDK, WebSockets / UDP
+- Tools & Platforms: Visual Studio, Rider, CMake, Blender, Figma, Windows, Linux, Agentic AI Workflows
+
+PROFESSIONAL EXPERIENCE
+Invisible Fiction — Gujarat, India
+Software & Engine Developer (Unreal Engine 5 & Unity) | Feb 2026 – Present
+- Architected an automated CAD-to-3D pipeline in Unreal Engine 5 (C++), parsing multi-layer DXF/JSON blueprints to procedurally generate 3D architectural meshes, roofs, and walls with runtime polygon triangulation and gap resolution, eliminating manual 3D modeling turnaround.
+- Engineered a modular runtime customization system using UE5 C++ Subsystems and Data Assets, enabling seamless swapping of furniture/finishes while guaranteeing transform persistence and zero memory leaks across room transitions.
+- Spearheaded end-to-end development of Fiction Mech as sole engineer: a cross-platform XR industrial application on Meta Quest 3 (OpenXR) with bidirectional low-latency control and real-time audio/video streaming to companion Android devices via Agora SDK.
+- Authored custom HLSL/Shader Graph see-through X-ray materials and optimized UE5 lighting channels (Skylight/Lumen) and draw-calls to achieve target 72+ FPS performance on standalone VR headsets.
+
+Junior Unity & XR Developer | May 2023 – Feb 2026
+- Built low-latency computer vision gameplay pipelines by streaming real-time MediaPipe skeletal landmarks (33 body points) into Unity via UDP sockets, powering motion-controlled commercial games at 30+ FPS.
+- Engineered gameplay mechanics, physics controllers, and responsive UI systems across multiple commercial mobile/PC titles (Turbo Trail, Cupping Muffins, Catch the Object), shipping client-branded adaptations on tight schedules.
+- Deployed enterprise AR tracking solutions on Microsoft HoloLens and mobile using Vuforia and ARCore, implementing QR-code localization and spatial anchoring for industrial machinery inspection.
+
+Artificial Intelligence Intern | Feb 2023 – May 2023
+- Prototyped real-time human pose estimation pipelines in Python using OpenCV and MediaPipe, establishing the core network IPC communication layer that was subsequently productized into live motion-controlled games.
+
+KEY TECHNICAL PROJECTS
+WebAR 3D Interactive & GPU Texture Unwarping Engine [Three.js • MindAR • WebGL • GLSL]
+- Engineered an in-browser WebAR application that tracks physical coloring pages via webcam and maps live hand-colored textures onto animated 3D character models in real-time.
+- Implemented a high-performance 2048 × 2048 UV texture extraction and unwarping pipeline running entirely client-side at 60 FPS without server overhead.
+
+FictionArchviz Multiuser CAD-to-VR Engine [Unreal Engine 5 • C++ • OpenXR • DXF]
+- Created a synchronized architectural visualization system supporting simultaneous PC and Meta Quest VR clients, featuring runtime DXF/JSON wall/roof polygon triangulation and spatial voice communication.
+
+Motion-Controlled Computer Vision Games [Unity • C# • MediaPipe • Python • UDP]
+- Developed gesture- and pose-controlled interactive games (Alien Runner, Football Cup), converting 30 FPS webcam video feeds into 33-point skeletal coordinate streams over UDP to control game physics without wearables.
+
+EDUCATION & ACADEMIC ACHIEVEMENTS
+Bachelor of Engineering (B.E.) in Computer Engineering | Graduated: 2023
+Ipcowala Institute of Engineering and Technology, Gujarat, India | CGPA: 9.11 / 10.0
+- Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming, Computer Graphics, Database Systems, Operating Systems, Computer Networks.
+- Languages: English (Professional), Hindi, Gujarati.`;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Plaintext resume copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>

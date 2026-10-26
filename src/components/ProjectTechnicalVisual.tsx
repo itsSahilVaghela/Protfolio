@@ -158,7 +158,7 @@ export const ProjectTechnicalVisual = ({
           {project.diagramType === "archviz-dxf" && "DXF Roof Tessellation"}
           {project.diagramType === "mimadim-subsystem" && "UE Subsystem Architecture"}
           {project.diagramType === "webar-uv" && "WebAR UV Processing"}
-          {(project.diagramType === "pose-detection" || project.diagramType === "mediapipe-unity") && "YOLO ONNX → MediaPipe → Three.js"}
+          {(project.diagramType === "pose-detection" || project.diagramType === "mediapipe-unity") && "ONNX Model → MediaPipe → Three.js / Electron"}
           {project.diagramType === "unity-games" && "Modular C# Systems"}
         </span>
       </div>
@@ -606,19 +606,19 @@ export const ProjectTechnicalVisual = ({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Step 1: Camera & YOLO11n Vest Isolation */}
+          {/* Step 1: Camera & ONNX Target Isolation */}
           <g transform="translate(14, 38)">
             <rect x="0" y="0" width="116" height="132" rx="6" fill="#10151D" stroke="#1E2736" />
             <text x="8" y="17" fill="#4D8DFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              YOLO11 ONNX (WEBGPU)
+              ONNX PERSON MODEL
             </text>
             <rect x="15" y="28" width="86" height="80" rx="4" fill="#080B10" stroke="#1E2736" strokeDasharray="3 2" />
             <rect x="33" y="44" width="50" height="46" rx="3" fill="rgba(77,141,255,0.15)" stroke="#22C55E" strokeWidth="1.6" />
             <text x="36" y="40" fill="#22C55E" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              VEST: 0.94
+              TARGET LOCK
             </text>
             <text x="8" y="122" fill="#778294" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              Patient ROI Isolation
+              1 Person From Many
             </text>
           </g>
 
@@ -629,7 +629,7 @@ export const ProjectTechnicalVisual = ({
           <g transform="translate(150, 38)">
             <rect x="0" y="0" width="116" height="132" rx="6" fill="#10151D" stroke="#1E2736" />
             <text x="8" y="17" fill="#8B6CFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              MEDIAPIPE POSE (60FPS)
+              MEDIAPIPE POSE
             </text>
             {/* Skeletal wireframe */}
             <circle cx="58" cy="36" r="6" stroke="#38BDF8" strokeWidth="1.4" />
@@ -652,29 +652,29 @@ export const ProjectTechnicalVisual = ({
           {/* Flow Line 2 */}
           <line x1="266" y1="104" x2="286" y2="104" stroke="#8B6CFF" strokeWidth="1.5" strokeDasharray="4 2" />
 
-          {/* Step 3: Pure Three.js 3D Games */}
+          {/* Step 3: Three.js & Electron 15 Games Suite */}
           <g transform="translate(286, 38)">
             <rect x="0" y="0" width="118" height="132" rx="6" fill="#151C27" stroke="#4D8DFF" strokeWidth="1.2" />
             <text x="8" y="17" fill="#4D8DFF" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              THREE.JS 3D GAMES
+              THREE.JS &amp; ELECTRON
             </text>
             <rect x="8" y="28" width="102" height="38" rx="4" fill="#10151D" stroke="#1E2736" />
             <text x="14" y="44" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              Endless Runner
+              15 Games Suite
             </text>
             <text x="14" y="56" fill="#A4ADBB" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Lane Jump &amp; Dodge
+              Motion-Controlled 3D
             </text>
 
             <rect x="8" y="70" width="102" height="38" rx="4" fill="#10151D" stroke="#1E2736" />
             <text x="14" y="86" fill="#F4F6FA" fontSize="8" fontFamily="JetBrains Mono, monospace">
-              Car Traffic Dodge
+              Real-Time Play
             </text>
             <text x="14" y="98" fill="#A4ADBB" fontSize="6.5" fontFamily="JetBrains Mono, monospace">
-              Lean Steering @ 60FPS
+              Desktop &amp; Browser Kiosk
             </text>
             <text x="8" y="122" fill="#22C55E" fontSize="7" fontFamily="JetBrains Mono, monospace">
-              100% In-Browser 3D
+              15 Interactive Games
             </text>
           </g>
         </svg>

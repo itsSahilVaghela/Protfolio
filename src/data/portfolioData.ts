@@ -844,53 +844,52 @@ export const featuredProjects: ProjectCaseStudy[] = [
     priorityRank: 6,
     featuredTier: "primary",
     title: "Motion-Controlled AI Games",
-    subtitle: "In-Browser MediaPipe Pose & YOLO11n ONNX Vest Tracking in Three.js",
+    subtitle: "15 Games Built with Three.js, Electron, MediaPipe & ONNX Person Tracking",
     category: "Web 3D Games / Computer Vision",
     filterGroup: "cv-games",
     technologies: [
       "Three.js",
-      "MediaPipe Pose",
-      "YOLO11 ONNX",
-      "AI-Assisted (Antigravity · Claude · ChatGPT)",
-      "WebGPU",
+      "Electron",
+      "MediaPipe",
+      "ONNX",
+      "AI-Assisted",
     ],
     shortDescription:
-      "Suite of browser-based 3D motion games driven by MediaPipe body tracking and an in-browser YOLO11n ONNX AI model that locks player tracking to clinical safety vests.",
+      "Suite of 15 motion-controlled 3D games built using AI with Three.js and Electron, powered by MediaPipe body tracking and an ONNX model to isolate and track a particular person from many.",
     highlights: [
-      "Built as Sole Developer using AI-assisted pair-programming (Google Antigravity, Claude, ChatGPT) for ONNX WebGPU pipelines and 3D gameplay.",
-      "Complete 3D game suite solely in Three.js: Endless Runner, Car Dodge, Flying Game, Shape Catcher.",
-      "Real-time 33-landmark skeletal tracking at 60 FPS using browser MediaPipe Pose.",
-      "In-browser YOLO11n ONNX inference via onnxruntime-web (WebGPU/WASM) for patient vest gating.",
-      "Solved multi-person clinic interference: auto-crops pose tracking exclusively to vest wearer.",
+      "Sole Developer: built 15 motion-controlled games using AI with Three.js, Electron, and MediaPipe.",
+      "Integrated ONNX model to isolate and track a particular person out of multiple people in view.",
+      "Real-time MediaPipe skeletal tracking driving controller-free full-body gameplay.",
+      "Packaged across browser and desktop environments with Electron.",
     ],
     cardCapsules: [
       {
-        tag: "Pure Three.js Suite",
+        tag: "15 AI Games",
         detail:
-          "5+ motion arcade games built natively in Three.js with zero Unity runtime.",
+          "Suite of 15 motion-controlled 3D games built using Three.js and AI tools.",
       },
       {
-        tag: "YOLO11n ONNX AI Gate",
+        tag: "ONNX Person Tracking",
         detail:
-          "Browser WebGPU inference tracks safety vest to isolate patient from crowd.",
+          "ONNX model isolates and tracks a particular person from many in the camera frame.",
       },
       {
-        tag: "AI-Accelerated Dev",
+        tag: "Three.js & Electron",
         detail:
-          "Built with Google Antigravity, Claude, and ChatGPT for ONNX WebGPU & kinematic math.",
+          "Cross-platform delivery with MediaPipe real-time body tracking.",
       },
     ],
-    roleTitle: "Lead Web 3D & Computer Vision Developer",
+    roleTitle: "Lead 3D & Computer Vision Developer",
     ownershipScope: "Sole Developer",
     ownershipNote:
-      "Sole Developer — engineered with AI-accelerated workflows using Google Antigravity, Claude, and ChatGPT to architect the in-browser YOLO11n vest detector, kinematic motion smoothing, and Three.js game loops.",
+      "Sole Developer — engineered 15 motion-controlled games using AI with Three.js, Electron, and MediaPipe, deploying an ONNX model to track a particular person from many.",
     diagramType: "pose-detection",
     mediaUrl: "/projects/motion-controlled-games/motion-therapy-station.jpg",
     videoUrl:
       "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/view?usp=sharing",
     additionalVideos: [
       {
-        label: "Clinical Therapy & Motion AI Gameplay Demo",
+        label: "Motion AI Gameplay Demo",
         url: "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/view?usp=sharing",
         previewUrl:
           "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/preview",
@@ -898,80 +897,74 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ],
     additionalImages: [
       {
-        label: "Interactive Motor Therapy Station (NoPainHeals)",
+        label: "Interactive Motion Therapy Station",
         url: "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/view?usp=sharing",
         previewUrl:
           "/projects/motion-controlled-games/motion-therapy-station.jpg",
       },
     ],
     mediaCaption:
-      "AI Tracking Pipeline: Camera Stream -> YOLO11n ONNX Vest Isolation -> MediaPipe Pose ROI -> Kinematic Gesture Engine -> 60 FPS Three.js Game Loop.",
+      "Pipeline: Camera Feed -> ONNX Person Isolation -> MediaPipe Pose Tracking -> 60 FPS Three.js Game Loop.",
     caseStudy: {
       overview:
-        "Motion-Controlled AI Games is a suite of real-time browser-based 3D motion games built solely with Three.js, MediaPipe Pose, and an in-browser YOLO11n ONNX computer vision model. Developed with AI-assisted engineering (Google Antigravity, Claude, ChatGPT), it tracks full-body skeletal movement to control interactive games (Endless Runner, Car Traffic Dodge, 3D Flying Game, Shape Catcher, Boat Runner) without game controllers or native engine installations.",
+        "A suite of 15 real-time 3D motion-controlled games built with Three.js, Electron, and MediaPipe using AI assistance. The platform uses an ONNX model to isolate and track a particular person from many in the camera frame, translating real-time body motion into interactive gameplay without physical controllers.",
       problem:
-        "In clinical therapy and arcade spaces, multiple clinicians and bystanders appear in the camera frame, causing single-person pose estimators to jump erratically between subjects. The challenge required executing deep-learning object detection, 33-landmark pose estimation, and a 3D WebGL render loop concurrently inside a standard web browser at a locked 60 FPS while translating noisy coordinates into crisp gameplay controls.",
+        "When multiple people appear in front of the camera, standard pose tracking jumps erratically between different individuals. The requirement was to isolate and track a specific person from a crowd while running 15 interactive 3D games smoothly in real time.",
       responsibilities: [
-        "Architected and implemented entire application as Sole Developer using AI pair-programming with Google Antigravity, Claude, and ChatGPT.",
-        "Engineered the complete 3D game suite solely in Three.js (Endless Runner, Car Dodge, 3D Flying, Shape Catcher, Arcade Boat).",
-        "Integrated in-browser YOLO11n ONNX inference via onnxruntime-web with WebGPU/WASM hardware acceleration.",
-        "Built dynamic anatomical ROI cropping isolating the safety vest wearer and feeding clean frames to MediaPipe Pose.",
-        "Developed kinematic motion filters, gesture recognition algorithms, and directional audio cueing systems.",
+        "Built all 15 motion games as sole developer using AI assistance across Three.js and Electron.",
+        "Integrated ONNX model to isolate and continuously track a particular person from many in the scene.",
+        "Implemented real-time body tracking using MediaPipe.",
+        "Engineered 3D mechanics and visual loops in Three.js and packaged desktop runtime with Electron.",
+        "Mapped body movements and gestures directly to gameplay controls.",
       ],
       technicalApproach:
-        "Executed custom-trained YOLO11n ONNX object detection on incoming webcam frames to locate the patient's high-visibility safety vest. Automatically cropped the video stream to the vest wearer's full anatomical boundary and fed only that cropped region to MediaPipe Pose, bypassing bystanders completely. Remapped detected 33 skeletal landmarks back to global coordinates and computed kinematic steering/jumping vectors to drive Three.js games at 60 FPS.",
+        "Utilized an ONNX model to detect and track a particular target person when multiple people are present in the camera frame. The isolated player stream is processed by MediaPipe to track body keypoints, driving real-time interaction across 15 3D games in Three.js and Electron.",
       architectureDetails: [
-        "AI-Accelerated Engineering: Developed via Google Antigravity, Claude, and ChatGPT for WebGPU ONNX execution, landmark remapping, and game mechanics.",
-        "In-Browser YOLO11n ONNX (WebGPU): Custom model (best.onnx) detects patient safety vest box [vx, vy, vw, vh] with NMS filtering.",
-        "Anatomical ROI Crop & Remapping: Offscreen canvas crops video stream to vest wearer, isolating patient and eliminating bystander interference.",
-        "MediaPipe Pose (33 Landmarks): Tracks joints at 60 FPS with velocity clamping and exponential moving average (EMA) smoothing.",
-        "Pure Three.js Game Suite: Procedural tracks, obstacle pooling, dynamic lighting, and threat-based audio cues without any native engine dependency.",
+        "15 Games Suite: 15 interactive 3D motion games developed in Three.js.",
+        "ONNX Person Tracking: Isolates and tracks a particular person from many.",
+        "MediaPipe Tracking: Real-time body tracking driving controller-free gameplay.",
+        "Electron & Web Delivery: Packaged for standalone desktop and browser execution.",
+        "AI-Assisted Workflow: Rapid prototyping and game development using AI tools.",
       ],
       pipelineSteps: [
         {
           stage: "STEP 01",
-          title: "Webcam & YOLO11n AI",
-          detail: "In-browser ONNX model detects clinical safety vest bounding box",
+          title: "Camera Feed",
+          detail: "Live video capture from camera input",
         },
         {
           stage: "STEP 02",
-          title: "Anatomical ROI Crop",
-          detail: "Video feed cropped exclusively to vest wearer, ignoring bystanders",
+          title: "ONNX Person Tracking",
+          detail: "ONNX model isolates and tracks particular person from many",
         },
         {
           stage: "STEP 03",
-          title: "MediaPipe 33 Landmarks",
-          detail: "Pose estimator tracks 33 skeletal keypoints on isolated patient ROI",
+          title: "MediaPipe Tracking",
+          detail: "MediaPipe extracts real-time skeletal landmarks from target",
         },
         {
           stage: "STEP 04",
-          title: "Native Three.js 60 FPS",
-          detail: "Kinematic gestures drive 3D lane jumps, leans, and item reaches",
+          title: "Three.js 15 Games",
+          detail: "Body motion drives real-time gameplay across 15 interactive games",
         },
       ],
       challenges: [
         {
           challenge:
-            "Multi-person hospital environments cause pose estimators to jump erratically between patient and therapists.",
+            "Multiple people in the camera field caused pose trackers to jump between different subjects.",
           solution:
-            "Layered YOLO11n ONNX vest detection as an exclusive spatial mask before pose estimation, locking tracking to the patient.",
+            "Implemented an ONNX model to identify and lock tracking exclusively onto the particular target person.",
         },
         {
           challenge:
-            "Heavy computational load of running ONNX inference, MediaPipe pose, and WebGL 3D rendering in a single browser thread.",
+            "Running computer vision models, pose estimation, and 3D rendering together with high responsiveness.",
           solution:
-            "Leveraged WebGPU / WASM SIMD execution in onnxruntime-web, decoupled inference cadences, and used Three.js geometry instancing.",
-        },
-        {
-          challenge:
-            "Minor patient tremors or camera sensor jitter caused jarring jumps in avatar position and gameplay controls.",
-          solution:
-            "Implemented kinematic deadzones and low-pass smoothing filters to produce arcade-responsive, clinical-grade input feel.",
+            "Optimized inference pipelines and render loops for smooth performance across Three.js and Electron.",
         },
       ],
       outcomes: [
-        "Successfully deployed 100% web-native 3D motion game suite eliminating native engine installs and specialized hardware controllers.",
-        "Maintained steady 60 FPS performance across all 5+ games while running concurrent AI vest detection and skeletal tracking.",
+        "Delivered 15 complete motion-controlled games running smoothly on Three.js and Electron.",
+        "Reliably tracked a particular person from many without specialized hardware.",
       ],
     },
   },

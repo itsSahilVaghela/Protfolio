@@ -864,19 +864,19 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ],
     cardCapsules: [
       {
-        tag: "15 AI Games",
+        tag: "15 Motion Games",
         detail:
-          "Suite of 15 motion-controlled 3D games built using Three.js and AI tools.",
+          "Arcade, flight, runner, and sports 3D titles built natively in Three.js.",
       },
       {
-        tag: "ONNX Person Tracking",
+        tag: "ONNX Person Isolation",
         detail:
-          "ONNX model isolates and tracks a particular person from many in the camera frame.",
+          "Neural network isolates and tracks a particular player from background crowds.",
       },
       {
-        tag: "Three.js & Electron",
+        tag: "MediaPipe & Electron",
         detail:
-          "Cross-platform delivery with MediaPipe real-time body tracking.",
+          "Real-time 33-landmark body tracking packaged for cross-platform desktop and web.",
       },
     ],
     roleTitle: "Lead 3D & Computer Vision Developer",
@@ -907,7 +907,7 @@ export const featuredProjects: ProjectCaseStudy[] = [
       "Pipeline: Camera Feed -> ONNX Person Isolation -> MediaPipe Pose Tracking -> 60 FPS Three.js Game Loop.",
     caseStudy: {
       overview:
-        "A suite of 15 real-time 3D motion-controlled games built with Three.js, Electron, and MediaPipe using AI assistance. The platform uses an ONNX model to isolate and track a particular person from many in the camera frame, translating real-time body motion into interactive gameplay without physical controllers.",
+        "A suite of 15 interactive 3D motion games developed using AI assistance. The platform tracks player body motion in real time via MediaPipe Pose, while an ONNX model isolates and tracks a particular person from multi-person environments without physical controllers.",
       problem:
         "When multiple people appear in front of the camera, standard pose tracking jumps erratically between different individuals. The requirement was to isolate and track a specific person from a crowd while running 15 interactive 3D games smoothly in real time.",
       responsibilities: [
@@ -930,41 +930,41 @@ export const featuredProjects: ProjectCaseStudy[] = [
         {
           stage: "STEP 01",
           title: "Camera Feed",
-          detail: "Live video capture from camera input",
+          detail: "60 FPS video capture from standard webcam input",
         },
         {
           stage: "STEP 02",
-          title: "ONNX Person Tracking",
-          detail: "ONNX model isolates and tracks particular person from many",
+          title: "ONNX Isolation",
+          detail: "Isolates target person bounding box and filters crowd interference",
         },
         {
           stage: "STEP 03",
           title: "MediaPipe Tracking",
-          detail: "MediaPipe extracts real-time skeletal landmarks from target",
+          detail: "Extracts 33 body landmarks on isolated player region",
         },
         {
           stage: "STEP 04",
-          title: "Three.js 15 Games",
-          detail: "Body motion drives real-time gameplay across 15 interactive games",
+          title: "Three.js Engine",
+          detail: "Translates motion vectors into gameplay across 15 games",
         },
       ],
       challenges: [
         {
           challenge:
-            "Multiple people in the camera field caused pose trackers to jump between different subjects.",
+            "Crowded multi-person environments cause pose estimators to jump between different individuals.",
           solution:
-            "Implemented an ONNX model to identify and lock tracking exclusively onto the particular target person.",
+            "Gated pose tracking behind an ONNX person isolation model, ensuring tracking stays locked exclusively to the target player.",
         },
         {
           challenge:
-            "Running computer vision models, pose estimation, and 3D rendering together with high responsiveness.",
+            "Running computer vision models, pose estimation, and 3D rendering simultaneously with high responsiveness.",
           solution:
-            "Optimized inference pipelines and render loops for smooth performance across Three.js and Electron.",
+            "Optimized inference cadences and decoupled Three.js render loops to maintain stable 60 FPS performance.",
         },
       ],
       outcomes: [
-        "Delivered 15 complete motion-controlled games running smoothly on Three.js and Electron.",
-        "Reliably tracked a particular person from many without specialized hardware.",
+        "Shipped 15 distinct 3D motion games running at 60 FPS across Three.js and Electron.",
+        "Eliminated external hardware controllers by tracking player movement directly through standard camera feeds.",
       ],
     },
   },

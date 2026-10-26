@@ -991,94 +991,94 @@ export const featuredProjects: ProjectCaseStudy[] = [
     filterGroup: "cv-games",
     technologies: ["Unity", "C#"],
     shortDescription:
-      "In-house PC and mobile Unity/C# games at Invisible Fiction including Turbo Trail (finger rubber trail physics), Cupping Muffins (adapted for Burger, Mocktail, and Milkshake), and Catch the Object (sole developer casual arcade).",
+      "In-house mobile and casual Unity/C# games at Invisible Fiction: resolved level-up bugs and overhauled UI in Turbo Trail, refactored Cupping Muffins into Burger, Mocktail, and Milkshake player/ingredient variants, and shipped Catch the Object as sole developer.",
     highlights: [
-      "Catch the Object (Sole Developer): Complete solo development of a casual arcade game from concept to release.",
-      "Turbo Trail (Sub Developer): High-speed mobile game where players drag fingers to forge dynamic rubber trails that guide balls and shield against obstacles.",
-      "Cupping Muffins (Sub Developer): Perpetual moving cup ingredient collection game; reworked systems to support Burger, Mocktail, and Milkshake themes.",
-      "Role: JR. Game Developer delivering modular C# gameplay mechanics, physics interactions, and responsive UI.",
+      "Turbo Trail (Junior Dev): Fixed level-up progression bugs, implemented dynamic score progress bar, overhauled game UI, and tuned rubber trail bounce physics against spikes and black hole hazards.",
+      "Cupping Muffins (Theme Adaptation): Inherited complete base Muffin project and adapted player into Burger, Mocktail, and Milkshake entities with custom ingredient prefabs.",
+      "Catch the Object (Sole Developer): Built entire casual arcade mini-game from concept to release, including falling item values, negative obstacles, and basket controls.",
+      "Role: JR. Game Developer delivering bug fixes, UI overhauls, prefab refactoring, and modular C# gameplay systems.",
     ],
     cardCapsules: [
       {
-        tag: "Turbo Trail (Sub Dev)",
+        tag: "Turbo Trail (UI & Bug Fixes)",
         detail:
-          "Dynamic rubber trail drawing serving as both player pathway and shield against spikes & barriers.",
+          "Drew rubber trails to bounce balls/balloons away from spikes & black holes; resolved level-up bugs and overhauled full game UI.",
       },
       {
-        tag: "Cupping Muffins (Sub Dev)",
+        tag: "Cupping Muffins (Prefabs)",
         detail:
-          "Moving cup collecting ingredients; refactored and adapted into Burger, Mocktail, and Milkshake editions.",
+          "Adapted base game player into Burger, Mocktail, and Milkshake variants; swapped ingredient assets, prefabs, and collection rules.",
       },
       {
         tag: "Catch the Object (Solo)",
         detail:
-          "Sole developer end-to-end: falling item values, negative hazard objects, and basket controls.",
+          "Sole developer end-to-end: falling item point values, negative hazard obstacles, and basket steering.",
       },
     ],
     roleTitle: "Junior Game Developer (Unity C#)",
     ownershipScope: "Solo & Team Contributions",
     ownershipNote:
-      "Junior Game Developer at Invisible Fiction: Sole Developer on Catch the Object; Sub Developer on Turbo Trail, Cupping Muffins (with Burger, Mocktail, and Milkshake adaptations), and in-house studio titles.",
+      "Junior Game Developer at Invisible Fiction: Sole Developer on Catch the Object; Sub Developer on Turbo Trail (level-up bug fixes, score feeling bar, UI overhaul) and Cupping Muffins (Burger, Mocktail, Milkshake player & prefab adaptations).",
     diagramType: "unity-games",
     mediaCaption:
       "Gameplay Systems Overview: Core Unity C# Loop -> Modular Mechanics & Physics -> Theme Adaptation & Responsive UI.",
     caseStudy: {
       overview:
-        "A suite of in-house mobile and casual games developed in Unity (C#) at Invisible Fiction. Spans solo development on Catch the Object alongside sub-developer contributions to Turbo Trail's dynamic trail-drawing mechanics and Cupping Muffins' multi-theme culinary expansions.",
+        "In-house casual and mobile games developed in Unity (C#) during junior game development at Invisible Fiction. Work spanned sole development on Catch the Object, critical UI and progression bug-fixing on Turbo Trail, and complete player/prefab adaptations across Cupping Muffins' culinary themes.",
       problem:
-        "Fast-paced studio game production requires reusable C# gameplay loops, clean UI state management, and modular asset/theme hooks so existing game mechanics can be rapidly reskinned or adapted into new themed variants without rewriting core logic.",
+        "Studio game production required hands-on debugging of level-up progression states, responsive UI overhauls with visual score progress feeling bars, and refactoring existing game prefabs to swap player types (Burger, Mocktail, Milkshake) and ingredient collection hierarchies without destabilizing core loops.",
       responsibilities: [
-        "Catch the Object (Sole Developer): Programmed complete game loop, weighted falling item spawners, point/penalty rules, and UI from scratch.",
-        "Turbo Trail (Sub Developer): Implemented dynamic rubber trail drawing physics that propel the ball forward while shielding against spikes and barriers.",
-        "Cupping Muffins (Sub Developer): Re-architected gameplay and ingredient collection systems to adapt the game into Burger, Mocktail, and Milkshake variants.",
-        "Engineered responsive UI systems, HUD feedback, and cross-resolution mobile scaling across titles.",
+        "Turbo Trail: Fixed level-up progression bugs, built dynamic score-filling progress bar, overhauled full game UI, and tuned rubber trail bounce physics protecting balls/balloons from spikes and black holes.",
+        "Cupping Muffins: Took complete base muffin project and adapted player entity into Burger, Mocktail, and Milkshake variants; re-authored food ingredients, item prefabs, and collection events.",
+        "Catch the Object (Sole Developer): Programmed complete game loop, basket movement, weighted falling items, positive/negative point rules, and game-over states from scratch.",
       ],
       technicalApproach:
-        "Structured gameplay controllers, object spawners, collision handlers, and UI managers in modular C# scripts within Unity. Decoupled visual theme assets and scoring parameters from core movement/collision logic to streamline themed variant production.",
+        "Separated visual assets, prefabs, and scoring parameters from core movement scripts. Debugged level-up state machines and score-fill calculations in Turbo Trail, while structuring modular player and ingredient prefab variants in Cupping Muffins to support rapid culinary reskinning.",
       architectureDetails: [
-        "Catch the Object (Solo Architecture): Self-contained C# game loop managing basket input, weighted item spawning, score/penalty evaluation, and game-over states.",
-        "Turbo Trail Mechanics: Dynamic trail-drawing interaction serving simultaneously as player pathway and obstacle shield.",
-        "Cupping Muffins Theme Adaptation: Refactored collectible and obstacle definitions to support Burger, Mocktail, and Milkshake themes.",
+        "Turbo Trail Physics & UI: Finger-drawn rubber line bounce physics preventing collisions with lethal spikes and black holes, paired with a dynamic score-progress feeling bar.",
+        "Cupping Muffins Prefab Architecture: Modular player swap system replacing base cup with Burger, Mocktail, and Milkshake entities alongside matching ingredient prefabs.",
+        "Catch the Object Solo Architecture: Self-contained C# loop managing basket controller, weighted item spawners, score/penalty evaluation, and game-over state transitions.",
       ],
       pipelineSteps: [
         {
-          stage: "INPUT & PHYSICS",
-          title: "Player Controllers",
-          detail: "Finger rubber trail drawing, basket movement & collision detection",
+          stage: "PHYSICS & INPUT",
+          title: "Rubber Bounce & Hazards",
+          detail: "Finger rubber trail bouncing ball away from lethal spikes & black holes",
         },
         {
-          stage: "GAME LOOP",
-          title: "Spawners & Scoring",
-          detail: "Configurable obstacle/collectible waves and point/penalty evaluation",
+          stage: "UI & PROGRESSION",
+          title: "Level Up & Score Bar",
+          detail: "Resolved level-up bugs, built score feeling bar, and overhauled UI",
         },
         {
-          stage: "ADAPTATION",
-          title: "Themed Variants",
-          detail: "Burger, Mocktail & Milkshake modular content replacement",
+          stage: "PREFAB SWAP",
+          title: "Burger / Mocktail / Shake",
+          detail: "Swapped player entity, food ingredient prefabs, and collection logic",
         },
         {
-          stage: "INTERFACE",
-          title: "UI Systems",
-          detail: "HUD feedback, menus, and cross-resolution mobile scaling",
+          stage: "SOLO PRODUCTION",
+          title: "Catch the Object",
+          detail: "Sole developer: basket controls, falling item values & negative hazards",
         },
       ],
       challenges: [
         {
           challenge:
-            "Adapting Cupping Muffins into multiple culinary themes without introducing regressions in core movement feel.",
+            "Cupping Muffins: Adapting the base muffin game into Burger, Mocktail, and Milkshake editions without breaking existing item collection and score calculations.",
           solution:
-            "Decoupled food asset definitions and ingredient recipes from the perpetual cup movement loop, creating a reusable data-driven theme architecture.",
+            "Restructured player and ingredient prefabs into modular variants, mapping theme-specific assets and colliders while preserving consistent collection event callbacks.",
         },
         {
           challenge:
-            "Balancing dynamic finger-drawn trail physics in Turbo Trail to simultaneously act as responsive pathway and reliable obstacle shield.",
+            "Turbo Trail: Intermittent level-up progression freezes and desynchronized score feeling bar animations during high-speed ball bounces.",
           solution:
-            "Implemented parameterized mesh generation along touch drag paths with optimized 2D edge colliders and impulse normal calculation.",
+            "Debugged and stabilized the level-progression state machine, decoupled score-fill normalization from framerate variations, and redesigned UI screens for clear player feedback.",
         },
       ],
       outcomes: [
+        "Resolved critical level-up bugs and successfully delivered full UI overhaul with score progress bar in Turbo Trail.",
+        "Engineered complete player and ingredient prefab reskins for Burger, Mocktail, and Milkshake editions of Cupping Muffins.",
         "Shipped Catch the Object independently as sole developer from concept to release.",
-        "Successfully delivered Turbo Trail and deployed Burger, Mocktail, and Milkshake themed adaptations of Cupping Muffins.",
       ],
     },
   },

@@ -700,7 +700,7 @@ export const ProjectTechnicalVisual = ({
             />
             <circle cx="88" cy="68" r="7" fill="#8B6CFF" />
             <text x="10" y="108" fill="#A4ADBB" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              Dynamic Trail Shield
+              Bounce Trail &amp; Hazards
             </text>
           </g>
 
@@ -713,7 +713,7 @@ export const ProjectTechnicalVisual = ({
             <circle cx="48" cy="46" r="4.5" fill="#4D8DFF" />
             <circle cx="70" cy="38" r="4.5" fill="#38BDF8" />
             <text x="10" y="108" fill="#A4ADBB" fontSize="7.5" fontFamily="JetBrains Mono, monospace">
-              Multi-Theme Systems
+              Burger &amp; Mocktail Prefabs
             </text>
           </g>
 

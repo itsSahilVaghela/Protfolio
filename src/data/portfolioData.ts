@@ -885,6 +885,25 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ownershipNote:
       "Sole Developer — engineered with AI-accelerated workflows using Google Antigravity, Claude, and ChatGPT to architect the in-browser YOLO11n vest detector, kinematic motion smoothing, and Three.js game loops.",
     diagramType: "pose-detection",
+    mediaUrl: "/projects/motion-controlled-games/motion-therapy-station.jpg",
+    videoUrl:
+      "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/view?usp=sharing",
+    additionalVideos: [
+      {
+        label: "Clinical Therapy & Motion AI Gameplay Demo",
+        url: "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/view?usp=sharing",
+        previewUrl:
+          "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/preview",
+      },
+    ],
+    additionalImages: [
+      {
+        label: "Interactive Motor Therapy Station (NoPainHeals)",
+        url: "https://drive.google.com/file/d/1Z7hl1SHNpafOahSAn2vqE2LnkRvDL8Z0/view?usp=sharing",
+        previewUrl:
+          "/projects/motion-controlled-games/motion-therapy-station.jpg",
+      },
+    ],
     mediaCaption:
       "AI Tracking Pipeline: Camera Stream -> YOLO11n ONNX Vest Isolation -> MediaPipe Pose ROI -> Kinematic Gesture Engine -> 60 FPS Three.js Game Loop.",
     caseStudy: {

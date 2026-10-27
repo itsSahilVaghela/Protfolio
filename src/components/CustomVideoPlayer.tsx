@@ -45,8 +45,8 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
 
   return (
     <div className="space-y-3">
-      {/* Precision Video Stage: Pixel-perfect aspect-ratio with 56px header crop */}
-      <div className="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-[#1E2736] shadow-2xl">
+      {/* Precision Video Stage: Pixel-perfect mobile height and 56px header crop */}
+      <div className="relative w-full h-[260px] xs:h-[300px] sm:h-auto sm:aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-[#1E2736] shadow-2xl">
         {/* Layer 0: Poster Backdrop */}
         {posterSrc && !isIframeLoaded && (
           <img

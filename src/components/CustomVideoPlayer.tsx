@@ -126,7 +126,7 @@ export const CustomVideoPlayer: React.FC<CustomVideoPlayerProps> = ({
   const stageShape =
     aspect === "portrait"
       ? "aspect-[9/16] max-h-[70dvh] mx-auto"
-      : "aspect-video";
+      : "aspect-[4/3] xs:aspect-[16/11] landscape:aspect-video sm:aspect-video";
 
   return (
     <div className="space-y-3 w-full min-w-0">

@@ -27,7 +27,6 @@
 - **Location & Contact:** Kheda, Gujarat, India | +91 63519 55141 | vaghelasahil1104@gmail.com
 - **Online Profiles:**
   - Portfolio: `https://itssahilvaghela.github.io/Protfolio/`
-  - GitHub: `https://github.com/itssahilvaghela`
   - LinkedIn: `https://www.linkedin.com/in/sahil-vaghela-ba4822250`
 
 ### 2.2 Professional Summary

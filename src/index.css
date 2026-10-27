@@ -136,6 +136,15 @@
     );
   }
 
+  /* Cross-browser hide scrollbar utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .hero-art-image {
     object-position: 68% center;
     filter: saturate(0.82) brightness(0.8);

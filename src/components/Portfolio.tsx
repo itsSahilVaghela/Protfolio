@@ -410,11 +410,11 @@ export const Portfolio = () => {
         open={!!activeCaseStudy}
         onOpenChange={(open) => !open && setActiveCaseStudy(null)}
       >
-        <DialogContent className="w-[95vw] sm:max-w-4xl max-h-[90vh] overflow-y-auto bg-[#10151D] border border-[#1E2736] text-[#F4F6FA] p-4 sm:p-6 sm:p-8">
+        <DialogContent className="w-[95vw] sm:max-w-4xl max-h-[90vh] overflow-y-auto bg-[#10151D] border border-[#1E2736] text-[#F4F6FA] p-4 sm:p-6 md:p-8">
           {activeCaseStudy && (
             <>
-              <DialogHeader className="space-y-3 border-b border-[#1E2736] pb-5 text-left">
-                <div className="flex flex-wrap items-center gap-2">
+              <DialogHeader className="space-y-3 border-b border-[#1E2736] pb-5 text-left pr-8 sm:pr-0">
+                <div className="flex flex-wrap items-center gap-2 max-w-[calc(100%-2rem)] sm:max-w-none">
                   <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#4D8DFF]/15 text-[#4D8DFF] border border-[#4D8DFF]/30">
                     CASE STUDY 0{activeCaseStudy.priorityRank}
                   </span>
@@ -426,11 +426,11 @@ export const Portfolio = () => {
                   </span>
                 </div>
 
-                <DialogTitle className="text-2xl sm:text-3xl font-bold text-[#F4F6FA]">
+                <DialogTitle className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F4F6FA] leading-tight">
                   {activeCaseStudy.title}
                 </DialogTitle>
 
-                <DialogDescription className="text-sm text-[#A4ADBB]">
+                <DialogDescription className="text-xs sm:text-sm text-[#A4ADBB]">
                   {activeCaseStudy.subtitle || activeCaseStudy.shortDescription}
                 </DialogDescription>
               </DialogHeader>
@@ -440,7 +440,7 @@ export const Portfolio = () => {
                 <div className="space-y-3">
                   {activeCaseStudy.videoUrl ? (
                     <div className="space-y-3">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                           <h4 className="text-xs font-mono uppercase tracking-wider text-[#4D8DFF] flex items-center gap-1.5">
@@ -462,42 +462,44 @@ export const Portfolio = () => {
                             )}
                           </h4>
                         </div>
-                        <div className="inline-flex items-center gap-1 p-1 rounded-lg bg-[#0C1017] border border-[#1E2736]">
+                        <div className={`w-full sm:w-auto grid ${activeCaseStudy.mediaUrl ? "grid-cols-3" : "grid-cols-2"} sm:flex sm:inline-flex items-center gap-1 p-1 rounded-lg bg-[#0C1017] border border-[#1E2736]`}>
                           <button
                             type="button"
                             onClick={() => setActiveMediaView("video")}
-                            className={`flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono transition-colors ${
+                            className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-1 rounded text-xs font-mono transition-colors text-center ${
                               activeMediaView === "video"
                                 ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
                                 : "text-[#A4ADBB] hover:text-[#F4F6FA]"
                             }`}
                           >
-                            <Play className="w-3 h-3 fill-current" />
-                            <span>Video Demo</span>
+                            <Play className="w-3 h-3 fill-current flex-shrink-0" />
+                            <span className="hidden sm:inline">Video Demo</span>
+                            <span className="sm:hidden">Video</span>
                           </button>
                           {activeCaseStudy.mediaUrl && (
                             <button
                               type="button"
                               onClick={() => setActiveMediaView("photo")}
-                              className={`flex items-center gap-1.5 px-3 py-1 rounded text-xs font-mono transition-colors ${
+                              className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-1 rounded text-xs font-mono transition-colors text-center ${
                                 activeMediaView === "photo"
                                   ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
                                   : "text-[#A4ADBB] hover:text-[#F4F6FA]"
                               }`}
                             >
-                              <Monitor className="w-3 h-3" />
+                              <Monitor className="w-3 h-3 flex-shrink-0" />
                               <span>Photo</span>
                             </button>
                           )}
                           <button
                             type="button"
                             onClick={() => setActiveMediaView("schematic")}
-                            className={`px-3 py-1 rounded text-xs font-mono transition-colors ${
+                            className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-1 rounded text-xs font-mono transition-colors text-center ${
                               activeMediaView === "schematic"
                                 ? "bg-[#4D8DFF] text-[#080B10] font-semibold shadow-sm"
                                 : "text-[#A4ADBB] hover:text-[#F4F6FA]"
                             }`}
                           >
+                            <Cpu className="w-3 h-3 sm:hidden flex-shrink-0" />
                             <span>Schematic</span>
                           </button>
                         </div>
@@ -506,8 +508,8 @@ export const Portfolio = () => {
                       {activeCaseStudy.additionalVideos &&
                         activeCaseStudy.additionalVideos.length > 0 &&
                         activeMediaView === "video" && (
-                          <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                            <span className="text-[10px] font-mono text-[#778294] uppercase tracking-wider mr-1">
+                          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 -mx-1 px-1">
+                            <span className="text-[10px] font-mono text-[#778294] uppercase tracking-wider mr-1 flex-shrink-0">
                               Walkthrough:
                             </span>
                             {activeCaseStudy.additionalVideos.map((vid, idx) => {
@@ -518,9 +520,9 @@ export const Portfolio = () => {
                                   key={idx}
                                   type="button"
                                   onClick={() => setActiveModalVideoUrl(vid.url)}
-                                  className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors border ${
+                                  className={`px-3 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap flex-shrink-0 transition-colors border ${
                                     isSelected
-                                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold border-[#4D8DFF]"
+                                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold border-[#4D8DFF] shadow-sm"
                                       : "bg-[#0C1017] text-[#A4ADBB] border-[#1E2736] hover:text-[#F4F6FA] hover:border-[#4D8DFF]/40"
                                   }`}
                                 >
@@ -533,7 +535,7 @@ export const Portfolio = () => {
                                 href={currentVideoUrl}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono text-[#89B2FF] hover:bg-[#4D8DFF]/10 transition-colors border border-[#4D8DFF]/30 ml-auto"
+                                className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono text-[#89B2FF] hover:bg-[#4D8DFF]/10 transition-colors border border-[#4D8DFF]/30 ml-auto whitespace-nowrap flex-shrink-0"
                               >
                                 <span>Open Drive ↗</span>
                               </a>
@@ -542,92 +544,117 @@ export const Portfolio = () => {
                         )}
 
                       {activeMediaView === "video" ? (
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl">
-                          {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
-                          {getPosterSrc(activeCaseStudy) ? (
-                            <img
-                              src={getPosterSrc(activeCaseStudy)!}
-                              alt=""
-                              aria-hidden="true"
-                              className="absolute inset-0 w-full h-full object-cover blur-sm opacity-25 scale-105 pointer-events-none"
-                            />
-                          ) : (
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#10151D] via-[#080B10] to-[#151C27] opacity-60" />
-                          )}
-
-                          {/* Layer 1: Active Video Player (Iframe or Video with smooth fade-in) */}
-                          <div
-                            className={`relative z-10 w-full h-full transition-opacity duration-300 ${
-                              isVideoLoading ? "opacity-0" : "opacity-100"
-                            }`}
-                          >
-                            {isEmbedIframe(currentVideoUrl) ? (
-                              <iframe
-                                src={getEmbedVideoUrl(currentVideoUrl)!}
-                                title={`${activeCaseStudy.title} Video Demo`}
-                                className="w-full h-full border-0"
-                                allow="autoplay; fullscreen"
-                                allowFullScreen
-                                onLoad={() => setIsVideoLoading(false)}
+                        <div className="space-y-2">
+                          <div className="relative w-full aspect-video min-h-[220px] sm:min-h-0 rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl">
+                            {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
+                            {getPosterSrc(activeCaseStudy) ? (
+                              <img
+                                src={getPosterSrc(activeCaseStudy)!}
+                                alt=""
+                                aria-hidden="true"
+                                className="absolute inset-0 w-full h-full object-cover blur-sm opacity-25 scale-105 pointer-events-none"
                               />
                             ) : (
-                              <video
-                                src={currentVideoUrl}
-                                controls
-                                playsInline
-                                className="w-full h-full object-contain bg-black"
-                                onLoadedData={() => setIsVideoLoading(false)}
-                              />
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#10151D] via-[#080B10] to-[#151C27] opacity-60" />
+                            )}
+
+                            {/* Layer 1: Active Video Player (Iframe or Video with smooth fade-in) */}
+                            <div
+                              className={`relative z-10 w-full h-full transition-opacity duration-300 ${
+                                isVideoLoading ? "opacity-0" : "opacity-100"
+                              }`}
+                            >
+                              {isEmbedIframe(currentVideoUrl) ? (
+                                <iframe
+                                  src={getEmbedVideoUrl(currentVideoUrl)!}
+                                  title={`${activeCaseStudy.title} Video Demo`}
+                                  className="w-full h-full border-0"
+                                  allow="autoplay; fullscreen"
+                                  allowFullScreen
+                                  onLoad={() => setIsVideoLoading(false)}
+                                />
+                              ) : (
+                                <video
+                                  src={currentVideoUrl}
+                                  controls
+                                  playsInline
+                                  className="w-full h-full object-contain bg-black"
+                                  onLoadedData={() => setIsVideoLoading(false)}
+                                />
+                              )}
+                            </div>
+
+                            {/* Layer 2: Loading State & Slow Network Recovery Overlay */}
+                            {isVideoLoading && (
+                              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-[#080B10]/85 backdrop-blur-md transition-all duration-300 overflow-y-auto">
+                                <div className="relative mb-2 sm:mb-3 flex items-center justify-center">
+                                  <span className="absolute w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-[#4D8DFF]/20 animate-ping" />
+                                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-center text-[#4D8DFF] shadow-lg">
+                                    <Loader2 className="w-4 sm:w-5 h-4 sm:h-5 animate-spin" />
+                                  </div>
+                                </div>
+
+                                <p className="text-xs sm:text-sm font-medium text-[#F4F6FA] mb-0.5 sm:mb-1">
+                                  Connecting video stream...
+                                </p>
+                                <p className="text-[11px] sm:text-xs font-mono text-[#778294] max-w-sm px-2">
+                                  Buffering high-resolution walkthrough demo from external host
+                                </p>
+
+                                {/* 6-Second Slow Network Indicator & Direct CTAs */}
+                                {isSlowNetwork && (
+                                  <div className="mt-2.5 sm:mt-4 p-2.5 sm:p-3 rounded-lg bg-[#151C27] border border-amber-500/30 flex flex-col sm:flex-row items-center gap-2 sm:gap-3 animate-fade-in shadow-xl w-full max-w-md">
+                                    <div className="flex items-center gap-1.5 text-amber-400 text-[11px] sm:text-xs font-mono">
+                                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                                      <span>Slow connection detected</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 w-full sm:w-auto justify-center">
+                                      {currentVideoUrl && (
+                                        <a
+                                          href={currentVideoUrl}
+                                          target="_blank"
+                                          rel="noreferrer"
+                                          className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium bg-[#4D8DFF] text-[#080B10] hover:bg-[#629BFF] transition-colors flex-1 sm:flex-initial"
+                                        >
+                                          <span>Open in Drive ↗</span>
+                                        </a>
+                                      )}
+                                      <button
+                                        type="button"
+                                        onClick={() => setActiveMediaView("schematic")}
+                                        className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736] hover:text-[#F4F6FA] hover:bg-[#1E2736] transition-colors flex-1 sm:flex-initial"
+                                      >
+                                        <span>Schematic</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
                             )}
                           </div>
 
-                          {/* Layer 2: Loading State & Slow Network Recovery Overlay */}
-                          {isVideoLoading && (
-                            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center bg-[#080B10]/80 backdrop-blur-md transition-all duration-300">
-                              <div className="relative mb-3 flex items-center justify-center">
-                                <span className="absolute w-12 h-12 rounded-full bg-[#4D8DFF]/20 animate-ping" />
-                                <div className="w-10 h-10 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-center text-[#4D8DFF] shadow-lg">
-                                  <Loader2 className="w-5 h-5 animate-spin" />
-                                </div>
-                              </div>
-
-                              <p className="text-sm font-medium text-[#F4F6FA] mb-1">
-                                Connecting video stream...
-                              </p>
-                              <p className="text-xs font-mono text-[#778294] max-w-sm">
-                                Buffering high-resolution walkthrough demo from external host
-                              </p>
-
-                              {/* 6-Second Slow Network Indicator & Direct CTAs */}
-                              {isSlowNetwork && (
-                                <div className="mt-4 p-3 rounded-lg bg-[#151C27] border border-amber-500/30 flex flex-col sm:flex-row items-center gap-3 animate-fade-in shadow-xl">
-                                  <div className="flex items-center gap-2 text-amber-400 text-xs font-mono">
-                                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                                    <span>Slow connection detected</span>
-                                  </div>
-                                  <div className="flex items-center gap-2">
-                                    {currentVideoUrl && (
-                                      <a
-                                        href={currentVideoUrl}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium bg-[#4D8DFF] text-[#080B10] hover:bg-[#629BFF] transition-colors"
-                                      >
-                                        <span>Open in Drive ↗</span>
-                                      </a>
-                                    )}
-                                    <button
-                                      type="button"
-                                      onClick={() => setActiveMediaView("schematic")}
-                                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736] hover:text-[#F4F6FA] hover:bg-[#1E2736] transition-colors"
-                                    >
-                                      <span>View Schematic</span>
-                                    </button>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          )}
+                          {/* Mobile Quick-Action Helper Bar (<sm only) */}
+                          <div className="flex sm:hidden items-center justify-between gap-2 pt-1">
+                            {currentVideoUrl && isEmbedIframe(currentVideoUrl) ? (
+                              <a
+                                href={currentVideoUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center justify-center gap-1.5 flex-1 px-3 py-2 rounded-lg text-xs font-mono font-medium bg-[#151C27] text-[#89B2FF] border border-[#4D8DFF]/30 active:bg-[#4D8DFF]/20 transition-colors"
+                              >
+                                <Play className="w-3.5 h-3.5 fill-[#89B2FF]" />
+                                <span>Watch in Drive ↗</span>
+                              </a>
+                            ) : null}
+                            <button
+                              type="button"
+                              onClick={() => setActiveMediaView("schematic")}
+                              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-mono bg-[#0C1017] text-[#A4ADBB] border border-[#1E2736] active:bg-[#151C27] transition-colors"
+                            >
+                              <Cpu className="w-3.5 h-3.5 text-[#4D8DFF]" />
+                              <span>Schematic</span>
+                            </button>
+                          </div>
                         </div>
                       ) : activeMediaView === "photo" && activeCaseStudy.mediaUrl ? (
                         <div className="relative w-full aspect-video max-h-[460px] rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl flex items-center justify-center">
@@ -708,8 +735,8 @@ export const Portfolio = () => {
 
                       {activeImageMode === "image" ? (
                         <>
-                          <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                            <span className="text-[10px] font-mono text-[#778294] uppercase tracking-wider mr-1">
+                          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 -mx-1 px-1">
+                            <span className="text-[10px] font-mono text-[#778294] uppercase tracking-wider mr-1 flex-shrink-0">
                               Inspection Mode:
                             </span>
                             {activeCaseStudy.additionalImages.map((img, idx) => {
@@ -719,9 +746,9 @@ export const Portfolio = () => {
                                   key={idx}
                                   type="button"
                                   onClick={() => setActiveModalImageUrl(img.previewUrl || null)}
-                                  className={`px-2.5 py-1 rounded text-[11px] font-mono transition-colors border ${
+                                  className={`px-3 py-1.5 rounded-lg text-xs font-mono whitespace-nowrap flex-shrink-0 transition-colors border ${
                                     isSelected
-                                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold border-[#4D8DFF]"
+                                      ? "bg-[#4D8DFF] text-[#080B10] font-semibold border-[#4D8DFF] shadow-sm"
                                       : "bg-[#0C1017] text-[#A4ADBB] border-[#1E2736] hover:text-[#F4F6FA] hover:border-[#4D8DFF]/40"
                                   }`}
                                 >
@@ -734,7 +761,7 @@ export const Portfolio = () => {
                                 href={currentImageDriveUrl}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono text-[#89B2FF] hover:bg-[#4D8DFF]/10 transition-colors border border-[#4D8DFF]/30 ml-auto"
+                                className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono text-[#89B2FF] hover:bg-[#4D8DFF]/10 transition-colors border border-[#4D8DFF]/30 ml-auto whitespace-nowrap flex-shrink-0"
                               >
                                 <span>Open Drive ↗</span>
                               </a>

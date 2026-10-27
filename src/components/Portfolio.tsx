@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
+  DialogClose,
   DialogDescription,
   DialogHeader,
   DialogTitle,
@@ -33,6 +34,7 @@ import {
   Loader2,
   AlertCircle,
   ExternalLink,
+  X,
 } from "lucide-react";
 import {
   featuredProjects,
@@ -410,32 +412,81 @@ export const Portfolio = () => {
         open={!!activeCaseStudy}
         onOpenChange={(open) => !open && setActiveCaseStudy(null)}
       >
-        <DialogContent className="w-[95vw] sm:max-w-4xl max-h-[90vh] overflow-y-auto bg-[#10151D] border border-[#1E2736] text-[#F4F6FA] p-4 sm:p-6 md:p-8">
+        <DialogContent className="!fixed !inset-0 !left-0 !top-0 !translate-x-0 !translate-y-0 !w-full !h-[100dvh] !max-w-none !max-h-none !rounded-none !p-0 bg-[#080B10] border-0 text-[#F4F6FA] !flex !flex-col overflow-hidden z-50 shadow-none !gap-0 sm:!top-[50%] sm:!left-[50%] sm:!translate-x-[-50%] sm:!translate-y-[-50%] sm:!w-[95vw] sm:!max-w-4xl sm:!h-auto sm:!max-h-[90vh] sm:!rounded-2xl sm:!border sm:!border-[#1E2736] sm:!p-6 md:!p-8 sm:!shadow-2xl sm:!bg-[#10151D]">
           {activeCaseStudy && (
-            <>
-              <DialogHeader className="space-y-3 border-b border-[#1E2736] pb-5 text-left pr-8 sm:pr-0">
-                <div className="flex flex-wrap items-center gap-2 max-w-[calc(100%-2rem)] sm:max-w-none">
-                  <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#4D8DFF]/15 text-[#4D8DFF] border border-[#4D8DFF]/30">
-                    CASE STUDY 0{activeCaseStudy.priorityRank}
+            <div className="flex flex-col h-full w-full overflow-hidden">
+              {/* Sticky Mobile App Bar (<sm only) */}
+              <div className="sm:hidden sticky top-0 z-40 flex items-center justify-between px-4 py-3 bg-[#10151D] border-b border-[#1E2736] flex-shrink-0">
+                <div className="flex items-center gap-2 min-w-0 pr-3">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#4D8DFF]/15 text-[#4D8DFF] border border-[#4D8DFF]/30 flex-shrink-0">
+                    0{activeCaseStudy.priorityRank}
                   </span>
-                  <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#151C27] text-[#A4ADBB] border border-[#1E2736]">
-                    {activeCaseStudy.category}
-                  </span>
-                  <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#8B6CFF]/15 text-[#F4F6FA] border border-[#8B6CFF]/30">
-                    {activeCaseStudy.ownershipScope}
-                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-xs font-bold text-[#F4F6FA] truncate leading-tight">
+                      {activeCaseStudy.title}
+                    </h3>
+                    <p className="text-[10px] font-mono text-[#778294] truncate">
+                      {activeCaseStudy.category}
+                    </p>
+                  </div>
+                </div>
+                <DialogClose asChild>
+                  <button
+                    type="button"
+                    className="w-8 h-8 rounded-lg bg-[#151C27] border border-[#1E2736] flex items-center justify-center text-[#F4F6FA] hover:bg-[#1E2736] active:scale-95 transition-all flex-shrink-0"
+                    aria-label="Close Case Study"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </DialogClose>
+              </div>
+
+              {/* Scrollable Container (Mobile full-bleed flow & Desktop modal scroll) */}
+              <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 sm:p-0 space-y-6 sm:space-y-8 text-left">
+                {/* Desktop & Tablet Modal Header */}
+                <DialogHeader className="hidden sm:block space-y-3 border-b border-[#1E2736] pb-5 text-left">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#4D8DFF]/15 text-[#4D8DFF] border border-[#4D8DFF]/30">
+                      CASE STUDY 0{activeCaseStudy.priorityRank}
+                    </span>
+                    <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#151C27] text-[#A4ADBB] border border-[#1E2736]">
+                      {activeCaseStudy.category}
+                    </span>
+                    <span className="px-2.5 py-1 rounded text-xs font-mono bg-[#8B6CFF]/15 text-[#F4F6FA] border border-[#8B6CFF]/30">
+                      {activeCaseStudy.ownershipScope}
+                    </span>
+                  </div>
+
+                  <DialogTitle className="text-2xl sm:text-3xl font-bold text-[#F4F6FA]">
+                    {activeCaseStudy.title}
+                  </DialogTitle>
+
+                  <DialogDescription className="text-sm text-[#A4ADBB]">
+                    {activeCaseStudy.subtitle || activeCaseStudy.shortDescription}
+                  </DialogDescription>
+                </DialogHeader>
+
+                {/* Mobile Title & Tag Banner inside scroll area */}
+                <div className="sm:hidden space-y-2 border-b border-[#1E2736]/70 pb-4">
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#4D8DFF]/15 text-[#4D8DFF] border border-[#4D8DFF]/30">
+                      CASE STUDY 0{activeCaseStudy.priorityRank}
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#151C27] text-[#A4ADBB] border border-[#1E2736]">
+                      {activeCaseStudy.category}
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#8B6CFF]/15 text-[#F4F6FA] border border-[#8B6CFF]/30">
+                      {activeCaseStudy.ownershipScope}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-bold text-[#F4F6FA] leading-tight">
+                    {activeCaseStudy.title}
+                  </h2>
+                  <p className="text-xs text-[#A4ADBB] leading-relaxed">
+                    {activeCaseStudy.subtitle || activeCaseStudy.shortDescription}
+                  </p>
                 </div>
 
-                <DialogTitle className="text-xl sm:text-2xl md:text-3xl font-bold text-[#F4F6FA] leading-tight">
-                  {activeCaseStudy.title}
-                </DialogTitle>
-
-                <DialogDescription className="text-xs sm:text-sm text-[#A4ADBB]">
-                  {activeCaseStudy.subtitle || activeCaseStudy.shortDescription}
-                </DialogDescription>
-              </DialogHeader>
-
-              <div className="space-y-8 pt-4 text-left">
                 {/* Visual / Technical Architecture Schematic / Demo Video */}
                 <div className="space-y-3">
                   {activeCaseStudy.videoUrl ? (
@@ -2399,7 +2450,7 @@ export const Portfolio = () => {
                   </div>
                 )}
               </div>
-            </>
+            </div>
           )}
         </DialogContent>
       </Dialog>

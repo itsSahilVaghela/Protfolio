@@ -130,7 +130,7 @@ export const Contact = () => {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="surface-card surface-card-interactive rounded-xl p-4 flex items-start justify-between gap-4 group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF]"
+                    className="surface-card surface-card-interactive rounded-xl p-4 flex items-start justify-between gap-4 group w-full max-w-full overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF]"
                   >
                     <div className="flex items-start gap-3.5 min-w-0">
                       <div className="p-2.5 rounded-lg bg-[#151C27] border border-[#1E2736] text-[#4D8DFF] group-hover:border-[#4D8DFF]/40 transition-colors flex-shrink-0">

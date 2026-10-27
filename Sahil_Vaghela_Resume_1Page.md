@@ -22,7 +22,7 @@ Software Engineer with 3+ years architecting real-time 3D, spatial computing (Me
 ## PROFESSIONAL EXPERIENCE & KEY PROJECTS
 
 ### **Invisible Fiction** — Gujarat, India  
-**Software & Engine Developer** *(Promoted: AI Intern → Jr. Unity Developer → Software & Engine Developer)* | *Feb 2023 – Present*  
+**Software & Game Developer** *(Promoted: AI Intern → Jr. Unity Developer → Unity & Unreal Developer)* | *Feb 2023 – Present*  
 
 **Fiction Mech (Meta Quest 3 MR & PC Studio — Sole Developer)** `[Unity • C# • OpenXR • Quest 3 • Agora SDK]`
 - Architected dual-runtime industrial digital twin platform: PC Authoring Studio in Unity C# (3D CAD ingestion, PBR materials, exploded assembly slider, PDF/MP4 metadata binding, cloud publishing) paired with standalone Meta Quest 3 MR runtime (OpenXR room-scale passthrough, 6DoF hand tracking, cyan outline highlights).

@@ -570,7 +570,11 @@ export const Portfolio = () => {
                         <div className="space-y-3">
                           <CustomVideoPlayer
                             url={currentVideoUrl}
-                            title={activeCaseStudy.title}
+                            title={
+                              activeCaseStudy.additionalVideos?.find(
+                                (v) => v.url === currentVideoUrl
+                              )?.label || activeCaseStudy.title
+                            }
                             posterSrc={getPosterSrc(activeCaseStudy)}
                             onOpenDrive={() => {
                               if (currentVideoUrl) window.open(currentVideoUrl, "_blank");

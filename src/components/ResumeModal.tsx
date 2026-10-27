@@ -394,7 +394,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               <div className="inline-flex items-center gap-1.5 p-0.5 rounded-lg bg-[#080B10] border border-[#1E2736]">
                 <span className="px-2.5 py-1 text-xs font-mono text-[#A4ADBB] flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>1 Page · Master Resume · ATS Ready</span>
+                  <span>1 Page · Master Resume</span>
                 </span>
               </div>
 
@@ -467,8 +467,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                 {/* Single Master Resume Sheet */}
                 <div ref={page1Ref} className="w-full flex flex-col items-center space-y-2">
                   <div className="w-full flex items-center justify-between text-[10px] font-mono text-[#778294] px-1">
-                    <span>MASTER RESUME — 1-PAGE EXECUTIVE VIEW</span>
-                    <span className="text-emerald-400 font-semibold">10/10 ATS VERIFIED</span>
+                    <span>MASTER RESUME — 1-PAGE VIEW</span>
+                    <span>1 OF 1</span>
                   </div>
                   <img
                     src={page1Image}

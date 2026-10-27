@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -31,11 +31,8 @@ import {
   Scissors,
   GraduationCap,
   Network,
-  Loader2,
-  AlertCircle,
   ExternalLink,
   X,
-  Maximize2,
 } from "lucide-react";
 import {
   featuredProjects,
@@ -43,6 +40,7 @@ import {
   ProjectCaseStudy,
 } from "@/data/portfolioData";
 import { ProjectTechnicalVisual } from "@/components/ProjectTechnicalVisual";
+import { CustomVideoPlayer } from "@/components/CustomVideoPlayer";
 
 const filterCategories = [
   { id: "all", label: "All Featured (7)" },
@@ -98,43 +96,6 @@ export const Portfolio = () => {
   const currentImageDriveUrl = activeCaseStudy?.additionalImages?.find(
     (img) => img.previewUrl === currentImageUrl
   )?.url;
-
-  const [isVideoLoading, setIsVideoLoading] = useState<boolean>(true);
-  const [isSlowNetwork, setIsSlowNetwork] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (activeMediaView !== "video" || !currentVideoUrl) return;
-    setIsVideoLoading(true);
-    setIsSlowNetwork(false);
-
-    const timer = setTimeout(() => {
-      setIsSlowNetwork(true);
-    }, 6000);
-
-    return () => clearTimeout(timer);
-  }, [currentVideoUrl, activeCaseStudy?.id, activeMediaView]);
-
-  const videoIframeRef = useRef<HTMLIFrameElement>(null);
-  const videoElementRef = useRef<HTMLVideoElement>(null);
-
-  const handleRequestFullscreen = () => {
-    const iframe = videoIframeRef.current;
-    const video = videoElementRef.current;
-    const target = (iframe || video) as HTMLElement | null;
-    if (!target) {
-      if (currentVideoUrl) window.open(currentVideoUrl, "_blank");
-      return;
-    }
-    if (target.requestFullscreen) {
-      target.requestFullscreen().catch(() => {
-        if (currentVideoUrl) window.open(currentVideoUrl, "_blank");
-      });
-    } else if ((target as any).webkitRequestFullscreen) {
-      (target as any).webkitRequestFullscreen();
-    } else if (currentVideoUrl) {
-      window.open(currentVideoUrl, "_blank");
-    }
-  };
 
   const getCompactVideoLabel = (label: string) => {
     if (label.includes("PC Authoring Studio")) return "PC Studio (4K)";
@@ -605,133 +566,16 @@ export const Portfolio = () => {
                           </div>
                         )}
 
-                      {activeMediaView === "video" ? (
+                      {activeMediaView === "video" && currentVideoUrl ? (
                         <div className="space-y-3">
-                          {/* Video Screen Container - Pixel-Perfect Responsive Aspect Ratio */}
-                          <div className="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-[#1E2736] shadow-2xl">
-                            {/* Layer 0: Poster Backdrop */}
-                            {getPosterSrc(activeCaseStudy) ? (
-                              <img
-                                src={getPosterSrc(activeCaseStudy)!}
-                                alt=""
-                                aria-hidden="true"
-                                className="absolute inset-0 w-full h-full object-cover blur-sm opacity-25 scale-105 pointer-events-none"
-                              />
-                            ) : (
-                              <div className="absolute inset-0 bg-gradient-to-br from-[#10151D] via-[#080B10] to-[#151C27] opacity-60" />
-                            )}
-
-                            {/* Layer 1: Active Video Player with strict absolute inset-0 */}
-                            <div
-                              className={`absolute inset-0 w-full h-full transition-opacity duration-300 ${
-                                isVideoLoading ? "opacity-0" : "opacity-100"
-                              }`}
-                            >
-                              {isEmbedIframe(currentVideoUrl) ? (
-                                <iframe
-                                  ref={videoIframeRef}
-                                  src={getEmbedVideoUrl(currentVideoUrl)!}
-                                  title={`${activeCaseStudy.title} Video Demo`}
-                                  className="absolute inset-0 w-full h-full border-0"
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                                  allowFullScreen
-                                  onLoad={() => setIsVideoLoading(false)}
-                                />
-                              ) : (
-                                <video
-                                  ref={videoElementRef}
-                                  src={currentVideoUrl}
-                                  controls
-                                  playsInline
-                                  className="absolute inset-0 w-full h-full object-contain bg-black"
-                                  onLoadedData={() => setIsVideoLoading(false)}
-                                />
-                              )}
-                            </div>
-
-                            {/* Layer 2: Loading State & Slow Network Recovery Overlay */}
-                            {isVideoLoading && (
-                              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-[#080B10]/90 backdrop-blur-md transition-all duration-300 overflow-y-auto">
-                                <div className="relative mb-2 sm:mb-3 flex items-center justify-center">
-                                  <span className="absolute w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-[#4D8DFF]/20 animate-ping" />
-                                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-center text-[#4D8DFF] shadow-lg">
-                                    <Loader2 className="w-4 sm:w-5 h-4 sm:h-5 animate-spin" />
-                                  </div>
-                                </div>
-
-                                <p className="text-xs sm:text-sm font-medium text-[#F4F6FA] mb-0.5 sm:mb-1">
-                                  Connecting video stream...
-                                </p>
-                                <p className="text-[11px] sm:text-xs font-mono text-[#778294] max-w-sm px-2">
-                                  Buffering high-resolution walkthrough demo from external host
-                                </p>
-
-                                {/* 6-Second Slow Network Indicator & Direct CTAs */}
-                                {isSlowNetwork && (
-                                  <div className="mt-2.5 sm:mt-4 p-2.5 sm:p-3 rounded-lg bg-[#151C27] border border-amber-500/30 flex flex-col sm:flex-row items-center gap-2 sm:gap-3 animate-fade-in shadow-xl w-full max-w-md">
-                                    <div className="flex items-center gap-1.5 text-amber-400 text-[11px] sm:text-xs font-mono">
-                                      <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                                      <span>Slow connection detected</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 w-full sm:w-auto justify-center">
-                                      {currentVideoUrl && (
-                                        <a
-                                          href={currentVideoUrl}
-                                          target="_blank"
-                                          rel="noreferrer"
-                                          className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium bg-[#4D8DFF] text-[#080B10] hover:bg-[#629BFF] transition-colors flex-1 sm:flex-initial"
-                                        >
-                                          <span>Open in Drive ↗</span>
-                                        </a>
-                                      )}
-                                      <button
-                                        type="button"
-                                        onClick={() => setActiveMediaView("schematic")}
-                                        className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-[#10151D] text-[#A4ADBB] border border-[#1E2736] hover:text-[#F4F6FA] hover:bg-[#1E2736] transition-colors flex-1 sm:flex-initial"
-                                      >
-                                        <span>Schematic</span>
-                                      </button>
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-                            )}
-                          </div>
-
-                          {/* Dedicated Video Control & Playback Bar */}
-                          <div className="flex items-center justify-between gap-2 p-2.5 sm:p-3 rounded-xl bg-[#0C1017] border border-[#1E2736]">
-                            <div className="flex items-center gap-2 min-w-0 pr-2">
-                              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
-                              <span className="text-xs font-mono text-[#F4F6FA] truncate font-medium">
-                                {activeCaseStudy.additionalVideos?.find(
-                                  (v) => v.url === currentVideoUrl
-                                )?.label || "Live Walkthrough Demo"}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-2 flex-shrink-0">
-                              <button
-                                type="button"
-                                onClick={handleRequestFullscreen}
-                                className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-[#4D8DFF] text-[#080B10] hover:bg-[#629BFF] active:scale-95 transition-all shadow-sm flex-shrink-0"
-                              >
-                                <Maximize2 className="w-3.5 h-3.5" />
-                                <span className="hidden xs:inline">Fullscreen</span>
-                                <span className="xs:hidden">Expand</span>
-                              </button>
-                              {currentVideoUrl && (
-                                <a
-                                  href={currentVideoUrl}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono text-[#89B2FF] bg-[#151C27] border border-[#4D8DFF]/30 hover:bg-[#4D8DFF]/15 active:scale-95 transition-all flex-shrink-0"
-                                  title="Open original video in Google Drive"
-                                >
-                                  <ExternalLink className="w-3.5 h-3.5" />
-                                  <span className="hidden xs:inline">Drive</span>
-                                </a>
-                              )}
-                            </div>
-                          </div>
+                          <CustomVideoPlayer
+                            url={currentVideoUrl}
+                            title={activeCaseStudy.title}
+                            posterSrc={getPosterSrc(activeCaseStudy)}
+                            onOpenDrive={() => {
+                              if (currentVideoUrl) window.open(currentVideoUrl, "_blank");
+                            }}
+                          />
                         </div>
                       ) : activeMediaView === "photo" && activeCaseStudy.mediaUrl ? (
                         <div className="relative w-full aspect-video max-h-[460px] rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl flex items-center justify-center">

@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* CSS Reset & Variable Tokens */
+
+    /* CSS Reset & Semantic Tokens */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -21,8 +22,10 @@
       --text-subtle: #64748b;
       --primary: #0284c7;
       --primary-dark: #0369a1;
+      --primary-light: #f0f9ff;
+      --primary-border: #bae6fd;
       --border-color: #cbd5e1;
-      --line-height: 1.30;
+      --line-height: 1.33;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -44,19 +47,19 @@
       z-index: 100;
       background: #0f172a;
       color: #f8fafc;
-      padding: 9px 16px;
+      padding: 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
     }
 
     .toolbar-title {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .badge-ats {
@@ -64,7 +67,7 @@
       color: #fff;
       font-size: 10px;
       font-weight: 700;
-      padding: 2px 7px;
+      padding: 2.5px 8px;
       border-radius: 4px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -72,6 +75,7 @@
 
     .toolbar-actions {
       display: flex;
+      align-items: center;
       gap: 10px;
     }
 
@@ -79,8 +83,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 12px;
-      font-size: 11.5px;
+      padding: 6px 14px;
+      font-size: 12px;
       font-weight: 600;
       border-radius: 6px;
       cursor: pointer;
@@ -91,19 +95,21 @@
 
     .btn-primary {
       background: #0284c7;
-      color: #fff;
+      color: #ffffff;
+      border-color: #0284c7;
     }
     .btn-primary:hover {
       background: #0369a1;
+      border-color: #0369a1;
     }
 
     .btn-outline {
-      background: transparent;
-      color: #e2e8f0;
+      background: #1e293b;
+      color: #f8fafc;
       border-color: #475569;
     }
     .btn-outline:hover {
-      background: #1e293b;
+      background: #334155;
       color: #fff;
     }
 
@@ -111,73 +117,80 @@
     .page-container {
       display: flex;
       justify-content: center;
-      padding: 16px 12px;
+      padding: 20px 14px;
     }
 
     .resume-sheet {
       width: 8.5in;
       min-height: 11in;
+      height: 11in;
       background: #ffffff;
       padding: 0.35in 0.44in 0.32in 0.44in;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
       border-radius: 2px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* Header */
     header {
       text-align: center;
-      margin-bottom: 5px;
-      padding-bottom: 4.5px;
+      margin-bottom: 6px;
+      padding-bottom: 5px;
       border-bottom: 2px solid var(--text-main);
     }
 
     h1 {
-      font-size: 19pt;
+      font-size: 20pt;
       font-weight: 800;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       color: #0284c7;
       text-transform: uppercase;
       line-height: 1.1;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
     }
 
     .headline {
-      font-size: 10.3pt;
+      font-size: 10.5pt;
       font-weight: 700;
       color: var(--text-main);
       letter-spacing: 0.2px;
-      margin-bottom: 2.5px;
+      margin-bottom: 3.5px;
     }
 
     .contact-line {
-      font-size: 8.2pt;
+      font-size: 8.4pt;
       color: var(--text-muted);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 4px 10px;
+      gap: 4px 11px;
     }
 
     .contact-line a {
-      color: var(--primary);
+      color: var(--text-muted);
       text-decoration: none;
       font-weight: 500;
     }
+
     .contact-line a:hover {
+      color: var(--primary);
       text-decoration: underline;
     }
 
     /* Section Headings */
     .section-title {
-      font-size: 9.1pt;
+      font-size: 9.3pt;
       font-weight: 800;
       color: var(--text-main);
       text-transform: uppercase;
-      letter-spacing: 0.7px;
-      margin-top: 5.5px;
-      margin-bottom: 2px;
-      padding-bottom: 1px;
-      border-bottom: 1.2px solid #94a3b8;
+      letter-spacing: 0.8px;
+      margin-top: 8px;
+      margin-bottom: 3.5px;
+      padding-bottom: 1.5px;
+      border-bottom: 1.4px solid #94a3b8;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -185,48 +198,44 @@
 
     /* Summary */
     .summary-text {
-      font-size: 8.5pt;
+      font-size: 8.7pt;
       color: var(--text-muted);
       text-align: justify;
-      line-height: 1.29;
+      line-height: 1.31;
       margin-bottom: 2.5px;
     }
 
-    /* Skills Grid */
-    .skills-list {
+    /* Technical Skills Grid */
+    .skills-list, .skills-grid {
       display: flex;
       flex-direction: column;
-      gap: 1.2px;
-      margin-bottom: 2.5px;
-      font-size: 8.35pt;
+      gap: 3.0px;
     }
 
     .skill-row {
       display: flex;
-      line-height: 1.26;
+      font-size: 8.45pt;
+      line-height: 1.30;
     }
 
     .skill-label {
-      width: 144px;
+      width: 175px;
       flex-shrink: 0;
       font-weight: 700;
       color: var(--text-main);
     }
 
-    .skill-value {
+    .skill-value, .skill-items {
       color: var(--text-muted);
     }
 
     /* Experience Header */
-    .job-block {
-      margin-bottom: 3.5px;
-    }
-
-    .job-header {
+    .job-header, .company-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.95pt;
+      font-size: 9.1pt;
+      margin-top: 2.5px;
     }
 
     .company-name {
@@ -235,7 +244,7 @@
     }
 
     .location {
-      font-size: 8.1pt;
+      font-size: 8.2pt;
       color: var(--text-subtle);
       font-weight: 500;
     }
@@ -244,9 +253,8 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.55pt;
-      margin-top: 0.5px;
-      margin-bottom: 3px;
+      font-size: 8.6pt;
+      margin-bottom: 3.5px;
     }
 
     .role-title {
@@ -255,23 +263,34 @@
     }
 
     .period {
-      font-size: 8.1pt;
+      font-size: 8.0pt;
       color: var(--text-subtle);
-      font-weight: 600;
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+      font-weight: 700;
+      color: var(--primary-dark);
     }
 
-    /* Project Sub-Blocks */
+    .period {
+      font-size: 8.0pt;
+      color: var(--text-subtle);
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+
+    /* Project Blocks */
     .project-entry {
-      margin-top: 3px;
-      margin-bottom: 3px;
+      margin-top: 5.5px;
+      margin-bottom: 4.5px;
     }
 
     .project-entry-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.55pt;
-      margin-bottom: 1px;
+      font-size: 8.75pt;
+      margin-bottom: 1.5px;
     }
 
     .project-entry-title {
@@ -281,11 +300,11 @@
 
     .project-tag {
       font-family: var(--font-mono);
-      font-size: 7.1pt;
+      font-size: 7.2pt;
       color: var(--primary-dark);
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      padding: 0px 4px;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      padding: 0.5px 5px;
       border-radius: 3px;
       font-weight: 600;
       white-space: nowrap;
@@ -294,16 +313,16 @@
     /* Bullet Points */
     ul.bullet-list {
       list-style-type: disc;
-      padding-left: 13px;
+      padding-left: 14px;
       display: flex;
       flex-direction: column;
-      gap: 1.5px;
+      gap: 2.2px;
     }
 
     ul.bullet-list li {
-      font-size: 8.25pt;
+      font-size: 8.45pt;
       color: var(--text-muted);
-      line-height: 1.27;
+      line-height: 1.29;
     }
 
     ul.bullet-list li strong {
@@ -312,11 +331,11 @@
     }
 
     /* Education */
-    .edu-header {
+    .edu-header, .edu-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 8.8pt;
+      font-size: 9.0pt;
     }
 
     .degree {
@@ -325,34 +344,37 @@
     }
 
     .edu-inst {
-      font-size: 8.3pt;
+      font-size: 8.5pt;
       color: var(--text-muted);
-      margin-top: 0.5px;
+      margin-top: 1px;
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
     }
 
-    .gpa-pill {
+    .gpa-pill, .cgpa-badge {
+      font-family: var(--font-mono);
+      font-size: 8.0pt;
       font-weight: 700;
-      color: #047857;
-      background: #ecfdf5;
-      padding: 0px 5px;
+      color: #15803d;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 0.5px 6px;
       border-radius: 3px;
-      border: 1px solid #a7f3d0;
     }
 
     .coursework {
-      font-size: 7.95pt;
+      font-size: 8.15pt;
       color: var(--text-subtle);
-      margin-top: 1px;
-      line-height: 1.23;
+      margin-top: 1.5px;
+      line-height: 1.27;
     }
 
     /* Print Stylesheet (Strict 1-Page Letter/A4) */
     @media print {
       body {
         background: #ffffff !important;
-        font-size: 8.65pt !important;
+        font-size: 8.45pt !important;
       }
 
       .screen-toolbar {
@@ -367,10 +389,12 @@
       .resume-sheet {
         width: 100% !important;
         min-height: auto !important;
+        height: auto !important;
         padding: 0 !important;
         margin: 0 !important;
         box-shadow: none !important;
         border-radius: 0 !important;
+        justify-content: flex-start !important;
       }
 
       a {
@@ -384,12 +408,19 @@
         print-color-adjust: exact !important;
       }
 
+      .gpa-pill, .cgpa-badge {
+        color: #15803d !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
       @page {
         size: letter portrait;
-        margin: 0.30in 0.38in 0.28in 0.38in;
+        margin: 0.30in 0.44in 0.28in 0.44in;
       }
     }
-  </style>
+
+</style>
 </head>
 <body>
 
@@ -467,7 +498,7 @@
         </div>
       </section>
 
-      <!-- Unified Experience & Key Projects Section (Page-Filling Authentic Engineering Depth) -->
+      <!-- Unified Experience & Key Projects Section -->
       <section>
         <h2 class="section-title">Professional Experience & Key Projects</h2>
         
@@ -478,7 +509,7 @@
           </div>
 
           <div class="role-row">
-            <span class="role-title">Software & Engine Developer <span style="font-weight: 500; color: #475569; font-size: 8pt;">(Promoted: AI Intern → Jr. Unity Developer → Software & Engine Developer)</span></span>
+            <span class="role-title">Software & Engine Developer <span style="font-weight: 500; color: #475569; font-size: 8.2pt;">(Promoted: AI Intern → Jr. Unity Developer → Software & Engine Developer)</span></span>
             <span class="period">Feb 2023 – Present</span>
           </div>
 
@@ -590,7 +621,7 @@ Fiction Mech (Meta Quest 3 MR & PC Studio — Sole Developer) [Unity • C# • 
 - Authored real-time 3-axis RGB GPU clipping plane shader for mechanical cross-sectioning and integrated Agora SDK telemetry synchronization (<100ms latency) between Quest 3 and Android mobile companion, achieving target 72+ FPS performance on mobile VR hardware.
 
 Radicon Powerbuild AR/MR (Industrial Machinery Showroom — Sole Developer) [Unity • C# • Vuforia • Quest 3 • Android]
-- Engineered industrial 3D product showcase on Android and Meta Quest 3, pairing Vuforia printed brochure image-target tracking with markerless ground-plane floor tracking for full-scale factory showroom placement.
+- Engineered industrial 3D product showcase on Android and Meta Quest 3, pairing Vuforia printed brochure image-target tracking with markerless ground-plane floor placement and dynamic shaft configuration.
 - Implemented orbiting 3D product carousel with hero focus, real-time mechanical output shaft swapping on active Series-M model, and in-world curved radial HUD for technical catalogs; optimized mobile fill-rate via CAD decimation and material atlasing.
 
 Fiction ArchViz (Multiuser CAD-to-VR Engine — UE5 C++ & Quest VR) [Unreal Engine 5 • C++ • LibTess2 • DXF/JSON • WebSocket]

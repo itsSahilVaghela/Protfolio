@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import resumePage1Asset from "@/assets/resume-page-1.png";
-import resumePage2Asset from "@/assets/resume-page-2.png";
 import {
   Dialog,
   DialogContent,
@@ -43,19 +42,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const page1Ref = React.useRef<HTMLDivElement>(null);
-  const page2Ref = React.useRef<HTMLDivElement>(null);
-
-  const scrollToPage = (page: 1 | 2) => {
-    if (page === 1) {
-      page1Ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      page2Ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
 
   const resumeUrl = `${import.meta.env.BASE_URL}${profileData.resumeFileName}`;
   const page1Image = resumePage1Asset || `${import.meta.env.BASE_URL}resume-page-1.png`;
-  const page2Image = resumePage2Asset || `${import.meta.env.BASE_URL}resume-page-2.png`;
 
   const handleCopy = (text: string, fieldName: string) => {
     navigator.clipboard.writeText(text);
@@ -96,7 +85,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                 </span>
               </DialogTitle>
               <DialogDescription className="text-xs text-[#778294] mt-0.5">
-                Executive Profile (40%) &amp; High-Resolution Resume Image (60%)
+                Executive Profile (40%) &amp; High-Resolution Master Resume (60%)
               </DialogDescription>
             </div>
           </div>
@@ -401,26 +390,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
           <div className="lg:col-span-7 xl:col-span-8 p-3 sm:p-5 bg-[#080B10] flex flex-col overflow-hidden space-y-3">
             {/* Viewer Controls Toolbar */}
             <div className="flex flex-wrap items-center justify-between gap-2 p-2 rounded-xl bg-[#10151D] border border-[#1E2736]">
-              {/* Continuous Scroll View Info & Page Jump Pills */}
+              {/* Master Resume Badge */}
               <div className="inline-flex items-center gap-1.5 p-0.5 rounded-lg bg-[#080B10] border border-[#1E2736]">
                 <span className="px-2.5 py-1 text-xs font-mono text-[#A4ADBB] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#4D8DFF]" />
-                  <span>2 Pages · Continuous</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span>1 Page · Master Resume · ATS Ready</span>
                 </span>
-                <button
-                  type="button"
-                  onClick={() => scrollToPage(1)}
-                  className="px-2.5 py-1 rounded text-xs font-mono text-[#778294] hover:text-[#F4F6FA] hover:bg-[#151C27] transition-colors"
-                >
-                  Page 1
-                </button>
-                <button
-                  type="button"
-                  onClick={() => scrollToPage(2)}
-                  className="px-2.5 py-1 rounded text-xs font-mono text-[#778294] hover:text-[#F4F6FA] hover:bg-[#151C27] transition-colors"
-                >
-                  Page 2
-                </button>
               </div>
 
               {/* Zoom & Fit Tools */}
@@ -459,49 +434,45 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
 
                 <a
                   href={resumeUrl}
+                  download="Sahil_Vaghela_Resume.pdf"
+                  className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-mono bg-[#4D8DFF] text-white hover:bg-[#3B7BE8] transition-colors font-medium shadow-sm"
+                  title="Download PDF"
+                >
+                  <Download className="w-3 h-3" />
+                  <span>Download PDF</span>
+                </a>
+
+                <a
+                  href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-mono bg-[#151C27] text-[#A4ADBB] hover:text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/40 transition-colors"
-                  title="Open original PDF in browser tab"
+                  title="Open PDF in browser tab"
                 >
                   <ExternalLink className="w-3 h-3" />
-                  <span className="hidden md:inline">PDF Tab</span>
+                  <span className="hidden md:inline">Open Tab</span>
                 </a>
               </div>
             </div>
 
-            {/* High-Resolution Resume Image Display Canvas - Single Continuous Scroll */}
+            {/* High-Resolution Resume Image Display Canvas */}
             <div className="flex-1 overflow-auto rounded-xl border border-[#1E2736] bg-[#05070A] flex flex-col items-center p-3 sm:p-6 relative select-none scroll-smooth">
               <div
                 style={{
                   width: `${zoomLevel}%`,
                   maxWidth: zoomLevel === 100 ? "100%" : "none",
                 }}
-                className="transition-all duration-150 flex flex-col items-center space-y-6"
+                className="transition-all duration-150 flex flex-col items-center"
               >
-                {/* Page 1 */}
+                {/* Single Master Resume Sheet */}
                 <div ref={page1Ref} className="w-full flex flex-col items-center space-y-2">
                   <div className="w-full flex items-center justify-between text-[10px] font-mono text-[#778294] px-1">
-                    <span>PAGE 1 — EXPERIENCE &amp; SKILLS</span>
-                    <span>1 / 2</span>
+                    <span>MASTER RESUME — 1-PAGE EXECUTIVE VIEW</span>
+                    <span className="text-emerald-400 font-semibold">10/10 ATS VERIFIED</span>
                   </div>
                   <img
                     src={page1Image}
-                    alt="Sahil Vaghela Resume Page 1"
-                    className="w-full h-auto rounded-lg shadow-2xl border border-white/5 bg-white"
-                    loading="eager"
-                  />
-                </div>
-
-                {/* Page 2 */}
-                <div ref={page2Ref} className="w-full flex flex-col items-center space-y-2 pt-2">
-                  <div className="w-full flex items-center justify-between text-[10px] font-mono text-[#778294] px-1">
-                    <span>PAGE 2 — PROJECTS &amp; EDUCATION</span>
-                    <span>2 / 2</span>
-                  </div>
-                  <img
-                    src={page2Image}
-                    alt="Sahil Vaghela Resume Page 2"
+                    alt="Sahil Vaghela Master Resume"
                     className="w-full h-auto rounded-lg shadow-2xl border border-white/5 bg-white"
                     loading="eager"
                   />
@@ -509,16 +480,16 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               </div>
             </div>
 
-            {/* Bottom Status & Continuous Scroll Indicator */}
+            {/* Bottom Status & Single-Page Indicator */}
             <div className="flex items-center justify-between text-[11px] font-mono text-[#778294] px-1 flex-shrink-0">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span>
-                  High-DPI 300 DPI Render · Complete 2-Page Document
+                  High-DPI 300 DPI Render · Complete 1-Page Master Resume
                 </span>
               </div>
               <div className="flex items-center gap-3 text-xs">
-                <span className="text-[#A4ADBB]">Scroll down to view Page 2</span>
+                <span className="text-emerald-400 font-mono">1 of 1 Page</span>
               </div>
             </div>
           </div>

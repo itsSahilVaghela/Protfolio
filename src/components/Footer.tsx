@@ -79,7 +79,7 @@ export const Footer = () => {
 
               <a
                 href={resumeUrl}
-                download="Sahil_Vaghela_Software_Developer_Resume.pdf"
+                download="Sahil_Vaghela_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-[#4D8DFF] hover:underline pt-1"

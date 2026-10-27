@@ -68,7 +68,7 @@ export const Hero = () => {
               </button>
               <a
                 href={resumeUrl}
-                download="Sahil_Vaghela_Software_Developer_Resume.pdf"
+                download="Sahil_Vaghela_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded-xl px-4 py-3.5 text-sm font-medium text-[#D0D8E4] transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <Download className="h-4 w-4" /> Resume

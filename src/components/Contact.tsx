@@ -172,7 +172,7 @@ export const Contact = () => {
                 </p>
                 <a
                   href={resumeUrl}
-                  download="Sahil_Vaghela_Software_Developer_Resume.pdf"
+                  download="Sahil_Vaghela_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-[#4D8DFF] text-[#080B10] hover:bg-[#4D8DFF]/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF]"

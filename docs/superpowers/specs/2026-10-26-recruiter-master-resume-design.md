@@ -23,16 +23,17 @@
 
 ### 2.1 Header & Contact
 - **Name:** SAHIL VAGHELA
-- **Headline:** Software Engineer — Real-Time 3D, Systems & XR
+- **Headline:** Game & Software Developer — Real-Time 3D, Systems & XR
 - **Location & Contact:** Kheda, Gujarat, India | +91 63519 55141 | vaghelasahil1104@gmail.com
 - **Online Profiles:**
   - Portfolio: `https://itssahilvaghela.github.io/Protfolio/`
+  - GitHub: `https://github.com/itssahilvaghela`
   - LinkedIn: `https://www.linkedin.com/in/sahil-vaghela-ba4822250`
 
 ### 2.2 Professional Summary
 Two-sentence dense statement highlighting:
 - Computer Engineering background (9.11 CGPA).
-- 3+ years architecting high-performance real-time systems, procedural geometry pipelines, and cross-platform applications across C++, C#, and Python.
+- Game & Software Developer with 3+ years architecting high-performance real-time 3D, game-engine systems, procedural geometry pipelines, and cross-platform applications across C++, C#, and Python.
 - Proven delivery of production Unreal Engine 5 subsystems, Meta Quest 3 / OpenXR spatial computing, and low-latency computer vision tracking.
 
 ### 2.3 Technical Skills Matrix (Categorized for ATS)
@@ -44,7 +45,7 @@ Two-sentence dense statement highlighting:
 
 ### 2.4 Professional Experience (Invisible Fiction, Gujarat, India)
 
-#### Software & Engine Developer (Unreal Engine 5 & Unity) | Feb 2026 – Present
+#### Software & Game Developer *(Promoted: AI Intern → Jr. Unity Developer → Unity & Unreal Developer)* | Feb 2023 – Present
 1. **Automated CAD-to-3D Pipeline:** Architected in UE5 (C++), parsing multi-layer DXF/JSON blueprints to procedurally generate 3D architectural meshes, roofs, and walls with runtime polygon triangulation and gap resolution, eliminating manual 3D modeling turnaround.
 2. **Modular Customization Architecture:** Engineered using UE5 C++ Subsystems and Data Assets, enabling seamless swapping of furniture/finishes while guaranteeing transform persistence and zero memory leaks across room transitions.
 3. **Fiction Mech (Sole Developer):** Spearheaded end-to-end development of a cross-platform XR industrial application on Meta Quest 3 (OpenXR) with bidirectional low-latency control and real-time audio/video streaming to companion Android devices via Agora SDK.

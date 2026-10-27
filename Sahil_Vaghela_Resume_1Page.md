@@ -1,12 +1,12 @@
 # SAHIL VAGHELA
-**Game and Software Developer — Real-Time 3D, Systems & XR**  
+**Game & Software Developer — Real-Time 3D, Systems & XR**  
 Kheda, Gujarat, India • +91 63519 55141 • [vaghelasahil1104@gmail.com](mailto:vaghelasahil1104@gmail.com)  
-Portfolio: [itssahilvaghela.github.io/Protfolio](https://itssahilvaghela.github.io/Protfolio/) • GitHub: [github.com/itssahilvaghela](https://github.com/itssahilvaghela) • LinkedIn: [linkedin.com/in/sahil-vaghela-ba4822250](https://www.linkedin.com/in/sahil-vaghela-ba4822250)
+**Portfolio:** [itssahilvaghela.github.io/Protfolio](https://itssahilvaghela.github.io/Protfolio/) • **GitHub:** [github.com/itssahilvaghela](https://github.com/itssahilvaghela) • **LinkedIn:** [linkedin.com/in/sahil-vaghela-ba4822250](https://www.linkedin.com/in/sahil-vaghela-ba4822250)
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Game and Software Developer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance game-engine systems across C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (**9.11 CGPA**) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and cross-platform mixed reality applications.
+Game & Software Developer with 3+ years architecting real-time 3D, spatial computing (Meta Quest 3 / OpenXR), and high-performance game-engine systems across C++, C#, and Python. First Class with Distinction graduate in Computer Engineering (**9.11 CGPA**) with deep expertise delivering Unreal Engine 5 subsystems, procedural CAD-to-3D geometry pipelines, and cross-platform mixed reality applications.
 
 ---
 
@@ -22,7 +22,7 @@ Game and Software Developer with 3+ years architecting real-time 3D, spatial com
 ## PROFESSIONAL EXPERIENCE & KEY PROJECTS
 
 ### **Invisible Fiction** — Gujarat, India  
-**Software and Game Developer** *(Promoted: AI Intern → Jr. Unity Developer → Unity & Unreal Developer)* | *Feb 2023 – Present*  
+**Software & Game Developer** *(Promoted: AI Intern → Jr. Unity Developer → Unity & Unreal Developer)* | *Feb 2023 – Present*  
 
 **Fiction Mech (Meta Quest 3 MR & PC Studio — Sole Developer)** `[Unity • C# • OpenXR • Quest 3 • Agora SDK]`
 - Architected dual-runtime industrial digital twin platform: PC Authoring Studio in Unity C# (3D CAD ingestion, PBR materials, exploded assembly slider, PDF/MP4 metadata binding, cloud publishing) paired with standalone Meta Quest 3 MR runtime (OpenXR room-scale passthrough, 6DoF hand tracking, cyan outline highlights).

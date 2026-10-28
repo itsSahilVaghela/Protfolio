@@ -33,6 +33,8 @@ import {
   Loader2,
   AlertCircle,
   ExternalLink,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 import {
   featuredProjects,
@@ -102,7 +104,68 @@ export const Portfolio = () => {
     scale: number;
     height: number;
   } | null>(null);
+  const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
+  const [fullscreenHint, setFullscreenHint] = useState("");
   const projectVideoFrameRef = useRef<HTMLDivElement>(null);
+  const ownsOrientationLockRef = useRef(false);
+
+  const toggleLandscapeFullscreen = async () => {
+    const frame = projectVideoFrameRef.current;
+    if (!frame) return;
+
+    if (document.fullscreenElement === frame) {
+      await document.exitFullscreen();
+      return;
+    }
+
+    try {
+      await frame.requestFullscreen();
+    } catch {
+      setFullscreenHint("Fullscreen is unavailable in this browser.");
+      return;
+    }
+
+    const orientation = window.screen.orientation as ScreenOrientation & {
+      lock?: (value: "landscape") => Promise<void>;
+    };
+
+    if (!orientation?.lock) {
+      setFullscreenHint("Rotate your phone to landscape. Use Back or Exit to return.");
+      return;
+    }
+
+    try {
+      await orientation.lock("landscape");
+      ownsOrientationLockRef.current = true;
+      setFullscreenHint("");
+    } catch {
+      setFullscreenHint("Rotate your phone to landscape. Use Back or Exit to return.");
+    }
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const isFrameFullscreen = document.fullscreenElement === projectVideoFrameRef.current;
+      setIsVideoFullscreen(isFrameFullscreen);
+      if (!isFrameFullscreen) {
+        if (ownsOrientationLockRef.current) {
+          const orientation = window.screen.orientation as ScreenOrientation & {
+            unlock?: () => void;
+          };
+          try {
+            orientation?.unlock?.();
+          } catch {
+            // Browsers may release the lock automatically when fullscreen ends.
+          }
+        }
+        ownsOrientationLockRef.current = false;
+        setFullscreenHint("");
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
 
   useLayoutEffect(() => {
     const frame = projectVideoFrameRef.current;
@@ -587,6 +650,31 @@ export const Portfolio = () => {
                           ref={projectVideoFrameRef}
                           className="project-video-frame relative w-full min-w-0 aspect-video overflow-hidden bg-black"
                         >
+                          <button
+                            type="button"
+                            onClick={toggleLandscapeFullscreen}
+                            aria-label={isVideoFullscreen ? "Exit landscape fullscreen" : "Watch in landscape fullscreen"}
+                            title={isVideoFullscreen ? "Exit fullscreen" : "Watch in landscape fullscreen"}
+                            className={`absolute left-3 top-3 z-30 inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg border border-white/20 bg-[#10151D]/90 px-3 text-xs font-mono text-[#F4F6FA] shadow-lg transition-colors hover:bg-[#1E2736] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] ${
+                              isVideoFullscreen ? "" : "md:hidden"
+                            }`}
+                          >
+                            {isVideoFullscreen ? (
+                              <Minimize2 className="h-4 w-4" aria-hidden="true" />
+                            ) : (
+                              <Maximize2 className="h-4 w-4" aria-hidden="true" />
+                            )}
+                            <span>{isVideoFullscreen ? "Exit" : "Landscape"}</span>
+                          </button>
+                          {fullscreenHint && (
+                            <p
+                              className="absolute left-3 top-16 z-30 max-w-[calc(100%-1.5rem)] rounded-md border border-white/15 bg-[#10151D]/90 px-3 py-2 text-xs text-[#F4F6FA] shadow-lg md:hidden"
+                              aria-live="polite"
+                            >
+                              {fullscreenHint}
+                            </p>
+                          )}
+
                           {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
                           {getPosterSrc(activeCaseStudy) ? (
                             <img
@@ -611,7 +699,7 @@ export const Portfolio = () => {
                                 title={`${activeCaseStudy.title} Video Demo`}
                                 className="project-video-embed absolute left-0 top-0 w-full h-full border-0"
                                 style={
-                                  portraitPlayerSize
+                                  portraitPlayerSize && !isVideoFullscreen
                                     ? {
                                         width: 600,
                                         height: portraitPlayerSize.height,

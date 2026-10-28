@@ -106,6 +106,7 @@ export const Portfolio = () => {
 
     const timer = setTimeout(() => {
       setIsSlowNetwork(true);
+      setIsVideoLoading(false);
     }, 6000);
 
     return () => clearTimeout(timer);
@@ -542,7 +543,7 @@ export const Portfolio = () => {
                         )}
 
                       {activeMediaView === "video" ? (
-                        <div className="project-video-frame relative w-full aspect-video overflow-hidden bg-black">
+                        <div className="project-video-frame relative w-full min-w-0 aspect-video overflow-hidden bg-black">
                           {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
                           {getPosterSrc(activeCaseStudy) ? (
                             <img
@@ -565,7 +566,7 @@ export const Portfolio = () => {
                               <iframe
                                 src={getEmbedVideoUrl(currentVideoUrl)!}
                                 title={`${activeCaseStudy.title} Video Demo`}
-                                className="w-full h-full border-0"
+                                className="project-video-embed absolute left-0 top-0 w-full h-full border-0"
                                 allow="autoplay; fullscreen"
                                 allowFullScreen
                                 onLoad={() => setIsVideoLoading(false)}

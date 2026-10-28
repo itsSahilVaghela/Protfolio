@@ -229,4 +229,29 @@
     height: min(48dvh, 28rem);
     min-height: 18rem;
   }
+
+  .project-video-frame .project-video-embed {
+    width: 600px;
+    height: 88.1dvh;
+    min-height: 528px;
+    max-height: 822px;
+    transform: scale(0.545);
+    transform-origin: top left;
+  }
 }
+
+@media screen and (orientation: portrait) and (max-width: 389px) {
+  .project-video-frame .project-video-embed {
+    transform: scale(0.52);
+    height: 92.3dvh;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 374px) {
+  .project-video-frame .project-video-embed {
+    transform: scale(0.497);
+    height: 96.8dvh;
+  }
+}
+
+

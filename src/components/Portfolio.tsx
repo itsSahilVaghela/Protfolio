@@ -542,7 +542,7 @@ export const Portfolio = () => {
                         )}
 
                       {activeMediaView === "video" ? (
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#080B10] border border-[#1E2736] shadow-2xl">
+                        <div className="project-video-frame relative w-full aspect-video overflow-hidden bg-black">
                           {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
                           {getPosterSrc(activeCaseStudy) ? (
                             <img

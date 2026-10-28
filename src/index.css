@@ -222,3 +222,11 @@
     transform: none;
   }
 }
+
+@media screen and (orientation: portrait) and (max-width: 767px) {
+  .project-video-frame {
+    aspect-ratio: auto;
+    height: min(48dvh, 28rem);
+    min-height: 18rem;
+  }
+}

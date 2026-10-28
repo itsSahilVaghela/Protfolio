@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -98,6 +98,46 @@ export const Portfolio = () => {
 
   const [isVideoLoading, setIsVideoLoading] = useState<boolean>(true);
   const [isSlowNetwork, setIsSlowNetwork] = useState<boolean>(false);
+  const [portraitPlayerSize, setPortraitPlayerSize] = useState<{
+    scale: number;
+    height: number;
+  } | null>(null);
+  const projectVideoFrameRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const frame = projectVideoFrameRef.current;
+    if (!frame) return;
+
+    const updatePlayerSize = () => {
+      if (!window.matchMedia("(orientation: portrait) and (max-width: 767px)").matches) {
+        setPortraitPlayerSize(null);
+        return;
+      }
+
+      const frameWidth = frame.clientWidth;
+      const frameHeight = frame.clientHeight;
+      if (!frameWidth || !frameHeight) return;
+
+      const scale = Math.min(1, frameWidth / 600);
+      const nextSize = { scale, height: frameHeight / scale };
+      setPortraitPlayerSize((current) =>
+        current &&
+        Math.abs(current.scale - nextSize.scale) < 0.001 &&
+        Math.abs(current.height - nextSize.height) < 1
+          ? current
+          : nextSize
+      );
+    };
+
+    updatePlayerSize();
+    window.addEventListener("resize", updatePlayerSize);
+    window.addEventListener("orientationchange", updatePlayerSize);
+
+    return () => {
+      window.removeEventListener("resize", updatePlayerSize);
+      window.removeEventListener("orientationchange", updatePlayerSize);
+    };
+  }, [activeMediaView, currentVideoUrl]);
 
   useEffect(() => {
     if (activeMediaView !== "video" || !currentVideoUrl) return;
@@ -543,7 +583,10 @@ export const Portfolio = () => {
                         )}
 
                       {activeMediaView === "video" ? (
-                        <div className="project-video-frame relative w-full min-w-0 aspect-video overflow-hidden bg-black">
+                        <div
+                          ref={projectVideoFrameRef}
+                          className="project-video-frame relative w-full min-w-0 aspect-video overflow-hidden bg-black"
+                        >
                           {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
                           {getPosterSrc(activeCaseStudy) ? (
                             <img
@@ -567,6 +610,16 @@ export const Portfolio = () => {
                                 src={getEmbedVideoUrl(currentVideoUrl)!}
                                 title={`${activeCaseStudy.title} Video Demo`}
                                 className="project-video-embed absolute left-0 top-0 w-full h-full border-0"
+                                style={
+                                  portraitPlayerSize
+                                    ? {
+                                        width: 600,
+                                        height: portraitPlayerSize.height,
+                                        transform: `scale(${portraitPlayerSize.scale})`,
+                                        transformOrigin: "top left",
+                                      }
+                                    : undefined
+                                }
                                 allow="autoplay; fullscreen"
                                 allowFullScreen
                                 onLoad={() => setIsVideoLoading(false)}

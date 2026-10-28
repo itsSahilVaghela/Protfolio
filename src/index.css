@@ -240,18 +240,4 @@
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 389px) {
-  .project-video-frame .project-video-embed {
-    transform: scale(0.52);
-    height: 92.3dvh;
-  }
-}
-
-@media screen and (orientation: portrait) and (max-width: 374px) {
-  .project-video-frame .project-video-embed {
-    transform: scale(0.497);
-    height: 96.8dvh;
-  }
-}
-
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -33,8 +33,6 @@ import {
   Loader2,
   AlertCircle,
   ExternalLink,
-  Maximize2,
-  Minimize2,
 } from "lucide-react";
 import {
   featuredProjects,
@@ -87,6 +85,13 @@ export const Portfolio = () => {
   const currentVideoUrl = activeCaseStudy
     ? activeModalVideoUrl || activeCaseStudy.videoUrl
     : undefined;
+  const [isMobilePortrait, setIsMobilePortrait] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(orientation: portrait) and (max-width: 767px)").matches
+  );
+  const shouldOpenDriveInPortrait =
+    isMobilePortrait && currentVideoUrl?.includes("drive.google.com");
 
   const currentImageUrl = activeCaseStudy
     ? activeModalImageUrl ||
@@ -100,110 +105,30 @@ export const Portfolio = () => {
 
   const [isVideoLoading, setIsVideoLoading] = useState<boolean>(true);
   const [isSlowNetwork, setIsSlowNetwork] = useState<boolean>(false);
-  const [portraitPlayerSize, setPortraitPlayerSize] = useState<{
-    scale: number;
-    height: number;
-  } | null>(null);
-  const [isVideoFullscreen, setIsVideoFullscreen] = useState(false);
-  const [fullscreenHint, setFullscreenHint] = useState("");
-  const projectVideoFrameRef = useRef<HTMLDivElement>(null);
-  const ownsOrientationLockRef = useRef(false);
-
-  const toggleLandscapeFullscreen = async () => {
-    const frame = projectVideoFrameRef.current;
-    if (!frame) return;
-
-    if (document.fullscreenElement === frame) {
-      await document.exitFullscreen();
-      return;
-    }
-
-    try {
-      await frame.requestFullscreen();
-    } catch {
-      setFullscreenHint("Fullscreen is unavailable in this browser.");
-      return;
-    }
-
-    const orientation = window.screen.orientation as ScreenOrientation & {
-      lock?: (value: "landscape") => Promise<void>;
-    };
-
-    if (!orientation?.lock) {
-      setFullscreenHint("Rotate your phone to landscape. Use Back or Exit to return.");
-      return;
-    }
-
-    try {
-      await orientation.lock("landscape");
-      ownsOrientationLockRef.current = true;
-      setFullscreenHint("");
-    } catch {
-      setFullscreenHint("Rotate your phone to landscape. Use Back or Exit to return.");
-    }
-  };
 
   useEffect(() => {
-    const handleFullscreenChange = () => {
-      const isFrameFullscreen = document.fullscreenElement === projectVideoFrameRef.current;
-      setIsVideoFullscreen(isFrameFullscreen);
-      if (!isFrameFullscreen) {
-        if (ownsOrientationLockRef.current) {
-          const orientation = window.screen.orientation as ScreenOrientation & {
-            unlock?: () => void;
-          };
-          try {
-            orientation?.unlock?.();
-          } catch {
-            // Browsers may release the lock automatically when fullscreen ends.
-          }
-        }
-        ownsOrientationLockRef.current = false;
-        setFullscreenHint("");
-      }
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
-  }, []);
-
-  useLayoutEffect(() => {
-    const frame = projectVideoFrameRef.current;
-    if (!frame) return;
-
-    const updatePlayerSize = () => {
-      if (!window.matchMedia("(orientation: portrait) and (max-width: 767px)").matches) {
-        setPortraitPlayerSize(null);
-        return;
-      }
-
-      const frameWidth = frame.clientWidth;
-      const frameHeight = frame.clientHeight;
-      if (!frameWidth || !frameHeight) return;
-
-      const scale = Math.min(1, frameWidth / 600);
-      const nextSize = { scale, height: frameHeight / scale };
-      setPortraitPlayerSize((current) =>
-        current &&
-        Math.abs(current.scale - nextSize.scale) < 0.001 &&
-        Math.abs(current.height - nextSize.height) < 1
-          ? current
-          : nextSize
+    const updateOrientation = () => {
+      setIsMobilePortrait(
+        window.matchMedia("(orientation: portrait) and (max-width: 767px)").matches
       );
     };
 
-    updatePlayerSize();
-    window.addEventListener("resize", updatePlayerSize);
-    window.addEventListener("orientationchange", updatePlayerSize);
-
+    window.addEventListener("resize", updateOrientation);
+    window.addEventListener("orientationchange", updateOrientation);
     return () => {
-      window.removeEventListener("resize", updatePlayerSize);
-      window.removeEventListener("orientationchange", updatePlayerSize);
+      window.removeEventListener("resize", updateOrientation);
+      window.removeEventListener("orientationchange", updateOrientation);
     };
-  }, [activeMediaView, currentVideoUrl]);
+  }, []);
 
   useEffect(() => {
     if (activeMediaView !== "video" || !currentVideoUrl) return;
+    if (shouldOpenDriveInPortrait) {
+      setIsVideoLoading(false);
+      setIsSlowNetwork(false);
+      return;
+    }
+
     setIsVideoLoading(true);
     setIsSlowNetwork(false);
 
@@ -213,7 +138,7 @@ export const Portfolio = () => {
     }, 6000);
 
     return () => clearTimeout(timer);
-  }, [currentVideoUrl, activeCaseStudy?.id, activeMediaView]);
+  }, [currentVideoUrl, activeCaseStudy?.id, activeMediaView, shouldOpenDriveInPortrait]);
 
   const getPosterSrc = (project?: ProjectCaseStudy | null) => {
     if (!project) return null;
@@ -647,34 +572,8 @@ export const Portfolio = () => {
 
                       {activeMediaView === "video" ? (
                         <div
-                          ref={projectVideoFrameRef}
                           className="project-video-frame relative w-full min-w-0 aspect-video overflow-hidden bg-black"
                         >
-                          <button
-                            type="button"
-                            onClick={toggleLandscapeFullscreen}
-                            aria-label={isVideoFullscreen ? "Exit landscape fullscreen" : "Watch in landscape fullscreen"}
-                            title={isVideoFullscreen ? "Exit fullscreen" : "Watch in landscape fullscreen"}
-                            className={`absolute left-3 top-3 z-30 inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg border border-white/20 bg-[#10151D]/90 px-3 text-xs font-mono text-[#F4F6FA] shadow-lg transition-colors hover:bg-[#1E2736] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] ${
-                              isVideoFullscreen ? "" : "md:hidden"
-                            }`}
-                          >
-                            {isVideoFullscreen ? (
-                              <Minimize2 className="h-4 w-4" aria-hidden="true" />
-                            ) : (
-                              <Maximize2 className="h-4 w-4" aria-hidden="true" />
-                            )}
-                            <span>{isVideoFullscreen ? "Exit" : "Landscape"}</span>
-                          </button>
-                          {fullscreenHint && (
-                            <p
-                              className="absolute left-3 top-16 z-30 max-w-[calc(100%-1.5rem)] rounded-md border border-white/15 bg-[#10151D]/90 px-3 py-2 text-xs text-[#F4F6FA] shadow-lg md:hidden"
-                              aria-live="polite"
-                            >
-                              {fullscreenHint}
-                            </p>
-                          )}
-
                           {/* Layer 0: Poster Backdrop (Prevents pitch-black void on slow networks) */}
                           {getPosterSrc(activeCaseStudy) ? (
                             <img
@@ -694,24 +593,38 @@ export const Portfolio = () => {
                             }`}
                           >
                             {isEmbedIframe(currentVideoUrl) ? (
-                              <iframe
-                                src={getEmbedVideoUrl(currentVideoUrl)!}
-                                title={`${activeCaseStudy.title} Video Demo`}
-                                className="project-video-embed absolute left-0 top-0 w-full h-full border-0"
-                                style={
-                                  portraitPlayerSize && !isVideoFullscreen
-                                    ? {
-                                        width: 600,
-                                        height: portraitPlayerSize.height,
-                                        transform: `scale(${portraitPlayerSize.scale})`,
-                                        transformOrigin: "top left",
-                                      }
-                                    : undefined
-                                }
-                                allow="autoplay; fullscreen"
-                                allowFullScreen
-                                onLoad={() => setIsVideoLoading(false)}
-                              />
+                              shouldOpenDriveInPortrait ? (
+                                <a
+                                  href={currentVideoUrl}
+                                  aria-label={`Open ${activeCaseStudy.title} video in Google Drive`}
+                                  className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#080B10]"
+                                >
+                                  {getPosterSrc(activeCaseStudy) ? (
+                                    <img
+                                      src={getPosterSrc(activeCaseStudy)!}
+                                      alt=""
+                                      aria-hidden="true"
+                                      className="absolute inset-0 h-full w-full object-cover opacity-60"
+                                    />
+                                  ) : (
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#10151D] via-[#080B10] to-[#151C27]" />
+                                  )}
+                                  <span className="relative z-10 inline-flex min-h-12 items-center gap-2 rounded-lg border border-[#4D8DFF]/60 bg-[#10151D]/95 px-5 py-3 font-mono text-sm text-[#F4F6FA] shadow-xl transition-colors hover:bg-[#1E2736]">
+                                    <Play className="h-4 w-4 fill-current text-[#4D8DFF]" aria-hidden="true" />
+                                    <span>Open video in Google Drive</span>
+                                    <ExternalLink className="h-4 w-4 text-[#89B2FF]" aria-hidden="true" />
+                                  </span>
+                                </a>
+                              ) : (
+                                <iframe
+                                  src={getEmbedVideoUrl(currentVideoUrl)!}
+                                  title={`${activeCaseStudy.title} Video Demo`}
+                                  className="project-video-embed absolute left-0 top-0 h-full w-full border-0"
+                                  allow="autoplay; fullscreen"
+                                  allowFullScreen
+                                  onLoad={() => setIsVideoLoading(false)}
+                                />
+                              )
                             ) : (
                               <video
                                 src={currentVideoUrl}
@@ -724,7 +637,7 @@ export const Portfolio = () => {
                           </div>
 
                           {/* Layer 2: Loading State & Slow Network Recovery Overlay */}
-                          {isVideoLoading && (
+                          {isVideoLoading && !shouldOpenDriveInPortrait && (
                             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center bg-[#080B10]/80 backdrop-blur-md transition-all duration-300">
                               <div className="relative mb-3 flex items-center justify-center">
                                 <span className="absolute w-12 h-12 rounded-full bg-[#4D8DFF]/20 animate-ping" />

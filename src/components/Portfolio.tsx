@@ -347,18 +347,10 @@ export const Portfolio = () => {
                           project.additionalImages?.[0]?.previewUrl || project.mediaUrl || null
                         );
                       }}
-                      className={`w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] ${
-                        isMainProject
-                          ? "bg-[#4D8DFF] text-[#080B10] font-semibold hover:bg-[#89B2FF]"
-                          : "bg-[#151C27] text-[#F4F6FA] border border-[#1E2736] hover:border-[#4D8DFF]/50 hover:bg-[#1E2736]"
-                      }`}
+                      className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4D8DFF] bg-[#151C27] text-[#F4F6FA] border border-[#1E2736] hover:bg-[#4D8DFF] hover:text-[#080B10] hover:border-[#4D8DFF] hover:font-semibold group/btn"
                     >
                       <span>View Case Study</span>
-                      <ArrowUpRight
-                        className={`w-4 h-4 ${
-                          isMainProject ? "text-[#080B10]" : "text-[#4D8DFF]"
-                        }`}
-                      />
+                      <ArrowUpRight className="w-4 h-4 text-[#4D8DFF] group-hover/btn:text-[#080B10] transition-colors" />
                     </button>
                   </div>
                 </article>

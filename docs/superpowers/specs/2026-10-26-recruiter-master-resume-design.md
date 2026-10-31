@@ -24,7 +24,7 @@
 ### 2.1 Header & Contact
 - **Name:** SAHIL VAGHELA
 - **Headline:** Game & Software Developer — Real-Time 3D, Systems & XR
-- **Location & Contact:** Kheda, Gujarat, India | +91 63519 55141 | vaghelasahil1104@gmail.com
+- **Location & Contact:** Kheda, Gujarat, India | +91 63519 55141 | sahil.vaghela.dev@gmail.com
 - **Online Profiles:**
   - Portfolio: `https://itssahilvaghela.github.io/Protfolio/`
   - LinkedIn: `https://www.linkedin.com/in/sahil-vaghela-ba4822250`

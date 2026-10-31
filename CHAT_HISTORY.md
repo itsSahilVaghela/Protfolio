@@ -641,7 +641,7 @@ Artifacts:
 
 7. **Contact & Resume Integration**:
    - Redesigned [`src/components/Contact.tsx`](file:///d:/Temp/New%20folder%20(2)/src/components/Contact.tsx) and [`src/components/Footer.tsx`](file:///d:/Temp/New%20folder%20(2)/src/components/Footer.tsx).
-   - Verified links for `vaghelasahil1104@gmail.com`, `sahilvaghela.if2@gmail.com`, LinkedIn, and GitHub.
+   - Verified links for `vaghelasahil1104@gmail.com`, `sahil.vaghela.dev@gmail.com`, LinkedIn, and GitHub.
    - Working resume download button uses `${import.meta.env.BASE_URL}Sahil_Vaghela_Software_Developer_Resume.pdf` and [`Sahil_Vaghela_Resume.pdf`](file:///d:/Temp/New%20folder%20(2)/public/Sahil_Vaghela_Resume.pdf), working in both local dev and GitHub Pages (`/Protfolio/`).
    - Preserved EmailJS contact form with accessible feedback toasts.
 

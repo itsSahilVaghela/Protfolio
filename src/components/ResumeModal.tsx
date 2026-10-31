@@ -266,7 +266,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                     </div>
                   </div>
 
-                  {/* Primary Email */}
+                  {/* Email */}
                   <div className="p-2.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div className="w-7 h-7 rounded-lg bg-[#10151D] border border-[#1E2736] flex items-center justify-center text-[#4D8DFF] flex-shrink-0">
@@ -302,42 +302,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                       >
                         Mail
                       </a>
-                    </div>
-                  </div>
-
-                  {/* Secondary Email */}
-                  <div className="p-2.5 rounded-xl bg-[#151C27] border border-[#1E2736] flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2.5 min-w-0">
-                      <div className="w-7 h-7 rounded-lg bg-[#10151D] border border-[#1E2736] flex items-center justify-center text-[#8B6CFF] flex-shrink-0">
-                        <Mail className="w-3.5 h-3.5" />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-[10px] font-mono text-[#778294]">
-                          Secondary Email
-                        </div>
-                        <div className="text-xs font-mono font-medium text-[#F4F6FA] truncate">
-                          {profileData.secondaryEmail}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 flex-shrink-0">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          handleCopy(
-                            profileData.secondaryEmail,
-                            "secondaryEmail"
-                          )
-                        }
-                        className="p-1.5 rounded-md hover:bg-[#1E2736] text-[#A4ADBB] hover:text-[#F4F6FA] transition-colors"
-                        title="Copy secondary email"
-                      >
-                        {copiedField === "secondaryEmail" ? (
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        ) : (
-                          <Copy className="w-3.5 h-3.5" />
-                        )}
-                      </button>
                     </div>
                   </div>
 

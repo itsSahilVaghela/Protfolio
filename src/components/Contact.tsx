@@ -29,7 +29,6 @@ export const Contact = () => {
       icon: Mail,
       label: "Email",
       value: profileData.primaryEmail,
-      subValue: `Also reachable at ${profileData.secondaryEmail}`,
       href: `mailto:${profileData.primaryEmail}`,
       external: false,
     },

@@ -1,6 +1,6 @@
 # SAHIL VAGHELA
 **Game & Software Developer — Real-Time 3D, Systems & XR**  
-Kheda, Gujarat, India • +91 63519 55141 • [vaghelasahil1104@gmail.com](mailto:vaghelasahil1104@gmail.com)  
+Kheda, Gujarat, India • +91 63519 55141 • [sahil.vaghela.dev@gmail.com](mailto:sahil.vaghela.dev@gmail.com)  
 **Portfolio:** [itssahilvaghela.github.io/Protfolio](https://itssahilvaghela.github.io/Protfolio/) • **LinkedIn:** [linkedin.com/in/sahil-vaghela-ba4822250](https://www.linkedin.com/in/sahil-vaghela-ba4822250)
 
 ---

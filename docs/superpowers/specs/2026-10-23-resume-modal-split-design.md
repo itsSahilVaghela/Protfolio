@@ -32,7 +32,7 @@ Replace the generic PDF embed with an executive two-column modal:
 │                                      │  │                                           │  │
 │  📞 Direct Contact                   │  │                                           │  │
 │     • Phone: +91 6351955141 [Copy]   │  │                                           │  │
-│     • Email: sahilvaghela.if2@gmail  │  │                                           │  │
+│     • Email: sahil.vaghela.dev@gmail  │  │                                           │  │
 │     • Secondary: sahilvaghela03@...  │  │                                           │  │
 │     • LinkedIn: /in/sahil-vaghela    │  │                                           │  │
 │                                      │  │                                           │  │
@@ -68,7 +68,7 @@ Replace the generic PDF embed with an executive two-column modal:
     - Procedural CAD generation, WebSocket multiuser sync & WebAR.
 - **Contact Cards (Interactive)**:
   - Phone: `+91 6351955141` with 1-click **Copy** and **Call** (`tel:`) buttons.
-  - Primary Email: `sahilvaghela.if2@gmail.com` with 1-click **Copy** and **Mailto** buttons.
+  - Primary Email: `sahil.vaghela.dev@gmail.com` with 1-click **Copy** and **Mailto** buttons.
   - Secondary Email: `sahilvaghela03@gmail.com`.
   - LinkedIn: Verified badge link opening `https://www.linkedin.com/in/sahil-vaghela-ba4822250`.
 - **Primary CTAs**:
